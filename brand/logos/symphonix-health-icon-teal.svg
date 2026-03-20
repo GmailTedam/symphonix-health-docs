@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="24 8 72 96" width="120" height="120">
+  <defs>
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   style="stop-color:#0D7377;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#14919B;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="overlayGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   style="stop-color:#E0F7FA;stop-opacity:0.9"/>
+      <stop offset="100%" style="stop-color:#B2EBF2;stop-opacity:0.7"/>
+    </linearGradient>
+    <linearGradient id="nodeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   style="stop-color:#4DD0E1;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#00ACC1;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="rainbowGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"    stop-color="#FF3B30"/>
+      <stop offset="14%"   stop-color="#FF9500"/>
+      <stop offset="28%"   stop-color="#FFCC00"/>
+      <stop offset="42%"   stop-color="#34C759"/>
+      <stop offset="57%"   stop-color="#00BCD4"/>
+      <stop offset="71%"   stop-color="#007AFF"/>
+      <stop offset="85%"   stop-color="#5856D6"/>
+      <stop offset="100%"  stop-color="#AF52DE"/>
+    </linearGradient>
+    <filter id="pulseGlow" x="-20%" y="-40%" width="140%" height="180%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <path d="M60,12 L92,24 L92,52 C92,76 60,100 60,100 C60,100 28,76 28,52 L28,24 Z"
+        fill="url(#shieldGrad)" stroke="#095E61" stroke-width="1.5"/>
+  <circle cx="60" cy="52" r="22" fill="none" stroke="url(#overlayGrad)" stroke-width="0.6" opacity="0.3"/>
+  <line x1="38" y1="52" x2="82" y2="52" stroke="url(#overlayGrad)" stroke-width="0.5" opacity="0.25"/>
+
+  <path d="M38,54 L44,54 L46,50 L48,54 L51,54 L55,52 L57,34 L60,68 L63,42 L65,54 L69,54 L72,48 L74,52 L78,54 L82,54"
+        fill="none" stroke="url(#rainbowGrad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        filter="url(#pulseGlow)"/>
+
+  <circle cx="57" cy="34" r="3" fill="#fff" stroke="#007AFF" stroke-width="1.2" opacity="0.9"/>
+  <circle cx="60" cy="68" r="2" fill="url(#nodeGrad)" stroke="#fff" stroke-width="0.8" opacity="0.8"/>
+  <circle cx="63" cy="42" r="2" fill="url(#nodeGrad)" stroke="#fff" stroke-width="0.8" opacity="0.8"/>
+
+  <rect x="57" y="78" width="6"  height="14" rx="1" fill="#E0F7FA" opacity="0.85"/>
+  <rect x="53" y="82" width="14" height="6"  rx="1" fill="#E0F7FA" opacity="0.85"/>
+</svg>

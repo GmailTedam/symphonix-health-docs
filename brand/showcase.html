@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Symphonix Health — Logo Brand Case</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', 'Segoe UI', sans-serif;
+      background: #0F0A2A;
+      color: #E0E7FF;
+      line-height: 1.6;
+    }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 60px 40px; }
+
+    h1 {
+      font-size: 48px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #A5B4FC, #818CF8, #6366F1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      font-size: 28px;
+      font-weight: 600;
+      color: #A5B4FC;
+      margin: 60px 0 24px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+    }
+
+    h3 {
+      font-size: 18px;
+      font-weight: 600;
+      color: #C7D2FE;
+      margin: 32px 0 12px;
+    }
+
+    p, li {
+      color: #94A3B8;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      color: #818CF8;
+      font-weight: 400;
+      margin-bottom: 40px;
+    }
+
+    .logo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin: 32px 0;
+    }
+
+    .logo-card {
+      border-radius: 16px;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .logo-card.light {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+    }
+
+    .logo-card.dark {
+      background: #1A1145;
+      border: 1px solid rgba(99, 102, 241, 0.15);
+    }
+
+    .logo-card.brand {
+      background: linear-gradient(135deg, #4F46E5, #6366F1);
+      border: none;
+    }
+
+    .logo-card img, .logo-card object {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .logo-card .label {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      opacity: 0.6;
+    }
+
+    .logo-card.light .label { color: #475569; }
+    .logo-card.dark .label  { color: #A5B4FC; }
+    .logo-card.brand .label { color: rgba(255,255,255,0.7); }
+
+    .icon-row {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+      margin: 24px 0;
+    }
+
+    .icon-box {
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      padding: 24px;
+    }
+
+    .icon-box.dark { background: #1A1145; border: 1px solid rgba(99, 102, 241, 0.15); }
+    .icon-box.light { background: #FFFFFF; border: 1px solid #E2E8F0; }
+
+    .icon-box .size-label {
+      font-size: 11px;
+      color: #818CF8;
+      letter-spacing: 1px;
+    }
+
+    .color-palette {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 16px;
+      margin: 24px 0;
+    }
+
+    .color-swatch {
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .swatch-block {
+      height: 72px;
+      width: 100%;
+    }
+
+    .swatch-info {
+      padding: 10px 12px;
+      background: #1A1145;
+      border: 1px solid rgba(99, 102, 241, 0.1);
+      border-top: none;
+      border-radius: 0 0 12px 12px;
+    }
+
+    .swatch-name {
+      font-size: 12px;
+      font-weight: 600;
+      color: #C7D2FE;
+    }
+
+    .swatch-hex {
+      font-size: 11px;
+      color: #818CF8;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .rainbow-bar {
+      height: 6px;
+      border-radius: 3px;
+      background: linear-gradient(to right, #FF3B30, #FF9500, #FFCC00, #34C759, #00BCD4, #007AFF, #5856D6, #AF52DE);
+      margin: 32px 0;
+    }
+
+    .usage-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+    }
+
+    .usage-table th, .usage-table td {
+      padding: 12px 16px;
+      text-align: left;
+      font-size: 14px;
+      border-bottom: 1px solid rgba(99, 102, 241, 0.1);
+    }
+
+    .usage-table th {
+      color: #A5B4FC;
+      font-weight: 600;
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .usage-table td { color: #94A3B8; }
+
+    .meaning-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin: 24px 0;
+    }
+
+    .meaning-card {
+      background: rgba(79, 70, 229, 0.06);
+      border: 1px solid rgba(99, 102, 241, 0.12);
+      border-radius: 12px;
+      padding: 24px;
+    }
+
+    .meaning-card h4 {
+      font-size: 14px;
+      font-weight: 600;
+      color: #A5B4FC;
+      margin-bottom: 8px;
+    }
+
+    .meaning-card p {
+      font-size: 13px;
+      color: #94A3B8;
+      line-height: 1.6;
+    }
+
+    .og-preview {
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(99, 102, 241, 0.15);
+      margin: 24px 0;
+    }
+
+    .og-preview img, .og-preview object {
+      width: 100%;
+      display: block;
+    }
+
+    .checklist {
+      list-style: none;
+      margin: 24px 0;
+    }
+
+    .checklist li {
+      padding: 8px 0;
+      padding-left: 28px;
+      position: relative;
+    }
+
+    .checklist li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #34C759;
+      font-weight: 700;
+    }
+
+    .section-divider {
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(99, 102, 241, 0.2), transparent);
+      margin: 60px 0;
+    }
+
+    .hero-source {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      background: rgba(79, 70, 229, 0.06);
+      border: 1px solid rgba(99, 102, 241, 0.12);
+      border-radius: 16px;
+      padding: 32px;
+      margin: 32px 0;
+    }
+
+    .hero-source img {
+      width: 120px;
+      height: 120px;
+      border-radius: 12px;
+    }
+
+    .hero-source .arrow {
+      font-size: 32px;
+      color: #6366F1;
+    }
+
+    footer {
+      text-align: center;
+      padding: 60px 0 40px;
+      color: #475569;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Header -->
+  <h1>Symphonix Health</h1>
+  <p class="subtitle">Logo Brand Case &amp; Usage Guide</p>
+  <div class="rainbow-bar"></div>
+
+  <!-- ─── CONCEPT ─── -->
+  <h2>1. Concept &amp; Rationale</h2>
+
+  <h3>The Name</h3>
+  <p><strong>Symphonix</strong> = <em>Symphony</em> + <em>Onyx</em> (strength). A symphony is many instruments playing in harmony — exactly what Symphonix Health does: orchestrating 160+ microservices, multiple healthcare standards (FHIR, HL7, CDA, X12), AI agents, and clinical workflows into a single coherent platform. The "onyx" suffix conveys durability and trust.</p>
+
+  <h3>The Signature Element</h3>
+  <div class="hero-source">
+    <div>
+      <p style="color: #C7D2FE; font-weight: 500; margin-bottom: 8px;">Source Inspiration</p>
+      <p>The rainbow ECG/pulse waveform is the heart of the brand — a healthcare vital sign rendered in the full color spectrum. It communicates:</p>
+      <ul style="margin: 12px 0 0 16px;">
+        <li><strong>Healthcare</strong> — the ECG waveform is universally recognized</li>
+        <li><strong>Harmony</strong> — the rainbow represents diverse systems working in concert</li>
+        <li><strong>Vitality</strong> — a pulse means the system is alive, monitoring, responsive</li>
+        <li><strong>Inclusivity</strong> — the full spectrum represents global reach (Ghana, Kenya, Rwanda, Nigeria, UK, Ireland)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="meaning-grid">
+    <div class="meaning-card">
+      <h4>Shield Container</h4>
+      <p>The shield silhouette is shared across the entire product family (GHARRA, Nexus, BulletTrain). It conveys protection, governance, and trust — core values for healthcare infrastructure handling PHI.</p>
+    </div>
+    <div class="meaning-card">
+      <h4>Rainbow Pulse</h4>
+      <p>The PQRST waveform in spectrum colors is the unique Symphonix signature. No other healthcare company uses this mark. It instantly communicates "healthcare + diversity of capability."</p>
+    </div>
+    <div class="meaning-card">
+      <h4>Healthcare Cross</h4>
+      <p>The domain badge anchors Symphonix firmly in the healthcare sector. Positioned at the shield base, it's subtle at full size but clear at icon size — ensuring context is never lost.</p>
+    </div>
+    <div class="meaning-card">
+      <h4>Indigo-Violet Primary</h4>
+      <p>Chosen to sit at the cool end of the rainbow spectrum, creating visual continuity. Indigo conveys innovation, wisdom, and technology — differentiating from the sea of blue/teal healthcare logos.</p>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── LOGO VARIANTS ─── -->
+  <h2>2. Logo Variants</h2>
+
+  <h3>Primary Lockup (400 x 120)</h3>
+  <div class="logo-grid">
+    <div class="logo-card light">
+      <object type="image/svg+xml" data="logos/symphonix-health-logo.svg" width="380"></object>
+      <span class="label">Light Background</span>
+    </div>
+    <div class="logo-card dark">
+      <object type="image/svg+xml" data="logos/symphonix-health-logo-dark.svg" width="380"></object>
+      <span class="label">Dark Background</span>
+    </div>
+  </div>
+
+  <h3>Icon Only (Shield + Pulse)</h3>
+  <div class="icon-row">
+    <div class="icon-box dark">
+      <object type="image/svg+xml" data="logos/symphonix-health-icon.svg" width="120" height="120"></object>
+      <span class="size-label">120 × 120 — App Icon</span>
+    </div>
+    <div class="icon-box light">
+      <object type="image/svg+xml" data="logos/symphonix-health-icon.svg" width="64" height="64"></object>
+      <span class="size-label">64 × 64 — Profile Pic</span>
+    </div>
+    <div class="icon-box dark">
+      <object type="image/svg+xml" data="logos/symphonix-health-favicon.svg" width="32" height="32"></object>
+      <span class="size-label">32 × 32 — Favicon</span>
+    </div>
+    <div class="icon-box light">
+      <object type="image/svg+xml" data="logos/symphonix-health-favicon.svg" width="16" height="16"></object>
+      <span class="size-label" style="color: #475569;">16 × 16 — Minimum</span>
+    </div>
+  </div>
+
+  <h3>Social / OG Preview (1200 × 630)</h3>
+  <div class="og-preview">
+    <object type="image/svg+xml" data="logos/symphonix-health-og.svg" width="100%"></object>
+  </div>
+  <p style="font-size: 13px; color: #64748B;">Used when links are shared on LinkedIn, Twitter/X, Facebook, GitHub, and Slack.</p>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── COLOR PALETTE ─── -->
+  <h2>3. Brand Color Palette</h2>
+
+  <h3>Primary (Indigo-Violet)</h3>
+  <div class="color-palette">
+    <div class="color-swatch">
+      <div class="swatch-block" style="background: #EEF2FF;"></div>
+      <div class="swatch-info"><div class="swatch-name">brand-50</div><div class="swatch-hex">#EEF2FF</div></div>
+    </div>
+    <div class="color-swatch">
+      <div class="swatch-block" style="background: #E0E7FF;"></div>
+      <div class="swatch-info"><div class="swatch-name">brand-100</div><div class="swatch-hex">#E0E7FF</div></div>
+    </div>
+    <div class="color-swatch">
+      <div class="swatch-block" style="background: #A5B4FC;"></div>
+      <div class="swatch-info"><div class="swatch-name">brand-300</div><div class="swatch-hex">#A5B4FC</div></div>
+    </div>
+    <div class="color-swatch">
+      <div class="swatch-block" style="background: #818CF8;"></div>
+      <div class="swatch-info"><div class="swatch-name">brand-400</div><div class="swatch-hex">#818CF8</div></div>
+    </div>
+    <div class="color-swatch">
+      <div class="swatch-block" style="background: #6366F1;"></div>
+      <div class="swatch-info"><div class="swatch-name">brand-500</div><div class="swatch-hex">#6366F1</div></div>
+    </div>
+    <div class="color-swatch">
+      <div class="swatch-block" style="background: #4F46E5;"></div>
+      <div class="swatch-info"><div class="swatch-name">brand-600</div><div class="swatch-hex">#4F46E5</div></div>
+    </div>
+    <div class="color-swatch">
+      <div class="swatch-block" style="background: #4338CA;"></div>
+      <div class="swatch-info"><div class="swatch-name">brand-700</div><div class="swatch-hex">#4338CA</div></div>
+    </div>
+    <div class="color-swatch">
+      <div class="swatch-block" style="background: #7B7BA0;"></div>
+      <div class="swatch-info"><div class="swatch-name">muted-text</div><div class="swatch-hex">#7B7BA0</div></div>
+    </div>
+  </div>
+
+  <h3>Signature Rainbow Spectrum</h3>
+  <div style="height: 48px; border-radius: 12px; background: linear-gradient(to right, #FF3B30, #FF9500, #FFCC00, #34C759, #00BCD4, #007AFF, #5856D6, #AF52DE); margin: 16px 0;"></div>
+  <p style="font-size: 13px; color: #64748B;">The rainbow gradient is <strong>exclusively</strong> used on the ECG pulse element. It should never be applied to backgrounds, buttons, or text. This constraint preserves its impact as a signature mark.</p>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── USAGE GUIDE ─── -->
+  <h2>4. Platform Usage Guide</h2>
+
+  <table class="usage-table">
+    <thead>
+      <tr><th>Platform</th><th>Asset</th><th>Dimensions</th><th>Notes</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Website Header</td>
+        <td>symphonix-health-logo.svg</td>
+        <td>400 × 120</td>
+        <td>Light variant on white/light backgrounds</td>
+      </tr>
+      <tr>
+        <td>Website Header (Dark)</td>
+        <td>symphonix-health-logo-dark.svg</td>
+        <td>400 × 120</td>
+        <td>For dark-mode headers</td>
+      </tr>
+      <tr>
+        <td>Favicon</td>
+        <td>symphonix-health-favicon.svg</td>
+        <td>32 × 32</td>
+        <td>Simplified pulse, bolder strokes</td>
+      </tr>
+      <tr>
+        <td>GitHub Profile / Org</td>
+        <td>symphonix-health-icon.svg</td>
+        <td>120 × 120</td>
+        <td>Shield icon only — renders well in circles</td>
+      </tr>
+      <tr>
+        <td>GitHub Social Preview</td>
+        <td>symphonix-health-og.svg</td>
+        <td>1200 × 630</td>
+        <td>Export as PNG for GitHub repo settings</td>
+      </tr>
+      <tr>
+        <td>LinkedIn Company Page</td>
+        <td>symphonix-health-icon.svg</td>
+        <td>300 × 300</td>
+        <td>Scale up icon SVG; export as PNG</td>
+      </tr>
+      <tr>
+        <td>LinkedIn Banner</td>
+        <td>symphonix-health-og.svg</td>
+        <td>1200 × 630 → crop</td>
+        <td>Or create 1128 × 191 variant</td>
+      </tr>
+      <tr>
+        <td>Twitter/X Profile</td>
+        <td>symphonix-health-icon.svg</td>
+        <td>400 × 400</td>
+        <td>Scale up; export PNG. Circular crop safe.</td>
+      </tr>
+      <tr>
+        <td>Twitter/X Header</td>
+        <td>symphonix-health-og.svg</td>
+        <td>1500 × 500</td>
+        <td>Adjust viewBox or pad</td>
+      </tr>
+      <tr>
+        <td>README Badge</td>
+        <td>symphonix-health-logo.svg</td>
+        <td>200 × 60</td>
+        <td>Half-size lockup</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── WHY THIS WORKS ─── -->
+  <h2>5. Why This Logo Works</h2>
+
+  <ul class="checklist">
+    <li><strong>Instant recognition:</strong> The rainbow pulse inside a shield is unique in healthcare branding — no competitor uses this combination</li>
+    <li><strong>Scalability:</strong> Legible from 1200px OG images down to 16px favicons. The simplified favicon variant maintains the rainbow pulse at minimum sizes</li>
+    <li><strong>Family coherence:</strong> Uses the same shield silhouette as GHARRA, Nexus, and BulletTrain — siblings in the Symphonix ecosystem</li>
+    <li><strong>Meaning-dense:</strong> Every element carries purpose — shield (trust), pulse (health), rainbow (harmony), cross (healthcare domain), indigo (innovation)</li>
+    <li><strong>Differentiation:</strong> Most healthcare logos use blue or teal. The indigo-violet primary with rainbow accent stands out in feeds, search results, and conference materials</li>
+    <li><strong>Dark/light adaptive:</strong> Full variants for both backgrounds ensure the logo never appears as an afterthought on any surface</li>
+    <li><strong>Cultural neutrality:</strong> The rainbow spectrum and ECG waveform are universally understood across all target markets (Ghana, Kenya, Rwanda, Nigeria, UK, Ireland)</li>
+    <li><strong>Technical precision:</strong> The ECG follows a realistic PQRST morphology — clinicians will notice and appreciate the attention to domain accuracy</li>
+  </ul>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── DO / DON'T ─── -->
+  <h2>6. Do &amp; Don't</h2>
+
+  <div class="meaning-grid">
+    <div class="meaning-card" style="border-color: rgba(52, 199, 89, 0.3);">
+      <h4 style="color: #34C759;">Do</h4>
+      <ul style="margin-left: 16px;">
+        <li>Use the SVG source for web — it scales perfectly</li>
+        <li>Export to PNG at 2x for retina displays</li>
+        <li>Maintain clear space equal to the shield width around the lockup</li>
+        <li>Use the dark variant on backgrounds darker than #333</li>
+        <li>Let the rainbow gradient speak — it's the signature</li>
+      </ul>
+    </div>
+    <div class="meaning-card" style="border-color: rgba(255, 59, 48, 0.3);">
+      <h4 style="color: #FF3B30;">Don't</h4>
+      <ul style="margin-left: 16px;">
+        <li>Don't modify the shield path shape</li>
+        <li>Don't use the rainbow gradient on anything other than the pulse</li>
+        <li>Don't place the logo on busy/patterned backgrounds</li>
+        <li>Don't rotate, skew, or add drop shadows to the lockup</li>
+        <li>Don't use the light variant on dark backgrounds (or vice versa)</li>
+        <li>Don't scale the lockup below 200 × 60 — use the icon variant instead</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── FILES ─── -->
+  <h2>7. Deliverables</h2>
+
+  <table class="usage-table">
+    <thead>
+      <tr><th>File</th><th>Purpose</th><th>Size</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>symphonix-health-logo.svg</td><td>Primary lockup (light bg)</td><td>400 × 120</td></tr>
+      <tr><td>symphonix-health-logo-dark.svg</td><td>Primary lockup (dark bg)</td><td>400 × 120</td></tr>
+      <tr><td>symphonix-health-icon.svg</td><td>Icon only (profile pics, app icons)</td><td>120 × 120</td></tr>
+      <tr><td>symphonix-health-favicon.svg</td><td>Simplified icon for favicon</td><td>32 × 32</td></tr>
+      <tr><td>symphonix-health-og.svg</td><td>Social media / OG image</td><td>1200 × 630</td></tr>
+      <tr><td>showcase.html</td><td>This brand case document</td><td>—</td></tr>
+    </tbody>
+  </table>
+
+  <div class="rainbow-bar"></div>
+
+  <footer>
+    Symphonix Health — Intelligent Healthcare Infrastructure<br>
+    Logo Brand Case v1.0 — March 2026
+  </footer>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!--
+  Symphonix Health — Social / OG Image (1200 × 630)
+  Use for: LinkedIn, Twitter/X, Facebook, GitHub social preview
+  The lockup is centred on a dark brand background with subtle gradient.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <!-- Background gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#0F0A2A"/>
+      <stop offset="50%"  stop-color="#1A1145"/>
+      <stop offset="100%" stop-color="#0D0826"/>
+    </linearGradient>
+
+    <!-- Subtle radial glow behind the logo -->
+    <radialGradient id="centerGlow" cx="50%" cy="50%" r="35%">
+      <stop offset="0%"   stop-color="#4F46E5" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#4F46E5" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   style="stop-color:#6366F1;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#818CF8;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="overlayGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   style="stop-color:#EEF2FF;stop-opacity:0.9"/>
+      <stop offset="100%" style="stop-color:#E0E7FF;stop-opacity:0.7"/>
+    </linearGradient>
+    <linearGradient id="nodeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   style="stop-color:#A5B4FC;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#818CF8;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="rainbowGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"    stop-color="#FF453A"/>
+      <stop offset="14%"   stop-color="#FF9F0A"/>
+      <stop offset="28%"   stop-color="#FFD60A"/>
+      <stop offset="42%"   stop-color="#30D158"/>
+      <stop offset="57%"   stop-color="#40C8E0"/>
+      <stop offset="71%"   stop-color="#0A84FF"/>
+      <stop offset="85%"   stop-color="#5E5CE6"/>
+      <stop offset="100%"  stop-color="#BF5AF2"/>
+    </linearGradient>
+    <filter id="pulseGlow" x="-20%" y="-40%" width="140%" height="180%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Decorative grid pattern -->
+    <pattern id="gridPattern" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="40" stroke="#4F46E5" stroke-width="0.3" opacity="0.08"/>
+      <line x1="0" y1="0" x2="40" y2="0" stroke="#4F46E5" stroke-width="0.3" opacity="0.08"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGrad)"/>
+  <rect width="1200" height="630" fill="url(#gridPattern)"/>
+  <rect width="1200" height="630" fill="url(#centerGlow)"/>
+
+  <!-- Centred lockup (scaled 2.5x from 400×120, positioned at centre) -->
+  <g transform="translate(350, 180) scale(2.5)">
+    <!-- Shield -->
+    <path d="M60,12 L92,24 L92,52 C92,76 60,100 60,100 C60,100 28,76 28,52 L28,24 Z"
+          fill="url(#shieldGrad)" stroke="#4338CA" stroke-width="1.5"/>
+
+    <circle cx="60" cy="52" r="22" fill="none" stroke="url(#overlayGrad)" stroke-width="0.6" opacity="0.3"/>
+    <line x1="38" y1="52" x2="82" y2="52" stroke="url(#overlayGrad)" stroke-width="0.5" opacity="0.25"/>
+
+    <!-- Rainbow ECG pulse -->
+    <path d="M38,54 L44,54 L46,50 L48,54 L51,54 L55,52 L57,34 L60,68 L63,42 L65,54 L69,54 L72,48 L74,52 L78,54 L82,54"
+          fill="none" stroke="url(#rainbowGrad)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"
+          filter="url(#pulseGlow)"/>
+
+    <circle cx="57" cy="34" r="3" fill="#fff" stroke="#0A84FF" stroke-width="1.2" opacity="0.95"/>
+    <circle cx="60" cy="68" r="2" fill="url(#nodeGrad)" stroke="#fff" stroke-width="0.8" opacity="0.8"/>
+    <circle cx="63" cy="42" r="2" fill="url(#nodeGrad)" stroke="#fff" stroke-width="0.8" opacity="0.8"/>
+
+    <!-- Healthcare cross -->
+    <rect x="57" y="78" width="6"  height="14" rx="1" fill="#EEF2FF" opacity="0.85"/>
+    <rect x="53" y="82" width="14" height="6"  rx="1" fill="#EEF2FF" opacity="0.85"/>
+  </g>
+
+  <!-- Wordmark (rendered separately for sharper text at OG size) -->
+  <text x="600" y="495" text-anchor="middle"
+        font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif"
+        font-size="52" font-weight="700" letter-spacing="8" fill="#E0E7FF">
+    SYMPHONIX HEALTH
+  </text>
+  <text x="600" y="530" text-anchor="middle"
+        font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif"
+        font-size="16" font-weight="400" letter-spacing="4" fill="#A5B4FC">
+    INTELLIGENT HEALTHCARE INFRASTRUCTURE
+  </text>
+
+  <!-- Subtle rainbow line accent at bottom -->
+  <line x1="350" y1="560" x2="850" y2="560" stroke="url(#rainbowGrad)" stroke-width="2" opacity="0.5"/>
+</svg>
