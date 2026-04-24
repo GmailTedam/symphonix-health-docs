@@ -117,12 +117,15 @@ tests/agent/
   test_recommender.py           — unit
   test_pending_sweeper.py       — integration
   test_output_validation.py     — schema + PHI guardrails
-  scenarios/                    — emulator-kit scenarios
-    medical_necessity_approve.yaml
-    medical_necessity_deny.yaml
-    medical_necessity_rfi.yaml
-    medical_necessity_abstain.yaml   — out-of-distribution
-    phi_leak_guardrail.yaml          — adversarial
+  scenarios/                    — emulator-kit scenarios (JSON, per
+                                  the symphonix_emulator_kit.scenarios
+                                  loader contract — that loader reads
+                                  *.json only; YAML is not supported)
+    medical_necessity_approve.json
+    medical_necessity_deny.json
+    medical_necessity_rfi.json
+    medical_necessity_abstain_ood.json  — out-of-distribution
+    phi_leak_guardrail.json             — adversarial
 ```
 
 One new ORM table (`AgentRecommendation`): `id`, `claim_id` FK, `verdict_id` FK (nullable; may precede verdict), `action`, `carc_code`, `rarc_code`, `rationale`, `cited_policies_json`, `missing_fields_json`, `confidence`, `model_version`, `prompt_hash`, `created_at`, `human_decision` (nullable, filled later), `human_decision_at` (nullable), `override` (bool, computed).
