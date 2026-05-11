@@ -1,0 +1,14 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-merge-conflict
+      - id: check-added-large-files
+        args: ["--maxkb=512"]
+
+# NOTE: jekyll-docker.yml runs jekyll build --future in Docker.
+# Pre-commit can't replicate this (needs Docker + Jekyll image).
+# Run locally: docker run --rm -v "${PWD}:/srv/jekyll" jekyll/builder:latest jekyll build --future
