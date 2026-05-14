@@ -1,0 +1,1062 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>helixcare-rl-implementation-plan.md</title>
+  <script>(function(){try{var pref=localStorage.getItem("theme")||"system";var dark=pref==="dark"||(pref==="system"&&window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches);document.documentElement.dataset.theme=dark?"dark":"light";document.documentElement.dataset.themePreference=pref;}catch(e){document.documentElement.dataset.theme="light";document.documentElement.dataset.themePreference="system";}})();</script>
+  <link rel="stylesheet" href="../../_design_system/colors_and_type.css?v=2026-05-14T14%3A22%3A48.413Z">
+  <link rel="stylesheet" href="../../_design_system/utilities.css?v=2026-05-14T14%3A22%3A48.413Z">
+  <link rel="stylesheet" href="../../_assets/docs.css?v=2026-05-14T14%3A22%3A48.413Z">
+  <script src="../../_assets/index.js?v=2026-05-14T14%3A22%3A48.413Z" defer></script>
+</head>
+<body class="bt-app docs-app">
+  <a class="skip-link" href="#main-content">Skip to document</a>
+  <div class="page-shell">
+    <aside class="toc-panel bt-card">
+      <a class="index-link bt-nav-item" href="../../index.html">Documentation index</a>
+      <div class="source-path">symphonix-health-docs\strategy\helixcare-rl-implementation-plan.md</div>
+      <nav aria-label="Table of contents">
+        <h2>Contents</h2>
+        <ol class="toc-list"><li class="toc-depth-1"><a href="#helixcare-rl-implementation-plan-v10">HelixCare RL Implementation Plan - v1.0</a></li><li class="toc-depth-2"><a href="#1-execution-thesis">1. Execution Thesis</a></li><li class="toc-depth-3"><a href="#non-negotiables">Non-negotiables</a></li><li class="toc-depth-2"><a href="#2-regulatory-and-safety-baseline">2. Regulatory And Safety Baseline</a></li><li class="toc-depth-3"><a href="#21-jurisdiction-posture">2.1 Jurisdiction posture</a></li><li class="toc-depth-3"><a href="#22-surface-classification-table">2.2 Surface classification table</a></li><li class="toc-depth-2"><a href="#3-shared-rl-operating-system-bullettrainrl">3. Shared RL Operating System (bullettrain.rl)</a></li><li class="toc-depth-3"><a href="#31-work-packages">3.1 Work packages</a></li><li class="toc-depth-3"><a href="#32-activation-gate">3.2 Activation gate</a></li><li class="toc-depth-3"><a href="#33-evidence-states">3.3 Evidence states</a></li><li class="toc-depth-2"><a href="#4-algorithm-decisions">4. Algorithm Decisions</a></li><li class="toc-depth-2"><a href="#5-wave-1-reference-surface-prior-auth-rl">5. Wave 1 Reference Surface: Prior-Auth RL</a></li><li class="toc-depth-3"><a href="#51-scope">5.1 Scope</a></li><li class="toc-depth-3"><a href="#52-prior-auth-build-tasks">5.2 Prior-auth build tasks</a></li><li class="toc-depth-3"><a href="#53-prior-auth-live-criteria">5.3 Prior-auth live criteria</a></li><li class="toc-depth-2"><a href="#6-wave-2-operational-surfaces">6. Wave 2 Operational Surfaces</a></li><li class="toc-depth-3"><a href="#61-scheduling-rl">6.1 Scheduling RL</a></li><li class="toc-depth-3"><a href="#62-inbox-triage-rl">6.2 Inbox-Triage RL</a></li><li class="toc-depth-3"><a href="#63-adherence-rl">6.3 Adherence RL</a></li><li class="toc-depth-2"><a href="#7-wave-3-clinical-surfaces">7. Wave 3 Clinical Surfaces</a></li><li class="toc-depth-3"><a href="#71-clinical-pathway-rl">7.1 Clinical Pathway RL</a></li><li class="toc-depth-3"><a href="#72-ed-triage-rl">7.2 ED / Triage RL</a></li><li class="toc-depth-3"><a href="#73-diagnosis-support-rl">7.3 Diagnosis Support RL</a></li><li class="toc-depth-3"><a href="#74-resource-allocation-rl">7.4 Resource Allocation RL</a></li><li class="toc-depth-2"><a href="#8-implementation-timeline">8. Implementation Timeline</a></li><li class="toc-depth-3"><a href="#81-build-clock">8.1 Build clock</a></li><li class="toc-depth-3"><a href="#82-activation-clock">8.2 Activation clock</a></li><li class="toc-depth-2"><a href="#9-first-implementation-tickets">9. First Implementation Tickets</a></li><li class="toc-depth-2"><a href="#10-definition-of-done">10. Definition Of Done</a></li><li class="toc-depth-3"><a href="#phase-0-done">Phase 0 done</a></li><li class="toc-depth-3"><a href="#wave-1-done">Wave 1 done</a></li><li class="toc-depth-3"><a href="#wave-2-done">Wave 2 done</a></li><li class="toc-depth-3"><a href="#wave-3-done">Wave 3 done</a></li><li class="toc-depth-2"><a href="#11-operating-cadence">11. Operating Cadence</a></li><li class="toc-depth-2"><a href="#12-risk-register">12. Risk Register</a></li><li class="toc-depth-2"><a href="#13-required-references">13. Required References</a></li><li class="toc-depth-2"><a href="#14-kickoff-decision">14. Kickoff Decision</a></li></ol>
+      </nav>
+    </aside>
+    <main class="content-panel bt-card bt-card-elevated" id="main-content">
+      <header class="document-header">
+        <div class="document-heading">
+          <div class="eyebrow type-label">symphonix-health-docs</div>
+          <h1>helixcare-rl-implementation-plan.md</h1>
+          <div class="sx-rainbow-underline"></div>
+        </div>
+        <div class="document-actions">
+          <button class="bt-btn bt-btn-sm theme-toggle" type="button" data-theme-toggle>
+            Theme: <span data-theme-label>System</span>
+          </button>
+        </div>
+        <div class="document-meta">
+          <a href="../../_source_markdown/symphonix-health-docs/strategy/helixcare-rl-implementation-plan.md">Source Markdown</a>
+          <span>symphonix-health-docs\strategy\helixcare-rl-implementation-plan.md</span>
+        </div>
+      </header>
+      <article class="markdown-body">
+<h1 id="helixcare-rl-implementation-plan-v10"><a class="heading-anchor" href="#helixcare-rl-implementation-plan-v10" aria-label="Link to section">#</a>HelixCare RL Implementation Plan - v1.0</h1>
+<p><strong>Status:</strong> Implementation kickoff baseline<br><strong>Authored:</strong> 2026-05-14<br><strong>Companion to:</strong> <a href="helixcare-business-case.html">helixcare-business-case.md §5</a> (the eight RL surfaces)<br><strong>Anchor pattern:</strong> <a href="agent-first.html">agent-first.md</a> - <em>&quot;Reference agent before scale&quot;</em><br><strong>Implementation start:</strong> Phase 0 and Wave 1 may commence from this plan. Clinical activation remains gated by the evidence, safety, and regulatory controls below.</p>
+<hr>
+<h2 id="1-execution-thesis"><a class="heading-anchor" href="#1-execution-thesis" aria-label="Link to section">#</a>1. Execution Thesis</h2>
+<p>HelixCare does <strong>not</strong> ship eight RL surfaces in parallel. We build one administrative reference surface end-to-end, extract the reusable RL operating system, then expand by risk tier:</p>
+<ol>
+<li><strong>Phase 0:</strong> build and validate <code>bullettrain.rl</code>, the shared policy, evidence, reward, and governance layer.</li>
+<li><strong>Wave 1:</strong> ship Prior-Auth RL as the reference surface in shadow mode, then HITL-live only after evidence gates pass.</li>
+<li><strong>Wave 2:</strong> expand to operational surfaces with constrained contextual bandits.</li>
+<li><strong>Wave 3:</strong> prepare clinical surfaces as regulated AI/ML device or high-risk AI candidates; build may proceed, but clinical activation waits for classification, safety case, regulator engagement where required, and prospective validation.</li>
+</ol>
+<p>The implementation rule is simple: <strong>autonomy is earned per action class, not per surface.</strong> Every policy starts in shadow. Every live recommendation is versioned, logged, replayable, reversible, and attributable to a named policy card.</p>
+<h3 id="non-negotiables"><a class="heading-anchor" href="#non-negotiables" aria-label="Link to section">#</a>Non-negotiables</h3>
+<table>
+<thead>
+<tr>
+<th>Rule</th>
+<th>Implementation consequence</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>No online exploration in clinical workflows</td>
+<td>Clinical policies train offline or in simulation only; live systems recommend under HITL</td>
+</tr>
+<tr>
+<td>No regulator-shortcut assumptions</td>
+<td>Each clinical surface carries intended-use classification before clinical activation</td>
+</tr>
+<tr>
+<td>Lower-risk does not mean zero-risk</td>
+<td>Prior-auth, scheduling, inbox, and adherence still receive equity, delay-harm, and appealability controls</td>
+</tr>
+<tr>
+<td>No opaque reward-only promotion</td>
+<td>Promotion requires OPE, overlap, subgroup, calibration, harm, and human-override evidence</td>
+</tr>
+<tr>
+<td>No policy update outside change control</td>
+<td>Even prompt, threshold, feature, or reward-shape changes receive policy-version review</td>
+</tr>
+<tr>
+<td>No patient-facing manipulation</td>
+<td>Adherence and scheduling use explicit consent, opt-out, quiet hours, burden budgets, and no dark patterns</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="2-regulatory-and-safety-baseline"><a class="heading-anchor" href="#2-regulatory-and-safety-baseline" aria-label="Link to section">#</a>2. Regulatory And Safety Baseline</h2>
+<p>This plan uses a conservative classification posture. The engineering teams may build the software now, but activation is constrained by intended use, market, and evidence state.</p>
+<h3 id="21-jurisdiction-posture"><a class="heading-anchor" href="#21-jurisdiction-posture" aria-label="Link to section">#</a>2.1 Jurisdiction posture</h3>
+<table>
+<thead>
+<tr>
+<th>Jurisdiction</th>
+<th>Baseline posture</th>
+<th>Implementation implication</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>US</td>
+<td>Non-device CDS is available only when all FDA CDS criteria are met. Many CDS-like functions remain medical devices. PCCP applies inside a marketing submission for AI-enabled devices.</td>
+<td>Every clinical or medical-necessity surface needs an intended-use statement, CDS criteria assessment, and fallback SaMD pathway. Do not label a surface &quot;CDS excluded&quot; until the four criteria are explicitly evidenced.</td>
+</tr>
+<tr>
+<td>UK</td>
+<td>DCB0129 covers manufacture; DCB0160 covers deployment and use. MHRA AI Airlock is a sandbox/engagement path for AIaMD regulatory questions, not a generic clearance mechanism.</td>
+<td>Every UK clinical-decision deployment needs a clinical safety case, hazard log, named clinical safety officer, deployment safety case, and MHRA route decision.</td>
+</tr>
+<tr>
+<td>EU</td>
+<td>EU AI Act high-risk obligations may apply to clinical and healthcare-access AI. MDR/IVDR classification depends on medical purpose and software function. Annex IV technical documentation is necessary for high-risk AI systems.</td>
+<td>Each EU launch needs AI Act classification, MDR/IVDR Rule 11 analysis where medical purpose exists, post-market monitoring, logging, human oversight, and CE/conformity route where applicable.</td>
+</tr>
+<tr>
+<td>HIPAA / GDPR</td>
+<td>SPID-only streams are pseudonymised unless de-identification is independently established.</td>
+<td>Reward logs remain regulated data unless privacy review confirms de-identification. Treat SPID as a linkable identifier with access controls, retention, audit, and DPIA/BAA coverage.</td>
+</tr>
+</tbody></table>
+<h3 id="22-surface-classification-table"><a class="heading-anchor" href="#22-surface-classification-table" aria-label="Link to section">#</a>2.2 Surface classification table</h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Surface</th>
+<th>Launch posture</th>
+<th>Regulatory posture before activation</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>4</td>
+<td>Prior-auth RL</td>
+<td>Wave 1 reference; shadow first, then HITL-live in design partners</td>
+<td>Administrative / access-to-care system. Not &quot;zero patient-safety risk.&quot; Requires delay-harm monitoring, appealability, equity review, and medical-necessity CDS/SaMD screen per payer workflow.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Scheduling RL</td>
+<td>Wave 2 operational</td>
+<td>Operational access system. Requires wait-time equity, urgent-slot protection, no-show fairness, and EU high-risk/profiling screen before EU rollout.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Inbox-triage RL</td>
+<td>Wave 2 operational with clinical-message partitioning</td>
+<td>Administrative messages can remain operational. Clinical advice, refill protocoling, or symptom triage require CDS/SaMD classification and DCB review.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Adherence RL</td>
+<td>Wave 2 operational/patient engagement</td>
+<td>Consent-based engagement surface. Disease-specific adherence optimization may carry medical-purpose classification. Requires opt-out, burden budget, and no behavioural dark patterns.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Clinical pathway RL</td>
+<td>Wave 3 regulated clinical surface</td>
+<td>Treat as SaMD/AIaMD candidate unless legal/regulatory review says otherwise. Requires guideline shield, clinical safety case, PCCP/update envelope, human factors, and prospective validation.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>ED / triage RL</td>
+<td>Wave 3 regulated clinical surface</td>
+<td>Treat as high-risk clinical triage support. No down-triage autonomy. Requires MTS shield, triage-nurse confirmation, safety case, and prospective silent trial.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Diagnosis support RL</td>
+<td>Wave 3 regulated clinical surface</td>
+<td>Must either satisfy all non-device CDS criteria or proceed as SaMD. Clinician must independently review basis. No autonomous diagnosis, ordering, or differential suppression.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Resource allocation RL</td>
+<td>Wave 3 regulated operational-clinical surface</td>
+<td>Treat as safety-critical allocation support. Use constrained optimisation first; RL only in simulation until evidence supports escalation. Requires fairness, incident, and human-override monitoring.</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="3-shared-rl-operating-system-bullettrainrl"><a class="heading-anchor" href="#3-shared-rl-operating-system-bullettrainrl" aria-label="Link to section">#</a>3. Shared RL Operating System (<code>bullettrain.rl</code>)</h2>
+<p><code>bullettrain.rl</code> lives inside BulletTrain because BulletTrain already owns integration, canonical data flow, auth, audit, SignalBox, and GHARRA wiring. Phase 0 is not just scaffolding: it must produce replayable evidence suitable for CSAA and external review.</p>
+<h3 id="31-work-packages"><a class="heading-anchor" href="#31-work-packages" aria-label="Link to section">#</a>3.1 Work packages</h3>
+<table>
+<thead>
+<tr>
+<th>WP</th>
+<th>Component</th>
+<th>Owner</th>
+<th>Build scope</th>
+<th>Acceptance criteria</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>WP0.1</td>
+<td><code>bullettrain.rl.contracts</code></td>
+<td>BulletTrain + CSAA</td>
+<td>Versioned state/action/reward/policy schemas; JSON Schema + Python models; surface-specific action vocabularies</td>
+<td>Schemas compile; each of eight surfaces has a registered action set, forbidden-action set, and primary/secondary outcome map</td>
+</tr>
+<tr>
+<td>WP0.2</td>
+<td><code>bullettrain.rl.feature_store</code></td>
+<td>BulletTrain</td>
+<td>FHIR-canonical deterministic snapshots via Bridge SDK; feature lineage; late-arriving data handling</td>
+<td>Same encounter replay returns identical feature vector; every feature has source system, timestamp, transform, and PHI class</td>
+</tr>
+<tr>
+<td>WP0.3</td>
+<td><code>bullettrain.rl.reward_log</code></td>
+<td>SignalBox</td>
+<td>Append-only reward events; GHARRA-anchored Ed25519 signatures; policy/action/user context</td>
+<td>Every tuple records state hash, action, propensity, policy version, actor, reward source, and delayed-outcome linkage</td>
+</tr>
+<tr>
+<td>WP0.4</td>
+<td><code>bullettrain.rl.ope_gate</code></td>
+<td>CSAA</td>
+<td>IPS, SNIPS, doubly robust OPE, bootstrap CIs, effective sample size, overlap checks, subgroup metrics</td>
+<td>Gate blocks promotion when overlap is poor, sample support is thin, subgroup harm worsens, or lower CI misses threshold</td>
+</tr>
+<tr>
+<td>WP0.5</td>
+<td><code>bullettrain.rl.policy_registry</code></td>
+<td>GHARRA</td>
+<td>Capability-card extension for policies: version, intended use, activation scope, evidence pack, rollback pointer</td>
+<td>Policy cannot activate without signed card, owner, approved gate report, activation window, and previous-version pointer</td>
+</tr>
+<tr>
+<td>WP0.6</td>
+<td><code>bullettrain.rl.hitl_router</code></td>
+<td>Provider-Portal</td>
+<td>HITL queue routing, confidence thresholds, action-class approvals, override capture</td>
+<td>Human accept/reject/edit/override is logged and replayable; emergency bypass is available for clinical workflows</td>
+</tr>
+<tr>
+<td>WP0.7</td>
+<td><code>bullettrain.rl.reward_hacking_guard</code></td>
+<td>CSAA</td>
+<td>Surface-specific adversarial packs and Goodhart tests</td>
+<td>Each surface has at least ten named reward-hacking vectors with automated or manual test evidence</td>
+</tr>
+<tr>
+<td>WP0.8</td>
+<td><code>bullettrain.rl.privacy_controls</code></td>
+<td>Security + Data Protection</td>
+<td>PHI classification, pseudonymization, re-identification controls, retention, DPIA hooks</td>
+<td>Reward log is treated as regulated data until privacy review says otherwise; access is least-privilege and auditable</td>
+</tr>
+<tr>
+<td>WP0.9</td>
+<td><code>bullettrain.rl.monitoring</code></td>
+<td>Observability</td>
+<td>Drift, reward, harm, override, fairness, and rollback dashboards</td>
+<td>On-call can see active policy versions, gate status, subgroup metrics, incident triggers, and rollback controls</td>
+</tr>
+</tbody></table>
+<h3 id="32-activation-gate"><a class="heading-anchor" href="#32-activation-gate" aria-label="Link to section">#</a>3.2 Activation gate</h3>
+<p>No policy promotes beyond shadow unless all checks pass:</p>
+<table>
+<thead>
+<tr>
+<th>Gate</th>
+<th>Required evidence</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Data readiness</td>
+<td>Feature completeness, missingness by subgroup, source-system latency, delayed outcome availability, logged propensities</td>
+</tr>
+<tr>
+<td>Offline replay</td>
+<td>Deterministic state reconstruction; baseline-policy replay; no forbidden action emitted</td>
+</tr>
+<tr>
+<td>Support / overlap</td>
+<td>Candidate policy actions are supported by historical data or bounded by simulator evidence; poor-overlap segments route to HITL</td>
+</tr>
+<tr>
+<td>OPE</td>
+<td>Primary reward lower 95% CI &gt;= baseline; no material worsening on secondary safety outcomes; ESS above surface threshold</td>
+</tr>
+<tr>
+<td>Equity</td>
+<td>Four-fifths DIR &gt;= 0.80 where applicable, plus subgroup performance, false-positive/false-negative, wait-time, delay, and override-rate checks</td>
+</tr>
+<tr>
+<td>Human factors</td>
+<td>Intended user can understand recommendation, basis, uncertainty, and override path without workflow degradation</td>
+</tr>
+<tr>
+<td>Clinical safety</td>
+<td>CSAA sign-off for clinical or access-to-care risk; DCB0129/0160 artefacts where UK deployment is in scope</td>
+</tr>
+<tr>
+<td>Privacy/security</td>
+<td>DPIA/BAA/data-sharing assessment complete; reward stream classification and retention approved</td>
+</tr>
+<tr>
+<td>Rollback</td>
+<td>Feature flag verified; rollback under 60 seconds; prior version and event audit remain intact</td>
+</tr>
+</tbody></table>
+<h3 id="33-evidence-states"><a class="heading-anchor" href="#33-evidence-states" aria-label="Link to section">#</a>3.3 Evidence states</h3>
+<table>
+<thead>
+<tr>
+<th>State</th>
+<th>Meaning</th>
+<th>Live behaviour</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>LAB_ONLY</code></td>
+<td>Training, simulation, or offline replay only</td>
+<td>No production user sees outputs</td>
+</tr>
+<tr>
+<td><code>SHADOW</code></td>
+<td>Runs on production events, no workflow influence</td>
+<td>Outputs are logged but invisible or clearly marked non-actionable</td>
+</tr>
+<tr>
+<td><code>HITL_SUGGEST</code></td>
+<td>Human sees suggestion with basis and can reject/edit</td>
+<td>No autonomous execution</td>
+</tr>
+<tr>
+<td><code>ASSISTED_ACTION</code></td>
+<td>Low-risk action can execute after explicit configured human approval or protocol approval</td>
+<td>Only action classes with passed gates</td>
+</tr>
+<tr>
+<td><code>AUTONOMOUS_LIMITED</code></td>
+<td>Narrow operational action class can execute within approved envelope</td>
+<td>Not available for Wave 3 clinical actions in v1.0</td>
+</tr>
+<tr>
+<td><code>FROZEN</code></td>
+<td>Policy cannot emit workflow-affecting output</td>
+<td>Triggered by harm, fairness, drift, incident, or expired evidence</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="4-algorithm-decisions"><a class="heading-anchor" href="#4-algorithm-decisions" aria-label="Link to section">#</a>4. Algorithm Decisions</h2>
+<p>The initial plan intentionally uses boring, auditable algorithms where they are sufficient. More complex RL is deferred until the evidence justifies it.</p>
+<table>
+<thead>
+<tr>
+<th>Surface</th>
+<th>v1.0 algorithm</th>
+<th>Explicitly deferred</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Prior-auth</td>
+<td>Contextual bandit using LinUCB / logistic Thompson sampling; <code>vowpalwabbit</code> acceptable for baseline; no autonomous denial</td>
+<td>PPO escalation strategy, NeuralUCB, and online exploration until 100k+ high-quality transitions and OPE support</td>
+</tr>
+<tr>
+<td>Scheduling</td>
+<td>Constrained contextual bandit with hard capacity and urgent-slot shields</td>
+<td>Full RL over appointment book unless simulator and prospective evidence exist</td>
+</tr>
+<tr>
+<td>Inbox-triage</td>
+<td>Classifier/ranking bandit for route and draft suggestion; LLM output remains HITL and policy-versioned</td>
+<td>Auto-send for clinical content; PPO routing until delayed harms are measurable</td>
+</tr>
+<tr>
+<td>Adherence</td>
+<td>Consent-aware contextual bandit per regimen class; burden budget and opt-out as hard constraints</td>
+<td>Biomarker-driven reward as primary reward; full RL across multi-med regimens until lagged outcome model is validated</td>
+</tr>
+<tr>
+<td>Clinical pathway</td>
+<td>Offline CQL only inside guideline DAG shield; <code>d3rlpy</code> candidate</td>
+<td>Online exploration; recommendation outside guideline DAG without explicit clinician override</td>
+</tr>
+<tr>
+<td>ED / triage</td>
+<td>Start with constrained ordinal/ranking model plus Manchester Triage shield; CPO research track only after simulator validation</td>
+<td>Direct CPO in live triage; any down-triage autonomy</td>
+</tr>
+<tr>
+<td>Diagnosis support</td>
+<td>Offline ranking/reward model from adjudicated cases; transparent basis and retrieval trace</td>
+<td>PPO-based differential ordering in production; differential suppression</td>
+</tr>
+<tr>
+<td>Resource allocation</td>
+<td>Constrained optimisation / MILP first; OR-Tools-style solver with safety and fairness constraints; RL only in simulation</td>
+<td>Constrained DDPG in live bed/staff allocation</td>
+</tr>
+</tbody></table>
+<p>Implementation note: <code>stable-baselines3</code> is suitable for PPO/DDPG/SAC/TD3 experiments, but it is <strong>not</strong> the production answer for CPO. If CPO remains necessary, select a dedicated safe-RL implementation or build a constraint/shield layer with CSAA review.</p>
+<hr>
+<h2 id="5-wave-1-reference-surface-prior-auth-rl"><a class="heading-anchor" href="#5-wave-1-reference-surface-prior-auth-rl" aria-label="Link to section">#</a>5. Wave 1 Reference Surface: Prior-Auth RL</h2>
+<p>Prior-auth remains the reference surface because <code>insurance-eclaims</code> is the canonical agent and X12 workflows give the cleanest closed-loop transition. The risk framing changes: this is <strong>lower clinical immediacy</strong>, not zero patient-safety risk.</p>
+<h3 id="51-scope"><a class="heading-anchor" href="#51-scope" aria-label="Link to section">#</a>5.1 Scope</h3>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Decision</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Sibling</td>
+<td><code>insurance-eclaims</code></td>
+</tr>
+<tr>
+<td>Shared infra</td>
+<td><code>bullettrain.rl</code></td>
+</tr>
+<tr>
+<td>Initial state</td>
+<td>CPT/HCPCS, ICD-10, payer rule, requested service, documentation completeness, prior denials, deadline, patient continuity risk, protected-group attributes for audit only</td>
+</tr>
+<tr>
+<td>Initial actions</td>
+<td>assemble documentation bundle, request missing chart evidence, route to human reviewer, suggest peer-to-peer escalation, suggest appeal path</td>
+</tr>
+<tr>
+<td>Forbidden actions</td>
+<td>auto-deny, fabricate evidence, suppress missing evidence, hide appeal route, route urgent continuity-risk case to slow lane</td>
+</tr>
+<tr>
+<td>Initial reward</td>
+<td>approval outcome - cycle-time penalty - appeal-cost penalty - continuity-delay penalty</td>
+</tr>
+<tr>
+<td>Primary guardrail</td>
+<td>no direct denial; urgent continuity cases always human-reviewed; unsupported action regions route to HITL</td>
+</tr>
+<tr>
+<td>Shadow window</td>
+<td>Minimum 4 weeks and at least the pre-registered minimum supported transitions per payer/use-case</td>
+</tr>
+</tbody></table>
+<h3 id="52-prior-auth-build-tasks"><a class="heading-anchor" href="#52-prior-auth-build-tasks" aria-label="Link to section">#</a>5.2 Prior-auth build tasks</h3>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Owner</th>
+<th>Done when</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>PA-1 Action vocabulary</td>
+<td>insurance-eclaims + CSAA</td>
+<td>Every action has allowed/forbidden status, required provenance, and HITL class</td>
+</tr>
+<tr>
+<td>PA-2 State extractor</td>
+<td>insurance-eclaims + Bridge SDK</td>
+<td>Historical X12/FHIR cases replay into deterministic feature snapshots</td>
+</tr>
+<tr>
+<td>PA-3 Logging adapter</td>
+<td>insurance-eclaims + SignalBox</td>
+<td>Existing queue emits state/action/reward/provenance events into <code>bullettrain.rl.reward_log</code></td>
+</tr>
+<tr>
+<td>PA-4 Baseline policy</td>
+<td>insurance-eclaims</td>
+<td>Current human/rules workflow is captured as comparator with propensities or deterministic-action labels</td>
+</tr>
+<tr>
+<td>PA-5 Candidate policy</td>
+<td>BulletTrain RL</td>
+<td>LinUCB/logistic Thompson model trains offline and emits calibrated action scores</td>
+</tr>
+<tr>
+<td>PA-6 OPE report</td>
+<td>CSAA</td>
+<td>DR/SNIPS report covers primary reward, cycle time, continuity delay, appeals, and subgroup metrics</td>
+</tr>
+<tr>
+<td>PA-7 Shadow dashboard</td>
+<td>Observability</td>
+<td>Design partners show baseline vs candidate outcomes, overrides, delays, fairness, and rollback readiness</td>
+</tr>
+<tr>
+<td>PA-8 Reference artefact</td>
+<td>Docs owner</td>
+<td><code>helixcare-rl-reference-prior-auth.md</code> documents patterns, gates, failures, and reusable components</td>
+</tr>
+</tbody></table>
+<h3 id="53-prior-auth-live-criteria"><a class="heading-anchor" href="#53-prior-auth-live-criteria" aria-label="Link to section">#</a>5.3 Prior-auth live criteria</h3>
+<p>Prior-auth may move from <code>SHADOW</code> to <code>HITL_SUGGEST</code> only when:</p>
+<ul>
+<li>No forbidden action appears in replay or shadow logs.</li>
+<li>OPE lower 95% CI is at least baseline on primary utility.</li>
+<li>No subgroup has material worsening in denial, delay, appeal, or reviewer override metrics.</li>
+<li>Urgent continuity-risk cases show no increased turnaround time.</li>
+<li>Human reviewers can see evidence provenance and reject/edit every suggestion.</li>
+<li>Rollback to previous policy version is tested in production-like environment.</li>
+</ul>
+<hr>
+<h2 id="6-wave-2-operational-surfaces"><a class="heading-anchor" href="#6-wave-2-operational-surfaces" aria-label="Link to section">#</a>6. Wave 2 Operational Surfaces</h2>
+<p>Wave 2 starts only after the Prior-Auth reference pattern has produced working contracts, logs, OPE reports, dashboards, and rollback evidence. Wave 2 can build in parallel, but each surface gates independently.</p>
+<h3 id="61-scheduling-rl"><a class="heading-anchor" href="#61-scheduling-rl" aria-label="Link to section">#</a>6.1 Scheduling RL</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Implementation decision</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Sibling</td>
+<td><code>scheduling-gateway</code> + <code>appointment-system</code></td>
+</tr>
+<tr>
+<td>State</td>
+<td>patient cohort, appointment type, slot, clinician availability, historical attendance, travel/channel constraints, urgency, prior waits</td>
+</tr>
+<tr>
+<td>Action</td>
+<td>single-book, capped double-book, reminder cadence, alternative slot offer</td>
+</tr>
+<tr>
+<td>Reward</td>
+<td>attendance + utilisation - wait-time penalty - overrun penalty - urgent-slot breach penalty</td>
+</tr>
+<tr>
+<td>Hard constraints</td>
+<td>never overbook urgent slots; cap double-booking by clinician/session; preserve accessibility accommodations</td>
+</tr>
+<tr>
+<td>Fairness</td>
+<td>wait-time and cancellation metrics by age, language, disability marker where lawful, deprivation proxy, and geography</td>
+</tr>
+<tr>
+<td>Gate to live</td>
+<td>4-week shadow, no urgent-slot breach, no subgroup wait-time regression, clinician override below threshold</td>
+</tr>
+</tbody></table>
+<h3 id="62-inbox-triage-rl"><a class="heading-anchor" href="#62-inbox-triage-rl" aria-label="Link to section">#</a>6.2 Inbox-Triage RL</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Implementation decision</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Sibling</td>
+<td><code>provider-portal</code></td>
+</tr>
+<tr>
+<td>State</td>
+<td>message type, content embedding, patient acuity, medication/protocol context, clinician inbox load, historical routing</td>
+</tr>
+<tr>
+<td>Action</td>
+<td>route to staff, draft reply, request clinician review, defer with SLA, escalate</td>
+</tr>
+<tr>
+<td>Reward</td>
+<td>clinician time saved + SLA met - patient delay - unsafe-routing event - dissatisfaction</td>
+</tr>
+<tr>
+<td>Hard constraints</td>
+<td>never auto-send clinical advice; clinical/refill protocol actions require explicit approved protocol; red-flag symptoms always escalate</td>
+</tr>
+<tr>
+<td>Fairness</td>
+<td>response time, escalation, and misroute rates by language, age, deprivation proxy, disability marker where lawful</td>
+</tr>
+<tr>
+<td>Gate to live</td>
+<td>clinical-message partitioning validated; red-flag recall meets threshold; all drafts remain HITL</td>
+</tr>
+</tbody></table>
+<h3 id="63-adherence-rl"><a class="heading-anchor" href="#63-adherence-rl" aria-label="Link to section">#</a>6.3 Adherence RL</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Implementation decision</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Sibling</td>
+<td><code>citizen-portal</code> + <code>pharmacy-system</code> + <code>eps</code></td>
+</tr>
+<tr>
+<td>State</td>
+<td>regimen, fill history, stated preference, channel consent, quiet hours, nudge fatigue, patient-reported burden, relevant outcome trend</td>
+</tr>
+<tr>
+<td>Action</td>
+<td>channel, cadence, timing, framing, caregiver copy only when consented</td>
+</tr>
+<tr>
+<td>Reward</td>
+<td>refill-on-time / PDC improvement - opt-out - burden - complaint; biomarker improvement is delayed secondary evidence</td>
+</tr>
+<tr>
+<td>Hard constraints</td>
+<td>opt-out is one tap; no quiet-hours messaging; no escalation of pressure after negative feedback; caregiver involvement requires explicit consent</td>
+</tr>
+<tr>
+<td>Fairness</td>
+<td>opt-out, burden, adherence, and language accessibility by age, language, socioeconomic proxy, and condition</td>
+</tr>
+<tr>
+<td>Gate to live</td>
+<td>consent capture verified; opt-out terminates policy; burden budget enforced</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="7-wave-3-clinical-surfaces"><a class="heading-anchor" href="#7-wave-3-clinical-surfaces" aria-label="Link to section">#</a>7. Wave 3 Clinical Surfaces</h2>
+<p>Wave 3 build can start after Phase 0 contracts exist, but clinical activation is evidence-clocked and regulator-clocked. Do not promise live dates until classification and regulator route are agreed.</p>
+<h3 id="71-clinical-pathway-rl"><a class="heading-anchor" href="#71-clinical-pathway-rl" aria-label="Link to section">#</a>7.1 Clinical Pathway RL</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Implementation decision</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Sibling</td>
+<td><code>clinical-pathways</code></td>
+</tr>
+<tr>
+<td>Algorithm</td>
+<td>Offline CQL inside guideline DAG shield</td>
+</tr>
+<tr>
+<td>Action</td>
+<td>next pathway node, monitoring cadence, escalation recommendation</td>
+</tr>
+<tr>
+<td>Forbidden action</td>
+<td>recommendation outside NICE/AHRQ/local guideline DAG unless surfaced as clinician override pathway</td>
+</tr>
+<tr>
+<td>Evidence package</td>
+<td>guideline trace, dataset representativeness, OPE, subgroup outcomes, clinician comprehension, DCB0129 hazard log, post-market plan</td>
+</tr>
+<tr>
+<td>Activation</td>
+<td><code>HITL_SUGGEST</code> only after clinical safety case and jurisdiction route clearance</td>
+</tr>
+</tbody></table>
+<h3 id="72-ed-triage-rl"><a class="heading-anchor" href="#72-ed-triage-rl" aria-label="Link to section">#</a>7.2 ED / Triage RL</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Implementation decision</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Sibling</td>
+<td><code>triage-api</code></td>
+</tr>
+<tr>
+<td>Algorithm</td>
+<td>Constrained ordinal model plus MTS shield; CPO remains research track</td>
+</tr>
+<tr>
+<td>Action</td>
+<td>queue priority within safe category, clinician routing, escalation recommendation</td>
+</tr>
+<tr>
+<td>Forbidden action</td>
+<td>down-triage MTS Category 1 or 2; autonomous category assignment</td>
+</tr>
+<tr>
+<td>Evidence package</td>
+<td>prospective silent trial, mistriage analysis, red-flag recall, triage-nurse override review, DCB hazard log</td>
+</tr>
+<tr>
+<td>Activation</td>
+<td>HITL nurse confirmation always required in v1.0</td>
+</tr>
+</tbody></table>
+<h3 id="73-diagnosis-support-rl"><a class="heading-anchor" href="#73-diagnosis-support-rl" aria-label="Link to section">#</a>7.3 Diagnosis Support RL</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Implementation decision</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Sibling</td>
+<td><code>provider-portal</code> + <code>prompt-engine</code></td>
+</tr>
+<tr>
+<td>Algorithm</td>
+<td>Offline ranking/reward model from adjudicated cases; retrieval-grounded basis</td>
+</tr>
+<tr>
+<td>Action</td>
+<td>differential ordering suggestion, next-test suggestion, escalation prompt</td>
+</tr>
+<tr>
+<td>Forbidden action</td>
+<td>autonomous diagnosis, autonomous test order, suppressing differential below configured confidence, hiding uncertainty</td>
+</tr>
+<tr>
+<td>Evidence package</td>
+<td>FDA CDS criteria assessment, independent-review basis, clinical performance, human factors, bias review, post-market monitoring</td>
+</tr>
+<tr>
+<td>Activation</td>
+<td>US non-device CDS only if all criteria are met; otherwise SaMD route</td>
+</tr>
+</tbody></table>
+<h3 id="74-resource-allocation-rl"><a class="heading-anchor" href="#74-resource-allocation-rl" aria-label="Link to section">#</a>7.4 Resource Allocation RL</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Implementation decision</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Sibling</td>
+<td><code>picis-system</code> + <code>scheduling-gateway</code></td>
+</tr>
+<tr>
+<td>Algorithm</td>
+<td>Constrained optimisation first; simulation-only RL research track</td>
+</tr>
+<tr>
+<td>Action</td>
+<td>bed assignment recommendation, staff mix recommendation, theatre scheduling suggestion, telemedicine offload suggestion</td>
+</tr>
+<tr>
+<td>Forbidden action</td>
+<td>autonomous ICU/HDU allocation, hidden rationing, optimisation that excludes high-need/high-cost cohorts</td>
+</tr>
+<tr>
+<td>Evidence package</td>
+<td>fairness, incident, clinical escalation, staff fatigue, adverse-event, and override analysis</td>
+</tr>
+<tr>
+<td>Activation</td>
+<td>HITL charge nurse / bed manager approval always required in v1.0</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="8-implementation-timeline"><a class="heading-anchor" href="#8-implementation-timeline" aria-label="Link to section">#</a>8. Implementation Timeline</h2>
+<p>The timeline has two clocks:</p>
+<ul>
+<li><strong>Build clock:</strong> code and internal evidence generation.</li>
+<li><strong>Activation clock:</strong> clinical safety, legal, regulator, and prospective validation.</li>
+</ul>
+<h3 id="81-build-clock"><a class="heading-anchor" href="#81-build-clock" aria-label="Link to section">#</a>8.1 Build clock</h3>
+<table>
+<thead>
+<tr>
+<th>Window</th>
+<th>Implementation output</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Days 0-2</td>
+<td>Kickoff, owners, issue board, action vocabulary templates, policy-card template, initial risk register</td>
+</tr>
+<tr>
+<td>Sprint weeks 1-2</td>
+<td><code>bullettrain.rl.contracts</code>, feature-store skeleton, reward-log adapter, policy registry skeleton, Prior-Auth state/action extractor</td>
+</tr>
+<tr>
+<td>Sprint weeks 3-4</td>
+<td>OPE gate v1, replay harness, baseline policy capture, prior-auth candidate policy, rollback and monitoring hooks</td>
+</tr>
+<tr>
+<td>Sprint weeks 5-8</td>
+<td>Prior-auth design-partner shadow; weekly CSAA OPE/fairness/harm review; reference artefact</td>
+</tr>
+<tr>
+<td>Sprint weeks 9-14</td>
+<td>Wave 2 build and shadow: scheduling, inbox-triage, adherence; each gates independently</td>
+</tr>
+<tr>
+<td>Sprint weeks 6-14 in parallel</td>
+<td>Wave 3 data-readiness, intended-use classification, hazard-log draft, and simulator/offline replay work</td>
+</tr>
+<tr>
+<td>Sprint weeks 15+</td>
+<td>Wave 3 evidence packages, prospective silent trials, regulator engagement where required</td>
+</tr>
+</tbody></table>
+<h3 id="82-activation-clock"><a class="heading-anchor" href="#82-activation-clock" aria-label="Link to section">#</a>8.2 Activation clock</h3>
+<table>
+<thead>
+<tr>
+<th>Surface tier</th>
+<th>Earliest activation posture</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Prior-auth</td>
+<td><code>HITL_SUGGEST</code> after 4-week shadow and passed gates; no auto-denial</td>
+</tr>
+<tr>
+<td>Wave 2 operational</td>
+<td><code>HITL_SUGGEST</code> or narrow <code>ASSISTED_ACTION</code> after 4-week shadow per action class</td>
+</tr>
+<tr>
+<td>Wave 3 clinical</td>
+<td><code>HITL_SUGGEST</code> only after classification, clinical safety case, prospective evidence, and jurisdiction route clearance</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="9-first-implementation-tickets"><a class="heading-anchor" href="#9-first-implementation-tickets" aria-label="Link to section">#</a>9. First Implementation Tickets</h2>
+<p>Create these tickets immediately. They are ordered so implementation can start without waiting for Wave 3 regulatory detail.</p>
+<table>
+<thead>
+<tr>
+<th>Ticket</th>
+<th>Title</th>
+<th>Owner</th>
+<th>Acceptance criteria</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>RL-000</td>
+<td>Create <code>bullettrain.rl</code> module skeleton</td>
+<td>BulletTrain</td>
+<td>Package imports, CI target, README, owner map, and empty contracts compile</td>
+</tr>
+<tr>
+<td>RL-001</td>
+<td>Define common RL event schemas</td>
+<td>BulletTrain + CSAA</td>
+<td>State/action/reward/policy/decision schemas versioned with JSON Schema and Python model tests</td>
+</tr>
+<tr>
+<td>RL-002</td>
+<td>Add policy-card extension to GHARRA</td>
+<td>GHARRA</td>
+<td>Capability card stores policy version, evidence pack, intended use, activation scope, rollback pointer</td>
+</tr>
+<tr>
+<td>RL-003</td>
+<td>Implement reward-log event writer</td>
+<td>SignalBox</td>
+<td>Signed append-only event includes state hash, action, reward source, propensity, policy version, actor</td>
+</tr>
+<tr>
+<td>RL-004</td>
+<td>Implement deterministic feature snapshot API</td>
+<td>BulletTrain + Bridge SDK</td>
+<td>Replay for the same source event produces identical feature vector and lineage metadata</td>
+</tr>
+<tr>
+<td>RL-005</td>
+<td>Implement OPE gate v1</td>
+<td>CSAA</td>
+<td>IPS/SNIPS/DR metrics, bootstrap CI, overlap, ESS, subgroup report, machine-readable pass/fail</td>
+</tr>
+<tr>
+<td>RL-006</td>
+<td>Wire HITL router to provider approval queue</td>
+<td>Provider-Portal</td>
+<td>Policy suggestions capture accept/reject/edit/override and emergency bypass</td>
+</tr>
+<tr>
+<td>RL-007</td>
+<td>Build Prior-Auth state/action extractor</td>
+<td>insurance-eclaims</td>
+<td>Historical X12/FHIR cases convert into RL tuples with forbidden-action validation</td>
+</tr>
+<tr>
+<td>RL-008</td>
+<td>Capture prior-auth baseline policy</td>
+<td>insurance-eclaims</td>
+<td>Current rules/human workflow is replayable as baseline comparator</td>
+</tr>
+<tr>
+<td>RL-009</td>
+<td>Train prior-auth candidate bandit</td>
+<td>BulletTrain RL</td>
+<td>Offline model emits calibrated action scores and propensities; no forbidden actions</td>
+</tr>
+<tr>
+<td>RL-010</td>
+<td>Build prior-auth shadow dashboard</td>
+<td>Observability</td>
+<td>Dashboard shows lift, delay, appeals, continuity risk, subgroup metrics, overrides, policy version</td>
+</tr>
+<tr>
+<td>RL-011</td>
+<td>Draft prior-auth safety case addendum</td>
+<td>CSAA</td>
+<td>Delay-harm, equity, appealability, and rollback hazards logged with controls</td>
+</tr>
+<tr>
+<td>RL-012</td>
+<td>Open Wave 2 data-readiness assessments</td>
+<td>Surface owners</td>
+<td>Scheduling, inbox, and adherence each have data availability, outcome delay, and consent/fairness gaps listed</td>
+</tr>
+<tr>
+<td>RL-013</td>
+<td>Open Wave 3 classification assessments</td>
+<td>Regulatory + CSAA</td>
+<td>Pathway, triage, diagnosis, and resource allocation each have intended-use and jurisdiction route drafts</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="10-definition-of-done"><a class="heading-anchor" href="#10-definition-of-done" aria-label="Link to section">#</a>10. Definition Of Done</h2>
+<h3 id="phase-0-done"><a class="heading-anchor" href="#phase-0-done" aria-label="Link to section">#</a>Phase 0 done</h3>
+<ul>
+<li><code>bullettrain.rl</code> schemas, feature snapshots, reward logs, policy registry, OPE gate, HITL routing, monitoring, and rollback path are implemented.</li>
+<li>A simulated policy can run from historical event to feature vector to action to reward log to OPE report to policy card.</li>
+<li>CSAA can freeze a policy from gate output or monitoring trigger.</li>
+<li>Reward logs are classified and protected as regulated data unless de-identification is formally approved.</li>
+</ul>
+<h3 id="wave-1-done"><a class="heading-anchor" href="#wave-1-done" aria-label="Link to section">#</a>Wave 1 done</h3>
+<ul>
+<li>Prior-auth runs in shadow for at least 4 weeks in 2-3 design-partner clinics.</li>
+<li>Evidence pack shows no forbidden actions, no delay-harm increase, no subgroup regression, and OPE lower CI &gt;= baseline.</li>
+<li>HITL-live activation is limited to approved action classes.</li>
+<li><code>helixcare-rl-reference-prior-auth.md</code> is published and becomes the pattern for Wave 2.</li>
+</ul>
+<h3 id="wave-2-done"><a class="heading-anchor" href="#wave-2-done" aria-label="Link to section">#</a>Wave 2 done</h3>
+<ul>
+<li>Scheduling, inbox-triage, and adherence each complete data readiness, shadow, OPE, fairness, burden/delay, and rollback gates.</li>
+<li>Any clinical-message or medical-purpose subset is partitioned and held at clinical safety review until classified.</li>
+</ul>
+<h3 id="wave-3-done"><a class="heading-anchor" href="#wave-3-done" aria-label="Link to section">#</a>Wave 3 done</h3>
+<ul>
+<li>Each clinical surface has intended use, classification, hazard log, evidence plan, human factors plan, post-market monitoring plan, and regulator route decision.</li>
+<li>Clinical activation does not proceed from this plan alone.</li>
+</ul>
+<hr>
+<h2 id="11-operating-cadence"><a class="heading-anchor" href="#11-operating-cadence" aria-label="Link to section">#</a>11. Operating Cadence</h2>
+<table>
+<thead>
+<tr>
+<th>Cadence</th>
+<th>Meeting</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Daily during Phase 0</td>
+<td>RL implementation standup</td>
+<td>Blockers across BulletTrain, SignalBox, GHARRA, provider-portal, insurance-eclaims</td>
+</tr>
+<tr>
+<td>Twice weekly</td>
+<td>CSAA gate review</td>
+<td>Review schemas, hazards, OPE assumptions, forbidden actions, and reward-hacking tests</td>
+</tr>
+<tr>
+<td>Weekly during shadow</td>
+<td>Evidence review</td>
+<td>Baseline vs candidate, subgroup metrics, override analysis, incidents, rollback readiness</td>
+</tr>
+<tr>
+<td>Per promotion</td>
+<td>Policy change board</td>
+<td>Approve policy card, evidence pack, activation scope, rollback plan, and monitoring thresholds</td>
+</tr>
+<tr>
+<td>Monthly</td>
+<td>Regulatory posture review</td>
+<td>Refresh classification, guidance changes, PCCP/update-envelope assumptions, jurisdiction risks</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="12-risk-register"><a class="heading-anchor" href="#12-risk-register" aria-label="Link to section">#</a>12. Risk Register</h2>
+<table>
+<thead>
+<tr>
+<th>Risk</th>
+<th>Severity</th>
+<th>Control</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Prior-auth delay harm hidden by approval-rate lift</td>
+<td>High</td>
+<td>Continuity-delay penalty, urgent-case stratification, appeals review, subgroup turnaround monitoring</td>
+</tr>
+<tr>
+<td>Poor historical support makes OPE unreliable</td>
+<td>High</td>
+<td>Overlap and ESS gates; unsupported segments route to HITL; collect shadow data before promotion</td>
+</tr>
+<tr>
+<td>Reward hacking improves proxy but worsens real outcomes</td>
+<td>High</td>
+<td>Surface adversarial packs, secondary safety outcomes, delayed-outcome review, automatic freeze</td>
+</tr>
+<tr>
+<td>Clinical surfaces misclassified as CDS</td>
+<td>High</td>
+<td>Intended-use review and CDS criteria evidence before any clinical activation</td>
+</tr>
+<tr>
+<td>SPID reward logs treated as de-identified when linkable</td>
+<td>High</td>
+<td>Treat as regulated data; DPIA/BAA; access control; retention and re-identification controls</td>
+</tr>
+<tr>
+<td>Algorithm complexity outruns auditability</td>
+<td>Medium</td>
+<td>Start with constrained bandits / optimisation; require explainability and replay before advanced RL</td>
+</tr>
+<tr>
+<td>Human reviewers rubber-stamp suggestions</td>
+<td>Medium</td>
+<td>Human-factors testing, override analytics, sampled case review, UI makes uncertainty and basis visible</td>
+</tr>
+<tr>
+<td>Bias metric is too narrow</td>
+<td>Medium</td>
+<td>DIR plus subgroup performance, delays, false positives/negatives, overrides, opt-outs, and burden</td>
+</tr>
+<tr>
+<td>Regulator queue delays Wave 3</td>
+<td>Medium</td>
+<td>Start classification/evidence work during Wave 1; do not tie Wave 2 revenue proof to Wave 3 activation</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="13-required-references"><a class="heading-anchor" href="#13-required-references" aria-label="Link to section">#</a>13. Required References</h2>
+<p>Engineering and governance should keep these references in the evidence folder for every policy pack:</p>
+<ul>
+<li><a href="https://www.fda.gov/medical-devices/software-medical-device-samd/clinical-decision-support-software-frequently-asked-questions-faqs">FDA Clinical Decision Support Software FAQ</a>.</li>
+<li><a href="https://www.fda.gov/regulatory-information/search-fda-guidance-documents/marketing-submission-recommendations-predetermined-change-control-plan-artificial-intelligence">FDA Marketing Submission Recommendations for a Predetermined Change Control Plan for AI-Enabled Device Software Functions</a>, final guidance, August 2025.</li>
+<li><a href="https://www.fda.gov/medical-devices/software-medical-device-samd/good-machine-learning-practice-medical-device-development-guiding-principles">FDA Good Machine Learning Practice for Medical Device Development</a> and <a href="https://www.fda.gov/medical-devices/software-medical-device-samd/transparency-machine-learning-enabled-medical-devices-guiding-principles">Transparency for Machine Learning-Enabled Medical Devices</a>.</li>
+<li><a href="https://www.gov.uk/government/collections/ai-airlock-the-regulatory-sandbox-for-aiamd">MHRA AI Airlock collection</a> and pilot learnings; use as regulatory engagement/sandbox context, not clearance shorthand.</li>
+<li><a href="https://digital.nhs.uk/data-and-information/information-standards/governance/latest-activity/standards-and-collections/dcb0129-clinical-risk-management-its-application-in-the-manufacture-of-health-it-systems/">NHS England DCB0129</a> and <a href="https://digital.nhs.uk/data-and-information/information-standards/governance/latest-activity/standards-and-collections/dcb0160-clinical-risk-management-its-application-in-the-deployment-and-use-of-health-it-systems/">DCB0160</a> clinical risk management standards.</li>
+<li><a href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng">Regulation (EU) 2024/1689 (EU AI Act)</a>, especially high-risk AI requirements, logging, transparency, human oversight, post-market monitoring, and Annex IV technical documentation.</li>
+<li><a href="https://health.ec.europa.eu/medical-devices-sector/new-regulations/guidance-mdcg-endorsed-documents-and-other-guidance_en">European Commission MDCG guidance library</a> for MDR / IVDR software classification guidance, including Rule 11 analysis where medical-purpose software is in scope.</li>
+<li><a href="https://www.hhs.gov/hipaa/for-professionals/privacy/special-topics/de-identification/index.html">HHS HIPAA de-identification guidance</a> for coded and pseudonymised health information.</li>
+<li><a href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10">NIST AI RMF 1.0</a> for risk management vocabulary and trustworthy-AI controls.</li>
+</ul>
+<hr>
+<h2 id="14-kickoff-decision"><a class="heading-anchor" href="#14-kickoff-decision" aria-label="Link to section">#</a>14. Kickoff Decision</h2>
+<p>Proceed with implementation in this order:</p>
+<ol>
+<li>Open RL-000 through RL-013.</li>
+<li>Start <code>bullettrain.rl</code> Phase 0 immediately.</li>
+<li>Start Prior-Auth RL extraction in parallel with Phase 0 contracts.</li>
+<li>Hold Wave 2 implementation until the common schemas and reward log are usable.</li>
+<li>Start Wave 3 classification and data-readiness work now, but do not commit clinical activation dates until evidence and regulatory routes are accepted.</li>
+</ol>
+<p>This is the final implementation baseline for commencing work. Any future change to algorithm class, reward shape, activation state, intended use, jurisdiction posture, or autonomy level is a policy change and must create a new signed policy-card version.</p>
+
+      </article>
+      <footer class="document-footer">
+        Generated from Markdown on 2026-05-14T14:22:48.413Z.
+      </footer>
+    </main>
+  </div>
+</body>
+</html>
