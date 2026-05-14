@@ -3,18 +3,2221 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>helixcare-rl-implementation-plan.md</title>
+  <title>HelixCare RL Implementation Plan - v1.0</title>
   <script>(function(){try{var pref=localStorage.getItem("theme")||"system";var dark=pref==="dark"||(pref==="system"&&window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches);document.documentElement.dataset.theme=dark?"dark":"light";document.documentElement.dataset.themePreference=pref;}catch(e){document.documentElement.dataset.theme="light";document.documentElement.dataset.themePreference="system";}})();</script>
-  <link rel="stylesheet" href="../../_design_system/colors_and_type.css?v=2026-05-14T14%3A22%3A48.413Z">
-  <link rel="stylesheet" href="../../_design_system/utilities.css?v=2026-05-14T14%3A22%3A48.413Z">
-  <link rel="stylesheet" href="../../_assets/docs.css?v=2026-05-14T14%3A22%3A48.413Z">
-  <script src="../../_assets/index.js?v=2026-05-14T14%3A22%3A48.413Z" defer></script>
+  <style>
+/* colors_and_type.css */
+/* ─────────────────────────────────────────────────────────────
+   Symphonix Health — Design Tokens
+   Extracted from symphonix-public/website/index.html + brand docs
+   ───────────────────────────────────────────────────────────── */
+
+:root {
+  /* ───── Brand: Indigo-Violet (primary) ───── */
+  --brand-50:  #EEF2FF;
+  --brand-100: #E0E7FF;
+  --brand-200: #C7D2FE;
+  --brand-300: #A5B4FC;
+  --brand-400: #818CF8;
+  --brand-500: #6366F1;  /* Hero primary */
+  --brand-600: #4F46E5;  /* Primary button */
+  --brand-700: #4338CA;
+  --brand-800: #3730A3;
+  --brand-900: #312E81;
+  --brand-950: #1E1B4B;
+
+  /* ───── Teal (secondary — "harmony" accent) ───── */
+  --teal-300: #4DD0E1;
+  --teal-400: #26C6DA;
+  --teal-500: #14919B;
+  --teal-600: #0D7377;
+
+  /* ───── Signature Rainbow Spectrum (ECG-only, never bg/text) ───── */
+  --rainbow-red:    #FF3B30;
+  --rainbow-orange: #FF9500;
+  --rainbow-yellow: #FFCC00;
+  --rainbow-green:  #34C759;
+  --rainbow-cyan:   #00BCD4;
+  --rainbow-blue:   #007AFF;
+  --rainbow-indigo: #5856D6;
+  --rainbow-purple: #AF52DE;
+  --rainbow:   linear-gradient(90deg, #FF3B30, #FF9500, #FFCC00, #34C759, #00BCD4, #007AFF, #5856D6, #AF52DE);
+  --rainbow-x2: linear-gradient(90deg, #FF3B30, #FF9500, #FFCC00, #34C759, #00BCD4, #007AFF, #5856D6, #AF52DE, #FF3B30, #FF9500, #FFCC00, #34C759);
+
+  /* ───── Dark surfaces (primary mode) ───── */
+  --surface-0: #080A2E;   /* Deep indigo-black, body */
+  --surface-1: #0C0E38;
+  --surface-2: #121445;
+  --surface-3: #1A1A55;
+  --surface-card:       rgba(12, 14, 46, 0.88);
+  --surface-card-hover: rgba(20, 20, 65, 0.92);
+  --bg-hero: linear-gradient(135deg, #060D1F 0%, #0D1B6E 28%, #1A1080 50%, #4A1A90 76%, #7B2DA0 100%);
+
+  /* ───── Text (dark mode) — tuned for high-contrast legibility on indigo bg ───── */
+  --text-1: #F5F6FA;     /* Headings, emphasis */
+  --text-2: #C4C7D6;     /* Body — bumped from #A0A3B5 for clarity */
+  --text-3: #9499B2;     /* Meta, captions — bumped from #7A7D98 */
+
+  /* ───── Borders ───── */
+  --border:       rgba(255, 255, 255, 0.07);
+  --border-hover: rgba(165, 180, 252, 0.40);
+  --border-strong: rgba(99, 102, 241, 0.35);
+
+  /* ───── Semantic category colors (used in nav/badges) ───── */
+  --cat-standards:   #0D7377; /* teal */
+  --cat-compliance:  #92600A; /* amber */
+  --cat-ai:          #4F46E5; /* brand */
+  --cat-architecture:#16803C; /* green */
+  --cat-symphonix:   #7C3AED; /* violet */
+
+  /* ───── Status ───── */
+  --success: #34C759;
+  --warning: #FF9500;
+  --danger:  #FF3B30;
+  --info:    #4DD0E1;
+
+  /* ───── Fonts — Inter primary (sharper than DM Sans at small sizes) ───── */
+  --f-sans:  'Inter', 'DM Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --f-serif: 'Playfair Display', Georgia, serif;
+  --f-mono:  'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
+
+  /* ───── Type scale (semantic) ───── */
+  --fs-display:  clamp(2.4rem, 5.2vw, 3.8rem); /* Hero h1, 700 */
+  --fs-h1:       clamp(1.8rem, 3.8vw, 3rem);    /* Section title, 700 */
+  --fs-h2:       clamp(1.6rem, 3vw,  2.4rem);   /* Subsection, 700 */
+  --fs-h3:       1.3rem;                         /* Card title, 700 */
+  --fs-lead:     clamp(0.95rem, 1.8vw, 1.18rem); /* Hero subtitle */
+  --fs-body:     0.92rem;
+  --fs-small:    0.85rem;
+  --fs-meta:     0.75rem;  /* Uppercase labels */
+  --fs-micro:    0.72rem;
+
+  --lh-tight:    1.12;
+  --lh-snug:     1.25;
+  --lh-body:     1.7;
+  --lh-relaxed:  1.8;
+
+  --ls-tight:    -0.025em;   /* Display */
+  --ls-normal:   0;
+  --ls-wide:     1.5px;      /* Meta / mono labels */
+  --ls-widest:   3.5px;      /* Section labels */
+
+  /* ───── Radii ───── */
+  --r-sm: 8px;   /* Small buttons, inputs */
+  --r-md: 10px;  /* Nav pills */
+  --r-lg: 12px;  /* Buttons, small cards */
+  --r-xl: 16px;  /* Nav bar, standard cards */
+  --r-2xl: 18px; /* Large panels, code windows */
+  --r-3xl: 24px; /* Hero panels */
+  --r-full: 9999px;
+
+  /* ───── Spacing (8pt-ish scale, page-level uses rems) ───── */
+  --sp-1: 0.25rem;
+  --sp-2: 0.5rem;
+  --sp-3: 0.75rem;
+  --sp-4: 1rem;
+  --sp-5: 1.25rem;
+  --sp-6: 1.5rem;
+  --sp-8: 2rem;
+  --sp-10: 2.5rem;
+  --sp-12: 3rem;
+  --sp-16: 4rem;
+  --sp-20: 5rem;
+  --sp-28: 7rem;   /* Section padding Y */
+
+  /* ───── Elevation ───── */
+  --shadow-sm:  0 1px 4px rgba(0,0,0,0.04);
+  --shadow-md:  0 8px 32px rgba(0,0,0,0.4);
+  --shadow-lg:  0 24px 64px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.02) inset;
+  --shadow-xl:  0 32px 64px rgba(0,0,0,0.35), 0 0 60px rgba(99,102,241,0.08);
+  --glow-brand: 0 0 40px rgba(99,102,241,0.15), inset 0 1px 0 rgba(255,255,255,0.1);
+  --glow-teal:  0 0 40px rgba(20,145,155,0.15);
+
+  /* ───── Motion ───── */
+  --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --dur-fast:    0.2s;
+  --dur-base:    0.35s;
+  --dur-slow:    0.8s;
+}
+
+/* ───── Light theme overrides ───── */
+[data-theme="light"] {
+  --surface-0: #FAFBFC;
+  --surface-1: #F3F4F9;
+  --surface-2: #EBEDF5;
+  --surface-3: #E2E4F0;
+  --surface-card:       rgba(255, 255, 255, 0.92);
+  --surface-card-hover: rgba(245, 247, 252, 0.95);
+  --text-1: #1A1D2E;
+  --text-2: #3A3D58;
+  --text-3: #6B6F8E;
+  --border: rgba(79, 70, 229, 0.14);
+  --border-hover: rgba(79, 70, 229, 0.35);
+  --border-strong: rgba(79, 70, 229, 0.35);
+  --brand-300: #4F46E5;  /* eyebrow/accent in light = indigo-600 */
+  --brand-400: #4F46E5;
+  --brand-500: #4F46E5;
+  --brand-600: #4338CA;
+  --bg-hero: linear-gradient(135deg, #EEF2FF 0%, #E0E7FF 40%, #F3E8FF 100%);
+  --shadow-sm:  0 1px 4px rgba(30, 27, 75, 0.06);
+  --shadow-md:  0 8px 24px rgba(30, 27, 75, 0.08);
+  --shadow-lg:  0 24px 48px rgba(30, 27, 75, 0.1);
+  --shadow-xl:  0 32px 64px rgba(30, 27, 75, 0.12);
+  --glow-brand: 0 0 40px rgba(99,102,241,0.12);
+  --glow-teal:  0 0 40px rgba(20,145,155,0.12);
+
+  /* Semantic tints for line-borders/fills used across components */
+  --tint-subtle:  rgba(79, 70, 229, 0.04);   /* was rgba(255,255,255,.03) */
+  --tint-weak:    rgba(79, 70, 229, 0.06);
+  --tint-line:    rgba(79, 70, 229, 0.12);
+  --tint-line-2:  rgba(79, 70, 229, 0.22);
+}
+
+:root {
+  --tint-subtle: rgba(255, 255, 255, 0.03);
+  --tint-weak:   rgba(255, 255, 255, 0.06);
+  --tint-line:   rgba(255, 255, 255, 0.08);
+  --tint-line-2: rgba(165, 180, 252, 0.22);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   SEMANTIC TYPE ROLES
+   Use these classes (or @extend equivalents) for consistent type.
+   ───────────────────────────────────────────────────────────── */
+
+.type-display,
+.sx-display {
+  font-family: var(--f-sans);
+  font-size: var(--fs-display);
+  font-weight: 700;
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-tight);
+  color: var(--text-1);
+}
+
+.type-h1, .sx-h1 {
+  font-family: var(--f-sans);
+  font-size: var(--fs-h1);
+  font-weight: 700;
+  line-height: var(--lh-tight);
+  letter-spacing: -0.03em;
+  color: var(--text-1);
+}
+
+.type-h2, .sx-h2 {
+  font-family: var(--f-sans);
+  font-size: var(--fs-h2);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--text-1);
+}
+
+.type-h3, .sx-h3 {
+  font-family: var(--f-sans);
+  font-size: var(--fs-h3);
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--text-1);
+}
+
+.type-lead, .sx-lead {
+  font-family: var(--f-sans);
+  font-size: var(--fs-lead);
+  font-weight: 400;
+  line-height: 1.75;
+  color: var(--text-2);
+}
+
+.type-body, .sx-body {
+  font-family: var(--f-sans);
+  font-size: var(--fs-body);
+  font-weight: 400;
+  line-height: var(--lh-relaxed);
+  color: var(--text-2);
+}
+
+.type-small, .sx-small {
+  font-family: var(--f-sans);
+  font-size: var(--fs-small);
+  line-height: 1.7;
+  color: var(--text-2);
+}
+
+/* Uppercase mono "eyebrow" label — the signature brand type treatment */
+.type-label, .sx-label {
+  font-family: var(--f-mono);
+  text-transform: uppercase;
+  font-size: var(--fs-meta);
+  font-weight: 500;
+  letter-spacing: var(--ls-widest);
+  color: var(--brand-400);
+}
+
+.type-mono, .sx-mono {
+  font-family: var(--f-mono);
+  font-size: var(--fs-small);
+  color: var(--text-2);
+}
+
+/* Playfair italic — used sparingly for big pull-quotes */
+.type-quote, .sx-quote {
+  font-family: var(--f-serif);
+  font-size: 1.35rem;
+  font-style: italic;
+  line-height: 1.55;
+  color: var(--brand-200);
+  border-left: 3px solid;
+  border-image: var(--rainbow-x2) 1;
+  padding-left: 1.5rem;
+}
+
+.type-meta, .sx-meta {
+  font-family: var(--f-mono);
+  font-size: var(--fs-meta);
+  color: var(--text-3);
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+/* ───── Utility: the signature 56px rainbow underline ───── */
+.sx-rainbow-underline {
+  width: 56px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--rainbow-x2);
+  background-size: 200% 100%;
+  animation: sx-pulse-flow 3s linear infinite;
+}
+
+@keyframes sx-pulse-flow {
+  0%   { background-position: 0%   50%; }
+  100% { background-position: 200% 50%; }
+}
+
+/* ───── Reduce-motion respect ───── */
+@media (prefers-reduced-motion: reduce) {
+  .sx-rainbow-underline { animation: none; }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   RESPONSIVE LAYOUT RESET
+   Viewport containment — pages fit on phone & tablet without
+   horizontal overflow.
+   ───────────────────────────────────────────────────────────── */
+
+:root {
+  /* Breakpoint reference tokens (informational; use literal px in @media) */
+  --bp-xs:   320px;
+  --bp-sm:   480px;
+  --bp-md:   768px;
+  --bp-lg:  1024px;
+  --bp-xl:  1280px;
+  --bp-2xl: 1536px;
+
+  /* Fluid container */
+  --sx-container-max:  1280px;
+  --sx-container-pad:  clamp(1rem, 4vw, 2.5rem);
+  --sx-gap:            clamp(0.75rem, 2.5vw, 1.5rem);
+  --sx-gap-sm:         clamp(0.5rem, 2vw, 1rem);
+  --sx-gap-lg:         clamp(1.5rem, 4vw, 2.5rem);
+}
+
+/* Box-model fix — border + padding never push elements outside containers */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Viewport-safe root — no horizontal scrollbar on phone or tablet */
+html {
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%; /* Prevent iOS font size inflation */
+}
+
+body {
+  overflow-x: hidden;
+  min-width: 320px; /* Smallest supported phone */
+}
+
+/* Media elements: constrained to container width */
+img, video, canvas, svg, picture, iframe, embed, object {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Scrollable table wrapper — prevents a wide table from pushing the page */
+.sx-table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+}
+
+/* Fluid layout container */
+.sx-container {
+  width: 100%;
+  max-width: var(--sx-container-max);
+  margin-inline: auto;
+  padding-inline: var(--sx-container-pad);
+}
+
+/* ─── Phone (≤ 480 px) ─── */
+@media (max-width: 480px) {
+  .sx-container {
+    padding-inline: var(--sp-4, 1rem);
+  }
+}
+
+/* ─── Tablet portrait (481 – 768 px) ─── */
+@media (min-width: 481px) and (max-width: 768px) {
+  .sx-container {
+    padding-inline: clamp(1rem, 3vw, 1.5rem);
+  }
+}
+
+
+/* utilities.css */
+/* ─────────────────────────────────────────────────────────────
+   Symphonix Health — Canonical Utility Classes
+   Source of truth for .bt-* utilities. Consumers import this
+   alongside colors_and_type.css:
+
+     <link rel="stylesheet" href=".../colors_and_type.css"/>
+     <link rel="stylesheet" href=".../utilities.css"/>
+
+   Or in a Vite project:
+     import "<design-system>/colors_and_type.css";
+     import "<design-system>/utilities.css";
+
+   Every consumer inherits the same visual treatment — no per-repo
+   drift. This file references tokens from colors_and_type.css and
+   MUST NOT hard-code colours, spacings, or radii.
+
+   L-261: form inputs must have a visibly bordered utility class.
+   Prior to this file, each caid-generated simulator copied its own
+   design-system.css and drifted. The canonical .bt-input below uses
+   --border-strong (not --border — which is a 7%/14% hairline tuned
+   for card chrome, not form affordances) so the form is legible in
+   both light and dark themes on every consumer.
+   ───────────────────────────────────────────────────────────── */
+
+/* ───── App shell ───── */
+
+.bt-app {
+  background: var(--surface-0);
+  color: var(--text-1);
+  font-family: var(--f-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+.bt-shell {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  min-height: 100vh;
+  background: var(--surface-0);
+}
+
+@media (max-width: 768px) {
+  .bt-shell {
+    grid-template-columns: 1fr;
+  }
+}
+
+.bt-sidebar {
+  background: var(--surface-1);
+  border-right: 1px solid var(--border);
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.bt-sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--text-1);
+}
+
+.bt-sidebar-section {
+  font-family: var(--f-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--text-3);
+  margin-top: 12px;
+}
+
+.bt-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.bt-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 12px;
+  color: var(--text-2);
+  text-decoration: none;
+  border-radius: var(--r-sm);
+  font-size: 0.9rem;
+  border-left: 2px solid transparent;
+  transition: background 0.2s ease-out, color 0.2s ease-out;
+}
+
+.bt-nav-item:hover {
+  color: var(--brand-300);
+  background: var(--tint-subtle, rgba(99, 102, 241, 0.06));
+}
+
+.bt-nav-item-active {
+  color: var(--brand-500);
+  background: var(--tint-weak, rgba(99, 102, 241, 0.10));
+  font-weight: 600;
+  border-left-color: var(--brand-500);
+}
+
+.bt-nav-item-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.bt-main {
+  padding: 28px 32px;
+  overflow-x: hidden;
+  background: var(--surface-0);
+}
+
+@media (max-width: 480px) {
+  .bt-main {
+    padding: 16px;
+  }
+}
+
+/* ───── Mobile sidebar / hamburger ───── */
+
+@media (max-width: 768px) {
+  .bt-sidebar {
+    position: fixed;
+    inset: 0 auto 0 0;
+    width: 280px;
+    z-index: 200;
+    transform: translateX(-100%);
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+      box-shadow 0.25s ease-out;
+  }
+  .bt-shell[data-sidebar-open] .bt-sidebar {
+    transform: translateX(0);
+    box-shadow: 8px 0 40px rgba(0, 0, 0, 0.25);
+  }
+}
+
+.bt-sidebar-backdrop {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .bt-sidebar-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 199;
+    backdrop-filter: blur(2px);
+    cursor: default;
+  }
+  .bt-shell[data-sidebar-open] .bt-sidebar-backdrop {
+    display: block;
+  }
+}
+
+/* Hamburger button — hidden on desktop, visible on mobile */
+.bt-hamburger {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  background: transparent;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--r-sm);
+  color: var(--text-2);
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s ease-out, color 0.15s ease-out;
+}
+
+.bt-hamburger:hover {
+  background: var(--tint-subtle, rgba(99, 102, 241, 0.06));
+  color: var(--text-1);
+}
+
+.bt-hamburger:focus-visible {
+  outline: 2px solid var(--brand-400);
+  outline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+  .bt-hamburger {
+    display: inline-flex;
+  }
+}
+
+/* Sidebar close button — hidden on desktop, visible on mobile */
+.bt-sidebar-close {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .bt-sidebar-close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    width: 28px;
+    height: 28px;
+    background: transparent;
+    border: 1px solid var(--border-strong);
+    border-radius: var(--r-sm);
+    color: var(--text-2);
+    cursor: pointer;
+    flex-shrink: 0;
+    font-family: inherit;
+    transition: background 0.15s ease-out, color 0.15s ease-out;
+  }
+  .bt-sidebar-close:hover {
+    background: var(--tint-subtle, rgba(99, 102, 241, 0.06));
+    color: var(--text-1);
+  }
+  .bt-sidebar-close:focus-visible {
+    outline: 2px solid var(--brand-400);
+    outline-offset: 2px;
+  }
+}
+
+/* ───── Forms (L-261 — visibly bordered) ───── */
+
+.bt-form-container {
+  max-width: 720px;
+}
+
+.bt-form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px 22px;
+  background: var(--surface-card, var(--surface-1));
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  backdrop-filter: blur(12px) saturate(1.5);
+}
+
+.bt-form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 14px;
+}
+
+.bt-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.bt-label {
+  font-size: 0.825rem;
+  font-weight: 500;
+  color: var(--text-2);
+  font-family: var(--f-sans);
+}
+
+.bt-label-required::after {
+  content: " *";
+  color: #EF4444;
+}
+
+.bt-hint {
+  font-size: 0.75rem;
+  color: var(--text-3);
+}
+
+.bt-error-text {
+  font-size: 0.8rem;
+  color: #EF4444;
+  margin: 0;
+}
+
+/* Input / select / textarea share a border spec using --border-strong,
+   NOT --border. --border is tuned for card chrome (6–14% opacity, sits
+   invisibly on surface-0); --border-strong sits around 35% and reads
+   as a real form affordance in both themes. See L-261. */
+
+.bt-input,
+.bt-select,
+.bt-textarea {
+  width: 100%;
+  /* L-261: even outside a .bt-form-container wrapper, inputs should
+     never stretch across the full viewport — that's unreadable and
+     looks unfinished. 520px is the readable-form width (≈ 80 chars
+     at 13px). Inside .bt-form-container the container's max-width
+     already caps them; this keeps them sane in ad-hoc forms too. */
+  max-width: 520px;
+  padding: 9px 12px;
+  background: var(--tint-subtle, rgba(99, 102, 241, 0.04));
+  border: 1px solid var(--border-strong);
+  border-radius: var(--r-sm);
+  color: var(--text-1);
+  font-family: var(--f-sans);
+  font-size: 0.9rem;
+  line-height: 1.4;
+  transition: border-color 0.15s ease-out, box-shadow 0.15s ease-out, background 0.15s ease-out;
+  outline: none;
+  box-sizing: border-box;
+}
+
+/* Inside a form row (3-up responsive grid), inputs should fill their
+   grid cell. The grid itself sits inside .bt-form-container so the
+   overall cap still applies. */
+.bt-form-row .bt-input,
+.bt-form-row .bt-select,
+.bt-form-row .bt-textarea {
+  max-width: 100%;
+}
+
+.bt-input {
+  height: 44px;
+}
+
+.bt-textarea {
+  min-height: 96px;
+  resize: vertical;
+}
+
+.bt-select {
+  height: 44px;
+  appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, var(--text-3) 50%),
+                    linear-gradient(135deg, var(--text-3) 50%, transparent 50%);
+  background-position: calc(100% - 18px) calc(50%), calc(100% - 13px) calc(50%);
+  background-size: 5px 5px, 5px 5px;
+  background-repeat: no-repeat;
+  padding-right: 32px;
+}
+
+.bt-input::placeholder,
+.bt-textarea::placeholder {
+  color: var(--text-3);
+}
+
+.bt-input:hover,
+.bt-select:hover,
+.bt-textarea:hover {
+  border-color: var(--border-hover);
+}
+
+.bt-input:focus,
+.bt-input:focus-visible,
+.bt-select:focus,
+.bt-select:focus-visible,
+.bt-textarea:focus,
+.bt-textarea:focus-visible {
+  border-color: var(--brand-500);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.20);
+  background: var(--surface-0);
+}
+
+.bt-input[disabled],
+.bt-select[disabled],
+.bt-textarea[disabled] {
+  background: var(--tint-subtle, rgba(99, 102, 241, 0.02));
+  color: var(--text-3);
+  border-color: var(--border);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.bt-input[disabled]::placeholder,
+.bt-textarea[disabled]::placeholder {
+  color: var(--text-3);
+  opacity: 0.6;
+}
+
+.bt-input-error,
+.bt-select-error,
+.bt-textarea-error {
+  border-color: #EF4444;
+}
+
+.bt-input-error:focus,
+.bt-select-error:focus,
+.bt-textarea-error:focus {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.20);
+}
+
+/* ───── Input wrapper — icon slots ───── */
+
+.bt-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  max-width: 520px;
+}
+
+.bt-form-row .bt-input-wrap {
+  max-width: 100%;
+}
+
+.bt-input-wrap .bt-input {
+  max-width: 100%;
+  width: 100%;
+}
+
+.bt-input-icon {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  color: var(--text-3);
+  pointer-events: none;
+  flex-shrink: 0;
+  transition: color 0.15s ease-out;
+}
+
+.bt-input-wrap.bt-icon-left .bt-input   { padding-left: 40px; }
+.bt-input-wrap.bt-icon-right .bt-input  { padding-right: 40px; }
+.bt-input-wrap.bt-icon-left .bt-input-icon  { left: 12px; }
+.bt-input-wrap.bt-icon-right .bt-input-icon { right: 12px; }
+
+.bt-input-wrap .bt-input:focus ~ .bt-input-icon,
+.bt-input-wrap .bt-input:focus-visible ~ .bt-input-icon {
+  color: var(--brand-400);
+}
+
+.bt-input-wrap .bt-input.bt-input-error ~ .bt-input-icon {
+  color: #EF4444;
+}
+
+/* ───── Checkbox ───── */
+
+.bt-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 1.5px solid var(--border-strong);
+  border-radius: 4px;
+  background: transparent;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.15s ease-out, border-color 0.15s ease-out, box-shadow 0.15s ease-out;
+}
+
+.bt-checkbox:hover:not(:disabled) {
+  border-color: var(--brand-400);
+}
+
+.bt-checkbox:checked {
+  background: var(--brand-600);
+  border-color: var(--brand-600);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14' fill='none' stroke='%23ffffff' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2.5 7 5.5 10 11.5 4'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 10px 10px;
+}
+
+.bt-checkbox:focus-visible {
+  outline: 2px solid var(--brand-400);
+  outline-offset: 2px;
+}
+
+.bt-checkbox:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  border-color: var(--border);
+}
+
+.bt-checkbox:checked:disabled {
+  background: var(--text-3);
+  border-color: var(--text-3);
+}
+
+.bt-checkbox-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.875rem;
+  color: var(--text-1);
+  cursor: pointer;
+  font-family: var(--f-sans);
+  user-select: none;
+  line-height: 1.4;
+}
+
+.bt-checkbox-label:has(.bt-checkbox:disabled) {
+  color: var(--text-3);
+  cursor: not-allowed;
+}
+
+/* ───── Radio button ───── */
+
+.bt-radio {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 1.5px solid var(--border-strong);
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: border-color 0.15s ease-out, background 0.15s ease-out, box-shadow 0.15s ease-out;
+}
+
+.bt-radio:hover:not(:disabled) {
+  border-color: var(--brand-400);
+}
+
+.bt-radio:checked {
+  border-color: var(--brand-500);
+  border-width: 2px;
+  background: radial-gradient(circle at center, var(--brand-500) 42%, transparent 42%);
+}
+
+.bt-radio:focus-visible {
+  outline: 2px solid var(--brand-400);
+  outline-offset: 2px;
+}
+
+.bt-radio:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  border-color: var(--border);
+}
+
+.bt-radio:checked:disabled {
+  background: radial-gradient(circle at center, var(--text-3) 42%, transparent 42%);
+  border-color: var(--text-3);
+}
+
+.bt-radio-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.875rem;
+  color: var(--text-1);
+  cursor: pointer;
+  font-family: var(--f-sans);
+  user-select: none;
+  line-height: 1.4;
+}
+
+.bt-radio-label:has(.bt-radio:disabled) {
+  color: var(--text-3);
+  cursor: not-allowed;
+}
+
+/* ───── Toggle switch ───── */
+
+.bt-toggle {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.bt-toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+.bt-toggle-track {
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  background: var(--border-strong);
+  transition: background 0.2s ease-out;
+}
+
+.bt-toggle-thumb {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease-out;
+}
+
+.bt-toggle input:checked ~ .bt-toggle-track {
+  background: var(--brand-600);
+}
+
+.bt-toggle input:checked ~ .bt-toggle-thumb {
+  transform: translateX(20px);
+}
+
+.bt-toggle input:focus-visible ~ .bt-toggle-track {
+  outline: 2px solid var(--brand-400);
+  outline-offset: 2px;
+}
+
+.bt-toggle input:disabled ~ .bt-toggle-track,
+.bt-toggle input:disabled ~ .bt-toggle-thumb {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* ───── Segmented control ───── */
+
+.bt-segmented {
+  display: inline-flex;
+  padding: 3px;
+  border-radius: var(--r-md);
+  background: var(--tint-subtle, rgba(99, 102, 241, 0.04));
+  border: 1px solid var(--border-strong);
+  gap: 2px;
+}
+
+.bt-segmented-option {
+  appearance: none;
+  border: none;
+  background: transparent;
+  color: var(--text-2);
+  padding: 7px 18px;
+  border-radius: 7px;
+  cursor: pointer;
+  font-family: var(--f-sans);
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.15s ease-out;
+  white-space: nowrap;
+}
+
+.bt-segmented-option:hover:not(.bt-segmented-active) {
+  color: var(--text-1);
+  background: var(--tint-weak, rgba(99, 102, 241, 0.08));
+}
+
+.bt-segmented-option.bt-segmented-active {
+  background: var(--brand-600);
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.30);
+  font-weight: 600;
+}
+
+.bt-segmented-option:focus-visible {
+  outline: 2px solid var(--brand-400);
+  outline-offset: 2px;
+}
+
+/* ───── Alert / message banners ───── */
+
+.bt-alert {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: var(--r-sm);
+  border: 1px solid transparent;
+  font-family: var(--f-sans);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.bt-alert-icon {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  margin-top: 1px;
+}
+
+.bt-alert-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.bt-alert-close {
+  appearance: none;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 2px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  opacity: 0.6;
+  transition: opacity 0.15s ease-out, background 0.15s ease-out;
+  margin-top: -1px;
+}
+
+.bt-alert-close:hover {
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.bt-alert-success {
+  background: rgba(34, 197, 94, 0.10);
+  border-color: rgba(34, 197, 94, 0.28);
+  color: #15803d;
+}
+
+.bt-alert-success .bt-alert-close { color: #15803d; }
+
+.bt-alert-info {
+  background: rgba(14, 165, 233, 0.10);
+  border-color: rgba(14, 165, 233, 0.28);
+  color: #0369a1;
+}
+
+.bt-alert-info .bt-alert-close { color: #0369a1; }
+
+.bt-alert-warning {
+  background: rgba(245, 158, 11, 0.10);
+  border-color: rgba(245, 158, 11, 0.28);
+  color: #b45309;
+}
+
+.bt-alert-warning .bt-alert-close { color: #b45309; }
+
+.bt-alert-error {
+  background: rgba(239, 68, 68, 0.10);
+  border-color: rgba(239, 68, 68, 0.28);
+  color: #b91c1c;
+}
+
+.bt-alert-error .bt-alert-close { color: #b91c1c; }
+
+/* ───── Step indicator ───── */
+
+.bt-steps {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.bt-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  position: relative;
+}
+
+/* Connector line between steps */
+.bt-step:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: calc(50% + 22px);
+  right: calc(-50% + 22px);
+  height: 2px;
+  background: var(--border-strong);
+  transition: background 0.3s ease-out;
+}
+
+.bt-step.bt-step-done:not(:last-child)::after {
+  background: var(--brand-500);
+}
+
+.bt-step-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid var(--border-strong);
+  background: var(--surface-1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-3);
+  transition: all 0.2s ease-out;
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+}
+
+.bt-step.bt-step-done .bt-step-icon {
+  background: var(--brand-500);
+  border-color: var(--brand-500);
+  color: #ffffff;
+}
+
+.bt-step.bt-step-active .bt-step-icon {
+  background: var(--brand-600);
+  border-color: var(--brand-600);
+  color: #ffffff;
+  box-shadow: 0 0 0 5px rgba(99, 102, 241, 0.15);
+}
+
+.bt-step-label {
+  margin-top: 8px;
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--text-3);
+  text-align: center;
+  font-family: var(--f-sans);
+  white-space: nowrap;
+}
+
+.bt-step.bt-step-active .bt-step-label {
+  color: var(--brand-400);
+  font-weight: 600;
+}
+
+.bt-step.bt-step-done .bt-step-label {
+  color: var(--text-2);
+}
+
+/* ───── Progress bar ───── */
+
+.bt-progress {
+  width: 100%;
+  height: 6px;
+  background: var(--tint-line, rgba(99, 102, 241, 0.12));
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.bt-progress-bar {
+  height: 100%;
+  background: var(--brand-500);
+  border-radius: 999px;
+  transition: width 0.4s var(--ease-out, cubic-bezier(0.16, 1, 0.3, 1));
+}
+
+.bt-progress-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.75rem;
+  color: var(--text-3);
+  margin-top: 6px;
+  font-family: var(--f-sans);
+}
+
+/* ───── Buttons ───── */
+
+.bt-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 16px;
+  /* WCAG 2.5.5 (Target Size, Enhanced) -- 44x44px floor.
+   * Replaces fixed `height: 38px` which exceeded only the AA criterion
+   * 2.5.8 (24px). 44px is healthcare best practice and the floor used
+   * across the BulletTrain hub frontend (frontend/src/styles.css:3084).
+   * `min-*` rather than `height` so dense data-table contexts can
+   * still use `.bt-btn-sm` for the documented 32px exception. */
+  min-height: 44px;
+  min-width: 44px;
+  background: transparent;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--r-sm);
+  color: var(--text-1);
+  font-family: var(--f-sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.15s ease-out, border-color 0.15s ease-out, transform 0.15s ease-out, box-shadow 0.15s ease-out;
+}
+
+.bt-btn:hover {
+  border-color: var(--brand-400);
+  background: var(--tint-weak, rgba(99, 102, 241, 0.06));
+}
+
+.bt-btn:focus-visible {
+  outline: 2px solid var(--brand-400);
+  outline-offset: 2px;
+}
+
+.bt-btn[disabled],
+.bt-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.bt-btn-primary {
+  background: var(--brand-600);
+  border-color: var(--brand-600);
+  color: #FFFFFF;
+  box-shadow: 0 0 40px rgba(99, 102, 241, 0.15);
+}
+
+.bt-btn-primary:hover {
+  background: var(--brand-500);
+  border-color: var(--brand-500);
+  transform: translateY(-1px);
+  box-shadow: 0 12px 40px rgba(99, 102, 241, 0.30);
+}
+
+.bt-btn-ghost {
+  border-color: transparent;
+  color: var(--text-2);
+}
+
+.bt-btn-ghost:hover {
+  background: var(--tint-subtle, rgba(99, 102, 241, 0.04));
+  color: var(--brand-300);
+}
+
+.bt-btn-danger {
+  background: #EF4444;
+  border-color: #EF4444;
+  color: #FFFFFF;
+}
+
+.bt-btn-danger:hover {
+  background: #DC2626;
+  border-color: #DC2626;
+}
+
+.bt-btn-sm {
+  /* Documented exception to the 44px floor. Use only inside dense
+   * data-table rows where a 44px button would break the row rhythm.
+   * WCAG 2.5.5 (AAA) is missed; 2.5.8 (AA, 24px) is still satisfied. */
+  min-height: 32px;
+  min-width: 32px;
+  padding: 6px 14px;
+  font-size: 0.8rem;
+}
+
+.bt-btn-lg {
+  min-height: 48px;
+  min-width: 48px;
+  padding: 12px 24px;
+  font-size: 1rem;
+}
+
+.bt-btn-pill {
+  border-radius: var(--r-full);
+}
+
+/* BEM-style modifier aliases — `bt-btn--primary` is the form used by
+ * the clinical-react UI kit (NominationSelector / PrescriptionTracker
+ * / SubjectAccessExporter). Both single-dash and double-dash modifiers
+ * are now first-class so consumers can pick either convention. */
+.bt-btn.bt-btn--primary,
+.bt-btn--primary {
+  background: var(--brand-600);
+  color: var(--text-on-brand, #fff);
+  border-color: var(--brand-600);
+}
+.bt-btn--primary:hover {
+  background: var(--brand-700, var(--brand-600));
+  border-color: var(--brand-700, var(--brand-600));
+}
+.bt-btn.bt-btn--ghost,
+.bt-btn--ghost {
+  background: transparent;
+  border-color: transparent;
+  color: var(--brand-600);
+}
+.bt-btn--ghost:hover {
+  background: var(--surface-hover, rgba(0, 0, 0, 0.04));
+}
+.bt-btn.bt-btn--danger,
+.bt-btn--danger {
+  background: var(--clinical-danger);
+  color: #fff;
+  border-color: var(--clinical-danger);
+}
+
+/* ───── Tables ───── */
+
+.bt-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: var(--surface-card, var(--surface-1));
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  font-family: var(--f-sans);
+  font-size: 0.875rem;
+}
+
+.bt-table th {
+  font-family: var(--f-mono);
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--text-3);
+  font-weight: 500;
+  text-align: left;
+  padding: 12px 16px;
+  background: var(--surface-2, var(--surface-1));
+  border-bottom: 1px solid var(--border);
+}
+
+.bt-table td {
+  padding: 14px 16px;
+  color: var(--text-2);
+  border-top: 1px solid var(--border);
+}
+
+.bt-table tbody tr:hover {
+  background: var(--tint-subtle, rgba(99, 102, 241, 0.04));
+}
+
+.bt-table-empty td {
+  text-align: center;
+  color: var(--text-3);
+  font-style: italic;
+  padding: 32px;
+}
+
+/* ───── Badges ───── */
+
+.bt-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-family: var(--f-mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.bt-badge-neutral {
+  background: rgba(160, 163, 181, 0.15);
+  color: var(--text-2);
+}
+
+.bt-badge-success {
+  background: rgba(52, 199, 89, 0.15);
+  color: #34C759;
+}
+
+.bt-badge-warning {
+  background: rgba(255, 204, 0, 0.20);
+  color: #D97706;
+}
+
+.bt-badge-error {
+  background: rgba(239, 68, 68, 0.15);
+  color: #EF4444;
+}
+
+/* High-contrast badge variants (--hc).
+ *
+ * The default tinted bg + same-hue text variants above (.bt-badge-success,
+ * -warning, -error, -neutral) work on dark surfaces but fall to 2.7-4.2:1
+ * contrast at the 10px badge font on light surfaces (verified against the
+ * BulletTrain V5 vendor dashboard, 2026-05-10), below WCAG AA's 4.5:1 floor
+ * for non-large text. The --hc variants here use solid backgrounds with
+ * opposite-luminance text and clear AA on every supported surface.
+ *
+ * Use the --hc variant when the badge sits on a light bt-card surface or
+ * any consumer where the underlying lightness is unknown. The legacy
+ * variants remain available for dark hero/cockpit surfaces where they
+ * already pass.
+ */
+.bt-badge-neutral--hc {
+  background: #374151;
+  color: #FFFFFF;
+}
+
+.bt-badge-success--hc {
+  /* #15803D (Tailwind green-700, 5.02:1 on white) replaces #16A34A
+   * (3.30:1, fails WCAG AA at 10px badge font). Caught by the
+   * BulletLink E2E pilot walkthrough on 2026-05-10 (commit d8989ccfa3
+   * post-filtered axe color-contrast violations on this exact class
+   * pending the upstream fix). */
+  background: #15803D;
+  color: #FFFFFF;
+}
+
+.bt-badge-warning--hc {
+  background: #F59E0B;
+  color: #1F2937;
+}
+
+.bt-badge-error--hc {
+  background: #B91C1C;
+  color: #FFFFFF;
+}
+
+.bt-badge-info--hc {
+  background: #1D4ED8;
+  color: #FFFFFF;
+}
+
+.bt-badge-primary--hc {
+  background: var(--brand-700, #4338CA);
+  color: #FFFFFF;
+}
+
+/* Drug-class badges — used by the medication-search UI kit. They map
+ * to the clinical-coloured badge tokens with a textual label that
+ * makes the meaning obvious without colour alone. Adding here so the
+ * clinical-react kit references resolve. */
+.bt-badge--opioid {
+  background: var(--clinical-critical-bg, var(--clinical-danger-bg));
+  color: var(--clinical-critical, var(--clinical-danger));
+  border: 1px solid var(--clinical-critical, var(--clinical-danger));
+}
+.bt-badge--antibiotic {
+  background: var(--clinical-caution-bg);
+  color: var(--clinical-caution);
+  border: 1px solid var(--clinical-caution);
+}
+.bt-badge--anticoagulant {
+  background: var(--audit-tint, var(--clinical-warning-bg, var(--surface-2)));
+  color: var(--audit-indicator, var(--clinical-warning, var(--text-1)));
+  border: 1px solid var(--audit-border, var(--border));
+}
+
+/* Look-Alike-Sound-Alike — ISMP-style identification of high-confusion
+ * pairs. Distinct visual cue pairs with the textual prefix `LASA`. */
+.bt-badge--lasa {
+  background: var(--clinical-caution-bg);
+  color: var(--clinical-caution);
+  border: 1px solid var(--clinical-caution);
+  font-style: italic;
+}
+
+/* Controlled-substance badges — ISMP / DEA / Home Office class. */
+.bt-badge--controlled {
+  background: var(--clinical-critical-bg, var(--clinical-danger-bg));
+  color: var(--clinical-critical, var(--clinical-danger));
+  border: 2px solid var(--clinical-critical, var(--clinical-danger));
+}
+
+/* `bt-sr-only` — screen-reader-only, visually hidden but exposed to
+ * assistive tech. Mirrors Tailwind / Bootstrap `sr-only` pattern.
+ * Used by clinical-react chart components for off-screen labels. */
+.bt-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.bt-badge-info {
+  background: rgba(99, 102, 241, 0.15);
+  color: var(--brand-400);
+}
+
+/* ───── Cards ───── */
+
+.bt-card {
+  background: var(--surface-card, var(--surface-1));
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 20px 22px;
+  backdrop-filter: blur(12px) saturate(1.5);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.02) inset;
+}
+
+.bt-card-elevated {
+  box-shadow: 0 32px 64px rgba(0, 0, 0, 0.35), 0 0 60px rgba(99, 102, 241, 0.08);
+}
+
+/* ───── KPI stat cards ───── */
+
+.bt-kpi {
+  background: var(--surface-card, var(--surface-1));
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--brand-500);
+  border-radius: var(--r-lg);
+  padding: 16px 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
+  transition: box-shadow 0.15s ease-out;
+}
+
+.bt-kpi:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.bt-kpi-label {
+  font-family: var(--f-mono);
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--text-3);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 8px;
+}
+
+.bt-kpi-value {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-1);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.bt-kpi-change {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 6px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-3);
+}
+
+.bt-kpi-change-pos {
+  color: #34C759;
+}
+
+.bt-kpi-change-neg {
+  color: #EF4444;
+}
+
+/* ───── Grid utilities ───── */
+
+.bt-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.bt-grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.bt-grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.bt-grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 1200px) {
+  .bt-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .bt-grid-2,
+  .bt-grid-3,
+  .bt-grid-4 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ───── Empty state ───── */
+
+.bt-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 48px 24px;
+  color: var(--text-3);
+  text-align: center;
+  font-family: var(--f-sans);
+}
+
+.bt-empty-title {
+  font-weight: 600;
+  color: var(--text-2);
+  font-size: 1rem;
+}
+
+
+/* docs.css */
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body.docs-app {
+  min-height: 100vh;
+  margin: 0;
+  background: var(--surface-0);
+  color: var(--text-2);
+  font-family: var(--f-sans);
+  font-size: 16px;
+  line-height: var(--lh-body);
+}
+
+body.docs-app::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    linear-gradient(var(--tint-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--tint-line) 1px, transparent 1px);
+  background-size: 60px 60px;
+  opacity: 0.24;
+}
+
+a {
+  color: var(--brand-300);
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.2em;
+}
+
+a:hover {
+  color: var(--teal-300);
+}
+
+.skip-link {
+  position: fixed;
+  left: 16px;
+  top: 12px;
+  z-index: 1000;
+  padding: 10px 14px;
+  border-radius: var(--r-sm);
+  background: var(--brand-600);
+  color: #fff;
+  transform: translateY(-140%);
+  transition: transform var(--dur-fast) var(--ease-out);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.page-shell {
+  display: grid;
+  grid-template-columns: minmax(260px, 320px) minmax(0, 1fr);
+  gap: var(--sp-6);
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: var(--sp-6);
+}
+
+.toc-panel {
+  position: sticky;
+  top: var(--sp-6);
+  align-self: start;
+  max-height: calc(100vh - 48px);
+  overflow: auto;
+}
+
+.index-link {
+  margin: 0 0 var(--sp-4);
+  font-weight: 700;
+}
+
+.source-path {
+  margin-bottom: var(--sp-5);
+  color: var(--text-3);
+  font-family: var(--f-mono);
+  font-size: var(--fs-small);
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.toc-panel h2 {
+  margin: 0 0 var(--sp-3);
+  color: var(--text-3);
+  font-family: var(--f-mono);
+  font-size: var(--fs-meta);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: var(--ls-widest);
+}
+
+.toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toc-list li {
+  margin: 0;
+}
+
+.toc-list a {
+  display: block;
+  padding: 5px 0;
+  color: var(--text-2);
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.toc-list a:hover {
+  color: var(--brand-300);
+}
+
+.toc-depth-2 {
+  padding-left: var(--sp-4);
+}
+
+.toc-depth-3 {
+  padding-left: var(--sp-8);
+  font-size: 0.94rem;
+}
+
+.empty-toc {
+  color: var(--text-3);
+  margin: 0;
+}
+
+.content-panel {
+  min-width: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.document-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--sp-4) var(--sp-6);
+  align-items: start;
+  padding: var(--sp-10) var(--sp-12) var(--sp-8);
+  border-bottom: 1px solid var(--border);
+  background: var(--tint-subtle);
+}
+
+.eyebrow {
+  margin-bottom: var(--sp-2);
+  color: var(--brand-300);
+}
+
+.document-header h1 {
+  margin: 0;
+  color: var(--text-1);
+  font-size: clamp(1.8rem, 3vw, 2.35rem);
+  font-weight: 800;
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-tight);
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
+.index-header h1 {
+  margin: 0;
+  color: var(--text-1);
+  font-size: var(--fs-h1);
+  font-weight: 800;
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-tight);
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
+.document-heading .sx-rainbow-underline,
+.index-header .sx-rainbow-underline {
+  margin-top: var(--sp-4);
+}
+
+.document-actions {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.theme-toggle {
+  white-space: nowrap;
+}
+
+.document-meta {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-3) var(--sp-5);
+  color: var(--text-3);
+  font-family: var(--f-mono);
+  font-size: var(--fs-small);
+}
+
+.document-meta span {
+  overflow-wrap: anywhere;
+}
+
+.markdown-body {
+  max-width: 980px;
+  padding: var(--sp-10) var(--sp-12) var(--sp-12);
+}
+
+.markdown-body > :first-child {
+  margin-top: 0;
+}
+
+.markdown-body > :last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  position: relative;
+  margin: 2.2rem 0 0.8rem;
+  color: var(--text-1);
+  line-height: var(--lh-snug);
+  scroll-margin-top: var(--sp-6);
+}
+
+.markdown-body h1 {
+  font-size: var(--fs-h2);
+}
+
+.markdown-body h2 {
+  padding-bottom: var(--sp-2);
+  border-bottom: 1px solid var(--border);
+  font-size: clamp(1.35rem, 2.3vw, 1.9rem);
+}
+
+.markdown-body h3 {
+  font-size: var(--fs-h3);
+}
+
+.heading-anchor {
+  position: absolute;
+  right: calc(100% + 8px);
+  opacity: 0;
+  color: var(--brand-400);
+  text-decoration: none;
+}
+
+.markdown-body h1:hover .heading-anchor,
+.markdown-body h2:hover .heading-anchor,
+.markdown-body h3:hover .heading-anchor,
+.markdown-body h4:hover .heading-anchor,
+.markdown-body h5:hover .heading-anchor,
+.markdown-body h6:hover .heading-anchor,
+.heading-anchor:focus {
+  opacity: 1;
+}
+
+p,
+ul,
+ol,
+blockquote,
+table,
+pre {
+  margin: 0 0 var(--sp-4);
+}
+
+ul,
+ol {
+  padding-left: 1.45rem;
+}
+
+li + li {
+  margin-top: 0.2rem;
+}
+
+blockquote {
+  padding: var(--sp-4) var(--sp-5);
+  border-left: 3px solid var(--brand-500);
+  border-radius: var(--r-md);
+  background: var(--tint-subtle);
+  color: var(--text-2);
+}
+
+blockquote > :last-child {
+  margin-bottom: 0;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--border);
+  margin: var(--sp-8) 0;
+}
+
+table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  background: var(--surface-card);
+}
+
+th,
+td {
+  padding: 0.65rem 0.85rem;
+  border-bottom: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+  vertical-align: top;
+}
+
+th {
+  color: var(--text-1);
+  font-family: var(--f-mono);
+  font-size: var(--fs-meta);
+  font-weight: 600;
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  background: var(--tint-weak);
+}
+
+td {
+  color: var(--text-2);
+}
+
+tr:last-child td {
+  border-bottom: 0;
+}
+
+th:last-child,
+td:last-child {
+  border-right: 0;
+}
+
+tr:nth-child(even) td {
+  background: var(--tint-subtle);
+}
+
+code {
+  padding: 0.12rem 0.32rem;
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  background: var(--surface-1);
+  color: var(--teal-300);
+  font-family: var(--f-mono);
+  font-size: 0.9em;
+}
+
+pre {
+  overflow: auto;
+  padding: var(--sp-4);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  background: var(--surface-1);
+  color: var(--text-2);
+  box-shadow: var(--shadow-md);
+}
+
+pre code {
+  display: block;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font-size: 0.9rem;
+}
+
+pre.mermaid {
+  color: var(--text-2);
+  white-space: pre-wrap;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--r-lg);
+}
+
+.document-footer {
+  padding: var(--sp-5) var(--sp-12) var(--sp-8);
+  border-top: 1px solid var(--border);
+  color: var(--text-3);
+  font-family: var(--f-mono);
+  font-size: var(--fs-small);
+}
+
+.index-page {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: var(--sp-8) var(--sp-6);
+}
+
+.index-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: var(--sp-5);
+  align-items: start;
+  margin-bottom: var(--sp-6);
+  padding: var(--sp-8);
+}
+
+.index-header p {
+  margin: var(--sp-4) 0 0;
+  color: var(--text-2);
+}
+
+.index-search {
+  grid-column: 1 / -1;
+  max-width: 760px;
+  margin: 0;
+}
+
+.index-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--sp-3);
+}
+
+.index-card {
+  transition: transform var(--dur-base) var(--ease-out), border-color var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out);
+}
+
+.index-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-xl);
+}
+
+.index-card a {
+  color: var(--teal-300);
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.index-card div {
+  margin-top: var(--sp-2);
+  color: var(--text-3);
+  font-family: var(--f-mono);
+  font-size: var(--fs-small);
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 900px) {
+  .page-shell {
+    display: block;
+    padding: 0;
+  }
+
+  .toc-panel {
+    position: static;
+    max-height: none;
+    border-width: 0 0 1px;
+    border-radius: 0;
+  }
+
+  .content-panel {
+    border-width: 0;
+    border-radius: 0;
+  }
+
+  .document-header,
+  .index-header {
+    grid-template-columns: 1fr;
+  }
+
+  .document-actions {
+    justify-content: flex-start;
+  }
+
+  .document-header,
+  .markdown-body,
+  .document-footer {
+    padding-left: var(--sp-5);
+    padding-right: var(--sp-5);
+  }
+
+  .index-page {
+    padding: 0;
+  }
+
+  .index-header {
+    border-radius: 0;
+  }
+
+  .heading-anchor {
+    position: static;
+    margin-right: 6px;
+    opacity: 1;
+  }
+}
+
+  </style>
+  <script defer>
+const themeLabels = {
+  light: "Light",
+  dark: "Dark",
+  system: "System",
+};
+
+function resolvedTheme(preference) {
+  if (preference === "dark" || preference === "light") return preference;
+  return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+}
+
+function applyTheme(preference) {
+  const nextPreference = preference || localStorage.getItem("theme") || "system";
+  const nextTheme = resolvedTheme(nextPreference);
+  document.documentElement.dataset.theme = nextTheme;
+  document.documentElement.dataset.themePreference = nextPreference;
+  for (const label of document.querySelectorAll("[data-theme-label]")) {
+    label.textContent = themeLabels[nextPreference] || "System";
+  }
+}
+
+applyTheme();
+
+for (const button of document.querySelectorAll("[data-theme-toggle]")) {
+  button.addEventListener("click", () => {
+    const current = document.documentElement.dataset.themePreference || "system";
+    const next = current === "system" ? "light" : current === "light" ? "dark" : "system";
+    localStorage.setItem("theme", next);
+    applyTheme(next);
+  });
+}
+
+if (window.matchMedia) {
+  window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
+    if ((document.documentElement.dataset.themePreference || "system") === "system") {
+      applyTheme("system");
+    }
+  });
+}
+
+const search = document.querySelector("[data-doc-search]");
+const cards = [...document.querySelectorAll("[data-doc-card]")];
+
+if (search) {
+  search.addEventListener("input", () => {
+    const terms = search.value.trim().toLowerCase().split(/\s+/).filter(Boolean);
+    for (const card of cards) {
+      const text = card.dataset.search || "";
+      card.hidden = terms.length > 0 && !terms.every((term) => text.includes(term));
+    }
+  });
+}
+
+  </script>
 </head>
 <body class="bt-app docs-app">
   <a class="skip-link" href="#main-content">Skip to document</a>
   <div class="page-shell">
     <aside class="toc-panel bt-card">
-      <a class="index-link bt-nav-item" href="../../index.html">Documentation index</a>
+      <a class="index-link bt-nav-item" href="../README.md">Docs README</a>
       <div class="source-path">symphonix-health-docs\strategy\helixcare-rl-implementation-plan.md</div>
       <nav aria-label="Table of contents">
         <h2>Contents</h2>
@@ -34,13 +2237,13 @@
           </button>
         </div>
         <div class="document-meta">
-          <a href="../../_source_markdown/symphonix-health-docs/strategy/helixcare-rl-implementation-plan.md">Source Markdown</a>
+          <a href="helixcare-rl-implementation-plan.md">Source Markdown</a>
           <span>symphonix-health-docs\strategy\helixcare-rl-implementation-plan.md</span>
         </div>
       </header>
       <article class="markdown-body">
 <h1 id="helixcare-rl-implementation-plan-v10"><a class="heading-anchor" href="#helixcare-rl-implementation-plan-v10" aria-label="Link to section">#</a>HelixCare RL Implementation Plan - v1.0</h1>
-<p><strong>Status:</strong> Implementation kickoff baseline<br><strong>Authored:</strong> 2026-05-14<br><strong>Companion to:</strong> <a href="helixcare-business-case.html">helixcare-business-case.md §5</a> (the eight RL surfaces)<br><strong>Anchor pattern:</strong> <a href="agent-first.html">agent-first.md</a> - <em>&quot;Reference agent before scale&quot;</em><br><strong>Implementation start:</strong> Phase 0 and Wave 1 may commence from this plan. Clinical activation remains gated by the evidence, safety, and regulatory controls below.</p>
+<p><strong>Status:</strong> Implementation kickoff baseline<br><strong>Authored:</strong> 2026-05-14<br><strong>Companion to:</strong> <a href="helixcare-business-case.md">helixcare-business-case.md §5</a> (the eight RL surfaces)<br><strong>Anchor pattern:</strong> <a href="agent-first.md">agent-first.md</a> - <em>&quot;Reference agent before scale&quot;</em><br><strong>Implementation start:</strong> Phase 0 and Wave 1 may commence from this plan. Clinical activation remains gated by the evidence, safety, and regulatory controls below.</p>
 <hr>
 <h2 id="1-execution-thesis"><a class="heading-anchor" href="#1-execution-thesis" aria-label="Link to section">#</a>1. Execution Thesis</h2>
 <p>HelixCare does <strong>not</strong> ship eight RL surfaces in parallel. We build one administrative reference surface end-to-end, extract the reusable RL operating system, then expand by risk tier:</p>
