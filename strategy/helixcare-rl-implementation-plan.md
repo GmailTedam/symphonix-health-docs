@@ -105,6 +105,58 @@ No policy promotes beyond shadow unless all checks pass:
 | `AUTONOMOUS_LIMITED` | Narrow operational action class can execute within approved envelope | Not available for Wave 3 clinical actions in v1.0 |
 | `FROZEN` | Policy cannot emit workflow-affecting output | Triggered by harm, fairness, drift, incident, or expired evidence |
 
+### 3.4 Test-scope gap review
+
+The current implementation-plan repository has no discoverable CAID canonical harness for HelixCare RL. A scoped CAID test-agent run against `symphonix-health-docs` reports `Targets: 0`, which means implementation could otherwise begin without an executable matrix gate, V-model coverage, or requirement-to-scenario traceability. That is not acceptable for this programme.
+
+The test scope is therefore part of Phase 0, not a later QA activity. No RL feature ticket is complete until it has linked canonical matrix rows, executable tests at the relevant V-model levels, and a passing matrix-integrity check.
+
+### 3.5 Canonical test harness baseline
+
+The active CAID contract for new HelixCare work is `BT_CANONICAL_MATRIX_V2_18COL`. Legacy 14-column JSON matrices may be emitted only as compatibility sidecars for existing BulletTrain harnesses; they are not the source of truth. The V2 matrix remains authoritative, and the sidecars must be regenerated from V2 rows so requirement IDs, scenario IDs, use-case IDs, and verification levels cannot diverge.
+
+Each HelixCare canonical matrix must contain exactly 100 realistic, unique scenarios with an 85 / 10 / 5 split: 85 positive, 10 negative, and 5 edge. Every row must include or reference:
+
+- Requirement ID(s), use-case ID, scenario ID, and verification level.
+- The target component or surface, preconditions, trigger, payload, expected connector calls, expected events, expected outputs, fault profile, security profile, priority, automation status, duration, and tags.
+- One V-model rung from `unit`, `integration`, `system`, or `acceptance`; traceability must prove every requirement has at least one row at every required rung and that no scenario is orphaned.
+
+Required repository artifacts:
+
+| Artifact | Required path | Purpose |
+|---|---|---|
+| Matrix integrity test | `tests/test_canonical_matrix_integrity.py` | Fails closed on missing V2 metadata, wrong columns, duplicate scenario IDs, row count drift, ratio drift, orphan requirements, or unsupported verification levels |
+| Test-agent manifest | `tests/harness/matrix_config.toml` | Declares HelixCare RL matrices, owning repo, implementation package, and compatibility sidecars |
+| Functional surface matrices | `tests/harness/canonical_matrices/helixcare_rl_<surface>.json` | Eight 100-scenario matrices, one each for prior-auth, scheduling, inbox-triage, adherence, clinical-pathway, ED-triage, diagnosis-support, and resource-allocation |
+| Shared component matrices | `tests/harness/canonical_matrices/helixcare_rl_<component>.json` | 100-scenario matrices for contracts, feature-store, reward-log, OPE gate, policy registry, HITL router, reward-hacking guard, privacy controls, monitoring, and rollback |
+| NFR matrices | `tests/harness/nfr_canonical_matrices/helixcare_rl_<nfr>.json` | 100-scenario matrices for privacy/security, auditability, latency, reliability/rollback, fairness, explainability, human oversight/usability, clinical safety, and regulatory traceability |
+| Legacy compatibility sidecars | `tests/harness/json_matrices/*.json` | Generated 14-column projections only where existing BulletTrain tests require them |
+| Requirements traceability | `tests/harness/requirements_matrix.json` | Maps SRS FR/NFR IDs, implementation tickets, canonical scenario IDs, V-model rung, owner, and evidence artifact |
+| V-model executable suites | `tests/harness/v_model/` | Unit, integration, system, and acceptance suites parametrized from the canonical scenario IDs |
+
+Minimum scenario families that must be present before Wave 1 shadow:
+
+| Area | Positive coverage | Negative coverage | Edge coverage |
+|---|---|---|---|
+| Contracts and schemas | Valid state/action/reward/policy/decision envelopes across all eight surfaces | Missing required fields, unknown action classes, stale schema versions, invalid propensities | Version-boundary migration, late-arriving outcomes, null optional context, high-cardinality tags |
+| Feature snapshots | Deterministic FHIR-canonical replay, source lineage, PHI class propagation | Inconsistent source timestamps, missing SPID mapping, invalid transform provenance | Duplicate events, backfilled encounters, daylight-saving and timezone boundary cases |
+| Reward log | Signed append-only events, delayed reward linkage, actor/policy attribution | Broken Ed25519 signature, hash mismatch, missing propensity, unapproved reward source | Reward reversal, late reward arrival, duplicate reward event, retention-window boundary |
+| OPE gate | IPS, SNIPS, doubly robust estimates, bootstrap CI, overlap, ESS, subgroup metrics | Poor overlap, low ESS, subgroup harm, lower CI below threshold, unsupported action segment | Small subgroup cell, wide CI, conflicting primary/secondary outcomes, simulator-only support |
+| Policy registry | Signed policy card, activation window, evidence pack, rollback pointer | Unsigned card, missing owner, expired evidence, change outside review | Patch update within PCCP envelope, rollback pointer to frozen version, concurrent promotion request |
+| HITL router | Accept/reject/edit/override capture, emergency bypass, replayable decisions | Missing override reason, bypass without authorization, action emitted outside approval class | Clinician edits suggested action, queue timeout, multi-approver conflict |
+| Reward-hacking guard | Goodhart vectors detected and routed to review | Reward increases while safety worsens, gaming cycle-time metric, subgroup burden shift | Sparse-harm signal, delayed appeal spike, proxy metric drift |
+| Privacy and security | SPID-only handling, access control, audit log, retention and DPIA hooks | PHI leakage, re-identification path, unauthorised reward-log read, missing audit event | DSAR/delete hold conflict, retention boundary, cross-border transfer classification |
+| Monitoring and rollback | Drift, harm, fairness, override, and rollback dashboards update from live evidence | Dashboard missing active policy, rollback exceeds 60 seconds, incident trigger ignored | Partial rollback, stale cache after freeze, policy card visible before activation |
+
+V-model execution scope:
+
+| Rung | Required tests |
+|---|---|
+| Unit | Schema model validation, policy-card validation, reward-log signing, OPE metric calculations, action vocabulary guards |
+| Integration | Real service-path tests across BulletTrain, SignalBox, GHARRA, Provider Portal, insurance-eclaims, Bridge SDK, and CSAA using deterministic fixtures; mocks are not sufficient for promotion evidence |
+| System | End-to-end replay from historical event to feature vector to action to reward log to OPE report to policy card and freeze/rollback path |
+| Acceptance | Design-partner shadow evidence, HITL usability checks, evidence-pack export, policy change-board approval, clinical safety/regulatory sign-off where applicable |
+
 ---
 
 ## 4. Algorithm Decisions
@@ -272,9 +324,9 @@ The timeline has two clocks:
 
 | Window | Implementation output |
 |---|---|
-| Days 0-2 | Kickoff, owners, issue board, action vocabulary templates, policy-card template, initial risk register |
-| Sprint weeks 1-2 | `bullettrain.rl.contracts`, feature-store skeleton, reward-log adapter, policy registry skeleton, Prior-Auth state/action extractor |
-| Sprint weeks 3-4 | OPE gate v1, replay harness, baseline policy capture, prior-auth candidate policy, rollback and monitoring hooks |
+| Days 0-2 | Kickoff, owners, issue board, canonical test-harness scaffold, action vocabulary templates, policy-card template, initial risk register |
+| Sprint weeks 1-2 | `bullettrain.rl.contracts`, feature-store skeleton, reward-log adapter, policy registry skeleton, Prior-Auth state/action extractor, first passing canonical matrix integrity gate |
+| Sprint weeks 3-4 | OPE gate v1, replay harness, baseline policy capture, prior-auth candidate policy, rollback and monitoring hooks, V-model unit and integration suites parametrized from canonical scenarios |
 | Sprint weeks 5-8 | Prior-auth design-partner shadow; weekly CSAA OPE/fairness/harm review; reference artefact |
 | Sprint weeks 9-14 | Wave 2 build and shadow: scheduling, inbox-triage, adherence; each gates independently |
 | Sprint weeks 6-14 in parallel | Wave 3 data-readiness, intended-use classification, hazard-log draft, and simulator/offline replay work |
@@ -292,10 +344,15 @@ The timeline has two clocks:
 
 ## 9. First Implementation Tickets
 
-Create these tickets immediately. They are ordered so implementation can start without waiting for Wave 3 regulatory detail.
+Create these tickets immediately. They are ordered so implementation can start without waiting for Wave 3 regulatory detail. Test-scope tickets are first-class implementation work; no feature ticket can close without linked canonical scenario rows and V-model evidence.
 
 | Ticket | Title | Owner | Acceptance criteria |
 |---|---|---|---|
+| RL-TST-000 | Create HelixCare canonical test harness scaffold | CAID + BulletTrain QA | `tests/test_canonical_matrix_integrity.py`, `tests/harness/matrix_config.toml`, `tests/harness/requirements_matrix.json`, `tests/harness/canonical_matrices/`, `tests/harness/nfr_canonical_matrices/`, and `tests/harness/v_model/` exist and are discoverable by the CAID test agent |
+| RL-TST-001 | Generate functional surface matrices | Surface owners + CAID | Eight V2 canonical matrices exist, each with exactly 100 unique realistic scenarios at 85/10/5 and trace links to SRS requirements, tickets, and V-model levels |
+| RL-TST-002 | Generate shared component and NFR matrices | BulletTrain + CSAA + Security | Shared component and NFR matrices cover contracts, feature snapshots, reward log, OPE, policy registry, HITL, reward-hacking, privacy, monitoring, rollback, fairness, audit, latency, reliability, explainability, human oversight, safety, and regulatory traceability |
+| RL-TST-003 | Add legacy 14-column compatibility sidecars where needed | BulletTrain QA | Existing 14-column harness consumers receive generated sidecars from V2 rows; CI proves sidecars match V2 scenario IDs, requirement IDs, ratio, and automation status |
+| RL-TST-004 | Wire V-model execution suites to canonical scenarios | CAID + Implementation owners | Unit, integration, system, and acceptance suites select scenarios by canonical ID; CAID test-agent reports nonzero targets and hidden-failure validation is clean before Wave 1 shadow |
 | RL-000 | Create `bullettrain.rl` module skeleton | BulletTrain | Package imports, CI target, README, owner map, and empty contracts compile |
 | RL-001 | Define common RL event schemas | BulletTrain + CSAA | State/action/reward/policy/decision schemas versioned with JSON Schema and Python model tests |
 | RL-002 | Add policy-card extension to GHARRA | GHARRA | Capability card stores policy version, evidence pack, intended use, activation scope, rollback pointer |
@@ -321,6 +378,8 @@ Create these tickets immediately. They are ordered so implementation can start w
 - A simulated policy can run from historical event to feature vector to action to reward log to OPE report to policy card.
 - CSAA can freeze a policy from gate output or monitoring trigger.
 - Reward logs are classified and protected as regulated data unless de-identification is formally approved.
+- CAID discovers nonzero HelixCare RL canonical targets, all V2 matrices pass integrity and traceability checks, and any 14-column compatibility sidecars are regenerated from the V2 source.
+- V-model unit and integration suites execute from canonical scenario IDs for every Phase 0 shared component.
 
 ### Wave 1 done
 
@@ -328,11 +387,13 @@ Create these tickets immediately. They are ordered so implementation can start w
 - Evidence pack shows no forbidden actions, no delay-harm increase, no subgroup regression, and OPE lower CI >= baseline.
 - HITL-live activation is limited to approved action classes.
 - `helixcare-rl-reference-prior-auth.md` is published and becomes the pattern for Wave 2.
+- The Prior-Auth canonical matrix, V-model system replay, HITL acceptance checks, shadow dashboard checks, and rollback tests all pass from the same scenario and requirement IDs.
 
 ### Wave 2 done
 
 - Scheduling, inbox-triage, and adherence each complete data readiness, shadow, OPE, fairness, burden/delay, and rollback gates.
 - Any clinical-message or medical-purpose subset is partitioned and held at clinical safety review until classified.
+- Each Wave 2 surface has its own 100-scenario V2 matrix, NFR coverage, V-model system tests, and acceptance evidence before action-class promotion.
 
 ### Wave 3 done
 
@@ -362,6 +423,7 @@ Create these tickets immediately. They are ordered so implementation can start w
 | Reward hacking improves proxy but worsens real outcomes | High | Surface adversarial packs, secondary safety outcomes, delayed-outcome review, automatic freeze |
 | Clinical surfaces misclassified as CDS | High | Intended-use review and CDS criteria evidence before any clinical activation |
 | SPID reward logs treated as de-identified when linkable | High | Treat as regulated data; DPIA/BAA; access control; retention and re-identification controls |
+| Implementation outpaces canonical test scope | High | RL-TST tickets run first; no feature ticket closes without V2 matrix rows, V-model evidence, and passing CAID discovery |
 | Algorithm complexity outruns auditability | Medium | Start with constrained bandits / optimisation; require explainability and replay before advanced RL |
 | Human reviewers rubber-stamp suggestions | Medium | Human-factors testing, override analytics, sampled case review, UI makes uncertainty and basis visible |
 | Bias metric is too narrow | Medium | DIR plus subgroup performance, delays, false positives/negatives, overrides, opt-outs, and burden |
@@ -389,10 +451,11 @@ Engineering and governance should keep these references in the evidence folder f
 
 Proceed with implementation in this order:
 
-1. Open RL-000 through RL-013.
-2. Start `bullettrain.rl` Phase 0 immediately.
-3. Start Prior-Auth RL extraction in parallel with Phase 0 contracts.
-4. Hold Wave 2 implementation until the common schemas and reward log are usable.
-5. Start Wave 3 classification and data-readiness work now, but do not commit clinical activation dates until evidence and regulatory routes are accepted.
+1. Open RL-TST-000 through RL-TST-004 and RL-000 through RL-013.
+2. Start the canonical test harness before closing any feature implementation ticket.
+3. Start `bullettrain.rl` Phase 0 immediately.
+4. Start Prior-Auth RL extraction in parallel with Phase 0 contracts.
+5. Hold Wave 2 implementation until the common schemas, reward log, and matrix integrity gate are usable.
+6. Start Wave 3 classification and data-readiness work now, but do not commit clinical activation dates until evidence and regulatory routes are accepted.
 
 This is the final implementation baseline for commencing work. Any future change to algorithm class, reward shape, activation state, intended use, jurisdiction posture, or autonomy level is a policy change and must create a new signed policy-card version.
