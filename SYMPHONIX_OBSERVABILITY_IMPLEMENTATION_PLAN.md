@@ -128,7 +128,7 @@ import sentry_sdk
 from sentry_sdk.integrations.fastapi import FastApiIntegration
 from sentry_sdk.integrations.sqlalchemy import SqlalchemyIntegration
 
-_PHI_KEYS = {"patient_id", "nhs_number", "dob", "address", "name", "email"}
+_PHI_KEYS = {"patient_id", "external_nhs_number", "dob", "address", "name", "email"}
 
 def _before_send(event, hint):
     """Strip PHI from Sentry payloads before transmission."""

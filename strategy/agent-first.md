@@ -16,7 +16,7 @@ This document defines the scoring framework, the prioritised transition list, th
 
 The following principles are load-bearing and should be cited when future decisions appear to deviate from this strategy.
 
-1. **Agents augment the API surface; they never replace it.** The existing REST / FHIR / X12 EDI / HL7v2 / DICOM / event-bus API surfaces across every repo must remain fully intact and functional for legacy consumers. An agent is **one** way to interact with a service; the API is **another**, and the API is not deprecated, thinned, or silently routed-through-agent. Agent-first is strictly additive — a value-add layer for capable consumers, not a gate everyone has to pass through. See §3.1 for what this rules out.
+1. **Agents augment the API surface; they never replace it.** The existing REST / FHIR / X12 EDI / HL7v2 / DICOM / event-bus API surfaces across every repo must remain fully intact and functional for their intended consumers. An agent is **one** way to interact with a service; the API is **another**, and the API is not deprecated, thinned, or silently routed-through-agent. Agent-first is strictly additive — a value-add layer for capable consumers, not a gate everyone has to pass through. Cross-sibling platform data exchange remains BulletTrain-mediated per [BulletTrain Integration Doctrine](bullettrain-integration-doctrine.md). See §3.1 for what this rules out.
 2. **Agent-fit is measurable.** A service becomes a candidate when it scores on reasoning density, orchestration need, signal richness, and governance fit (see §4). Aesthetic "this feels agentic" is not a justification.
 3. **Every clinical agent runs behind CSAA + GHARRA + Nexus A2A.** Safety classification, identity, and coordination are non-negotiable pre-conditions for any patient-facing agent. Administrative agents may relax Nexus A2A but never CSAA.
 4. **Agents replace judgement, not CRUD.** If the work is "write row, read row, update row," it is not a candidate. If the work is "given these signals, decide which of N actions to take and justify it to an audit chain," it is.
@@ -79,7 +79,7 @@ Per design principle #1, the existing API surface of every repo stays fully func
 - **Deprecating or removing existing REST / FHIR / X12 EDI / HL7v2 / DICOM endpoints.** The endpoints ship as they are today and continue to serve their original consumers with unchanged semantics, payloads, and latency profiles.
 - **Modifying existing ORM tables beyond additive nullable columns.** Agents write to **new** sibling tables (e.g., `AgentRecommendation` alongside `AdjudicationVerdict`); they never mutate, rename, or drop existing columns.
 - **Turning an existing endpoint into a façade that secretly invokes an agent.** Legacy callers must not pay an LLM's latency or cost budget unless they opt in explicitly through a distinct agent-facing route.
-- **Forcing every integration through GHARRA / Nexus A2A.** These layers exist for agent-to-agent trust. Traditional clients continue to call the service's own REST / EDI gateway directly, authenticated by its own pre-agent mechanisms (JWT, AS2, SFTP, mTLS as applicable).
+- **Forcing every integration through GHARRA / Nexus A2A.** These layers exist for agent-to-agent trust. Traditional external clients continue to call the service's own public REST / EDI gateway directly where that gateway is explicitly part of the service contract, authenticated by its own pre-agent mechanisms (JWT, AS2, SFTP, mTLS as applicable). This does not weaken the BulletTrain rule: sibling-to-sibling platform data exchange is still mediated through BulletTrain.
 - **Any change that requires a pre-existing integration test to be modified.** If an agent-landing PR cannot keep the legacy suite green unchanged, the design is wrong and needs a re-think, not a test update.
 
 The practical check before every agent-landing PR: **does the pre-existing integration test suite pass unmodified?** If yes, the additive invariant is likely satisfied. If a test had to change, that is a red flag requiring explicit justification in the PR description.
@@ -305,6 +305,7 @@ Two categories, tracked from Phase 2 onwards.
 
 ## 11. Cross-references
 
+- [BulletTrain Integration Doctrine](bullettrain-integration-doctrine.md) - no point-to-point sibling integration; BulletTrain owns cross-system exchange.
 - [Prompt Engineering System](prompt-engineering-system.md) — the reasoning-layer contract every agent conforms to.
 - [GHARRA Market Intelligence](../../health-agent-workspace/GHARRA_Healthcare_AI_Agent_Market_Intelligence.md) — Tier-A priorities and Horizon 1000 alignment.
 - [SE-Agent Literature Review](../../health-agent-workspace/literature_review_SE_agents_2024_2026.md) — academic grounding for the multi-role orchestrator.
