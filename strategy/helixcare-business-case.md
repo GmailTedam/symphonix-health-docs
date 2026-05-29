@@ -42,6 +42,7 @@ HelixCare is a **cloud-hosted, multi-tenant, multi-jurisdiction virtual hospital
 - A claims and revenue surface — [insurance-eclaims](../../insurance-eclaims) with X12 270/271/837/835/278/277CA, bias audit, four-fifths-rule monitoring.
 - A supply chain surface — [supply-chain-erp](../../supply-chain-erp) for inventory, cold chain, UDI traceability, where the clinician owns physical stock.
 - A scheduling fabric — [scheduling-gateway](../../scheduling-gateway) plus [appointment-system](../../appointment-system) federated through GHARRA.
+- A cross-border credential surface — BulletTrain's GDHCN service issues, verifies, and revokes COSE-signed vaccination, test, and recovery certificates interoperable with the WHO Global Digital Health Certification Network, the EU DCC, and ICAO VDS, so a HelixCare patient's credentials are verifiable across borders.
 - A genomics, oncology, mental-health, maternity, screening, transfusion, mortuary and community-nursing set of sibling apps activated on demand.
 
 All of this is **already running in the workspace**. HelixCare is not new software; it is the **commercial repackaging and the agent overlay** that turns the existing 26-sibling stack into a single product a clinician can buy.
@@ -353,7 +354,7 @@ The pattern: standalone EHR for solo / small group sits at $140–300/clinician/
 |---|---|---|---|
 | **Starter** | Solo clinicians, locums, low-volume independent practice | **$79** | Workstation; patient app; e-prescribing; scheduling RL; inbox-triage RL; ambient scribe; pay-as-you-go patient payments (Stripe / Paystack pass-through). Cap: 300 active patients, 200 encounters/month. |
 | **Professional** | Clinics, small groups (2–25 clinicians) | **$149** | Everything in Starter plus: insurance-eclaims (X12 270/271/837/835), prior-auth RL, pathway RL, lab + pharmacy + imaging integration, multi-staff seats (3 admin staff included), supply-chain-erp light. Cap: 2,000 active patients, 1,500 encounters/month per clinician. |
-| **Enterprise** | Hospitals, virtual wards, multi-site groups (25+ clinicians) | **$299** | Everything in Professional plus: picis acute surface, virtual-ward resourcing RL, diagnosis-support RL, multi-jurisdiction licensing, dedicated tenant isolation, SLA, dedicated CSO support, HelixCare Insurance Rails admin. Uncapped. |
+| **Enterprise** | Hospitals, virtual wards, multi-site groups (25+ clinicians) | **$299** | Everything in Professional plus: picis acute surface, virtual-ward resourcing RL, diagnosis-support RL, multi-jurisdiction licensing, dedicated tenant isolation, SLA, dedicated CSO support, HelixCare Insurance Rails admin, cross-border health credentials (GDHCN-aligned, EU DCC + ICAO VDS interoperable). Uncapped. |
 | **Africa Bronze (subsidised)** | Solo clinicians in Horizon 1000-aligned jurisdictions, Gates-funded programmes, faith-based clinics | **$9–19** | Workstation; patient wallet; scheduling RL; ambient scribe (multilingual); inbox-triage RL; pay-as-you-go via Paystack / Flutterwave / M-Pesa. Subsidy applied per donor agreement. |
 | **Pay-as-you-go (clinician)** | Occasional locum, volunteer, post-disaster surge | **$2.50/encounter, no subscription** | Workstation + scribe + scheduling for the encounter only. |
 
@@ -468,6 +469,7 @@ Refer to [regulatory-agents.md](regulatory-agents.md) for the full operating mod
 - **EU.** EU AI Act 2024/1689 high-risk system classification for clinical agents with Annex IV technical documentation, conformity assessment via notified body. EU MDR 2017/745 SaMD pre-market submission where the agent makes autonomous diagnostic claims (initially none; HITL on all).
 - **Africa.** Country-by-country health-data-regulation compliance (Ghana DPA 2012, Kenya DPA 2019, Nigeria NDPR 2019, South Africa POPIA, Rwanda DPP Law 2021). Telemedicine licensing per Medical and Dental Council of each jurisdiction.
 - **GDPR / data sovereignty.** Regional data residency by default (EU clinicians' data in EU; Africa clinicians' data in Africa). Patient SAR + Article 15/20 cascade via citizen-portal.
+- **WHO cross-border alignment.** The GDHCN credential surface is aligned with the WHO Global Digital Health Certification Network and interoperable with the EU DCC and ICAO VDS. Live participation in the WHO trust network is a per-jurisdiction onboarding step (submitting trust keys to WHO), not additional build — which makes cross-border credentials a credible sovereign/ministry sell rather than a roadmap promise.
 - **EU AI Act algorithmic fairness.** Bias-audit and four-fifths-rule monitoring across age, sex, ethnicity, plan type, ZIP income — already shipping in [insurance-eclaims/docs/USE_CASES.md](../../insurance-eclaims/docs/USE_CASES.md) UC-EC-BIAS-001 — extended to scheduling, triage, and inbox-triage RL surfaces.
 
 The strategic posture: **clinician-in-the-loop CDS exclusion as the launch position; SaMD pre-market only when a specific agent's autonomy is earned per the PCCP (Predetermined Change Control Plan)**. This is the right posture for time-to-market and is consistent with the agent-first strategy.
@@ -588,6 +590,7 @@ HelixCare is a cloud-hosted, multi-tenant virtual hospital that gives any licens
 | Protocol translation | [symphonix-bridge-sdk](../../symphonix-bridge-sdk) | Production |
 | Clinical safety | [csaa](../../csaa) | Production |
 | Integration hub | [BulletTrain](../../BulletTrain) | Production |
+| Cross-border health certificates | [BulletTrain](../../BulletTrain) GDHCN service | Production-shape |
 | Emulator | [symphonix-emulator-kit](../../symphonix-emulator-kit) | Production |
 
 New work for HelixCare v1.0 launch (Phase 1):

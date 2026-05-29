@@ -4,9 +4,9 @@
 
 ---
 
-## The Five Things Keeping Healthcare Leaders Up at Night
+## The Six Things Keeping Healthcare Leaders Up at Night
 
-Every health system, every payer, every clinician we spoke to said some version of the same five things. Not in boardrooms — in the corridors, after the meetings, when the slides were off.
+Every health system, every payer, every clinician we spoke to said some version of the same six things. Not in boardrooms — in the corridors, after the meetings, when the slides were off.
 
 ---
 
@@ -103,6 +103,26 @@ You've invested millions in systems that work. Imperfectly, yes — but they wor
 
 ---
 
+### 6. "Our patients cross borders. Their health records don't."
+
+A traveller arrives needing care with no record a clinician can trust. A migrant crosses a border with no verifiable vaccination history. A prescription written at home can't be filled abroad. Paper yellow-cards get lost, PDFs get forged, and the clinician on the receiving side has no way to know what's real.
+
+The World Health Organization built the **Global Digital Health Certification Network (GDHCN)** to close exactly this gap — a trust network where countries verify each other's health credentials across borders, with WHO as the trust anchor and no central database of patient data. It grew out of the EU Digital COVID Certificate, which reached every EU member and 51 non-EU countries, and now spans vaccination certificates, the International Certificate of Vaccination or Prophylaxis (ICVP), cross-border prescriptions, and International Patient Summaries.
+
+**BulletTrain ships a working GDHCN-aligned certificate service today.**
+
+- **Issue, verify, and revoke** vaccination, test, and recovery certificates through one governed service
+- **COSE-signed with ECDSA P-256 (ES256)** — the cryptographic envelope GDHCN and the EU DCC are built on
+- **Interoperable by design** — credential templates carry GDHCN, EU DCC, and ICAO VDS jurisdictions, and clinical data maps to FHIR R4 (Immunization, Observation, Condition) with CVX, LOINC, and SNOMED CT coding
+- **Trust-list management** — fetches and caches issuer public keys, so a certificate signed in one country verifies in another without a phone call
+- **Consent-gated and audited** — every issuance checks consent and emits an ATNA audit record, like every other action on the platform
+
+> *For the clinician:* Scan a credential from any participating country and see, in seconds, whether it's authentic, current, and safe to act on.
+>
+> *For the health minister:* The technical foundation for GDHCN participation is built and tested. The remaining step is WHO onboarding — submitting your trust keys to the network — not a multi-year platform build.
+
+---
+
 ## The Architecture of Trust
 
 ```
@@ -141,6 +161,8 @@ You've invested millions in systems that work. Imperfectly, yes — but they wor
 | Route admission security checks | 13 validations per request |
 | AI governance controls | RBAC, HITL, guardrails, explainability, break-glass |
 | Regulatory alignment | HIPAA, GDPR, EU AI Act, ATNA, FDA QMS |
+| Cross-border credentials | WHO GDHCN, EU DCC, ICAO VDS interoperable |
+| Digital health signatures | COSE / ECDSA P-256, FHIR R4 (CVX, LOINC, SNOMED CT) |
 
 ---
 
@@ -151,6 +173,7 @@ You want AI that helps — without losing control.
 You want agents that collaborate across boundaries — without compromising trust.
 You want financial workflows that move at the speed of care — without letting fraud through.
 You want to modernize — without breaking what works.
+You want your patients' credentials to cross borders with them — without anyone having to take them on faith.
 
 **That's Symphonix-Health. That's BulletTrain. That's GHARRA. That's Nexus.**
 

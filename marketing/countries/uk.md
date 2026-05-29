@@ -107,6 +107,14 @@ GP Triage Agent (Primary Care)
 >
 > *For the ICS digital lead:* Federated agent collaboration that respects trust autonomy while enabling system-wide pathways.
 
+**And when the patient crosses a border, their credentials should travel too.**
+
+GHARRA and Nexus move agents and tasks across borders. The WHO's Global Digital Health Certification Network (GDHCN) moves *credentials* — verifiable vaccination certificates, the International Certificate of Vaccination or Prophylaxis (ICVP), cross-border prescriptions, and patient summaries — with WHO as the trust anchor and no central database. It grew out of the EU Digital COVID Certificate, which reached every EU member and 51 non-EU countries. Post-Brexit there is no automatic recognition of EU health credentials, and inbound travellers arrive with records no NHS clinician can verify.
+
+BulletTrain ships the credential engine today: issue, verify, and revoke COSE-signed (ECDSA P-256) vaccination, test, and recovery certificates, interoperable with GDHCN, the EU DCC, and ICAO VDS, with FHIR R4 mapping and ATNA audit. The foundation is built and tested; live participation is a WHO onboarding step — submitting trust keys to the network — not a new build.
+
+> *For the trust CIO and national digital teams:* Verify an inbound traveller's vaccination or test credential against the international trust network, and issue credentials British travellers can use abroad — interoperable with the EU DCC and ICAO VDS.
+
 ---
 
 ## What Symphonix-Health Addresses
@@ -119,6 +127,7 @@ GP Triage Agent (Primary Care)
 | AI governance across dozens of care systems | Federated governance control plane with per-system configuration |
 | Cross-trust agent collaboration | GHARRA organisational zones + Nexus-A2A delegation protocol |
 | Evolving data protection and AI regulation | Governance-first: RBAC, HITL, explainability, audit trails |
+| No verification of inbound/outbound travel credentials | GDHCN-aligned certificate engine, EU DCC + ICAO VDS interoperable |
 
 ---
 

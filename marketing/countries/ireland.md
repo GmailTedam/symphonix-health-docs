@@ -112,6 +112,14 @@ This health system sits at the centre of the GHARRA federation. The root registr
 
 > *For the decision maker:* This isn't just a deployment location. It's the anchor. The root registry. The governance model. The trust chain. Built here.
 
+**And when the patient crosses a border, their credentials travel too.**
+
+GHARRA and Nexus move agents and tasks across borders. The WHO's Global Digital Health Certification Network (GDHCN) moves *credentials* — verifiable vaccination certificates, the International Certificate of Vaccination or Prophylaxis (ICVP), cross-border prescriptions, and patient summaries — with WHO as the trust anchor and no central database. This health system already ran the EU Digital COVID Certificate, the system GDHCN was built on, and the Common Travel Area creates cross-border credential needs of its own.
+
+BulletTrain ships the credential engine today: issue, verify, and revoke COSE-signed (ECDSA P-256) vaccination, test, and recovery certificates, interoperable with GDHCN, the EU DCC, and ICAO VDS, with FHIR R4 mapping and ATNA audit. As an EU member, the path to the live WHO network is member-state onboarding — submitting trust keys — not a new build.
+
+> *For the Department of Health:* You operated EU DCC at national scale. GDHCN is its successor, and the credential engine to participate is already running.
+
 ---
 
 ## What Symphonix-Health Addresses
@@ -124,6 +132,7 @@ This health system sits at the centre of the GHARRA federation. The root registr
 | New Health Regions without digital integration | Federated integration layer mirroring governance model |
 | EU AI Act compliance by August 2026 | Governance-first: Articles 9, 12, 13, 14 implemented as shipped capability |
 | Cross-border health data considerations | GHARRA federation with adequacy enforcement at the routing layer |
+| Successor to EU DCC; Common Travel Area credentials | GDHCN-aligned certificate engine, EU DCC + ICAO VDS interoperable |
 
 ---
 

@@ -115,6 +115,14 @@ Community Health Agent (Rural District)
   → Full audit trail. Patient data stays sovereign.
 ```
 
+**And when the patient crosses an ECOWAS border, their credentials should travel too.**
+
+GHARRA and Nexus move agents and tasks across borders. The WHO's Global Digital Health Certification Network (GDHCN) moves *credentials* — verifiable vaccination certificates, the International Certificate of Vaccination or Prophylaxis (ICVP), cross-border prescriptions, and patient summaries — with WHO as the trust anchor and no central database. It grew out of the EU Digital COVID Certificate, which reached every EU member and 51 non-EU countries. For a country whose patients and health workers move across the region, that is the difference between a credential a neighbouring clinic can trust and a paper card it cannot.
+
+BulletTrain ships the credential engine today: issue, verify, and revoke COSE-signed (ECDSA P-256) vaccination, test, and recovery certificates, interoperable with GDHCN, the EU DCC, and ICAO VDS, with FHIR R4 mapping and ATNA audit. The foundation is built and tested; live participation is a WHO onboarding step — submitting Ghana's trust keys to the network — not a new build.
+
+> *For the MoH and GHS:* A traveller from Lagos or Abidjan arrives with a credential your clinicians can verify in seconds, and a Ghanaian abroad can prove vaccination status without a paper card no one trusts.
+
 ---
 
 ## What Symphonix-Health Addresses
@@ -127,6 +135,7 @@ Community Health Agent (Rural District)
 | Workforce stretched beyond capacity | AI triage, telemedicine, voice documentation, workflow automation |
 | No AI governance framework for health | Governance-first platform: RBAC, HITL, explainability, PII guardrails |
 | No regional interoperability standard | GHARRA sovereign zone + Nexus-A2A protocol |
+| No way to verify health credentials across ECOWAS borders | GDHCN-aligned certificate engine (vaccination, test, recovery), EU DCC + ICAO VDS interoperable |
 
 ---
 

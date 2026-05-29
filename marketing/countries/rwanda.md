@@ -119,6 +119,14 @@ District Hospital Agent
 >
 > *For regional cooperation:* Lead the framework. Partners connect when ready. Federated. Sovereign. No shared-database dependencies.
 
+**And when the patient crosses a border, their credentials should travel too.**
+
+GHARRA and Nexus move agents and tasks across borders. The WHO's Global Digital Health Certification Network (GDHCN) moves *credentials* — verifiable vaccination certificates, the International Certificate of Vaccination or Prophylaxis (ICVP), cross-border prescriptions, and patient summaries — with WHO as the trust anchor and no central database. It grew out of the EU Digital COVID Certificate, which reached every EU member and 51 non-EU countries. For the continent's most advanced digital health system, this is a chance to lead the cross-border credential framework rather than follow it, and the National Data Sharing Policy already anticipates the question.
+
+BulletTrain ships the credential engine today: issue, verify, and revoke COSE-signed (ECDSA P-256) vaccination, test, and recovery certificates, interoperable with GDHCN, the EU DCC, and ICAO VDS, with FHIR R4 mapping and ATNA audit. The foundation is built and tested; live participation is a WHO onboarding step — submitting the country's trust keys to the network — not a new build.
+
+> *For the data governance team:* Issue credentials your regional partners can verify, and be first in line for WHO onboarding when the trust network opens to more African members.
+
 ---
 
 ## What Symphonix-Health Addresses
@@ -130,6 +138,7 @@ District Hospital Agent
 | Community health workers need smarter digital tools | AI triage, voice input, messaging, offline-capable workflows |
 | Thousands of daily AI consultations need governance | National AI governance registry, explainability, HITL, change control |
 | Cross-border data governance is uncharted | GHARRA sovereign zone + Nexus-A2A regional federation |
+| No verifiable cross-border patient credentials | GDHCN-aligned certificate engine (vaccination, test, recovery), EU DCC + ICAO VDS interoperable |
 
 ---
 

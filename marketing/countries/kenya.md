@@ -120,6 +120,14 @@ Community Health Volunteer (Rural County)
   → Full delegation chain. Full audit. County → National → Cross-border.
 ```
 
+**And when the patient crosses an EAC border, their credentials should travel too.**
+
+GHARRA and Nexus move agents and tasks across borders. The WHO's Global Digital Health Certification Network (GDHCN) moves *credentials* — verifiable vaccination certificates, the International Certificate of Vaccination or Prophylaxis (ICVP), cross-border prescriptions, and patient summaries — with WHO as the trust anchor and no central database. It grew out of the EU Digital COVID Certificate, which reached every EU member and 51 non-EU countries. In an East African hub where cross-border referrals are routine and the EAC has no harmonised way to verify a patient's history on arrival, that gap is felt daily.
+
+BulletTrain ships the credential engine today: issue, verify, and revoke COSE-signed (ECDSA P-256) vaccination, test, and recovery certificates, interoperable with GDHCN, the EU DCC, and ICAO VDS, with FHIR R4 mapping and ATNA audit. The foundation is built and tested; live participation is a WHO onboarding step — submitting the country's trust keys to the network — not a new build.
+
+> *For SHA and the MoH:* A patient referred from Kampala or Dar es Salaam arrives with vaccination, test, and recovery credentials a Nairobi clinician can verify in seconds — no phone call, no paper.
+
 ---
 
 ## What Symphonix-Health Addresses
@@ -132,6 +140,7 @@ Community Health Volunteer (Rural County)
 | Informal sector unreached by digital enrollment | WhatsApp/SMS enrollment, mobile money, community health volunteer tools |
 | No AI governance in health legislation | Governance-first platform: HITL, consent, audit, explainability |
 | No regional cross-border health data standards | GHARRA sovereign zone + Nexus-A2A federation |
+| No harmonised way to verify cross-border credentials (EAC) | GDHCN-aligned certificate engine (vaccination, test, recovery), EU DCC + ICAO VDS interoperable |
 
 ---
 

@@ -128,6 +128,14 @@ PHC Agent (State Level)
 
 **Regional federation:** The sovereign zone federates with neighbouring zones — enabling cross-border epidemic surveillance, health worker credentialing, and referral coordination.
 
+**And when the patient crosses an ECOWAS border, their credentials should travel too.**
+
+GHARRA and Nexus move agents and tasks across borders. The WHO's Global Digital Health Certification Network (GDHCN) moves *credentials* — verifiable vaccination certificates, the International Certificate of Vaccination or Prophylaxis (ICVP), cross-border prescriptions, and patient summaries — with WHO as the trust anchor and no central database. It grew out of the EU Digital COVID Certificate, which reached every EU member and 51 non-EU countries. For the region's largest population, with daily cross-border movement and shared epidemic risk, verifiable credentials are border infrastructure, not a nicety.
+
+BulletTrain ships the credential engine today: issue, verify, and revoke COSE-signed (ECDSA P-256) vaccination, test, and recovery certificates at scale, interoperable with GDHCN, the EU DCC, and ICAO VDS, with FHIR R4 mapping and ATNA audit. The foundation is built and tested; live participation is a WHO onboarding step — submitting the country's trust keys to the network — not a new build.
+
+> *For the Federal MoH and NCDC:* Vaccination and test credentials that hold up at any crossing in the sub-region — issued at continental scale, verified in seconds, tied to the same surveillance signals you already track.
+
 ---
 
 ## What Symphonix-Health Addresses
@@ -140,6 +148,7 @@ PHC Agent (State Level)
 | Informal workforce unreached by digital enrollment | WhatsApp/SMS, community health worker tools, mobile money |
 | No AI legislation, variable digital maturity | Governance-first platform aligned with continental strategy, per-state config |
 | No regional health data framework | GHARRA sovereign zone + Nexus-A2A federation |
+| No cross-border credential verification across ECOWAS | GDHCN-aligned certificate engine (vaccination, test, recovery), EU DCC + ICAO VDS interoperable |
 
 ---
 
