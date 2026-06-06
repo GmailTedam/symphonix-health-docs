@@ -1,0 +1,106 @@
+{
+  "schema_version": "BT_REQUIREMENTS_TRACEABILITY_V1",
+  "canonical_matrix_schema": "BT_CANONICAL_MATRIX_V1_14COL",
+  "metadata": {
+    "repo": "symphonix-health-docs",
+    "purpose": "Seeded alignment requirements for repos without a prior canonical requirements matrix.",
+    "requirement_count": 5
+  },
+  "requirements": [
+    {
+      "requirement_id": "FR-SHD-001",
+      "title": "symphonix-health-docs seeded alignment FR-SHD-001",
+      "description": "The repository SHALL maintain configurable healthcare alignment evidence for this requirement across specification, use case, implementation ownership, real tests, and seeded data.",
+      "category": "functional",
+      "priority": "must",
+      "jurisdiction": "configurable_profile",
+      "care_settings": [
+        "hospital",
+        "primary_care",
+        "community",
+        "mental_health",
+        "public_health",
+        "pharmacy",
+        "laboratory",
+        "imaging",
+        "ambulance"
+      ]
+    },
+    {
+      "requirement_id": "FR-SHD-002",
+      "title": "symphonix-health-docs seeded alignment FR-SHD-002",
+      "description": "The repository SHALL maintain configurable healthcare alignment evidence for this requirement across specification, use case, implementation ownership, real tests, and seeded data.",
+      "category": "functional",
+      "priority": "must",
+      "jurisdiction": "configurable_profile",
+      "care_settings": [
+        "hospital",
+        "primary_care",
+        "community",
+        "mental_health",
+        "public_health",
+        "pharmacy",
+        "laboratory",
+        "imaging",
+        "ambulance"
+      ]
+    },
+    {
+      "requirement_id": "FR-SHD-003",
+      "title": "symphonix-health-docs seeded alignment FR-SHD-003",
+      "description": "The repository SHALL maintain configurable healthcare alignment evidence for this requirement across specification, use case, implementation ownership, real tests, and seeded data.",
+      "category": "functional",
+      "priority": "must",
+      "jurisdiction": "configurable_profile",
+      "care_settings": [
+        "hospital",
+        "primary_care",
+        "community",
+        "mental_health",
+        "public_health",
+        "pharmacy",
+        "laboratory",
+        "imaging",
+        "ambulance"
+      ]
+    },
+    {
+      "requirement_id": "NFR-SHD-001",
+      "title": "symphonix-health-docs seeded alignment NFR-SHD-001",
+      "description": "The repository SHALL maintain configurable healthcare alignment evidence for this requirement across specification, use case, implementation ownership, real tests, and seeded data.",
+      "category": "non_functional",
+      "priority": "must",
+      "jurisdiction": "configurable_profile",
+      "care_settings": [
+        "hospital",
+        "primary_care",
+        "community",
+        "mental_health",
+        "public_health",
+        "pharmacy",
+        "laboratory",
+        "imaging",
+        "ambulance"
+      ]
+    },
+    {
+      "requirement_id": "NFR-SHD-002",
+      "title": "symphonix-health-docs seeded alignment NFR-SHD-002",
+      "description": "The repository SHALL maintain configurable healthcare alignment evidence for this requirement across specification, use case, implementation ownership, real tests, and seeded data.",
+      "category": "non_functional",
+      "priority": "must",
+      "jurisdiction": "configurable_profile",
+      "care_settings": [
+        "hospital",
+        "primary_care",
+        "community",
+        "mental_health",
+        "public_health",
+        "pharmacy",
+        "laboratory",
+        "imaging",
+        "ambulance"
+      ]
+    }
+  ]
+}
