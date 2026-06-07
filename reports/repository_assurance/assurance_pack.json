@@ -1,0 +1,526 @@
+{
+  "domain_results": [
+    {
+      "evidence_paths": [
+        "tests/harness/requirements_matrix.json",
+        "tests/harness/healthcare_requirements_superset.json",
+        "docs/specifications/functional-requirements.md",
+        "docs/specifications/non-functional-requirements.md"
+      ],
+      "gap_count": 0,
+      "metrics": {
+        "functional": 102,
+        "non_functional": 21,
+        "requirements": 123
+      },
+      "name": "requirements_completeness",
+      "status": "PASS"
+    },
+    {
+      "evidence_paths": [
+        "tests/harness/requirements_matrix.json",
+        "docs/specifications/seeded-requirement-traceability.md",
+        "tests/harness/reduced_json_matrices/*.14col.json"
+      ],
+      "gap_count": 0,
+      "metrics": {
+        "matrix_rows": 123,
+        "requirements_total": 123,
+        "requirements_traced": 123
+      },
+      "name": "requirements_traceability",
+      "status": "PASS"
+    },
+    {
+      "evidence_paths": [
+        "tests/harness/reduced_json_matrices/*.14col.json",
+        "tests/harness/requirements_matrix.json"
+      ],
+      "gap_count": 1,
+      "metrics": {
+        "scenario_categories": [
+          "positive"
+        ],
+        "use_cases": 123
+      },
+      "name": "canonical_use_case_alignment",
+      "status": "BLOCKED"
+    },
+    {
+      "evidence_paths": [
+        "seeded_alignment_trace.py",
+        "seed_data/seeded_requirement_traceability.json",
+        "docs/specifications/design-specification.md"
+      ],
+      "gap_count": 0,
+      "metrics": {
+        "service_evidence_policy": "non_service_documentation",
+        "service_paths": []
+      },
+      "name": "implementation_alignment",
+      "status": "PASS"
+    },
+    {
+      "evidence_paths": [
+        "tests/test_requirement_acceptance_alignment.py",
+        "tests/test_specification_alignment.py",
+        "tests/test_acceptance_alignment.py",
+        "tests/harness/reduced_json_matrices/*.14col.json"
+      ],
+      "gap_count": 1,
+      "metrics": {
+        "matrix_rows": 123,
+        "scenario_execution_status": "BLOCKED",
+        "scenario_rows_passed": 0,
+        "test_files": 3
+      },
+      "name": "testing_completeness",
+      "status": "BLOCKED"
+    },
+    {
+      "evidence_paths": [
+        "README.md",
+        "docs/specifications"
+      ],
+      "gap_count": 11,
+      "metrics": {
+        "sections": {
+          "architecture": false,
+          "configuration": false,
+          "dependencies": false,
+          "deployment": false,
+          "environment variables": false,
+          "installation": false,
+          "links to specifications": false,
+          "purpose": false,
+          "running locally": false,
+          "testing": false,
+          "troubleshooting": false
+        }
+      },
+      "name": "documentation_completeness",
+      "status": "BLOCKED"
+    },
+    {
+      "evidence_paths": [
+        "tests/harness/healthcare_requirements_superset.json",
+        "tests/harness/requirements_matrix.json",
+        "docs/specifications"
+      ],
+      "gap_count": 2,
+      "metrics": {
+        "baseline_domains": [
+          "un_sdg3_uhc_equity",
+          "who_digital_health_governance",
+          "interoperability_and_standards",
+          "privacy_security_consent",
+          "clinical_safety_and_quality",
+          "public_health_resilience",
+          "workforce_and_operational_readiness",
+          "accessibility_and_inclusion",
+          "country_configurability"
+        ],
+        "capabilities": {
+          "audit": true,
+          "care_coordination": true,
+          "claims_billing": true,
+          "clinical_records": true,
+          "consent": true,
+          "identity_management": true,
+          "interoperability": true,
+          "orders": false,
+          "patient_administration": true,
+          "referrals": false,
+          "reporting": true,
+          "results": true,
+          "scheduling": false,
+          "security": true
+        },
+        "care_settings": {
+          "clinics": true,
+          "community_care": true,
+          "hospitals": true,
+          "laboratories": true,
+          "payers": true,
+          "pharmacies": true,
+          "public_health": true,
+          "telehealth": true
+        },
+        "standards": {
+          "gdpr": false,
+          "hipaa": false,
+          "hl7_fhir": false,
+          "icd_10_11": false,
+          "openhie": false,
+          "snomed": false
+        }
+      },
+      "name": "healthcare_superset_validation",
+      "status": "BLOCKED"
+    },
+    {
+      "evidence_paths": [
+        "seed_data",
+        "seeded_alignment_trace.py",
+        "tests/harness/persona_journeys",
+        "tests/harness/browser_states",
+        "tests/harness/signalbox"
+      ],
+      "gap_count": 3,
+      "metrics": {
+        "browser_states": false,
+        "fixtures_or_factories": false,
+        "personas": false,
+        "roles_permissions": true,
+        "seed_data": true,
+        "seeded_trace": true,
+        "signalbox": true
+      },
+      "name": "repository_seeding_completion",
+      "status": "BLOCKED"
+    }
+  ],
+  "gaps": [
+    {
+      "acceptance_criteria_ids": [],
+      "blocking": true,
+      "domain": "canonical_use_case_alignment",
+      "evidence_checked": [
+        "tests/harness/reduced_json_matrices/*.14col.json",
+        "tests/harness/requirements_matrix.json"
+      ],
+      "fpfn_decision": "requires_review",
+      "gap_id": "GAP-SYMPHONIX_HEALTH_DOCS-001",
+      "remediation_owner": "repo-owner",
+      "requirement_ids": [],
+      "title": "Canonical matrices lack expected positive, negative, or edge coverage labels",
+      "use_case_ids": []
+    },
+    {
+      "acceptance_criteria_ids": [],
+      "blocking": true,
+      "domain": "testing_completeness",
+      "evidence_checked": [
+        "reports/repository_assurance/scenario_execution.json",
+        "tests/harness/reduced_json_matrices/*.14col.json"
+      ],
+      "fpfn_decision": "requires_review",
+      "gap_id": "GAP-SYMPHONIX_HEALTH_DOCS-002",
+      "remediation_owner": "repo-owner",
+      "requirement_ids": [],
+      "title": "Canonical scenario matrix execution evidence is incomplete",
+      "use_case_ids": [
+        "seeded_alignment_trace.14col-SA-SHD-00001",
+        "seeded_alignment_trace.14col-SA-SHD-00002",
+        "seeded_alignment_trace.14col-SA-SHD-00003",
+        "seeded_alignment_trace.14col-SA-SHD-00004",
+        "seeded_alignment_trace.14col-SA-SHD-00005",
+        "seeded_alignment_trace.14col-SA-SHD-00006",
+        "seeded_alignment_trace.14col-SA-SHD-00007",
+        "seeded_alignment_trace.14col-SA-SHD-00008",
+        "seeded_alignment_trace.14col-SA-SHD-00009",
+        "seeded_alignment_trace.14col-SA-SHD-00010",
+        "seeded_alignment_trace.14col-SA-SHD-00011",
+        "seeded_alignment_trace.14col-SA-SHD-00012",
+        "seeded_alignment_trace.14col-SA-SHD-00013",
+        "seeded_alignment_trace.14col-SA-SHD-00014",
+        "seeded_alignment_trace.14col-SA-SHD-00015",
+        "seeded_alignment_trace.14col-SA-SHD-00016",
+        "seeded_alignment_trace.14col-SA-SHD-00017",
+        "seeded_alignment_trace.14col-SA-SHD-00018",
+        "seeded_alignment_trace.14col-SA-SHD-00019",
+        "seeded_alignment_trace.14col-SA-SHD-00020"
+      ]
+    },
+    {
+      "acceptance_criteria_ids": [],
+      "blocking": true,
+      "domain": "documentation_completeness",
+      "evidence_checked": [
+        "README.md",
+        "docs/specifications"
+      ],
+      "fpfn_decision": "requires_review",
+      "gap_id": "GAP-SYMPHONIX_HEALTH_DOCS-003",
+      "remediation_owner": "repo-owner",
+      "requirement_ids": [],
+      "title": "README missing required section or link: purpose",
+      "use_case_ids": []
+    },
+    {
+      "acceptance_criteria_ids": [],
+      "blocking": true,
+      "domain": "documentation_completeness",
+      "evidence_checked": [
+        "README.md",
+        "docs/specifications"
+      ],
+      "fpfn_decision": "requires_review",
+      "gap_id": "GAP-SYMPHONIX_HEALTH_DOCS-004",
+      "remediation_owner": "repo-owner",
+      "requirement_ids": [],
+      "title": "README missing required section or link: architecture",
+      "use_case_ids": []
+    },
+    {
+      "acceptance_criteria_ids": [],
+      "blocking": true,
+      "domain": "documentation_completeness",
+      "evidence_checked": [
+        "README.md",
+        "docs/specifications"
+      ],
+      "fpfn_decision": "requires_review",
+      "gap_id": "GAP-SYMPHONIX_HEALTH_DOCS-005",
+      "remediation_owner": "repo-owner",
+      "requirement_ids": [],
+      "title": "README missing required section or link: dependencies",
+      "use_case_ids": []
+    },
+    {
+      "acceptance_criteria_ids": [],
+      "blocking": true,
+      "domain": "documentation_completeness",
+      "evidence_checked": [
+        "README.md",
+        "docs/specifications"
+      ],
+      "fpfn_decision": "requires_review",
+      "gap_id": "GAP-SYMPHONIX_HEALTH_DOCS-006",
+      "remediation_owner": "repo-owner",
+      "requirement_ids": [],
+      "title": "README missing required section or link: installation",
+      "use_case_ids": []
+    },
+    {
+      "acceptance_criteria_ids": [],
+      "blocking": true,
+      "domain": "documentation_completeness",
+      "evidence_checked": [
+        "README.md",
+        "docs/specifications"
+      ],
+      "fpfn_decision": "requires_review",
+      "gap_id": "GAP-SYMPHONIX_HEALTH_DOCS-007",
+      "remediation_owner": "repo-owner",
+      "requirement_ids": [],
+      "title": "README missing required section or link: configuration",
+      "use_case_ids": []
+    },
+    {
+      "acceptance_criteria_ids": [],
+      "blocking": true,
+      "domain": "documentation_completeness",
+      "evidence_checked": [
+        "README.md",
+        "docs/specifications"
+      ],
+      "fpfn_decision": "requires_review",
+      "gap_id": "GAP-SYMPHONIX_HEALTH_DOCS-008",
+      "remediation_owner": "repo-owner",
+      "requirement_ids": [],
+      "title": "README missing required section or link: environment variables",
+      "use_case_ids": []
+    },
+    {
+      "acceptance_criteria_ids": [],
+      "blocking": true,
+      "domain": "documentation_completeness",
+      "evidence_checked": [
+        "README.md",
+        "docs/specifications"
+      ],
+      "fpfn_decision": "requires_review",
+      "gap_id": "GAP-SYMPHONIX_HEALTH_DOCS-009",
+      "remediation_owner": "repo-owner",
+      "requirement_ids": [],
+      "title": "README missing required section or link: running locally",
+      "use_case_ids": []
+    },
+    {
+      "acceptance_criteria_ids": [],
+      "blocking": true,
+      "domain": "documentation_completeness",
+      "evidence_checked": [
+        "README.md",
+        "docs/specifications"
+      ],
+      "fpfn_decision": "requires_review",
+      "gap_id": "GAP-SYMPHONIX_HEALTH_DOCS-010",
+      "remediation_owner": "repo-owner",
+      "requirement_ids": [],
+      "title": "README missing required section or link: testing",
+      "use_case_ids": []
+    },
+    {
+      "acceptance_criteria_ids": [],
+      "blocking": true,
+      "domain": "documentation_completeness",
+      "evidence_checked": [
+        "README.md",
+        "docs/specifications"
+      ],
+      "fpfn_decision": "requires_review",
+      "gap_id": "GAP-SYMPHONIX_HEALTH_DOCS-011",
+      "remediation_owner": "repo-owner",
+      "requirement_ids": [],
+      "title": "README missing required section or link: deployment",
+      "use_case_ids": []
+    },
+    {
+      "acceptance_criteria_ids": [],
+      "blocking": true,
+      "domain": "documentation_completeness",
+      "evidence_checked": [
+        "README.md",
+        "docs/specifications"
+      ],
+      "fpfn_decision": "requires_review",
+      "gap_id": "GAP-SYMPHONIX_HEALTH_DOCS-012",
+      "remediation_owner": "repo-owner",
+      "requirement_ids": [],
+      "title": "README missing required section or link: troubleshooting",
+      "use_case_ids": []
+    },
+    {
+      "acceptance_criteria_ids": [],
+      "blocking": true,
+      "domain": "documentation_completeness",
+      "evidence_checked": [
+        "README.md",
+        "docs/specifications"
+      ],
+      "fpfn_decision": "requires_review",
+      "gap_id": "GAP-SYMPHONIX_HEALTH_DOCS-013",
+      "remediation_owner": "repo-owner",
+      "requirement_ids": [],
+      "title": "README missing required section or link: links to specifications",
+      "use_case_ids": []
+    },
+    {
+      "acceptance_criteria_ids": [],
+      "blocking": true,
+      "domain": "healthcare_superset_validation",
+      "evidence_checked": [
+        "tests/harness/healthcare_requirements_superset.json",
+        "tests/harness/requirements_matrix.json",
+        "docs/specifications"
+      ],
+      "fpfn_decision": "requires_review",
+      "gap_id": "GAP-SYMPHONIX_HEALTH_DOCS-014",
+      "remediation_owner": "repo-owner",
+      "requirement_ids": [],
+      "title": "Healthcare capability coverage evidence is incomplete",
+      "use_case_ids": []
+    },
+    {
+      "acceptance_criteria_ids": [],
+      "blocking": true,
+      "domain": "healthcare_superset_validation",
+      "evidence_checked": [
+        "tests/harness/healthcare_requirements_superset.json",
+        "tests/harness/requirements_matrix.json",
+        "docs/specifications"
+      ],
+      "fpfn_decision": "requires_review",
+      "gap_id": "GAP-SYMPHONIX_HEALTH_DOCS-015",
+      "remediation_owner": "repo-owner",
+      "requirement_ids": [],
+      "title": "Healthcare standard or regulatory evidence is incomplete",
+      "use_case_ids": []
+    },
+    {
+      "acceptance_criteria_ids": [],
+      "blocking": true,
+      "domain": "repository_seeding_completion",
+      "evidence_checked": [
+        "seed_data",
+        "seeded_alignment_trace.py",
+        "tests/harness/persona_journeys",
+        "tests/harness/browser_states",
+        "tests/harness/signalbox"
+      ],
+      "fpfn_decision": "requires_review",
+      "gap_id": "GAP-SYMPHONIX_HEALTH_DOCS-016",
+      "remediation_owner": "repo-owner",
+      "requirement_ids": [],
+      "title": "Seeding evidence missing or not discoverable: fixtures_or_factories",
+      "use_case_ids": []
+    },
+    {
+      "acceptance_criteria_ids": [],
+      "blocking": true,
+      "domain": "repository_seeding_completion",
+      "evidence_checked": [
+        "seed_data",
+        "seeded_alignment_trace.py",
+        "tests/harness/persona_journeys",
+        "tests/harness/browser_states",
+        "tests/harness/signalbox"
+      ],
+      "fpfn_decision": "requires_review",
+      "gap_id": "GAP-SYMPHONIX_HEALTH_DOCS-017",
+      "remediation_owner": "repo-owner",
+      "requirement_ids": [],
+      "title": "Seeding evidence missing or not discoverable: personas",
+      "use_case_ids": []
+    },
+    {
+      "acceptance_criteria_ids": [],
+      "blocking": true,
+      "domain": "repository_seeding_completion",
+      "evidence_checked": [
+        "seed_data",
+        "seeded_alignment_trace.py",
+        "tests/harness/persona_journeys",
+        "tests/harness/browser_states",
+        "tests/harness/signalbox"
+      ],
+      "fpfn_decision": "requires_review",
+      "gap_id": "GAP-SYMPHONIX_HEALTH_DOCS-018",
+      "remediation_owner": "repo-owner",
+      "requirement_ids": [],
+      "title": "Seeding evidence missing or not discoverable: browser_states",
+      "use_case_ids": []
+    }
+  ],
+  "generated_at": "2026-06-07T10:42:11Z",
+  "repo": "symphonix-health-docs",
+  "repo_path": "C:\\Users\\hgeec\\github\\symphonix-health-docs",
+  "runtime_gates": {
+    "commands": [
+      {
+        "command": "python -m pytest tests/test_requirement_acceptance_alignment.py tests/test_specification_alignment.py -q",
+        "cwd": "C:\\Users\\hgeec\\github\\symphonix-health-docs",
+        "exit_code": 0,
+        "stderr_tail": "",
+        "stdout_tail": "..........                                                               [100%]\n10 passed in 0.07s\n"
+      },
+      {
+        "command": "python -m caid.cli fpfn-audit --repo C:\\Users\\hgeec\\github\\symphonix-health-docs --format text --fail-on none",
+        "cwd": "C:\\Users\\hgeec\\github\\caid-agent",
+        "exit_code": 0,
+        "stderr_tail": "",
+        "stdout_tail": "FP/FN audit: C:\\Users\\hgeec\\github\\symphonix-health-docs\nVerdict: PASS\nCounts: {'PASS': 1, 'FAIL': 0, 'PARTIAL': 0, 'BLOCKED': 0}\n\n- PASS repo symphonix-health-docs (gate_exempt)\n  notes: repo declares itself out of product seeding scope with .caid-gate-exempt\n"
+      },
+      {
+        "command": "python C:\\Users\\hgeec\\github\\caid-agent\\scripts\\check_seeding_alignment.py --project-dir C:\\Users\\hgeec\\github\\symphonix-health-docs --report-dir C:\\Users\\hgeec\\github\\symphonix-health-docs\\reports",
+        "cwd": "C:\\Users\\hgeec\\github\\symphonix-health-docs",
+        "exit_code": 0,
+        "stderr_tail": "",
+        "stdout_tail": "[SEEDING-ALIGNMENT-GATE] decision=PASS\n[SEEDING-ALIGNMENT-GATE] functional_testing_permitted=YES\n[SEEDING-ALIGNMENT-GATE] rationale=EXEMPT: this repo declares itself out-of-scope for the seeding alignment gate via .caid-gate-exempt marker. Reason: non-product repo: documentation, strategy, research, and brand material for the Symphonix Health estate. No runtime services, frontend product pages, or domain packages are owned here; repo-local validation is specification, seeded traceability, and canonical documentation evidence.\n[SEEDING-ALIGNMENT-GATE] rows=0 blocking=0 orphan_seed=0 missing_seed=0 partial_seeding=0\n"
+      }
+    ],
+    "status": "PASS"
+  },
+  "scenario_execution_status": "BLOCKED",
+  "schema_version": "SH_REPOSITORY_ASSURANCE_PACK_V1",
+  "service_evidence_policy": "non_service_documentation",
+  "summary": {
+    "gap_count": 18,
+    "matrix_files": 1,
+    "matrix_rows": 123,
+    "requirements": 123
+  },
+  "verdict": "BLOCKED"
+}
