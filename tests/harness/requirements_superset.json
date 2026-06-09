@@ -1,0 +1,33 @@
+{
+  "schema_version": "BT_HEALTHCARE_REQUIREMENTS_SUPERSET_V1",
+  "repo": "symphonix-health-docs",
+  "scope": "configurable_healthcare_superset",
+  "requirement_ids": [
+    "FR-SHD-001",
+    "FR-SHD-002",
+    "FR-SHD-003",
+    "NFR-SHD-001",
+    "NFR-SHD-002"
+  ],
+  "care_settings": [
+    "hospital",
+    "primary_care",
+    "community",
+    "mental_health",
+    "social_care",
+    "public_health",
+    "telehealth",
+    "home_care",
+    "pharmacy",
+    "laboratory",
+    "imaging",
+    "ambulance"
+  ],
+  "deployment_profiles": [
+    "jurisdiction_policy",
+    "tenant_policy",
+    "care_setting_policy",
+    "integration_profile",
+    "role_permission_profile"
+  ]
+}
