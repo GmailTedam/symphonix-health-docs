@@ -621,8 +621,8 @@
         </tr>
         <tr>
           <td>Unified persona registry may be missing.</td>
-          <td>GHARRA has a `PersonaRegistry` and a `PersonaDefinition` surface that consolidates 68 persona definitions and country-aware avatar selection.</td>
-          <td><span class="status partial">reframed</span> Cross-repo contract projection is still partial.</td>
+          <td>GHARRA has a `PersonaRegistry`; Bridge SDK now also has a `SuperpersonaContract` exchange shape for human/AI agent identity, skills, tools, IAM scopes, safety, eval evidence, route salience, and runtime budgets.</td>
+          <td><span class="status partial">reframed</span> Human/AI agent capability framework adoption across every sibling system is still partial.</td>
         </tr>
         <tr>
           <td>Specialty persona completeness is not verified.</td>
@@ -636,8 +636,8 @@
         </tr>
         <tr>
           <td>Computational intuition can be treated as a realized layer.</td>
-          <td>The repos show planning, reflection, routing, provider fallback, and capability discovery, but no single global "intuition" service.</td>
-          <td><span class="status gap">design pattern</span> Needs explicit contract and tests if adopted.</td>
+          <td>The repos show planning, reflection, route salience, provider fallback, capability discovery, and safety gating, but no single global "intuition" service.</td>
+          <td><span class="status partial">contracted</span> Bridge SDK has a contract-level `IntuitionDecision`; global clinical deployment remains partial.</td>
         </tr>
       </tbody>
     </table>
@@ -648,7 +648,7 @@
       </div>
       <div class="card">
         <h3>Diagram change</h3>
-        <p>The revised diagrams put BulletTrain, Bridge SDK, GHARRA, Nexus, Prompt Engine, Bevan, CSAA, SignalBox, and CAID into explicit layers instead of showing a generic agentic stack.</p>
+        <p>The revised diagrams should put BulletTrain, Bridge SDK, GHARRA, Nexus, Prompt Engine, Bevan, CSAA, SignalBox, CAID, sibling/domain systems, and the human/AI agent capability framework into explicit layers instead of showing a generic agentic stack.</p>
       </div>
     </div>
     <div class="footer"><span>Correction ledger</span><span>2 / 12</span></div>
@@ -663,6 +663,11 @@
         <div class="name">External substrate</div>
         <div class="body">Health systems, national rails, payers, pharmacies, labs, imaging, ambulance workflows, and external model providers are dependencies, not proof of autonomy.</div>
         <div class="repo">Kenya SRS<br>Bridge adapters<br>BulletTrain</div>
+      </div>
+      <div class="layer">
+        <div class="name">Sibling domain systems</div>
+        <div class="body">Pharmacy, clinical pathways, ambulance/EMS, insurance eclaims, ERP, supply-chain ERP, HMIS, provider portal, citizen portal, appointments, genomics, and Patient360 are the domain execution surfaces.</div>
+        <div class="repo">pharmacy-system<br>clinical-pathways<br>HMIS + portals</div>
       </div>
       <div class="layer">
         <div class="name">Data plane</div>
@@ -680,9 +685,9 @@
         <div class="repo">global-agent-registry<br>nexus-a2a-protocol</div>
       </div>
       <div class="layer">
-        <div class="name">Persona and contract plane</div>
-        <div class="body">Personas are defined in GHARRA and surfaced through Nexus, Bridge SDK, Patient360, and BulletTrain governance personas. This is the right home for superpersona contracts.</div>
-        <div class="repo">personas.py<br>agent_contract.py<br>Patient360</div>
+        <div class="name">Human and AI agent framework</div>
+        <div class="body">Human roles and AI agent personas/superpersonas carry skill packs, tool packs, clinical frameworks, authority scope, safety constraints, evidence duties, and outcome targets.</div>
+        <div class="repo">GHARRA personas<br>Bridge superpersona<br>Nexus + sibling tools</div>
       </div>
       <div class="layer">
         <div class="name">Governance and evidence plane</div>
@@ -763,9 +768,9 @@
 
   <section class="page">
     <div class="kicker">Persona audit</div>
-    <h2>The persona gap moved</h2>
+    <h2>The human and AI agent framework gap moved</h2>
     <div class="callout">
-      <p>The old report treated a unified persona registry as likely missing. Local code changes that conclusion: GHARRA has a consolidated persona registry. The live gap is cross-plane projection from persona to skills, tools, IAM, safety, budgets, consent, and evaluations.</p>
+      <p>The old report treated a unified persona registry as likely missing. Local code changes that conclusion: GHARRA has a consolidated persona registry. The live gap is cross-plane projection from human and AI agent personas into skills, tools, frameworks, IAM, authority, safety, budgets, consent, evaluations, and outcome obligations.</p>
     </div>
     <div class="grid-2">
       <div class="card">
@@ -806,8 +811,8 @@
         </tr>
         <tr>
           <td><strong>Bridge SDK</strong></td>
-          <td>Typed agent intents, safety class, FHIR Task projection, persona delegation token fields, agent-card output.</td>
-          <td>Needs persona catalog source-of-truth linkage.</td>
+          <td>Typed agent intents, safety class, FHIR Task projection, persona delegation token fields, superpersona contracts, agent-card output.</td>
+          <td>Needs generated framework, skill, and tool-pack adoption across siblings.</td>
         </tr>
         <tr>
           <td><strong>Patient360 and BulletTrain</strong></td>
@@ -821,12 +826,16 @@
 
   <section class="page light">
     <div class="kicker">Contract target</div>
-    <h2>A canonical superpersona contract should be generated, not hand-described</h2>
-    <p>The architecture has most of the necessary pieces. The next refactor target is a generated contract that projects a persona into every plane that can authorize, route, execute, observe, or test it.</p>
+    <h2>Human and AI agent superpersona contracts now exist</h2>
+    <p>Bridge SDK now implements a `SuperpersonaContract` exchange shape. The contract should be treated as the capability framework for human and AI agents: persona identity, skills, tools, clinical frameworks, authority, safety, evidence, and outcome binding. Adoption across GHARRA, Nexus, SignalBox, Prompt Engine, Patient360, and sibling systems is still partial.</p>
     <div class="contract">
       <div class="field">
         <div class="name">persona_id</div>
         <div class="source">GHARRA PersonaRegistry</div>
+      </div>
+      <div class="field">
+        <div class="name">agent_kind</div>
+        <div class="source">human | AI | team</div>
       </div>
       <div class="field">
         <div class="name">human_role</div>
@@ -837,8 +846,16 @@
         <div class="source">persona toolset; SOPs</div>
       </div>
       <div class="field">
+        <div class="name">framework_pack</div>
+        <div class="source">clinical pathway; SOP; policy</div>
+      </div>
+      <div class="field">
         <div class="name">tool_pack</div>
         <div class="source">Bridge SDK capabilities</div>
+      </div>
+      <div class="field">
+        <div class="name">authority_scope</div>
+        <div class="source">IAM; consent; HITL policy</div>
       </div>
       <div class="field">
         <div class="name">safety_class</div>
@@ -869,6 +886,10 @@
         <div class="source">SignalBox; CAID; scenario YAML</div>
       </div>
       <div class="field">
+        <div class="name">outcome_pack</div>
+        <div class="source">service + strategic metrics</div>
+      </div>
+      <div class="field">
         <div class="name">audit_pack</div>
         <div class="source">Bridge audit; BulletTrain audit store</div>
       </div>
@@ -883,24 +904,29 @@
       </thead>
       <tbody>
         <tr>
-          <td>Persona identity and clinical role</td>
+          <td>Human/AI agent identity and clinical role</td>
           <td><span class="status done">yes</span> GHARRA persona definitions and Nexus IAM groups.</td>
           <td>Generate one canonical ID and alias table consumed by every sibling repo.</td>
         </tr>
         <tr>
-          <td>Skill and tool authorization</td>
-          <td><span class="status partial">partial</span> Persona toolsets and Bridge capabilities exist.</td>
-          <td>Compile allowed tool calls per persona, task type, tenant, and jurisdiction.</td>
+          <td>Skill, tool, and framework authorization</td>
+          <td><span class="status partial">partial</span> Bridge SDK `SuperpersonaContract` now projects skill and tool policy; explicit framework-pack consumption is not universal.</td>
+          <td>Compile and publish allowed skill packs, tool calls, and clinical/operational frameworks per agent, task type, tenant, and jurisdiction.</td>
         </tr>
         <tr>
           <td>Safety and evaluation binding</td>
-          <td><span class="status partial">partial</span> Safety classes, CSAA, SignalBox, and CAID exist.</td>
-          <td>Make deployment fail when the persona lacks a passing safety case and scenario pack.</td>
+          <td><span class="status partial">partial</span> Safety classes, CSAA, SignalBox, CAID, and Bridge eval-pack references exist.</td>
+          <td>Make deployment fail when a persona lacks a passing safety case, SignalBox/CAID evidence, and sibling route tests.</td>
         </tr>
         <tr>
           <td>Budget and compute limits</td>
-          <td><span class="status partial">partial</span> Bridge concurrency budgets exist.</td>
-          <td>Expose budgets as a first-class agent contract field and report saturation telemetry.</td>
+          <td><span class="status done">yes</span> Bridge concurrency budgets and superpersona runtime budget policies exist.</td>
+          <td>Report saturation telemetry and require budget fields in each sibling contract projection.</td>
+        </tr>
+        <tr>
+          <td>Outcome binding</td>
+          <td><span class="status partial">partial</span> Outcome telemetry and evidence systems exist, but are not yet one mandatory agent-capability gate.</td>
+          <td>Bind each human/AI agent framework to immediate outputs, service outcomes, strategic outcomes, and innovation/invention evidence.</td>
         </tr>
       </tbody>
     </table>
@@ -965,8 +991,8 @@
 
   <section class="page light">
     <div class="kicker">Reasoning layer</div>
-    <h2>Computational intuition is a proposed pattern, not a verified global service</h2>
-    <p>The idea is still useful if it is defined as fast pre-planning: salience detection, route choice, likely framework selection, risk spotting, and tool-pack selection before deeper execution. The current repos show pieces of that pattern, not a single deployed intuition layer.</p>
+    <h2>Computational intuition is contract-backed, not a global service</h2>
+    <p>The idea is useful when defined as auditable pre-planning: salience detection, route choice, likely framework selection, risk spotting, and tool-pack selection before deeper execution. Bridge SDK now has an `IntuitionDecision` inside superpersona contracts; the repos still do not show one global clinical intuition service.</p>
     <table>
       <thead>
         <tr>
@@ -978,13 +1004,13 @@
       <tbody>
         <tr>
           <td><strong>Fast salience detection</strong></td>
-          <td>Prompt Engine detects clinical/PHI patterns and can auto-activate HIPAA, safety, bias, and citation prompt elements.</td>
-          <td>Explicit salience schema and tests across clinical pathways.</td>
+          <td>Prompt Engine detects clinical/PHI patterns; Bridge SDK records route salience in `IntuitionDecision`.</td>
+          <td>Cross-sibling salience tests across pathways, pharmacy, claims, EMS, and portals.</td>
         </tr>
         <tr>
           <td><strong>Framework selection</strong></td>
-          <td>Persona definitions, SOPs, toolsets, and clinical safety classes provide the vocabulary.</td>
-          <td>A deterministic selector that records why a framework was chosen.</td>
+          <td>Persona definitions, SOPs, toolsets, clinical safety classes, and route-salience records provide the vocabulary.</td>
+          <td>A deterministic framework-pack selector that records why a pathway, SOP, policy, or reasoning frame was chosen in live clinical workflows.</td>
         </tr>
         <tr>
           <td><strong>Route and model choice</strong></td>
@@ -1001,11 +1027,11 @@
     <div class="grid-2 mt">
       <div class="card">
         <h3>Recommended diagram label</h3>
-        <p>"Policy and routing heuristics" is more accurate than "computational intuition" for the current architecture.</p>
+        <p>"Contracted salience and routing heuristics" is more accurate than an unlabeled intuition layer for the current architecture.</p>
       </div>
       <div class="card">
         <h3>Recommended implementation</h3>
-        <p>If this becomes a product layer, implement it as a typed decision record: input context, selected persona, selected tools, model path, risk class, and evidence pack.</p>
+        <p>Extend the existing contract record with input context, selected persona, selected tools, model path, risk class, evidence pack, and outcome feedback.</p>
       </div>
     </div>
     <div class="callout mt">
@@ -1021,11 +1047,11 @@
     <div class="stack">
       <div class="stack-row">
         <div class="left">Learning and readiness</div>
-        <div class="right">SignalBox scenarios, CAID audits, real-service tests, readiness reports, outcome telemetry, and false-positive/false-negative checks.</div>
+        <div class="right">SignalBox scenarios, CAID reflection and structured memory, Prompt Engine optimization, CSAA risk-case updates, real-service tests, outcome telemetry, and false-positive/false-negative checks.</div>
       </div>
       <div class="stack-row">
         <div class="left">Action and workflow</div>
-        <div class="right">Patient360 workflows, claims, prescribing, pharmacy, lab, radiology, ambulance, HMIS, ERP, and assistant journeys mediated through BulletTrain and Bridge SDK.</div>
+        <div class="right">Patient360 plus sibling systems: pharmacy, clinical pathways, ambulance/EMS, insurance eclaims, ERP, supply-chain ERP, HMIS, provider portal, citizen portal, appointments, genomics, lab, imaging, and assistant journeys mediated through BulletTrain and Bridge SDK.</div>
       </div>
       <div class="stack-row">
         <div class="left">Guardrails and trust</div>
@@ -1036,8 +1062,8 @@
         <div class="right">Prompt Engine, Bevan LLM router, policy prompts, provider fallback, schema validation, local PHI routing, and output validation.</div>
       </div>
       <div class="stack-row">
-        <div class="left">Persona contracts</div>
-        <div class="right">GHARRA persona definitions, Nexus 68 personas and six IAM groups, Bridge typed intents, persona delegation scopes, safety class, and FHIR role codes.</div>
+        <div class="left">Human and AI agent framework</div>
+        <div class="right">GHARRA human roles and AI personas, Nexus agents/IAM, Bridge superpersona contracts, skill packs, tool packs, framework selection, authority scope, safety class, runtime budgets, FHIR role codes, and outcome obligations.</div>
       </div>
       <div class="stack-row">
         <div class="left">Context and data</div>
@@ -1049,7 +1075,10 @@
       </div>
     </div>
     <div class="callout mt">
-      <p>The diagram should be read bottom-up for dependency and top-down for governance. No agent bypasses the data, consent, trust, safety, and evidence layers.</p>
+      <p>The diagram should be read bottom-up for dependency and top-down for governance. No agent bypasses the data, consent, trust, safety, sibling-system, and evidence layers. Layer 6 should be labelled "Symphonix-Health mechanism core."</p>
+    </div>
+    <div class="callout mt">
+      <p><strong>Diagram additions:</strong> add the human/AI agent capability framework, add bounded rationality to the essence-critical problem domains, and add innovation and invention to strategic outcomes. These are not cosmetic labels; they need outcome metrics and evidence before they are treated as achieved.</p>
     </div>
     <div class="footer"><span>Nested architecture diagram</span><span>9 / 12</span></div>
   </section>
@@ -1073,9 +1102,9 @@
           <td>Generate a normalized persona inventory from GHARRA, Nexus, Patient360, Bridge SDK, and BulletTrain role files. Flag aliases and missing mappings.</td>
         </tr>
         <tr>
-          <td><strong>Superpersona contract</strong></td>
-          <td><span class="status partial">partial</span></td>
-          <td>Generate a `superpersona.contract.json` per persona with skill, tool, IAM, safety, consent, budget, route, model, and evaluation fields.</td>
+          <td><strong>Human/AI agent framework</strong></td>
+          <td><span class="status partial">implemented core</span></td>
+          <td>Bridge SDK implements the contract shape; now generate/adopt agent-kind, skill-pack, tool-pack, framework-pack, authority, safety, evidence, and outcome fields across GHARRA, Nexus, SignalBox, Patient360, Prompt Engine, and sibling systems.</td>
         </tr>
         <tr>
           <td><strong>Safety as CI gate</strong></td>
@@ -1090,12 +1119,17 @@
         <tr>
           <td><strong>Architecture catalog</strong></td>
           <td><span class="status gap">gap</span></td>
-          <td>Create a cross-repo generated map of services, routes, persona roles, data flows, PHI boundaries, and evidence artifacts.</td>
+          <td>Create a cross-repo generated map of core services, sibling systems, routes, persona roles, data flows, PHI boundaries, and evidence artifacts.</td>
         </tr>
         <tr>
           <td><strong>Outcome learning loop</strong></td>
-          <td><span class="status gap">gap</span></td>
-          <td>Bind outcome metrics to approved workflow changes, prompt updates, safety case revisions, and persona contract versions.</td>
+          <td><span class="status partial">partial</span></td>
+          <td>CAID, SignalBox, Prompt Engine, CSAA, and Bridge SDK have loop pieces; bind clinical outcomes to controlled workflow, prompt, safety, and contract updates.</td>
+        </tr>
+        <tr>
+          <td><strong>Sibling test gates</strong></td>
+          <td><span class="status gap">failing</span></td>
+          <td>Repair reduced-matrix requirement-ID drift and requirement-count drift in CAID-generated siblings before claiming all sibling capabilities are tested.</td>
         </tr>
       </tbody>
     </table>
@@ -1113,7 +1147,7 @@
       <div class="step">
         <div class="num">3</div>
         <h3>Generate</h3>
-        <p>Emit superpersona contracts and architecture catalog artifacts.</p>
+        <p>Emit human/AI agent capability contracts and architecture catalog artifacts.</p>
       </div>
       <div class="step">
         <div class="num">4</div>
@@ -1123,7 +1157,7 @@
       <div class="step">
         <div class="num">5</div>
         <h3>Learn</h3>
-        <p>Feed verified outcomes into controlled contract and policy updates.</p>
+        <p>Feed verified outcomes, bounded-rationality misses, and innovation/invention evidence into controlled contract and policy updates.</p>
       </div>
     </div>
     <div class="footer"><span>Revised roadmap</span><span>10 / 12</span></div>
@@ -1235,9 +1269,9 @@
           <td>Nexus consumes GHARRA trust/routing metadata, validates records, and does not replace GHARRA discovery or BulletTrain orchestration.</td>
         </tr>
         <tr>
-          <td><strong>symphonix-bridge-sdk/src/bridge_sdk/agent_contract.py</strong></td>
-          <td>1-13; 178-185; 233-248; 275-310</td>
-          <td>Agent Execution Contract, typed intents, safety class, FHIR Task conversion, GHARRA agent-card capability strings, and `.well-known/agent-card.json` output.</td>
+          <td><strong>symphonix-bridge-sdk agent and superpersona contracts</strong></td>
+          <td>agent_contract.py 1-13; 275-310; superpersona_contract.py 1-8; 79-102; 167-190; 224-292; tests/test_superpersona_contract.py 17-103</td>
+          <td>Agent Execution Contract, typed intents, FHIR Task conversion, GHARRA agent-card output, human/AI superpersona contract fields, skill and tool policy, route salience, runtime budgets, GHARRA/A2A/MCP/audit exports, and direct tests.</td>
         </tr>
         <tr>
           <td><strong>symphonix-bridge-sdk/src/bridge_sdk/concurrency.py</strong></td>
@@ -1263,6 +1297,11 @@
           <td><strong>csaa; signalbox-mcp; caid-agent; patient360-assistant</strong></td>
           <td>CSAA 90-94, 149; SignalBox v2 217-229; CAID 245-249; Patient360 README 55-61, 128-132</td>
           <td>Safety scope and hard-stop behavior, scenario evidence, FP/FN audit discipline, Patient360 clinical assistant and persona/context expectations.</td>
+        </tr>
+        <tr>
+          <td><strong>Sibling-system audit</strong></td>
+          <td>nested-crafts-diagram-cross-check.md; sibling README/test evidence</td>
+          <td>Pharmacy, clinical pathways, ambulance/EMS, eclaims, ERP, supply-chain ERP, HMIS, provider portal, citizen portal, appointment, genomics, and Patient360 must be visible in the diagram, along with the human/AI agent capability framework that binds personas to skills, tools, frameworks, and outcomes; several matrix gates currently fail.</td>
         </tr>
       </tbody>
     </table>
