@@ -1,0 +1,907 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Unified Symphonix-Health Agentic Architecture - repo-aligned revision</title>
+  <style>
+    :root {
+      --bg: #080A2E;
+      --panel: #10133D;
+      --panel-2: #151A4F;
+      --line: rgba(232, 232, 237, 0.18);
+      --text: #E8E8ED;
+      --muted: #A0A3B5;
+      --faint: #737895;
+      --brand: #6366F1;
+      --brand-2: #4F46E5;
+      --teal: #14919B;
+      --cyan: #4DD0E1;
+      --critical: #F87171;
+      --warn: #FBBF24;
+      --ok: #34D399;
+      --paper: #F7F8FC;
+      --ink: #172033;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      color: var(--text);
+      background: var(--bg);
+      font-family: "DM Sans", "Segoe UI", Arial, sans-serif;
+      font-size: 10.5pt;
+      line-height: 1.48;
+    }
+
+    body {
+      background:
+        radial-gradient(circle at 12% 8%, rgba(99, 102, 241, 0.18), transparent 28%),
+        radial-gradient(circle at 84% 14%, rgba(20, 145, 155, 0.16), transparent 30%),
+        linear-gradient(135deg, #060D1F 0%, #0D1B6E 44%, #1A1080 72%, #321061 100%);
+    }
+
+    @page {
+      size: Letter;
+      margin: 0;
+    }
+
+    .page {
+      width: 8.5in;
+      height: 11in;
+      min-height: 11in;
+      padding: 0.55in 0.62in;
+      break-after: page;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px),
+        var(--bg);
+      background-size: 46px 46px, 46px 46px, auto;
+    }
+
+    .page.light {
+      color: var(--ink);
+      background: var(--paper);
+    }
+
+    .page::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      border-top: 4px solid transparent;
+      border-image: linear-gradient(90deg, #EF4444, #F97316, #EAB308, #22C55E, #06B6D4, #3B82F6, #6366F1, #A855F7) 1;
+    }
+
+    .footer {
+      position: absolute;
+      left: 0.62in;
+      right: 0.62in;
+      bottom: 0.34in;
+      display: flex;
+      justify-content: space-between;
+      color: var(--faint);
+      font-size: 8.5pt;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-family: "JetBrains Mono", Consolas, monospace;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+      font-weight: 750;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      font-size: 30pt;
+      line-height: 1.04;
+      max-width: 6.9in;
+    }
+
+    h2 {
+      font-size: 20pt;
+      margin-bottom: 0.18in;
+    }
+
+    h3 {
+      font-size: 12pt;
+      margin: 0.18in 0 0.08in;
+      color: var(--cyan);
+    }
+
+    p {
+      margin: 0 0 0.11in;
+    }
+
+    .label {
+      font-family: "JetBrains Mono", Consolas, monospace;
+      font-size: 8.5pt;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: 0.14in;
+    }
+
+    .lede {
+      color: var(--muted);
+      font-size: 13pt;
+      line-height: 1.42;
+      max-width: 6.8in;
+      margin-top: 0.25in;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.12in;
+      margin-top: 0.32in;
+    }
+
+    .metric {
+      min-height: 0.82in;
+      border: 1px solid var(--line);
+      background: rgba(16, 19, 61, 0.78);
+      border-radius: 10px;
+      padding: 0.12in;
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 16pt;
+      line-height: 1;
+      margin-bottom: 0.08in;
+      color: var(--text);
+    }
+
+    .metric span {
+      color: var(--muted);
+      font-size: 8.5pt;
+    }
+
+    .callout {
+      border-left: 4px solid var(--cyan);
+      background: rgba(77, 208, 225, 0.09);
+      border-radius: 8px;
+      padding: 0.14in 0.16in;
+      margin: 0.22in 0;
+    }
+
+    .correction {
+      border-left-color: var(--critical);
+      background: rgba(248, 113, 113, 0.10);
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.18in;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.14in;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      background: rgba(16, 19, 61, 0.86);
+      border-radius: 12px;
+      padding: 0.15in;
+      min-height: 1.05in;
+    }
+
+    .light .card,
+    .light .metric {
+      background: #FFFFFF;
+      border-color: #D8DDEA;
+      color: var(--ink);
+    }
+
+    .card h3 {
+      margin-top: 0;
+    }
+
+    ul,
+    ol {
+      margin: 0.05in 0 0.12in 0.2in;
+      padding: 0;
+    }
+
+    ul {
+      list-style: none;
+      margin-left: 0;
+    }
+
+    ul li::before {
+      content: "- ";
+      color: var(--brand-2);
+      font-weight: 700;
+    }
+
+    li {
+      margin-bottom: 0.055in;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 8.5pt;
+      line-height: 1.33;
+      margin: 0.08in 0 0.12in;
+    }
+
+    th,
+    td {
+      border-bottom: 1px solid rgba(23, 32, 51, 0.18);
+      padding: 0.055in 0.065in;
+      vertical-align: top;
+    }
+
+    th {
+      text-align: left;
+      font-family: "JetBrains Mono", Consolas, monospace;
+      font-size: 7.6pt;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #36456A;
+      background: #EEF2FF;
+    }
+
+    td.code,
+    .code {
+      font-family: "JetBrains Mono", Consolas, monospace;
+      font-size: 8pt;
+      color: #2D3B66;
+    }
+
+    .small {
+      font-size: 8.4pt;
+      color: inherit;
+      opacity: 0.84;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .light .muted {
+      color: #4C587A;
+    }
+
+    .diagram {
+      width: 100%;
+      height: auto;
+      margin: 0.06in 0 0.14in;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 14px;
+      background: rgba(255,255,255,0.035);
+    }
+
+    .light .diagram {
+      border-color: #D8DDEA;
+      background: #FFFFFF;
+    }
+
+    .diagram text {
+      font-family: "Segoe UI", Arial, sans-serif;
+      letter-spacing: 0;
+    }
+
+    .evidence-ref {
+      font-family: "JetBrains Mono", Consolas, monospace;
+      font-size: 7.7pt;
+      color: #34466F;
+    }
+
+    .status {
+      display: inline-block;
+      padding: 0.02in 0.06in;
+      border-radius: 999px;
+      font-family: "JetBrains Mono", Consolas, monospace;
+      font-size: 7.4pt;
+      text-transform: uppercase;
+      background: #E6F7F8;
+      color: #0A5C63;
+      white-space: nowrap;
+    }
+
+    .status.warn {
+      background: #FFF4D4;
+      color: #745000;
+    }
+
+    .status.hot {
+      background: #FFE5E5;
+      color: #8A1F1F;
+    }
+
+    .title-spacer {
+      height: 1.05in;
+    }
+  </style>
+</head>
+<body>
+  <section class="page">
+    <div class="title-spacer"></div>
+    <div class="label">Repo-aligned revision | first document</div>
+    <h1>Unified Symphonix-Health Agentic Architecture</h1>
+    <p class="lede">This revision replaces the earlier repo-inference based report with an architecture brief grounded in the local repositories under <span class="code">C:\Users\hgeec\github</span>. It keeps the original layered intent, but corrects ownership, data flow, agent routing, clinical safety, and evidence boundaries.</p>
+    <div class="meta-grid">
+      <div class="metric">
+        <strong>10</strong>
+        <span>Core platform repos treated as explicit architecture inputs.</span>
+      </div>
+      <div class="metric">
+        <strong>0 PHI</strong>
+        <span>GHARRA remains a registry and trust plane, not a patient-data store.</span>
+      </div>
+      <div class="metric">
+        <strong>13</strong>
+        <span>Nexus route-admission checks before transport opens.</span>
+      </div>
+      <div class="metric">
+        <strong>160+</strong>
+        <span>BulletTrain services form the healthcare exchange fabric.</span>
+      </div>
+    </div>
+    <div class="callout correction">
+      <strong>Primary correction.</strong> The previous PDF said several rows were based on "name inference" because repo access failed. This version treats local repo files as available evidence. Where a repository exposes an actual specification, requirement, route, test, or stated boundary, this report uses that instead of inferred responsibility.
+    </div>
+    <div class="grid-3">
+      <div class="card">
+        <h3>Runtime rule</h3>
+        <p>Agents augment service APIs. They do not replace REST, FHIR, X12, HL7v2, DICOM, or event-bus contracts.</p>
+      </div>
+      <div class="card">
+        <h3>Data rule</h3>
+        <p>Services own domain data. BulletTrain owns cross-system exchange, audit, provenance, transformation, consent enforcement, and AI grounding.</p>
+      </div>
+      <div class="card">
+        <h3>Clinical rule</h3>
+        <p>Clinical agents pass through CSAA classification, GHARRA registration, and Nexus A2A coordination before production use.</p>
+      </div>
+    </div>
+    <div class="footer"><span>Symphonix Health</span><span>1</span></div>
+  </section>
+
+  <section class="page light">
+    <div class="label">Corrected architecture stance</div>
+    <h2>What changed from the original PDF</h2>
+    <div class="grid-2">
+      <div class="card">
+        <h3>1. BulletTrain is the exchange plane, not a generic base layer</h3>
+        <p>BulletTrain is the HIE and orchestration backbone for clinical and operational exchange. It owns FHIR/EventBus/API-gateway mediated movement, identity, consent, audit, provenance, routing, validation, and AI grounding across sibling systems.</p>
+        <p class="evidence-ref">Evidence: BulletTrain/README.md:33,43,51,60,65,67-69,784-785; symphonix-health-docs/strategy/bullettrain-integration-doctrine.md:11,56,100,117-119,161.</p>
+      </div>
+      <div class="card">
+        <h3>2. GHARRA is not an execution bus</h3>
+        <p>GHARRA is the federated zero-trust registry and routing authority. It stores agent metadata, trust material, route policy, and A2A agent cards. It must not store patient data.</p>
+        <p class="evidence-ref">Evidence: global-agent-registry/README.md:26,91-101,139-166,209,259; global-agent-registry/CLAUDE.md:11,143-145,229,259-264.</p>
+      </div>
+      <div class="card">
+        <h3>3. Nexus validates and transports admitted calls</h3>
+        <p>Nexus A2A provides JSON-RPC 2.0 agent transport and route-admission enforcement. The repo explicitly states Nexus does not perform discovery, store registry records, or decide which agent to call.</p>
+        <p class="evidence-ref">Evidence: nexus-a2a-protocol/README.md:26,71-73,144-166,189-190; nexus-a2a-protocol/docs/gharra_integration.md:14,18-21,228-231.</p>
+      </div>
+      <div class="card">
+        <h3>4. CSAA is a production gate for clinical agents</h3>
+        <p>CSAA classifies clinical scope and builds safety cases, hazard logs, release decisions, and residual-risk checks. It is a runtime governance dependency for clinical-agent release, not an optional appendix.</p>
+        <p class="evidence-ref">Evidence: csaa/csaa/scope.py:1-16,142-217; csaa/csaa/case_builder.py:55-117,160-199; csaa/demo/pacs_ris_image_ai/safety/RELEASE_DECISION.md:12-64.</p>
+      </div>
+    </div>
+    <div class="footer"><span>Repo-aligned correction log</span><span>2</span></div>
+  </section>
+
+  <section class="page light">
+    <div class="label">Correction log continued</div>
+    <h2>Agent and evidence boundaries</h2>
+    <div class="grid-2">
+      <div class="card">
+        <h3>5. SignalBox is test, evidence, and attestation tooling</h3>
+        <p>SignalBox exposes browser control, structured assertions, persona switching, visual regression, scenario execution, and GHARRA-anchored clinical-signal capture. It should appear in the evidence and control plane, not as a generic agent.</p>
+        <p class="evidence-ref">Evidence: signalbox-mcp/versions/v2/README.md:8-20,41,103-145,181-227,278-308; signalbox-mcp/INTEROP.md:9-15,101-110.</p>
+      </div>
+      <div class="card">
+        <h3>6. CAID and health-agent-workspace are not patient runtime services</h3>
+        <p>CAID is the SDLC, requirements, architecture, matrix, and multi-agent engineering system. Health Agent Workspace provides market, pilot, and research grounding. They inform build priority and evidence quality; they are not clinical data stores.</p>
+        <p class="evidence-ref">Evidence: caid-agent/README.md:31-56,92-127,235-247,725-728; health-agent-workspace/GHARRA_Healthcare_AI_Agent_Market_Intelligence.md:8-10,360-381.</p>
+      </div>
+    </div>
+    <div class="callout">
+      <strong>Architectural consequence.</strong> The platform should be drawn as a set of governed control planes, not as one agent brain. BulletTrain, GHARRA, Nexus, CSAA, SignalBox, Bridge SDK, Prompt Engine, CAID, and Health Agent Workspace each carry a separate accountability boundary.
+    </div>
+    <div class="footer"><span>Repo-aligned correction log</span><span>3</span></div>
+  </section>
+
+  <section class="page">
+    <div class="label">Layered architecture</div>
+    <h2>Evidence-backed platform map</h2>
+    <svg class="diagram" viewBox="0 0 900 610" role="img" aria-label="Layered architecture diagram">
+      <defs>
+        <linearGradient id="rainbow" x1="0" x2="1" y1="0" y2="0">
+          <stop offset="0%" stop-color="#EF4444"/>
+          <stop offset="14%" stop-color="#F97316"/>
+          <stop offset="28%" stop-color="#EAB308"/>
+          <stop offset="42%" stop-color="#22C55E"/>
+          <stop offset="56%" stop-color="#06B6D4"/>
+          <stop offset="70%" stop-color="#3B82F6"/>
+          <stop offset="84%" stop-color="#6366F1"/>
+          <stop offset="100%" stop-color="#A855F7"/>
+        </linearGradient>
+      </defs>
+      <rect x="24" y="26" width="852" height="42" rx="12" fill="url(#rainbow)" opacity="0.9"/>
+      <text x="450" y="53" text-anchor="middle" font-size="18" font-weight="700" fill="#071022">Clinical and operational value: safer workflows, governed automation, measurable outcomes</text>
+
+      <g>
+        <rect x="50" y="100" width="800" height="70" rx="14" fill="#151A4F" stroke="#4DD0E1" opacity="0.95"/>
+        <text x="76" y="127" font-size="16" font-weight="700" fill="#E8E8ED">Applications and workflow action</text>
+        <text x="76" y="151" font-size="13" fill="#A0A3B5">Provider portal, citizen portal, triage, scheduling, LIS, PACS/RIS, pharmacy, claims, ERP, HMIS, specialty systems</text>
+      </g>
+
+      <g>
+        <rect x="50" y="196" width="800" height="88" rx="14" fill="#10133D" stroke="rgba(232,232,237,0.25)"/>
+        <text x="76" y="223" font-size="16" font-weight="700" fill="#E8E8ED">Agent execution and evidence control</text>
+        <text x="76" y="247" font-size="13" fill="#A0A3B5">Prompt Engine, Symphonix Bridge SDK, SignalBox MCP, CAID-generated requirements and matrices, human review queues</text>
+        <text x="76" y="269" font-size="12" fill="#4DD0E1">Agent loop: context -> plan -> tool call -> review -> audit -> outcome measurement</text>
+      </g>
+
+      <g>
+        <rect x="50" y="310" width="800" height="88" rx="14" fill="#10133D" stroke="#6366F1"/>
+        <text x="76" y="337" font-size="16" font-weight="700" fill="#E8E8ED">Agent trust, discovery, safety, and transport</text>
+        <text x="76" y="361" font-size="13" fill="#A0A3B5">CSAA classifies clinical scope. GHARRA resolves signed capability cards and trust bundles. Nexus admits and transports JSON-RPC calls.</text>
+        <text x="76" y="383" font-size="12" fill="#4DD0E1">Nexus validates records. GHARRA owns registry. BulletTrain and SignalBox orchestrate.</text>
+      </g>
+
+      <g>
+        <rect x="50" y="424" width="800" height="80" rx="14" fill="#10133D" stroke="rgba(232,232,237,0.25)"/>
+        <text x="76" y="451" font-size="16" font-weight="700" fill="#E8E8ED">Interoperability, identity, consent, and audit fabric</text>
+        <text x="76" y="475" font-size="13" fill="#A0A3B5">BulletTrain API Gateway, FHIR EventBus, Shared Health Record, terminology, audit store, observability, consent governance</text>
+        <text x="76" y="493" font-size="12" fill="#4DD0E1">All sibling-to-sibling platform exchange flows through BulletTrain-mediated contracts.</text>
+      </g>
+
+      <g>
+        <rect x="50" y="530" width="800" height="54" rx="14" fill="#151A4F" stroke="#14919B"/>
+        <text x="76" y="562" font-size="16" font-weight="700" fill="#E8E8ED">Runtime substrate</text>
+        <text x="240" y="562" font-size="13" fill="#A0A3B5">Private cloud, sovereign zones, regional cloud, Kubernetes, databases, queues, GPUs, CPU, storage, network</text>
+      </g>
+
+      <path d="M450 186 L450 172" stroke="#4DD0E1" stroke-width="3"/>
+      <path d="M450 302 L450 286" stroke="#4DD0E1" stroke-width="3"/>
+      <path d="M450 416 L450 400" stroke="#4DD0E1" stroke-width="3"/>
+      <path d="M450 522 L450 506" stroke="#4DD0E1" stroke-width="3"/>
+    </svg>
+    <div class="grid-2">
+      <div class="callout">
+        <strong>Boundary that matters.</strong> A clinical agent can recommend, draft, classify, route, or create a proposed update. It does not mutate sibling records directly unless the action is mediated by BulletTrain, authorised by policy, and auditable against the system of record.
+      </div>
+      <div class="callout">
+        <strong>Transport that matters.</strong> Nexus receives admitted GHARRA records and transports JSON-RPC calls. It is not the registry and it is not the business orchestrator.
+      </div>
+    </div>
+    <div class="footer"><span>Layered platform map</span><span>4</span></div>
+  </section>
+
+  <section class="page light">
+    <div class="label">Runtime sequence</div>
+    <h2>How a clinical agent call should flow</h2>
+    <svg class="diagram" viewBox="0 0 900 520" role="img" aria-label="Clinical agent runtime sequence">
+      <defs>
+        <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+          <path d="M0,0 L6,3 L0,6 Z" fill="#4F46E5"/>
+        </marker>
+      </defs>
+      <rect x="30" y="34" width="150" height="72" rx="12" fill="#EEF2FF" stroke="#AAB5E8"/>
+      <text x="105" y="62" text-anchor="middle" font-size="13" font-weight="700" fill="#172033">Clinical workflow</text>
+      <text x="105" y="84" text-anchor="middle" font-size="11" fill="#4C587A">triage, claim, lab, image</text>
+
+      <rect x="222" y="34" width="150" height="72" rx="12" fill="#E6F7F8" stroke="#85D8E0"/>
+      <text x="297" y="62" text-anchor="middle" font-size="13" font-weight="700" fill="#172033">BulletTrain</text>
+      <text x="297" y="84" text-anchor="middle" font-size="11" fill="#4C587A">FHIR/EventBus/context</text>
+
+      <rect x="414" y="34" width="150" height="72" rx="12" fill="#F8FAFF" stroke="#D8DDEA"/>
+      <text x="489" y="62" text-anchor="middle" font-size="13" font-weight="700" fill="#172033">Prompt + bridge</text>
+      <text x="489" y="84" text-anchor="middle" font-size="11" fill="#4C587A">deterministic envelope</text>
+
+      <rect x="606" y="34" width="120" height="72" rx="12" fill="#FFF4D4" stroke="#F5D37C"/>
+      <text x="666" y="62" text-anchor="middle" font-size="13" font-weight="700" fill="#172033">CSAA</text>
+      <text x="666" y="84" text-anchor="middle" font-size="11" fill="#4C587A">scope and risk gate</text>
+
+      <rect x="762" y="34" width="110" height="72" rx="12" fill="#FFE5E5" stroke="#F7A6A6"/>
+      <text x="817" y="62" text-anchor="middle" font-size="13" font-weight="700" fill="#172033">Human review</text>
+      <text x="817" y="84" text-anchor="middle" font-size="11" fill="#4C587A">when required</text>
+
+      <rect x="222" y="174" width="150" height="72" rx="12" fill="#E6F7F8" stroke="#85D8E0"/>
+      <text x="297" y="202" text-anchor="middle" font-size="13" font-weight="700" fill="#172033">GHARRA</text>
+      <text x="297" y="224" text-anchor="middle" font-size="11" fill="#4C587A">resolve capability card</text>
+
+      <rect x="414" y="174" width="150" height="72" rx="12" fill="#EEF2FF" stroke="#AAB5E8"/>
+      <text x="489" y="202" text-anchor="middle" font-size="13" font-weight="700" fill="#172033">Nexus A2A</text>
+      <text x="489" y="224" text-anchor="middle" font-size="11" fill="#4C587A">13 checks + JSON-RPC</text>
+
+      <rect x="606" y="174" width="150" height="72" rx="12" fill="#F8FAFF" stroke="#D8DDEA"/>
+      <text x="681" y="202" text-anchor="middle" font-size="13" font-weight="700" fill="#172033">Target agent</text>
+      <text x="681" y="224" text-anchor="middle" font-size="11" fill="#4C587A">tool use, task lifecycle</text>
+
+      <rect x="318" y="324" width="264" height="72" rx="12" fill="#F1FFF9" stroke="#88DDBB"/>
+      <text x="450" y="352" text-anchor="middle" font-size="13" font-weight="700" fill="#172033">Proposed result or action</text>
+      <text x="450" y="374" text-anchor="middle" font-size="11" fill="#4C587A">accept, modify, reject, defer, escalate</text>
+
+      <rect x="318" y="432" width="264" height="50" rx="12" fill="#F8FAFF" stroke="#D8DDEA"/>
+      <text x="450" y="462" text-anchor="middle" font-size="13" font-weight="700" fill="#172033">Audit, provenance, metrics, learning loop</text>
+
+      <path d="M180 70 H222" stroke="#4F46E5" stroke-width="2.4" marker-end="url(#arrow)"/>
+      <path d="M372 70 H414" stroke="#4F46E5" stroke-width="2.4" marker-end="url(#arrow)"/>
+      <path d="M564 70 H606" stroke="#4F46E5" stroke-width="2.4" marker-end="url(#arrow)"/>
+      <path d="M726 70 H762" stroke="#4F46E5" stroke-width="2.4" marker-end="url(#arrow)"/>
+      <path d="M297 106 V174" stroke="#4F46E5" stroke-width="2.4" marker-end="url(#arrow)"/>
+      <path d="M372 210 H414" stroke="#4F46E5" stroke-width="2.4" marker-end="url(#arrow)"/>
+      <path d="M564 210 H606" stroke="#4F46E5" stroke-width="2.4" marker-end="url(#arrow)"/>
+      <path d="M681 246 C681 310, 582 318, 520 324" stroke="#4F46E5" stroke-width="2.4" fill="none" marker-end="url(#arrow)"/>
+      <path d="M450 396 V432" stroke="#4F46E5" stroke-width="2.4" marker-end="url(#arrow)"/>
+      <path d="M318 457 C180 456, 156 118, 222 96" stroke="#14919B" stroke-width="2" fill="none" stroke-dasharray="7 6"/>
+    </svg>
+    <div class="callout">
+      <strong>Read the loop as a control contract.</strong> BulletTrain assembles trusted clinical context and records outcomes. Prompt Engine and Bridge SDK build deterministic, inspectable agent envelopes. CSAA decides the safety posture. GHARRA returns the eligible agent and trust bundle. Nexus opens transport only after admission checks. Human review is mandatory where the clinical or regulatory rule says so.
+    </div>
+    <div class="footer"><span>Clinical runtime sequence</span><span>5</span></div>
+  </section>
+
+  <section class="page light">
+    <div class="label">Repository mapping</div>
+    <h2>Repo-to-layer map with direct evidence</h2>
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 18%">Repo or family</th>
+          <th style="width: 20%">Mapped layer</th>
+          <th style="width: 32%">Repo-backed responsibility</th>
+          <th style="width: 16%">Evidence status</th>
+          <th style="width: 14%">Primary refs</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="code">BulletTrain</td>
+          <td>Interoperability, identity, audit, AI grounding</td>
+          <td>FHIR R4-native HIE with 160+ services, API gateway, EventBus, SignalBox control plane, RBAC, audit, consent governance, terminology, DICOM, CDA, X12, OpenHIE, observability.</td>
+          <td><span class="status">repo evidence</span></td>
+          <td class="evidence-ref">README.md:33,43,51,60,65,67-69,784-785</td>
+        </tr>
+        <tr>
+          <td class="code">global-agent-registry</td>
+          <td>Agent identity, registry, trust, discovery</td>
+          <td>GHARRA provides federated zero-trust agent discovery, routing advice, trust verification, zero-patient-data guardrails, A2A agent cards, JWT/mTLS/DPoP auth, and MCP exposure.</td>
+          <td><span class="status">repo evidence</span></td>
+          <td class="evidence-ref">README.md:26,91-101,139-166,209,259</td>
+        </tr>
+        <tr>
+          <td class="code">nexus-a2a-protocol</td>
+          <td>Agent transport and admission</td>
+          <td>Nexus implements trusted agent-to-agent communication over JSON-RPC 2.0, 25 clinical agents, on-demand gateway, 13 route checks, and GHARRA metadata injection. Discovery and registry ownership stay outside Nexus.</td>
+          <td><span class="status">repo evidence</span></td>
+          <td class="evidence-ref">README.md:26,71-73,144-166; docs/gharra_integration.md:228-231</td>
+        </tr>
+        <tr>
+          <td class="code">symphonix-bridge-sdk</td>
+          <td>Canonical envelopes and adapter translation</td>
+          <td>Bridge SDK provides canonical pivot translation, deterministic envelope serialization, audit and routing consistency, patient identity alignment, and a no-direct-sibling-call rule via BulletTrain hub mediation.</td>
+          <td><span class="status">repo evidence</span></td>
+          <td class="evidence-ref">docs/REQUIREMENTS.md:14,35,37; docs/architecture/patient-identity-closed-loop.md:21-30,130,318</td>
+        </tr>
+        <tr>
+          <td class="code">prompt-engine</td>
+          <td>Prompt specs, templates, policies, optimization</td>
+          <td>Prompt Engine loads structured specs, assembles deterministic prompts, handles healthcare templates, PHI redaction, policy injection, prompt testing, and dispatches optimizer calls through BulletTrain hub mediation.</td>
+          <td><span class="status">repo evidence</span></td>
+          <td class="evidence-ref">docs/REQUIREMENTS.md:7-34,344-363,479-500,616-689; src/prompt_engine/optimizer/workflow.py:3-11,146-231</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="footer"><span>Repo-to-layer mapping</span><span>6</span></div>
+  </section>
+
+  <section class="page light">
+    <div class="label">Repository mapping continued</div>
+    <h2>Assurance, strategy, and domain layers</h2>
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 18%">Repo or family</th>
+          <th style="width: 20%">Mapped layer</th>
+          <th style="width: 32%">Repo-backed responsibility</th>
+          <th style="width: 16%">Evidence status</th>
+          <th style="width: 14%">Primary refs</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="code">csaa</td>
+          <td>Clinical safety assurance</td>
+          <td>CSAA classifies safety scope, generates safety cases, hazard logs, clinical risk management plans, and release recommendations. It should gate clinical-agent production release.</td>
+          <td><span class="status">repo evidence</span></td>
+          <td class="evidence-ref">csaa/scope.py:1-16,142-217; csaa/case_builder.py:55-117,160-199</td>
+        </tr>
+        <tr>
+          <td class="code">signalbox-mcp</td>
+          <td>Browser evidence, test execution, capture attestation</td>
+          <td>SignalBox provides MCP browser control, persona-aware tests, structured assertions, visual regression, scenario execution, screenshots, session recording, network and console inspection, and GHARRA-anchored capture manifests.</td>
+          <td><span class="status">repo evidence</span></td>
+          <td class="evidence-ref">versions/v2/README.md:8-20,41,103-145,181-227; INTEROP.md:9-15,101-110</td>
+        </tr>
+        <tr>
+          <td class="code">caid-agent</td>
+          <td>SDLC orchestration, requirements, matrices, verification</td>
+          <td>CAID handles prompt-as-requirement traceability, IEEE documentation, canonical matrices, NFR derivation, multi-agent engineering orchestration, architecture advisory, memory, and evidence gates.</td>
+          <td><span class="status">repo evidence</span></td>
+          <td class="evidence-ref">README.md:31-56,92-127,235-247,725-728</td>
+        </tr>
+        <tr>
+          <td class="code">health-agent-workspace</td>
+          <td>Market, pilot, and research grounding</td>
+          <td>Provides GHARRA healthcare AI market priorities, Horizon 1000 alignment, tiered build sequence, SE-agent literature review, and Kenya pilot requirements context.</td>
+          <td><span class="status">strategy evidence</span></td>
+          <td class="evidence-ref">GHARRA...md:8-10,360-381; literature_review...md:13-15,252-275</td>
+        </tr>
+        <tr>
+          <td class="code">domain apps</td>
+          <td>Workflow action and system-of-record boundaries</td>
+          <td>Portals, triage, scheduling, LIS, PACS/RIS, pharmacy, EPS, e-claims, HMIS, and specialty systems own their bounded domain data and expose service contracts; cross-system movement is mediated by BulletTrain.</td>
+          <td><span class="status warn">family evidence</span></td>
+          <td class="evidence-ref">agent-first.md:19,82,108-173; bullettrain-integration-doctrine.md:56,68,100,161</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="footer"><span>Repo-to-layer mapping</span><span>7</span></div>
+  </section>
+
+  <section class="page light">
+    <div class="label">Assurance model</div>
+    <h2>Architecture is not complete without evidence</h2>
+    <div class="grid-2">
+      <div>
+        <h3>Evidence stack</h3>
+        <ol>
+          <li><strong>Requirements.</strong> Repo-level functional and non-functional specs, prompt-as-requirement trace, and seeded requirement ledgers define the target behaviour.</li>
+          <li><strong>Canonical matrices.</strong> Functional scenarios use the 14-column BulletTrain matrix. CAID NFR scenarios use the 18-column matrix where required.</li>
+          <li><strong>Real-service validation.</strong> Internal service evidence should use real seeded paths and real service ownership, not internal fakes.</li>
+          <li><strong>Browser and visual evidence.</strong> SignalBox captures persona-aware browser runs, screenshots, assertions, and visual regressions.</li>
+          <li><strong>Clinical safety evidence.</strong> CSAA provides scope classification, hazards, risk controls, safety case reports, and release decisions.</li>
+          <li><strong>Audit and provenance.</strong> BulletTrain and Bridge SDK produce auditable envelopes, FHIR/AuditEvent/Provenance alignment, and replayable execution records.</li>
+        </ol>
+      </div>
+      <div>
+        <h3>Evidence diagram</h3>
+        <svg class="diagram" viewBox="0 0 390 360" role="img" aria-label="Evidence stack diagram">
+          <rect x="38" y="22" width="314" height="46" rx="10" fill="#EEF2FF" stroke="#AAB5E8"/>
+          <text x="195" y="51" text-anchor="middle" font-size="13" font-weight="700" fill="#172033">Requirements and specs</text>
+          <rect x="38" y="86" width="314" height="46" rx="10" fill="#E6F7F8" stroke="#85D8E0"/>
+          <text x="195" y="115" text-anchor="middle" font-size="13" font-weight="700" fill="#172033">Canonical matrices and seeded data</text>
+          <rect x="38" y="150" width="314" height="46" rx="10" fill="#F1FFF9" stroke="#88DDBB"/>
+          <text x="195" y="179" text-anchor="middle" font-size="13" font-weight="700" fill="#172033">Real service and browser runs</text>
+          <rect x="38" y="214" width="314" height="46" rx="10" fill="#FFF4D4" stroke="#F5D37C"/>
+          <text x="195" y="243" text-anchor="middle" font-size="13" font-weight="700" fill="#172033">CSAA safety case and hazards</text>
+          <rect x="38" y="278" width="314" height="46" rx="10" fill="#FFE5E5" stroke="#F7A6A6"/>
+          <text x="195" y="307" text-anchor="middle" font-size="13" font-weight="700" fill="#172033">Audit, provenance, outcome metrics</text>
+        </svg>
+      </div>
+    </div>
+    <div class="callout correction">
+      <strong>Do not count stale substitutes as readiness.</strong> Internal fakes, mocks, stand-in backends, empty dashboards, synthetic counters, and scenario-only claims are not readiness evidence for an internal service. They can be useful during development, but the architecture report should mark them as gaps unless the seeded real path is verified.
+    </div>
+    <div class="footer"><span>Evidence and assurance model</span><span>8</span></div>
+  </section>
+
+  <section class="page light">
+    <div class="label">Source files</div>
+    <h3>Source-of-truth files for the architecture report</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Evidence category</th>
+          <th>Primary files</th>
+          <th>Use in this report</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Strategy</td>
+          <td class="code">symphonix-health-docs/strategy/agent-first.md<br>symphonix-health-docs/strategy/bullettrain-integration-doctrine.md</td>
+          <td>Defines the additive agent stance, cross-system exchange rule, core platform repos, and clinical-agent governance gates.</td>
+        </tr>
+        <tr>
+          <td>Platform code/specs</td>
+          <td class="code">BulletTrain/README.md<br>global-agent-registry/README.md<br>nexus-a2a-protocol/README.md<br>nexus-a2a-protocol/docs/gharra_integration.md</td>
+          <td>Defines HIE fabric, registry, route admission, JSON-RPC transport, trust, and zero-PHI boundaries.</td>
+        </tr>
+        <tr>
+          <td>Assurance</td>
+          <td class="code">csaa/csaa/scope.py<br>csaa/csaa/case_builder.py<br>signalbox-mcp/versions/v2/README.md<br>symphonix-bridge-sdk/docs/REQUIREMENTS.md</td>
+          <td>Defines clinical safety scope, evidence capture, canonical envelopes, deterministic audit replay, and test evidence.</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="footer"><span>Evidence source files</span><span>9</span></div>
+  </section>
+
+  <section class="page light">
+    <div class="label">First working slice</div>
+    <h2>Recommended delivery slice</h2>
+    <p>The report should not propose a full-platform build as the first step. The repo evidence points to a narrower first slice: one measurable workflow, BulletTrain-mediated context, CSAA safety classification, GHARRA registration, Nexus transport where agent-to-agent calls are needed, SignalBox evidence, and explicit human review.</p>
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 13%">Priority</th>
+          <th style="width: 27%">Component</th>
+          <th style="width: 39%">Role in first slice</th>
+          <th style="width: 21%">Acceptance evidence</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="status hot">P0</span></td>
+          <td class="code">BulletTrain + domain API</td>
+          <td>Expose the workflow through a real service contract and BulletTrain-mediated context, not a direct agent-to-database path.</td>
+          <td>Real service test, EventBus/API evidence, audit event.</td>
+        </tr>
+        <tr>
+          <td><span class="status hot">P0</span></td>
+          <td class="code">prompt-engine + symphonix-bridge-sdk</td>
+          <td>Build deterministic prompts and canonical action envelopes with stable serialization, policy injection, PHI handling, and replayable audit.</td>
+          <td>Prompt regression, bridge requirements tests, envelope replay.</td>
+        </tr>
+        <tr>
+          <td><span class="status hot">P0</span></td>
+          <td class="code">csaa</td>
+          <td>Classify clinical scope and produce safety-case/hazard evidence before the workflow is described as production-ready.</td>
+          <td>Scope classification, hazard log, release decision.</td>
+        </tr>
+        <tr>
+          <td><span class="status hot">P0</span></td>
+          <td class="code">global-agent-registry</td>
+          <td>Register the agent capability card, trust material, zone metadata, PHI policy posture, and route policy.</td>
+          <td>GHARRA record, zero-PHI scan, trust bundle.</td>
+        </tr>
+        <tr>
+          <td><span class="status">P1</span></td>
+          <td class="code">nexus-a2a-protocol</td>
+          <td>Use Nexus only when the workflow requires agent-to-agent delegation. Validate the GHARRA record and transport JSON-RPC.</td>
+          <td>13-check admission result, JSON-RPC trace.</td>
+        </tr>
+        <tr>
+          <td><span class="status">P1</span></td>
+          <td class="code">signalbox-mcp</td>
+          <td>Capture browser, persona, visual, network, and assertion evidence for the workflow and attach it to the audit story.</td>
+          <td>Scenario result, screenshot, capture manifest.</td>
+        </tr>
+        <tr>
+          <td><span class="status warn">P2</span></td>
+          <td class="code">CAID + health-agent-workspace</td>
+          <td>Use CAID to keep requirements, matrices, NFRs, and documentation in sync; use Health Agent Workspace to choose market-aligned workflows and pilot constraints.</td>
+          <td>RTM, matrix coverage, SRS/pilot evidence.</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="grid-2">
+      <div class="card">
+        <h3>Best first workflow candidates</h3>
+        <ul>
+          <li>Prior authorization or insurance e-claims, because it is high volume and has clear human review points.</li>
+          <li>Clinical pathway deviation or triage, because CSAA, HITL, provenance, and evidence capture are central.</li>
+          <li>Scheduling or appointment automation, because it gives measurable cycle-time value with lower clinical risk.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Do not start here</h3>
+        <ul>
+          <li>Do not start with a platform-wide "superpersona" that can mutate many systems.</li>
+          <li>Do not route traditional clients through GHARRA/Nexus just to make them look agentic.</li>
+          <li>Do not treat a diagram, scenario-only evidence, or generated readiness report as implementation proof.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer"><span>First working slice</span><span>10</span></div>
+  </section>
+
+  <section class="page light">
+    <div class="label">Open decisions</div>
+    <h2>Questions that remain genuinely unresolved</h2>
+    <div class="grid-2">
+      <div>
+        <h3>Deployment</h3>
+        <ul>
+          <li>Which sovereign or regional hosting pattern is the first target: Kenya, UK, Ireland, Ghana, Rwanda, Nigeria, UAE, or a private lab environment?</li>
+          <li>What are the first-slice latency, throughput, uptime, and offline-operation targets?</li>
+          <li>Which identity provider and trust-anchor model will be used for the first tenant?</li>
+        </ul>
+        <h3>Clinical governance</h3>
+        <ul>
+          <li>Which actions are advisory-only, which require human sign-off, and which are hard-stopped?</li>
+          <li>What clinical safety scope does CSAA assign to the first workflow?</li>
+          <li>Which audit records must be FHIR AuditEvent/Provenance versus internal operational audit?</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Agent boundaries</h3>
+        <ul>
+          <li>Which agent capabilities belong in GHARRA as signed cards, and which remain internal tools behind one capability?</li>
+          <li>When is Nexus A2A mandatory versus unnecessary because the workflow only calls local service APIs?</li>
+          <li>Which context data is safe to expose to a model, and which must stay in BulletTrain as references only?</li>
+        </ul>
+        <h3>Evidence</h3>
+        <ul>
+          <li>Which SignalBox scenario proves the workflow from the correct persona?</li>
+          <li>Which canonical matrix rows cover the same behaviour?</li>
+          <li>Which real seeded service path replaces any previous internal fake or stand-in?</li>
+        </ul>
+      </div>
+    </div>
+    <div class="callout">
+      <strong>Design note.</strong> The revised diagrams intentionally keep GHARRA, Nexus, CSAA, BulletTrain, SignalBox, Prompt Engine, Bridge SDK, and CAID separate. Collapsing them into one "agent brain" would hide the controls that make the architecture reviewable.
+    </div>
+    <div class="footer"><span>Open decisions</span><span>11</span></div>
+  </section>
+
+  <section class="page light">
+    <div class="label">References</div>
+    <h3>Reference list for this revision</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Reference</th>
+          <th>Why it is used</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="code">symphonix-health-docs/strategy/agent-first.md</td>
+          <td>Defines additive agent-first posture, core repo roles, and clinical-agent governance gates.</td>
+        </tr>
+        <tr>
+          <td class="code">symphonix-health-docs/strategy/bullettrain-integration-doctrine.md</td>
+          <td>Defines BulletTrain as the mandatory cross-system exchange, audit, consent, provenance, and AI grounding plane.</td>
+        </tr>
+        <tr>
+          <td class="code">BulletTrain/README.md</td>
+          <td>Defines HIE scope, standards, 160+ microservices, SignalBox control plane, RBAC, audit, consent, and EventBus posture.</td>
+        </tr>
+        <tr>
+          <td class="code">global-agent-registry/README.md and CLAUDE.md</td>
+          <td>Defines GHARRA as zero-trust, federated, zero-PHI registry and route-advisory layer.</td>
+        </tr>
+        <tr>
+          <td class="code">nexus-a2a-protocol/README.md and docs/gharra_integration.md</td>
+          <td>Defines Nexus JSON-RPC transport, 25 agents, 13 route checks, and boundary with GHARRA and BulletTrain.</td>
+        </tr>
+        <tr>
+          <td class="code">symphonix-bridge-sdk/docs/REQUIREMENTS.md</td>
+          <td>Defines canonical adapter translation, stable envelope serialization, and BulletTrain hub mediation constraints.</td>
+        </tr>
+        <tr>
+          <td class="code">prompt-engine/docs/REQUIREMENTS.md and src/prompt_engine/optimizer/workflow.py</td>
+          <td>Defines prompt spec, policy, PHI, agentic mode, test, and BulletTrain hub dispatch behaviour.</td>
+        </tr>
+        <tr>
+          <td class="code">csaa/csaa/scope.py and csaa/csaa/case_builder.py</td>
+          <td>Defines clinical scope classification, hazard/risk handling, safety case reports, and release recommendation logic.</td>
+        </tr>
+        <tr>
+          <td class="code">signalbox-mcp/versions/v2/README.md and INTEROP.md</td>
+          <td>Defines browser-test tools, persona assertions, visual regression, scenario execution, and capture attestation.</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="footer"><span>Open decisions and references</span><span>12</span></div>
+  </section>
+</body>
+</html>

@@ -1,0 +1,814 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Critical Realist and CRAFTS Interpretation of Symphonix-Health - repo-aligned revision</title>
+  <style>
+    :root {
+      --bg: #070A2A;
+      --panel: #111640;
+      --panel-2: #171D52;
+      --line: rgba(232, 232, 237, 0.18);
+      --text: #E8E8ED;
+      --muted: #A9AEC4;
+      --faint: #7C829B;
+      --brand: #6366F1;
+      --teal: #14919B;
+      --cyan: #4DD0E1;
+      --red: #F87171;
+      --amber: #FBBF24;
+      --green: #34D399;
+      --paper: #F7F8FC;
+      --ink: #172033;
+      --ink-muted: #536079;
+      --paper-line: #D8DDEA;
+    }
+
+    * {
+      box-sizing: border-box;
+      letter-spacing: 0;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      color: var(--text);
+      background: var(--bg);
+      font-family: "DM Sans", "Segoe UI", Arial, sans-serif;
+      font-size: 10.4pt;
+      line-height: 1.46;
+    }
+
+    body {
+      background: linear-gradient(135deg, #070A2A 0%, #0B1548 45%, #20135F 72%, #2A124F 100%);
+    }
+
+    @page {
+      size: Letter;
+      margin: 0;
+    }
+
+    .page {
+      width: 8.5in;
+      height: 11in;
+      min-height: 11in;
+      padding: 0.55in 0.62in;
+      break-after: page;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(rgba(255, 255, 255, 0.026) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.026) 1px, transparent 1px),
+        var(--bg);
+      background-size: 44px 44px, 44px 44px, auto;
+    }
+
+    .page.light {
+      color: var(--ink);
+      background:
+        linear-gradient(rgba(23, 32, 51, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(23, 32, 51, 0.035) 1px, transparent 1px),
+        var(--paper);
+      background-size: 44px 44px, 44px 44px, auto;
+    }
+
+    .page::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      border-top: 4px solid transparent;
+      border-image: linear-gradient(90deg, #EF4444, #F97316, #EAB308, #22C55E, #06B6D4, #3B82F6, #6366F1, #A855F7) 1;
+    }
+
+    .footer {
+      position: absolute;
+      left: 0.62in;
+      right: 0.62in;
+      bottom: 0.34in;
+      display: flex;
+      justify-content: space-between;
+      color: var(--faint);
+      font-size: 8.2pt;
+      font-family: "JetBrains Mono", Consolas, monospace;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+      font-weight: 750;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      font-size: 29pt;
+      line-height: 1.05;
+      max-width: 7in;
+    }
+
+    h2 {
+      font-size: 20pt;
+      margin-bottom: 0.17in;
+    }
+
+    h3 {
+      font-size: 11.5pt;
+      margin: 0.14in 0 0.07in;
+      color: var(--cyan);
+    }
+
+    .light h3 {
+      color: #0F7F8A;
+    }
+
+    p {
+      margin: 0 0 0.1in;
+    }
+
+    .label {
+      font-family: "JetBrains Mono", Consolas, monospace;
+      font-size: 8.3pt;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: 0.14in;
+    }
+
+    .lede {
+      color: var(--muted);
+      font-size: 12.6pt;
+      line-height: 1.42;
+      max-width: 6.9in;
+      margin-top: 0.24in;
+    }
+
+    .light .lede,
+    .light .muted {
+      color: var(--ink-muted);
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.12in;
+      margin-top: 0.3in;
+    }
+
+    .metric,
+    .card {
+      border: 1px solid var(--line);
+      background: rgba(17, 22, 64, 0.88);
+      border-radius: 8px;
+      padding: 0.14in;
+    }
+
+    .metric {
+      min-height: 0.86in;
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 15pt;
+      line-height: 1;
+      margin-bottom: 0.08in;
+      color: var(--text);
+    }
+
+    .metric span {
+      color: var(--muted);
+      font-size: 8.4pt;
+    }
+
+    .light .metric,
+    .light .card {
+      background: #FFFFFF;
+      border-color: var(--paper-line);
+      color: var(--ink);
+    }
+
+    .callout {
+      border-left: 4px solid var(--cyan);
+      background: rgba(77, 208, 225, 0.09);
+      border-radius: 8px;
+      padding: 0.14in 0.16in;
+      margin: 0.2in 0;
+    }
+
+    .correction {
+      border-left-color: var(--red);
+      background: rgba(248, 113, 113, 0.11);
+    }
+
+    .ok {
+      border-left-color: var(--green);
+      background: rgba(52, 211, 153, 0.10);
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.16in;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.13in;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.1in;
+    }
+
+    .card h3 {
+      margin-top: 0;
+    }
+
+    ul,
+    ol {
+      margin: 0.05in 0 0.1in 0;
+      padding: 0;
+    }
+
+    li {
+      list-style: none;
+      margin: 0 0 0.06in;
+      padding-left: 0.16in;
+      position: relative;
+    }
+
+    li::before {
+      content: "-";
+      position: absolute;
+      left: 0;
+      color: var(--cyan);
+    }
+
+    .tight li {
+      margin-bottom: 0.035in;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 9.1pt;
+      margin-top: 0.08in;
+    }
+
+    th,
+    td {
+      border: 1px solid var(--line);
+      padding: 0.075in 0.08in;
+      vertical-align: top;
+    }
+
+    .light th,
+    .light td {
+      border-color: var(--paper-line);
+    }
+
+    th {
+      color: var(--cyan);
+      font-weight: 700;
+      text-align: left;
+      background: rgba(77, 208, 225, 0.07);
+    }
+
+    .light th {
+      color: #0F7F8A;
+      background: #EAF8FA;
+    }
+
+    code,
+    .mono {
+      font-family: "JetBrains Mono", Consolas, monospace;
+      font-size: 8.6pt;
+    }
+
+    .pill {
+      display: inline-block;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 0.045in 0.08in;
+      margin: 0.025in 0.025in 0 0;
+      color: var(--muted);
+      background: rgba(255, 255, 255, 0.04);
+      font-size: 8.4pt;
+    }
+
+    .light .pill {
+      color: var(--ink-muted);
+      background: #FFFFFF;
+      border-color: var(--paper-line);
+    }
+
+    .source {
+      color: var(--faint);
+      font-size: 8.1pt;
+      font-family: "JetBrains Mono", Consolas, monospace;
+      margin-top: 0.07in;
+    }
+
+    .light .source {
+      color: #67718B;
+    }
+
+    .stack {
+      display: grid;
+      gap: 0.08in;
+      margin-top: 0.18in;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 0.38in 1fr 1.65in;
+      gap: 0.1in;
+      align-items: stretch;
+      border: 1px solid var(--line);
+      background: rgba(17, 22, 64, 0.82);
+      border-radius: 8px;
+      padding: 0.08in;
+    }
+
+    .light .step {
+      background: #FFFFFF;
+      border-color: var(--paper-line);
+    }
+
+    .num {
+      width: 0.3in;
+      height: 0.3in;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--brand);
+      color: white;
+      font-weight: 800;
+      font-size: 9pt;
+    }
+
+    .tag {
+      justify-self: end;
+      align-self: start;
+      border: 1px solid rgba(77, 208, 225, 0.35);
+      color: var(--cyan);
+      border-radius: 999px;
+      padding: 0.035in 0.075in;
+      font-size: 8.1pt;
+      font-family: "JetBrains Mono", Consolas, monospace;
+      white-space: nowrap;
+    }
+
+    .light .tag {
+      color: #0F7F8A;
+      border-color: #90DDE5;
+    }
+
+    .mechanism {
+      display: grid;
+      grid-template-columns: 1.15fr 1.45fr 1.15fr;
+      gap: 0.12in;
+      margin-top: 0.2in;
+      align-items: stretch;
+    }
+
+    .rail {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 0.14in;
+      background: rgba(17, 22, 64, 0.86);
+      min-height: 6.4in;
+    }
+
+    .light .rail {
+      background: #FFFFFF;
+      border-color: var(--paper-line);
+    }
+
+    .rail h3 {
+      margin-top: 0;
+      margin-bottom: 0.1in;
+    }
+
+    .node {
+      border: 1px solid rgba(77, 208, 225, 0.28);
+      border-radius: 8px;
+      padding: 0.09in;
+      margin-bottom: 0.08in;
+      background: rgba(77, 208, 225, 0.07);
+    }
+
+    .light .node {
+      background: #F5FBFC;
+      border-color: #B9E9EE;
+    }
+
+    .node strong {
+      display: block;
+      margin-bottom: 0.03in;
+    }
+
+    .banner {
+      margin-top: 0.28in;
+      padding: 0.13in 0.16in;
+      border: 1px solid rgba(77, 208, 225, 0.28);
+      border-radius: 8px;
+      background: rgba(77, 208, 225, 0.08);
+    }
+
+    .compact {
+      font-size: 9.1pt;
+      line-height: 1.38;
+    }
+
+    .small {
+      font-size: 8.5pt;
+    }
+  </style>
+</head>
+<body>
+  <section class="page">
+    <div class="label">Repo-aligned revision - document 2 of 4</div>
+    <h1>A critical realist and CRAFTS-based interpretation of Symphonix-Health as an agentic mechanism architecture</h1>
+    <p class="lede">The original PDF had the right instinct: Symphonix-Health should be read as a mechanism, not as a single model. The correction is that the mechanism is the implemented repo arrangement: BulletTrain, Bridge SDK, Prompt Engine, Bevan, GHARRA, Nexus A2A, CSAA, SignalBox, CAID, and the domain services around them.</p>
+    <div class="meta-grid">
+      <div class="metric"><strong>Lens</strong><span>CRAFTS and critical realism are interpretation frames, not platform subsystems.</span></div>
+      <div class="metric"><strong>Runtime</strong><span>Cross-system movement remains BulletTrain-mediated.</span></div>
+      <div class="metric"><strong>Trust</strong><span>GHARRA supplies registry metadata; Nexus admits routes.</span></div>
+      <div class="metric"><strong>Safety</strong><span>CSAA, HITL, audit, PHI routing, and SignalBox evidence bound clinical use.</span></div>
+    </div>
+    <div class="callout">
+      <strong>Revision position.</strong> Symphonix-Health can be described as an agentic mechanism architecture when "mechanism" means a repeatable arrangement of data, policy, identity, transport, reasoning, safety, human review, and evidence capture. The repositories do not support treating CRAFTS as an implemented framework or AGI as a current product claim.
+    </div>
+    <div class="banner">
+      <span class="pill">Source PDF: A Critical Realist and CRAFTS-Based Interpretation...</span>
+      <span class="pill">Evidence basis: local repositories under C:\Users\hgeec\github</span>
+      <span class="pill">Output: revised report and diagram set</span>
+    </div>
+    <div class="footer"><span>Symphonix-Health</span><span>Critical realist / CRAFTS revision</span></div>
+  </section>
+
+  <section class="page light">
+    <div class="label">Required correction</div>
+    <h2>What the original PDF should now say</h2>
+    <div class="grid-2">
+      <div class="card">
+        <h3>Keep</h3>
+        <ul>
+          <li>Symphonix-Health is better understood as a mechanism architecture than as "an AI app".</li>
+          <li>The central question is how clinical context, tools, agents, and governance combine to produce safe action.</li>
+          <li>Critical realism is a useful evaluation stance because outcomes depend on context and controls, not only model accuracy.</li>
+          <li>Networked intelligence is a plausible aspiration for bounded healthcare workflows.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Correct</h3>
+        <ul>
+          <li>CRAFTS is not a named implemented repo component. It should sit outside the runtime diagram as an analytic lens.</li>
+          <li>AGI benchmark statements are not repo evidence and should not appear as proof of platform capability.</li>
+          <li>Bevan exists in the codebase, but as a local LLM/router, training, and inference surface behind controls.</li>
+          <li>Agents do not replace APIs or mutate sibling systems directly; cross-system exchange remains BulletTrain-mediated.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="callout correction">
+      <strong>Highest-risk overclaim.</strong> "Superhuman clinical intelligence" is acceptable only as a bounded network-level claim: a governed system may exceed one clinician's memory, throughput, and coordination capacity in selected workflows. It is not evidence that the model, or the platform, has general superhuman intelligence.
+    </div>
+    <table>
+      <thead>
+        <tr><th>Original implication</th><th>Repo-aligned wording</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>CRAFTS is part of the Symphonix runtime.</td><td>CRAFTS is a reading frame used to classify culture, relations, agency, resources, funding or power, technology, and structure.</td></tr>
+        <tr><td>The LLM is the main mechanism.</td><td>The mechanism is the arrangement of BulletTrain, envelopes, prompts, route admission, safety gates, human review, and evidence capture.</td></tr>
+        <tr><td>AGI benchmarks justify the architecture.</td><td>Local requirements, seeded matrices, service tests, audit traces, SignalBox captures, and safety cases justify or falsify the architecture.</td></tr>
+      </tbody>
+    </table>
+    <div class="source">Evidence: symphonix-health-docs/strategy/agent-first.md:9,19,21,54-58,82,193-196; symphonix-health-docs/strategy/bullettrain-integration-doctrine.md:11,77,117,161.</div>
+    <div class="footer"><span>Correction</span><span>2</span></div>
+  </section>
+
+  <section class="page">
+    <div class="label">Mechanism map</div>
+    <h2>The actual mechanism is an arrangement, not a model</h2>
+    <p class="muted">In critical realist terms, the generative mechanism is activated only when the right conditions co-occur: governed clinical data, identity, policy, route admission, local reasoning, safety scope, human accountability, and observable evidence.</p>
+    <div class="mechanism">
+      <div class="rail">
+        <h3>Context and resources</h3>
+        <div class="node"><strong>Domain systems</strong> Patient, claims, pharmacy, laboratory, scheduling, imaging, public-health, and workflow services.</div>
+        <div class="node"><strong>BulletTrain</strong> Integration fabric, canonical exchange, FHIR R4, HL7v2, CDA, X12, event bus, consent, audit, provenance.</div>
+        <div class="node"><strong>Bridge SDK</strong> Canonical pivot, deterministic envelope serialisation, adapter translation, no sibling direct calls.</div>
+      </div>
+      <div class="rail">
+        <h3>Agency and coordination</h3>
+        <div class="node"><strong>Prompt Engine</strong> Structured prompt specs, agentic mode, policy injection, PHI detection, schema validation, reflection support.</div>
+        <div class="node"><strong>Bevan</strong> Local LLM/router option for domain queries and PHI-local routing, with harness and audit expectations.</div>
+        <div class="node"><strong>GHARRA</strong> Federated zero-trust registry for agent discovery, routing advice, trust bundles, ABAC, and zero-PHI enforcement.</div>
+        <div class="node"><strong>Nexus A2A</strong> JSON-RPC transport, 13 route-admission checks, JWT, DID support, task lifecycle and escalation.</div>
+      </div>
+      <div class="rail">
+        <h3>Controls and outcomes</h3>
+        <div class="node"><strong>CSAA</strong> Scope classifier, hazard seed, DCB0129/0160 artefacts, DPIA triggers, hard-stop release logic.</div>
+        <div class="node"><strong>SignalBox</strong> Persona-aware browser evidence, structured assertions, clinical signal capture, replay, GHARRA ledger anchoring.</div>
+        <div class="node"><strong>CAID</strong> Prompt-to-requirement trace, derived tests, matrices, orchestration, audit trail, healthcare patterns.</div>
+      </div>
+    </div>
+    <div class="source">Evidence: BulletTrain/README.md:33,43,51,60,65,67,69,75-87,125-130; symphonix-bridge-sdk/docs/REQUIREMENTS.md:14,35,37; prompt-engine/docs/REQUIREMENTS.md:344,643,670,1026.</div>
+    <div class="footer"><span>Mechanism map</span><span>3</span></div>
+  </section>
+
+  <section class="page light">
+    <div class="label">CRAFTS as lens</div>
+    <h2>How CRAFTS maps onto implemented evidence</h2>
+    <p>The source PDF uses CRAFTS to organise socio-technical explanation. That is still useful if it is kept outside the runtime. The repositories provide evidence for each dimension, but they do not define "CRAFTS" as a service, library, policy engine, or data model.</p>
+    <table>
+      <thead>
+        <tr><th>CRAFTS dimension</th><th>Repo-aligned interpretation</th><th>Evidence surface</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Culture</td><td>Clinical doctrine, policy language, safety posture, and prompt constraints.</td><td>Prompt Engine policies; CSAA scope/hazard rules; Symphonix design specifications.</td></tr>
+        <tr><td>Relations</td><td>Trust chains, route admission, tenancy, persona, access, and agent handoff.</td><td>GHARRA registry; Nexus A2A admission; BulletTrain RBAC; SignalBox personas.</td></tr>
+        <tr><td>Agency</td><td>Human clinicians, administrative users, local agents, CAID agents, and review workflows.</td><td>Agent-first gates; CAID orchestration; HITL and approval states.</td></tr>
+        <tr><td>Funding or power</td><td>Governance, market priorities, country and tenant constraints, sovereignty, subscription surfaces.</td><td>Health Agent Workspace; GHARRA marketplace and jurisdiction controls; strategy docs.</td></tr>
+        <tr><td>Technology</td><td>FHIR, X12, HL7v2, JSON-RPC, MCP, LLM routing, deterministic envelopes, audit logs.</td><td>BulletTrain, Bridge SDK, Prompt Engine, Bevan, Nexus, SignalBox.</td></tr>
+        <tr><td>Structure</td><td>Where responsibility lives: domain services own data, BulletTrain owns exchange, GHARRA owns registry, Nexus owns transport admission.</td><td>BulletTrain Integration Doctrine; Nexus/GHARRA integration docs; Bridge SDK rules.</td></tr>
+      </tbody>
+    </table>
+    <div class="callout ok">
+      <strong>Recommended diagram convention.</strong> Draw CRAFTS as an outer evaluation lens around the platform diagram. Do not place it in the same layer as BulletTrain, GHARRA, Nexus, or CSAA.
+    </div>
+    <div class="grid-3">
+      <div class="card compact"><h3>What it explains</h3><p>Why the same agent behaves differently across workflows, tenants, policies, personas, and evidence standards.</p></div>
+      <div class="card compact"><h3>What it does not do</h3><p>It does not route traffic, store patient records, validate prompts, admit A2A routes, or classify clinical safety scope.</p></div>
+      <div class="card compact"><h3>How to test it</h3><p>Use CMO-style traces: context, mechanism, outcome, evidence, and governance status for each workflow.</p></div>
+    </div>
+    <div class="footer"><span>CRAFTS lens</span><span>4</span></div>
+  </section>
+
+  <section class="page">
+    <div class="label">Critical realist model</div>
+    <h2>Context, mechanism, outcome</h2>
+    <div class="grid-3">
+      <div class="card">
+        <h3>Context</h3>
+        <ul>
+          <li>Patient, encounter, claim, workflow, jurisdiction, tenant, persona, role, and consent state.</li>
+          <li>Available data quality, provenance, terminology, protocol, route, and service ownership.</li>
+          <li>Clinical safety class: administrative, clinical workflow, CDS support, or medical-device likely.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Mechanism</h3>
+        <ul>
+          <li>BulletTrain assembles and mediates context rather than allowing ad hoc sibling calls.</li>
+          <li>Prompt Engine or Bevan reasons under policy, schema, PHI, and tool-use constraints.</li>
+          <li>GHARRA and Nexus establish trust and route admission for agent-to-agent work.</li>
+          <li>CSAA and HITL determine what may be released, escalated, or blocked.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Outcome</h3>
+        <ul>
+          <li>A reviewable recommendation, draft, classification, route, proposed update, or approved action.</li>
+          <li>An audit record with provenance, policy context, persona state, and evidence links.</li>
+          <li>A learning signal only if it is generated through approved logs, matrices, or feedback loops.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="callout">
+      <strong>Mechanism rule.</strong> A model output is not the outcome. The outcome is the accepted, rejected, escalated, or audited clinical/administrative action after controls have run.
+    </div>
+    <div class="stack">
+      <div class="step">
+        <div class="num">1</div>
+        <div><strong>Real-world situation</strong><br>Incomplete information, cognitive load, time pressure, fragmented systems, and clinical/administrative risk.</div>
+        <div class="tag">Context</div>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <div><strong>Configured mechanism</strong><br>Canonical data movement, identity, route admission, prompt policy, safety classification, human review, and evidence capture.</div>
+        <div class="tag">Mechanism</div>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <div><strong>Observed result</strong><br>Measured decision quality, auditability, delay reduction, safety escalation, denied action, or failed gate.</div>
+        <div class="tag">Outcome</div>
+      </div>
+    </div>
+    <div class="source">Evidence: csaa/README.md:90-94,149; csaa/csaa/case_builder.py:181-199; symphonix-health-docs/docs/specifications/architecture-specification.md:170-184.</div>
+    <div class="footer"><span>CMO model</span><span>5</span></div>
+  </section>
+
+  <section class="page light">
+    <div class="label">Runtime sequence</div>
+    <h2>Repo-aligned agentic flow</h2>
+    <div class="stack">
+      <div class="step">
+        <div class="num">1</div>
+        <div><strong>Workflow request enters a real service.</strong><br>Examples include claims adjudication, pathway deviation, prior authorisation, triage, or clinician inbox work.</div>
+        <div class="tag">Service</div>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <div><strong>BulletTrain mediates cross-system context.</strong><br>FHIR, HL7v2, X12, event bus, consent, access policy, audit, provenance, transformation, and AI grounding stay under the integration fabric.</div>
+        <div class="tag">Data plane</div>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <div><strong>Bridge SDK serialises the envelope.</strong><br>Adapters translate via the canonical pivot; deterministic serialisation supports audit replay and refuses direct sibling calls.</div>
+        <div class="tag">Envelope</div>
+      </div>
+      <div class="step">
+        <div class="num">4</div>
+        <div><strong>Reasoning is assembled under policy.</strong><br>Prompt Engine adds structured specs, policy elements, agentic mode, schema validation, and PHI detection. Bevan may serve as a local domain LLM/router.</div>
+        <div class="tag">Reasoning</div>
+      </div>
+      <div class="step">
+        <div class="num">5</div>
+        <div><strong>Agent routes are discovered and admitted.</strong><br>GHARRA owns registry and trust metadata. Nexus validates GHARRA records, applies 13 route-admission checks, and proxies JSON-RPC only when admitted.</div>
+        <div class="tag">Trust</div>
+      </div>
+      <div class="step">
+        <div class="num">6</div>
+        <div><strong>Safety and evidence controls run.</strong><br>CSAA classifies clinical scope and hazards. SignalBox captures persona-aware browser evidence and can anchor clinical signal manifests through GHARRA.</div>
+        <div class="tag">Governance</div>
+      </div>
+    </div>
+    <div class="source">Evidence: nexus-a2a-protocol/docs/gharra_integration.md:5,14,18-21,228-231; signalbox-mcp/README.md:47,293-305,313; BulletTrain/bevan_llm/BEVAN_LLM_INTEGRATION_GUIDE.md:4-5,40.</div>
+    <div class="footer"><span>Runtime</span><span>6</span></div>
+  </section>
+
+  <section class="page">
+    <div class="label">Bounded intelligence claim</div>
+    <h2>Replace AGI proof claims with bounded network intelligence</h2>
+    <div class="callout correction">
+      <strong>Do not use AGI benchmark claims as architecture evidence.</strong> The local repositories contain service contracts, requirements matrices, safety gates, integration rules, and implementation code. They do not prove AGI.
+    </div>
+    <div class="grid-2">
+      <div class="card">
+        <h3>Supported claim</h3>
+        <p>Symphonix-Health is designed to produce networked clinical and administrative intelligence by combining specialised services, agents, protocols, and human review under a shared governance model.</p>
+        <ul>
+          <li>It can coordinate more context than one person can hold unaided.</li>
+          <li>It can run repeatable checks faster than manual review in selected workflows.</li>
+          <li>It can preserve route, policy, persona, and evidence state for later review.</li>
+          <li>It can fail closed when safety or trust conditions are missing.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Unsupported claim</h3>
+        <p>The repos do not justify saying the platform currently has general superhuman clinical intelligence or AGI-level capability.</p>
+        <ul>
+          <li>Bevan is a local LLM/router surface, not an AGI proof.</li>
+          <li>Prompt Engine improves prompt assembly and policy control, not general intelligence.</li>
+          <li>SignalBox provides evidence capture and browser attestation, not outcome truth by itself.</li>
+          <li>Public benchmark claims are external and should be omitted unless separately verified.</li>
+        </ul>
+      </div>
+    </div>
+    <table>
+      <thead>
+        <tr><th>Use the term</th><th>Only when the evidence shows</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Agentic mechanism</td><td>Data, policy, identity, route, safety, review, and audit controls combine to produce a governed action.</td></tr>
+        <tr><td>Networked clinical intelligence</td><td>Multiple specialised components improve workflow coverage, timeliness, consistency, or auditability.</td></tr>
+        <tr><td>Superhuman</td><td>A bounded workflow demonstrably exceeds a single human baseline under real-service conditions and documented safety gates.</td></tr>
+      </tbody>
+    </table>
+    <div class="source">Evidence: BulletTrain/bevan_llm/BEVAN_LLM_SECURITY_REVIEW.md:4-18; BulletTrain/bevan_llm/BEVAN_LLM_FINE_TUNING_PROPOSAL.md:15-32,63-69; caid-agent/README.md:37,44,51,728.</div>
+    <div class="footer"><span>Bounded claim</span><span>7</span></div>
+  </section>
+
+  <section class="page light">
+    <div class="label">Evaluation design</div>
+    <h2>How a realist evaluation should be run</h2>
+    <p>Critical realism is most useful here as an evidence discipline: do not ask whether "AI works" in the abstract. Ask which mechanism, in which context, under which governance conditions, produced which outcome.</p>
+    <div class="grid-2">
+      <div class="card">
+        <h3>Minimum evidence per workflow</h3>
+        <ul>
+          <li>Real service route, tenant/account scope, persona, role, and permission boundary.</li>
+          <li>BulletTrain-mediated data path with consent, access, transformation, provenance, and audit evidence.</li>
+          <li>Prompt or Bevan route with policy, schema, PHI, and tool-use controls.</li>
+          <li>GHARRA/Nexus route-admission evidence for agent-to-agent interactions.</li>
+          <li>CSAA scope, hazard state, human review point, and release decision where clinical scope applies.</li>
+          <li>SignalBox capture, replay, screenshot, structured assertion, or equivalent runtime evidence.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Evidence that should not pass</h3>
+        <ul>
+          <li>Scenario-only statements without direct service evidence.</li>
+          <li>Mocked internal services when seeded real paths exist.</li>
+          <li>Empty dashboards, synthetic counters, fabricated telemetry, or unbacked screenshots.</li>
+          <li>Repo-level coverage reused as service-level proof.</li>
+          <li>Claims that ignore patient identity, consent, tenant, or route ownership.</li>
+          <li>Reports that cite public AGI benchmarks instead of local workflow evidence.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="callout">
+      <strong>CMO record shape.</strong> Each workflow should record Context, Mechanism, Outcome, Evidence, Blockers, Residual risk, Human decision, and Next action. That format matches the repo culture better than abstract capability scoring.
+    </div>
+    <div class="grid-4">
+      <div class="card compact"><h3>Data</h3><p>FHIR, X12, HL7v2, event, consent, provenance.</p></div>
+      <div class="card compact"><h3>Trust</h3><p>GHARRA record, Nexus admission, JWT/mTLS/DPoP where applicable.</p></div>
+      <div class="card compact"><h3>Safety</h3><p>CSAA scope, hazards, DPIA, residual risk, HITL.</p></div>
+      <div class="card compact"><h3>Evidence</h3><p>SignalBox capture, test result, matrix row, audit log, trace.</p></div>
+    </div>
+    <div class="footer"><span>Evaluation</span><span>8</span></div>
+  </section>
+
+  <section class="page">
+    <div class="label">Diagram revision</div>
+    <h2>Recommended diagram structure</h2>
+    <p class="muted">The revised diagrams should make the boundary between theory and runtime obvious. CRAFTS and critical realism frame evaluation. BulletTrain, Bridge SDK, Prompt Engine, Bevan, GHARRA, Nexus, CSAA, SignalBox, and CAID are the platform evidence surfaces.</p>
+    <div class="mechanism">
+      <div class="rail">
+        <h3>Outer lens</h3>
+        <div class="node"><strong>Critical realism</strong> Context plus mechanism plus outcome.</div>
+        <div class="node"><strong>CRAFTS</strong> Culture, relations, agency, funding/power, technology, structure.</div>
+        <div class="node"><strong>Evaluation</strong> Which conditions activate or block the mechanism?</div>
+      </div>
+      <div class="rail">
+        <h3>Runtime spine</h3>
+        <div class="node"><strong>BulletTrain</strong> Integration fabric and data movement owner.</div>
+        <div class="node"><strong>Bridge SDK</strong> Canonical envelope and adapter translation.</div>
+        <div class="node"><strong>Prompt Engine / Bevan</strong> Reasoning substrate under policy and PHI controls.</div>
+        <div class="node"><strong>GHARRA / Nexus</strong> Discovery metadata, trust, route admission, transport.</div>
+      </div>
+      <div class="rail">
+        <h3>Control plane</h3>
+        <div class="node"><strong>CSAA</strong> Clinical safety classification and release gates.</div>
+        <div class="node"><strong>SignalBox</strong> Persona, browser, scenario, capture, replay, ledger evidence.</div>
+        <div class="node"><strong>CAID</strong> Requirement trace, matrices, generation, audit, real-service verification.</div>
+      </div>
+    </div>
+    <div class="callout ok">
+      <strong>Diagram rule.</strong> Use one arrows-and-layers diagram for the runtime flow, and one CMO/CRAFTS diagram for interpretation. Do not collapse them into a single stack, because that makes an analytic framework look like executable architecture.
+    </div>
+    <div class="source">Evidence: global-agent-registry/README.md:26,93-101,107-119,139,165-166,259; nexus-a2a-protocol/README.md:26,73,144-166,189-190.</div>
+    <div class="footer"><span>Diagram structure</span><span>9</span></div>
+  </section>
+
+  <section class="page light">
+    <div class="label">Open decisions</div>
+    <h2>Decisions the revised document should leave visible</h2>
+    <table>
+      <thead>
+        <tr><th>Decision</th><th>Recommended stance</th><th>Reason</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Should "AGI" appear?</td><td>No, except in a limitations note.</td><td>The repos support governed agentic workflows, not AGI proof.</td></tr>
+        <tr><td>Should "superhuman" appear?</td><td>Yes, but only with "bounded network-level" qualifiers.</td><td>The system can exceed single-human bandwidth in scoped workflows; that is not model-level general intelligence.</td></tr>
+        <tr><td>Should CRAFTS be drawn inside the platform?</td><td>No.</td><td>It is an interpretation frame. Runtime components are named repos and services.</td></tr>
+        <tr><td>Should Bevan be included?</td><td>Yes, narrowly.</td><td>Bevan has BulletTrain code/docs as local LLM/router and fine-tuning surface, with PHI and harness controls.</td></tr>
+        <tr><td>Should Patient360 be used as a worked example?</td><td>Only after current package evidence is checked.</td><td>BulletTrain notes migration to patient360-assistant, so old examples can drift.</td></tr>
+        <tr><td>Should readiness use report claims?</td><td>No.</td><td>Reports are hypotheses; real-service tests, traces, seeded data, and direct evidence are required.</td></tr>
+      </tbody>
+    </table>
+    <div class="callout">
+      <strong>Document health rule.</strong> Every future claim should name whether it is code-backed, specification-backed, strategy-backed, or external theory. Mixed claims are the source of most drift in the original PDF.
+    </div>
+    <div class="grid-3">
+      <div class="card compact"><h3>Code-backed</h3><p>Implemented modules, routes, tests, harnesses, and generated artifacts present in the repos.</p></div>
+      <div class="card compact"><h3>Spec-backed</h3><p>Requirement statements, architecture specifications, matrices, safety cases, and strategy documents.</p></div>
+      <div class="card compact"><h3>Theory-backed</h3><p>Critical realism and CRAFTS interpretation, clearly separated from implementation evidence.</p></div>
+    </div>
+    <div class="footer"><span>Open decisions</span><span>10</span></div>
+  </section>
+
+  <section class="page">
+    <div class="label">Source ledger</div>
+    <h2>Primary repo evidence used</h2>
+    <table>
+      <thead>
+        <tr><th>Area</th><th>Evidence references</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Agent-first architecture</td><td>symphonix-health-docs/strategy/agent-first.md:9,19,21,33-42,54-58,82,98,193-196,308-317.</td></tr>
+        <tr><td>Integration doctrine</td><td>symphonix-health-docs/strategy/bullettrain-integration-doctrine.md:11,23,47,51,56,72,77-78,89-100,117-119,146-161.</td></tr>
+        <tr><td>BulletTrain fabric</td><td>BulletTrain/README.md:33,43,51,53,60-69,73-87,111,125-130,155.</td></tr>
+        <tr><td>GHARRA trust and zero-PHI registry</td><td>global-agent-registry/README.md:26,60,93-101,107-119,139,165-166,259,268.</td></tr>
+        <tr><td>Nexus A2A route admission</td><td>nexus-a2a-protocol/README.md:26,73,144-166,189-190; nexus-a2a-protocol/docs/gharra_integration.md:5,14,18-21,228-231.</td></tr>
+        <tr><td>Bridge SDK envelope rules</td><td>symphonix-bridge-sdk/docs/REQUIREMENTS.md:14,35,37; docs/architecture/patient-identity-closed-loop.md:21-30,318.</td></tr>
+        <tr><td>Prompt and reasoning controls</td><td>prompt-engine/docs/REQUIREMENTS.md:344-363,643-670,950-956,1026; prompt-engine/src/prompt_engine/optimizer/workflow.py:4-11,227.</td></tr>
+        <tr><td>Bevan bounded role</td><td>BulletTrain/bevan_llm/BEVAN_LLM_INTEGRATION_GUIDE.md:4-5,40,95-96; BEVAN_LLM_SECURITY_REVIEW.md:4-18; BEVAN_LLM_FINE_TUNING_PROPOSAL.md:15-32,63-69.</td></tr>
+        <tr><td>CSAA and SignalBox</td><td>csaa/README.md:90-94,149; csaa/csaa/case_builder.py:181-199; signalbox-mcp/README.md:47,293-305,313; signalbox-mcp/versions/v2/README.md:9,41,171-175,217-229,378.</td></tr>
+        <tr><td>CAID and evidence discipline</td><td>caid-agent/README.md:37,44,51,54,171,175,245-249,671-672,726-728.</td></tr>
+      </tbody>
+    </table>
+    <div class="callout">
+      <strong>Revision summary.</strong> The revised document should read Symphonix-Health as a repo-backed agentic mechanism architecture, while clearly labelling CRAFTS and critical realism as interpretation and evaluation tools. That alignment preserves the useful thesis and removes the unsupported implementation and AGI claims.
+    </div>
+    <div class="footer"><span>Source ledger</span><span>11</span></div>
+  </section>
+</body>
+</html>

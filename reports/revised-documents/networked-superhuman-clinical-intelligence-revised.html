@@ -1,0 +1,779 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Networked Superhuman Clinical Intelligence - repo-aligned revision</title>
+  <style>
+    :root {
+      --bg: #080A2E;
+      --panel: #111640;
+      --panel-2: #171D52;
+      --line: rgba(232, 232, 237, 0.18);
+      --text: #E8E8ED;
+      --muted: #A9AEC4;
+      --faint: #7C829B;
+      --brand: #6366F1;
+      --teal: #14919B;
+      --cyan: #4DD0E1;
+      --red: #F87171;
+      --amber: #FBBF24;
+      --green: #34D399;
+      --paper: #F7F8FC;
+      --ink: #172033;
+      --ink-muted: #536079;
+      --paper-line: #D8DDEA;
+    }
+
+    * {
+      box-sizing: border-box;
+      letter-spacing: 0;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      color: var(--text);
+      background: var(--bg);
+      font-family: "DM Sans", "Segoe UI", Arial, sans-serif;
+      font-size: 10.4pt;
+      line-height: 1.46;
+    }
+
+    body {
+      background: linear-gradient(135deg, #060D1F 0%, #0D1B6E 44%, #1A1080 72%, #321061 100%);
+    }
+
+    @page {
+      size: Letter;
+      margin: 0;
+    }
+
+    .page {
+      width: 8.5in;
+      height: 11in;
+      min-height: 11in;
+      padding: 0.55in 0.62in;
+      break-after: page;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(rgba(255, 255, 255, 0.026) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.026) 1px, transparent 1px),
+        var(--bg);
+      background-size: 44px 44px, 44px 44px, auto;
+    }
+
+    .page.light {
+      color: var(--ink);
+      background:
+        linear-gradient(rgba(23, 32, 51, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(23, 32, 51, 0.035) 1px, transparent 1px),
+        var(--paper);
+      background-size: 44px 44px, 44px 44px, auto;
+    }
+
+    .page::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      border-top: 4px solid transparent;
+      border-image: linear-gradient(90deg, #EF4444, #F97316, #EAB308, #22C55E, #06B6D4, #3B82F6, #6366F1, #A855F7) 1;
+    }
+
+    .footer {
+      position: absolute;
+      left: 0.62in;
+      right: 0.62in;
+      bottom: 0.34in;
+      display: flex;
+      justify-content: space-between;
+      color: var(--faint);
+      font-size: 8.2pt;
+      font-family: "JetBrains Mono", Consolas, monospace;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+      font-weight: 750;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      font-size: 29pt;
+      line-height: 1.05;
+      max-width: 7in;
+    }
+
+    h2 {
+      font-size: 20pt;
+      margin-bottom: 0.17in;
+    }
+
+    h3 {
+      font-size: 11.5pt;
+      margin: 0.14in 0 0.07in;
+      color: var(--cyan);
+    }
+
+    .light h3 {
+      color: #0F7F8A;
+    }
+
+    p {
+      margin: 0 0 0.1in;
+    }
+
+    .label {
+      font-family: "JetBrains Mono", Consolas, monospace;
+      font-size: 8.3pt;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: 0.14in;
+    }
+
+    .lede {
+      color: var(--muted);
+      font-size: 12.6pt;
+      line-height: 1.42;
+      max-width: 6.9in;
+      margin-top: 0.24in;
+    }
+
+    .light .lede,
+    .light .muted {
+      color: var(--ink-muted);
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.12in;
+      margin-top: 0.3in;
+    }
+
+    .metric,
+    .card {
+      border: 1px solid var(--line);
+      background: rgba(17, 22, 64, 0.88);
+      border-radius: 8px;
+      padding: 0.14in;
+    }
+
+    .metric {
+      min-height: 0.86in;
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 15pt;
+      line-height: 1;
+      margin-bottom: 0.08in;
+      color: var(--text);
+    }
+
+    .metric span {
+      color: var(--muted);
+      font-size: 8.4pt;
+    }
+
+    .light .metric,
+    .light .card {
+      background: #FFFFFF;
+      border-color: var(--paper-line);
+      color: var(--ink);
+    }
+
+    .callout {
+      border-left: 4px solid var(--cyan);
+      background: rgba(77, 208, 225, 0.09);
+      border-radius: 8px;
+      padding: 0.14in 0.16in;
+      margin: 0.2in 0;
+    }
+
+    .correction {
+      border-left-color: var(--red);
+      background: rgba(248, 113, 113, 0.11);
+    }
+
+    .ok {
+      border-left-color: var(--green);
+      background: rgba(52, 211, 153, 0.10);
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.16in;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.13in;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.1in;
+    }
+
+    .card h3 {
+      margin-top: 0;
+    }
+
+    ul,
+    ol {
+      margin: 0.05in 0 0.1in 0;
+      padding: 0;
+    }
+
+    li {
+      list-style: none;
+      margin: 0 0 0.055in;
+      padding-left: 0.16in;
+      position: relative;
+    }
+
+    li::before {
+      content: "-";
+      position: absolute;
+      left: 0;
+      color: var(--cyan);
+    }
+
+    .tight li {
+      margin-bottom: 0.035in;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 9.1pt;
+      margin-top: 0.08in;
+    }
+
+    th,
+    td {
+      border: 1px solid var(--line);
+      padding: 0.075in 0.08in;
+      vertical-align: top;
+    }
+
+    .light th,
+    .light td {
+      border-color: var(--paper-line);
+    }
+
+    th {
+      color: var(--cyan);
+      font-weight: 700;
+      text-align: left;
+      background: rgba(77, 208, 225, 0.07);
+    }
+
+    .light th {
+      color: #0F7F8A;
+      background: #EAF8FA;
+    }
+
+    code,
+    .mono {
+      font-family: "JetBrains Mono", Consolas, monospace;
+      font-size: 8.6pt;
+    }
+
+    .pill {
+      display: inline-block;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 0.045in 0.08in;
+      margin: 0.025in 0.025in 0 0;
+      color: var(--muted);
+      background: rgba(255, 255, 255, 0.04);
+      font-size: 8.4pt;
+    }
+
+    .light .pill {
+      color: var(--ink-muted);
+      background: #FFFFFF;
+      border-color: var(--paper-line);
+    }
+
+    .source {
+      color: var(--faint);
+      font-size: 8.1pt;
+      font-family: "JetBrains Mono", Consolas, monospace;
+      margin-top: 0.07in;
+    }
+
+    .light .source {
+      color: #67718B;
+    }
+
+    .stack {
+      display: grid;
+      gap: 0.08in;
+      margin-top: 0.18in;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 0.38in 1fr 1.65in;
+      gap: 0.1in;
+      align-items: stretch;
+      border: 1px solid var(--line);
+      background: rgba(17, 22, 64, 0.82);
+      border-radius: 8px;
+      padding: 0.08in;
+    }
+
+    .light .step {
+      background: #FFFFFF;
+      border-color: var(--paper-line);
+    }
+
+    .num {
+      width: 0.3in;
+      height: 0.3in;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--brand);
+      color: white;
+      font-weight: 800;
+      font-size: 9pt;
+    }
+
+    .tag {
+      justify-self: end;
+      align-self: start;
+      border: 1px solid rgba(77, 208, 225, 0.35);
+      color: var(--cyan);
+      border-radius: 999px;
+      padding: 0.035in 0.075in;
+      font-size: 8.1pt;
+      font-family: "JetBrains Mono", Consolas, monospace;
+      white-space: nowrap;
+    }
+
+    .light .tag {
+      color: #0F7F8A;
+      border-color: #90DDE5;
+    }
+
+    .layer {
+      display: grid;
+      grid-template-columns: 1.25in 1fr 1.45in;
+      gap: 0.12in;
+      align-items: stretch;
+      border: 1px solid var(--line);
+      background: rgba(17, 22, 64, 0.82);
+      border-radius: 8px;
+      padding: 0.1in;
+      margin-bottom: 0.08in;
+    }
+
+    .light .layer {
+      background: #FFFFFF;
+      border-color: var(--paper-line);
+    }
+
+    .layer strong {
+      color: var(--cyan);
+      display: block;
+    }
+
+    .light .layer strong {
+      color: #0F7F8A;
+    }
+
+    .banner {
+      margin-top: 0.28in;
+      padding: 0.13in 0.16in;
+      border: 1px solid rgba(77, 208, 225, 0.28);
+      border-radius: 8px;
+      background: rgba(77, 208, 225, 0.08);
+    }
+
+    .compact {
+      font-size: 9.1pt;
+      line-height: 1.38;
+    }
+
+    .small {
+      font-size: 8.5pt;
+    }
+  </style>
+</head>
+<body>
+  <section class="page">
+    <div class="label">Repo-aligned revision - document 3 of 4</div>
+    <h1>Symphonix Health and the case for bounded networked clinical intelligence</h1>
+    <p class="lede">The original PDF argued that Symphonix-Health can exceed ordinary single-human clinical bandwidth by networking data, agents, models, workflows, and governance. The repo-aligned correction is to make that claim measurable, bounded, and dependent on real service evidence.</p>
+    <div class="meta-grid">
+      <div class="metric"><strong>Bounded</strong><span>Superhuman is not a general model claim. It applies only to proven workflows.</span></div>
+      <div class="metric"><strong>Networked</strong><span>Capability comes from orchestration across repos, services, agents, and humans.</span></div>
+      <div class="metric"><strong>Governed</strong><span>Every clinical path needs safety scope, trust, HITL, and audit evidence.</span></div>
+      <div class="metric"><strong>Measured</strong><span>Claims must map to context coverage, latency, accuracy, safety, and outcomes.</span></div>
+    </div>
+    <div class="callout">
+      <strong>Revision position.</strong> Symphonix-Health can defensibly claim bounded networked clinical intelligence: the platform can coordinate more clinical context, protocol logic, routing, and evidence than an unaided individual in selected workflows. The repositories do not support AGI language or unconstrained superhuman clinical claims.
+    </div>
+    <div class="banner">
+      <span class="pill">Source PDF: Symphonix Health and the Case for Networked Superhuman Clinical Intelligence</span>
+      <span class="pill">Evidence basis: local repos and specifications</span>
+      <span class="pill">Output: revised report and diagrams</span>
+    </div>
+    <div class="footer"><span>Symphonix-Health</span><span>Networked intelligence revision</span></div>
+  </section>
+
+  <section class="page light">
+    <div class="label">Required correction</div>
+    <h2>What changes from the source PDF</h2>
+    <div class="grid-2">
+      <div class="card">
+        <h3>Keep</h3>
+        <ul>
+          <li>The useful thesis: Symphonix is more than a healthcare AI platform because its value comes from coordinated infrastructure.</li>
+          <li>The network framing: BulletTrain, GHARRA, Nexus A2A, Bevan, Patient360, voice, safety, and evidence surfaces combine.</li>
+          <li>The realist point: context determines whether a capability works, for whom, and under which constraints.</li>
+          <li>The need for a layered diagram that shows data, models, agents, governance, and workflow outcomes together.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Correct</h3>
+        <ul>
+          <li>Replace public-site dependence with local repo evidence and line-cited specifications.</li>
+          <li>Remove external AI benchmark examples as proof of platform capability.</li>
+          <li>Show compute and foundation-model infrastructure as external dependencies, not as Symphonix-owned layers.</li>
+          <li>Define "superhuman" through workflow thresholds, not through broad claims about intelligence.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="callout correction">
+      <strong>Highest-risk phrase.</strong> "Networked superhuman clinical intelligence" should remain a thesis-level term only if it is immediately narrowed to "bounded, governed, workflow-specific capability exceeding a single unaided human baseline."
+    </div>
+    <table>
+      <thead>
+        <tr><th>Source PDF wording</th><th>Repo-aligned replacement</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Engineer healthcare beyond the limits of human cognition.</td><td>Coordinate clinical context, workflows, agents, and controls so selected tasks can exceed unaided human bandwidth.</td></tr>
+        <tr><td>AI remains augmentative rather than sovereign.</td><td>Agents augment APIs and clinicians; they do not replace service APIs, direct mutation controls, or human accountability.</td></tr>
+        <tr><td>Nvidia-style five-layer cake.</td><td>External compute substrate plus Symphonix-owned data, reasoning, agent trust, safety, evidence, and workflow layers.</td></tr>
+      </tbody>
+    </table>
+    <div class="source">Evidence: symphonix-health-docs/strategy/agent-first.md:19,21,54-59,71-82; bullettrain-integration-doctrine.md:89-100,161.</div>
+    <div class="footer"><span>Correction</span><span>2</span></div>
+  </section>
+
+  <section class="page">
+    <div class="label">Repo-backed thesis</div>
+    <h2>The strongest defensible claim</h2>
+    <p class="muted">The local repositories support a stronger and cleaner thesis than the public-site version: Symphonix is a governed network for making clinical and administrative decisions more complete, traceable, and repeatable.</p>
+    <div class="grid-3">
+      <div class="card">
+        <h3>1. More complete context</h3>
+        <ul>
+          <li>BulletTrain owns cross-system exchange, identity, consent, provenance, transformation, and AI grounding.</li>
+          <li>Patient360 Assistant federates reads across 24 healthcare systems through the BulletTrain MCP Gateway.</li>
+          <li>Bridge SDK enforces canonical pivot translation and deterministic envelopes.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>2. Safer delegation</h3>
+        <ul>
+          <li>GHARRA is a zero-PHI registry and trust directory for healthcare agents.</li>
+          <li>Nexus A2A admits agent routes only after GHARRA-backed route validation.</li>
+          <li>Clinical agents run behind CSAA, route admission, and HITL patterns.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>3. Evidence-bearing action</h3>
+        <ul>
+          <li>SignalBox captures persona-aware browser and clinical signal evidence.</li>
+          <li>CAID preserves prompt-to-requirement trace and matrix-backed tests.</li>
+          <li>BulletTrain emits audit, consent, RBAC, workflow, and observability signals.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="callout ok">
+      <strong>Essence statement.</strong> Symphonix-Health is a governed clinical intelligence network: it assembles consented context, delegates through trusted agent routes, reasons under policy, stages or blocks action, and records evidence for review.
+    </div>
+    <div class="source">Evidence: BulletTrain/README.md:33,43-57,64-69,121,125-130,157,195-219; patient360-assistant/README.md:22,26,55,60-61; global-agent-registry/docs/integration-guide.md:5,363-375.</div>
+    <div class="footer"><span>Defensible claim</span><span>3</span></div>
+  </section>
+
+  <section class="page light">
+    <div class="label">Bounded superhuman definition</div>
+    <h2>Define the term by measurable thresholds</h2>
+    <p>The revised document should not say "the model is superhuman." It should say that a governed network may produce superhuman workflow performance when measured against a specific single-human or team baseline.</p>
+    <table>
+      <thead>
+        <tr><th>Capability axis</th><th>Repo-backed mechanism</th><th>Proof threshold</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Context breadth</td><td>Patient360, Shared Health Record, context assembler, FHIR/HL7/X12/DICOM adapters.</td><td>More relevant systems reached with fewer blind spots and no governance breaches.</td></tr>
+        <tr><td>Consistency</td><td>Prompt Engine schema validation, Bridge SDK deterministic envelopes, Output Validator, CAID matrices.</td><td>Lower variance across repeated cases, documented schema pass rate, reproducible audit replay.</td></tr>
+        <tr><td>Speed and scale</td><td>Workflow Orchestrator, Global Orchestrator, Event Router, LLM Router, Bevan, HITL Coordinator.</td><td>Better p50/p95 decision time while preserving safety and review gates.</td></tr>
+        <tr><td>Safety</td><td>CSAA, RBAC, consent service, GHARRA PHI gates, Nexus admission, SignalBox evidence.</td><td>No unreviewed clinical action outside scope; all denials/escalations/audits traceable.</td></tr>
+        <tr><td>Learning loop</td><td>Audit logs, SignalBox replay, CAID traceability, Bevan harness matrices, outcome watcher.</td><td>Measured improvement over baseline without synthetic or mocked internal evidence.</td></tr>
+      </tbody>
+    </table>
+    <div class="callout">
+      <strong>Use this guardrail.</strong> If a workflow lacks a baseline, a metric, a real service path, a safety classification, and direct evidence, do not call it superhuman. Call it a candidate.
+    </div>
+    <div class="source">Evidence: BulletTrain/README.md:208-219,253,273,380,693,836,854,1401; caid-agent/README.md:37,44,51,671-672,726-728; signalbox-mcp/README.md:47,293-305,313.</div>
+    <div class="footer"><span>Definition</span><span>4</span></div>
+  </section>
+
+  <section class="page">
+    <div class="label">Layer model</div>
+    <h2>Replace the five-layer cake with repo-owned layers</h2>
+    <p class="muted">The source PDF tries to merge a generic AI infrastructure stack with the Symphonix roadmap. The revised diagram should separate external dependencies from the layers this workspace actually owns.</p>
+    <div class="layer">
+      <strong>External substrate</strong>
+      <div>Energy, chips, GPUs, cloud regions, data centres, foundation-model vendors, and national connectivity. These condition the platform but are not Symphonix repo capabilities.</div>
+      <div class="tag">Dependency</div>
+    </div>
+    <div class="layer">
+      <strong>Model substrate</strong>
+      <div>Bevan LLM, LLM Router, local inference, approved external fallback, output validation, prompt-injection screening, and PHI-local routing.</div>
+      <div class="tag">Reasoning</div>
+    </div>
+    <div class="layer">
+      <strong>Data plane</strong>
+      <div>BulletTrain, Bridge SDK, FHIR R4, HL7v2/CDA, X12, DICOM, OpenHIE gateway, terminology services, consent, provenance, and audit.</div>
+      <div class="tag">Grounding</div>
+    </div>
+    <div class="layer">
+      <strong>Agent trust plane</strong>
+      <div>GHARRA registry, zero-PHI metadata, ABAC, agent cards, Nexus JSON-RPC, route admission, JWT, DID support, and task lifecycle.</div>
+      <div class="tag">Delegation</div>
+    </div>
+    <div class="layer">
+      <strong>Governance plane</strong>
+      <div>CSAA safety scope, HITL, RBAC, break-glass, SignalBox capture/replay, CAID traceability, seeded matrices, and real-service verification.</div>
+      <div class="tag">Control</div>
+    </div>
+    <div class="layer">
+      <strong>Workflow surface</strong>
+      <div>Patient360 Assistant, clinical pathways, eClaims, pharmacy, labs, imaging, voice, CHW workflows, claims/fraud review, and operational dashboards.</div>
+      <div class="tag">Outcome</div>
+    </div>
+    <div class="source">Evidence: BulletTrain/README.md:183-197,208-219,291,318-342,352,361-380; nexus-a2a-protocol/README.md:26,73,144-166; global-agent-registry/README.md:26,93-119,139,165-166.</div>
+    <div class="footer"><span>Layer model</span><span>5</span></div>
+  </section>
+
+  <section class="page light">
+    <div class="label">Patient360 correction</div>
+    <h2>Patient360 is the best worked example, but it must be current</h2>
+    <p>The source PDF treats Patient360 as a broad essence example. The current repo evidence is more precise: the assistant is a governed conversational and tool-using agent over the Patient360 record, with all sibling reads routed through the BulletTrain MCP Gateway.</p>
+    <div class="grid-2">
+      <div class="card">
+        <h3>What is code/spec-backed</h3>
+        <ul>
+          <li>It spans 24 federated healthcare systems by contract.</li>
+          <li>It has deny-by-default context radius and tool policy catalogues.</li>
+          <li>It uses a boot guard to block permissive MCP surfaces.</li>
+          <li>It emits session, capability, tool-call, and outcome audit events.</li>
+          <li>It opens sessions with patient, persona, and consent token inputs.</li>
+          <li>It records governance coverage and can fail closed.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>What to avoid claiming</h3>
+        <ul>
+          <li>Do not say it freely reads all sibling systems. It routes through the MCP Gateway and policy gates.</li>
+          <li>Do not treat current hermetic tests as full real-service proof where they point to a stub gateway.</li>
+          <li>Do not imply autonomous clinical mutation. The evidence supports governed reads, summaries, dispatches, outcomes, and audit.</li>
+          <li>Do not cite stale BulletTrain assistant files as the active package; the assistant has a separate repo.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="callout ok">
+      <strong>Diagram placement.</strong> Put Patient360 at the workflow surface, connected downward to BulletTrain/MCP Gateway, laterally to persona/consent/audit controls, and upward to the bounded intelligence claim.
+    </div>
+    <div class="source">Evidence: patient360-assistant/CLAUDE.md:15,30,34,42,49-52,94-115,128; patient360-assistant/README.md:22,26,55,60-61,128-132,156-157; tests/test_use_cases.py:9,171,203,241,264-315.</div>
+    <div class="footer"><span>Patient360</span><span>6</span></div>
+  </section>
+
+  <section class="page">
+    <div class="label">Voice and multimodal surface</div>
+    <h2>Voice-first interaction is real, but bounded by tests and consent</h2>
+    <p class="muted">The original PDF mentions voice-first interaction. The local evidence supports a voice and ambient-scribe surface inside BulletTrain, but it should be described through its implemented controls, not as a broad intelligence claim.</p>
+    <div class="grid-3">
+      <div class="card">
+        <h3>Ambient scribe</h3>
+        <ul>
+          <li>BulletTrain has an ambient clinical scribe and voice command pipeline.</li>
+          <li>The ambient session is consent-gated and drafts SOAP sections.</li>
+          <li>Retention tests cover lifecycle, signing, and tamper detection.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Voice routing</h3>
+        <ul>
+          <li>The Voice Router converts voice input to text and forwards messages to downstream HTTP endpoints.</li>
+          <li>Voice authentication uses spoken phrase plus one-time password in BulletTrain docs.</li>
+          <li>Voice commands can route into the chat/workflow assistant surface.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Evidence gate</h3>
+        <ul>
+          <li>Ambient scribe has 500 matrix-driven scenarios across UC-AV-01..05.</li>
+          <li>Those scenarios run against live prompt_constructor and fhir_proxy.</li>
+          <li>Voice is therefore a tested channel, not proof of model-level superhuman reasoning.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="callout">
+      <strong>Wording rule.</strong> Say "voice and ambient-scribe channels reduce input friction and can feed governed workflow actions." Do not say they make the system generally superhuman.
+    </div>
+    <div class="source">Evidence: BulletTrain/bullettrain/voice/README.md:3,17,20-21,32,48-50,64-68; BulletTrain/services/voice_router/README.md:3; BulletTrain/README.md:831,911-912,925,976-978.</div>
+    <div class="footer"><span>Voice</span><span>7</span></div>
+  </section>
+
+  <section class="page light">
+    <div class="label">Evaluation gate</div>
+    <h2>How to prove a networked intelligence claim</h2>
+    <div class="stack">
+      <div class="step">
+        <div class="num">1</div>
+        <div><strong>Name the workflow and baseline.</strong><br>Examples: eClaims adjudication, pathway deviation, pharmacy prior authorisation, ambulance dispatch, clinician inbox triage, Patient360 summary, ambient-scribe draft.</div>
+        <div class="tag">Scope</div>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <div><strong>Verify the real data path.</strong><br>Show BulletTrain mediation, Bridge SDK envelope, Patient360/MCP Gateway path, FHIR/HL7/X12/DICOM evidence, consent, provenance, and system ownership.</div>
+        <div class="tag">Grounding</div>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <div><strong>Verify trust and safety.</strong><br>Record GHARRA metadata, Nexus admission where A2A applies, CSAA classification, PHI routing, RBAC, HITL, and break-glass handling.</div>
+        <div class="tag">Control</div>
+      </div>
+      <div class="step">
+        <div class="num">4</div>
+        <div><strong>Measure against a human baseline.</strong><br>Use context completeness, decision latency, accuracy, override rate, blind spots, queue burn-down, safety incidents, and downstream outcome evidence.</div>
+        <div class="tag">Measure</div>
+      </div>
+      <div class="step">
+        <div class="num">5</div>
+        <div><strong>Promote only when the gates hold.</strong><br>Shadow mode first; threshold-HITL only after false-positive and false-negative rates, queue SLA, and audit evidence meet the promotion bar.</div>
+        <div class="tag">Promote</div>
+      </div>
+    </div>
+    <div class="source">Evidence: symphonix-health-docs/strategy/agent-first.md:95-98,118,162-175,193-209,229-243,291-299; bullettrain-integration-doctrine.md:117-119,161.</div>
+    <div class="footer"><span>Evaluation</span><span>8</span></div>
+  </section>
+
+  <section class="page">
+    <div class="label">Diagram revision</div>
+    <h2>Recommended final diagram set</h2>
+    <p class="muted">The third PDF should not collapse architecture, thesis, and aspiration into one figure. Use three small diagrams that keep claims testable.</p>
+    <div class="grid-3">
+      <div class="card">
+        <h3>Diagram A: capability envelope</h3>
+        <ul>
+          <li>Outer label: bounded networked clinical intelligence.</li>
+          <li>Inputs: real services, consented data, personas, policy, safety scope.</li>
+          <li>Outputs: recommendation, draft, route, proposed update, approved action, blocked action.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Diagram B: owned layers</h3>
+        <ul>
+          <li>Separate external compute/model substrate from repo-owned controls.</li>
+          <li>Show BulletTrain/Bridge as data plane; GHARRA/Nexus as trust plane.</li>
+          <li>Show CSAA, SignalBox, CAID, RBAC, and HITL as control plane.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Diagram C: proof gates</h3>
+        <ul>
+          <li>Baseline, data path, safety class, route admission, human review, audit, outcome.</li>
+          <li>Pass, fail, blocked, or candidate status for each workflow.</li>
+          <li>Evidence links to tests, matrices, captures, logs, and safety cases.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="callout ok">
+      <strong>Design rule.</strong> Use the phrase "superhuman" only in Diagram A, with bounded and measured qualifiers. Keep repo names in Diagram B, and keep hard evidence in Diagram C.
+    </div>
+    <table>
+      <thead>
+        <tr><th>Do not draw</th><th>Draw instead</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>One all-purpose "AI stack" that implies Symphonix owns compute, data centres, and models end to end.</td><td>External dependency band plus repo-owned data, model routing, trust, governance, and workflow bands.</td></tr>
+        <tr><td>A clinician replaced by an AI agent.</td><td>Clinician, assistant, domain service, HITL reviewer, and audit trail in the same loop.</td></tr>
+        <tr><td>Capability arrows without evidence gates.</td><td>Arrows labelled with route admission, safety scope, consent, provenance, and outcome measurement.</td></tr>
+      </tbody>
+    </table>
+    <div class="footer"><span>Diagram set</span><span>9</span></div>
+  </section>
+
+  <section class="page light">
+    <div class="label">Open decisions</div>
+    <h2>Terminology decisions for the thesis</h2>
+    <table>
+      <thead>
+        <tr><th>Term</th><th>Recommended use</th><th>Reason</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Superhuman</td><td>Use only with "bounded", "networked", and a named workflow baseline.</td><td>The repo evidence supports scoped system performance, not unrestricted intelligence.</td></tr>
+        <tr><td>AGI</td><td>Avoid except in a limitations note.</td><td>The local code and specs do not establish AGI and do not need it for the architecture claim.</td></tr>
+        <tr><td>Grounded clinical rationality</td><td>Acceptable as a thesis phrase if mapped to consented context, provenance, policy, and review.</td><td>It captures the mechanism better than "AI app" while staying measurable.</td></tr>
+        <tr><td>Voice-first</td><td>Use as an interaction channel, not an intelligence claim.</td><td>BulletTrain has voice and ambient-scribe evidence, but governance remains the important qualifier.</td></tr>
+        <tr><td>Five-layer cake</td><td>Replace with repo-owned layer model.</td><td>It blurs external AI infrastructure with implemented platform responsibility.</td></tr>
+        <tr><td>Public evidence</td><td>Demote to supporting background.</td><td>The revised diagrams should be driven by repo code, requirements, strategies, and tests.</td></tr>
+      </tbody>
+    </table>
+    <div class="callout">
+      <strong>Practical rule.</strong> A reader should be able to point from every strong phrase in the document to a repo file, a requirement, a test, a matrix, a safety case, or a measured workflow result.
+    </div>
+    <div class="grid-3">
+      <div class="card compact"><h3>Accepted</h3><p>Bounded networked clinical intelligence; governed workflow performance; evidence-bearing delegation.</p></div>
+      <div class="card compact"><h3>Needs proof</h3><p>Superhuman task result; autonomous promotion; model improvement; pathway coverage.</p></div>
+      <div class="card compact"><h3>Avoid</h3><p>AGI, unlimited clinical reasoning, public benchmark proof, model-as-clinician diagrams.</p></div>
+    </div>
+    <div class="footer"><span>Terminology</span><span>10</span></div>
+  </section>
+
+  <section class="page">
+    <div class="label">Source ledger</div>
+    <h2>Primary repo evidence used</h2>
+    <table>
+      <thead>
+        <tr><th>Area</th><th>Evidence references</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Agent-first strategy</td><td>symphonix-health-docs/strategy/agent-first.md:9,19,21,33-42,54-59,71-82,95-98,118,162-175,193-209,229-243,291-299.</td></tr>
+        <tr><td>Integration doctrine</td><td>symphonix-health-docs/strategy/bullettrain-integration-doctrine.md:13,19,23,61,66,72,77-78,89-100,117-119,144,161.</td></tr>
+        <tr><td>BulletTrain platform</td><td>BulletTrain/README.md:33,43-57,64-69,87,121,125-130,157,183-197,208-219,253,273,291,318-342,352,361-380,693,784,809,836,854,1401.</td></tr>
+        <tr><td>Patient360 Assistant</td><td>patient360-assistant/CLAUDE.md:15,30,34,42,49-52,94-115,128; README.md:22,26,55,60-61,128-132,156-157; tests/test_use_cases.py:9,171,203,241,264-315.</td></tr>
+        <tr><td>Bevan and model routing</td><td>BulletTrain/bevan_llm/BEVAN_LLM_INTEGRATION_GUIDE.md:4-5,25-33,40,71,95-96; BEVAN_LLM_SECURITY_REVIEW.md:4-18; BEVAN_LLM_FINE_TUNING_PROPOSAL.md:15-32,63-69.</td></tr>
+        <tr><td>GHARRA and Nexus</td><td>global-agent-registry/README.md:26,93-119,139,165-166,259; global-agent-registry/docs/integration-guide.md:5,363-375; nexus-a2a-protocol/README.md:26,73,144-166,189-190.</td></tr>
+        <tr><td>Voice and workflow</td><td>BulletTrain/bullettrain/voice/README.md:3,17,20-21,32,48-50,64-68; services/voice_router/README.md:3; BulletTrain/README.md:831,911-912,925,976-978.</td></tr>
+        <tr><td>Safety and evidence</td><td>csaa/README.md:90-94,149; signalbox-mcp/README.md:47,293-305,313; caid-agent/README.md:37,44,51,671-672,726-728.</td></tr>
+        <tr><td>Market and research context</td><td>health-agent-workspace/GHARRA_Healthcare_AI_Agent_Market_Intelligence.md:10,362-381; literature_review_SE_agents_2024_2026.md:252-275; Kenya SRS:288-294,702-704,805-829.</td></tr>
+      </tbody>
+    </table>
+    <div class="callout">
+      <strong>Revision summary.</strong> The thesis survives, but only in a stricter form: Symphonix-Health is a governed, repo-backed network that can produce bounded superhuman workflow performance when real-service evidence proves it.
+    </div>
+    <div class="footer"><span>Source ledger</span><span>11</span></div>
+  </section>
+</body>
+</html>

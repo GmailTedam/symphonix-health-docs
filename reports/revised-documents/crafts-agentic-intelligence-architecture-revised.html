@@ -1,0 +1,1272 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Symphonix-Health CRAFTS Agentic Intelligence Architecture - repo-aligned revision</title>
+  <style>
+    :root {
+      --bg: #070A2A;
+      --panel: #111640;
+      --panel-2: #171D52;
+      --line: rgba(232, 232, 237, 0.18);
+      --text: #E8E8ED;
+      --muted: #A9AEC4;
+      --faint: #7C829B;
+      --brand: #6366F1;
+      --teal: #14919B;
+      --cyan: #4DD0E1;
+      --red: #F87171;
+      --amber: #FBBF24;
+      --green: #34D399;
+      --paper: #F7F8FC;
+      --ink: #172033;
+      --ink-muted: #536079;
+      --paper-line: #D8DDEA;
+    }
+
+    * {
+      box-sizing: border-box;
+      letter-spacing: 0;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      color: var(--text);
+      background: var(--bg);
+      font-family: "DM Sans", "Segoe UI", Arial, sans-serif;
+      font-size: 10.4pt;
+      line-height: 1.46;
+    }
+
+    body {
+      background: linear-gradient(135deg, #070A2A 0%, #0B1548 45%, #20135F 72%, #2A124F 100%);
+    }
+
+    @page {
+      size: Letter;
+      margin: 0;
+    }
+
+    .page {
+      width: 8.5in;
+      height: 11in;
+      min-height: 11in;
+      padding: 0.55in 0.62in;
+      break-after: page;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(rgba(255, 255, 255, 0.026) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.026) 1px, transparent 1px),
+        var(--bg);
+      background-size: 44px 44px, 44px 44px, auto;
+    }
+
+    .page.light {
+      color: var(--ink);
+      background:
+        linear-gradient(rgba(23, 32, 51, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(23, 32, 51, 0.035) 1px, transparent 1px),
+        var(--paper);
+      background-size: 44px 44px, 44px 44px, auto;
+    }
+
+    .page::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      border-top: 4px solid transparent;
+      border-image: linear-gradient(90deg, #EF4444, #F97316, #EAB308, #22C55E, #06B6D4, #3B82F6, #6366F1, #A855F7) 1;
+    }
+
+    .footer {
+      position: absolute;
+      left: 0.62in;
+      right: 0.62in;
+      bottom: 0.34in;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--faint);
+      font-size: 7.7pt;
+      border-top: 1px solid var(--line);
+      padding-top: 0.09in;
+    }
+
+    .light .footer {
+      color: var(--ink-muted);
+      border-color: var(--paper-line);
+    }
+
+    .kicker {
+      color: var(--cyan);
+      text-transform: uppercase;
+      font-size: 8.2pt;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.13in;
+    }
+
+    .light .kicker {
+      color: #0F7E88;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin: 0;
+    }
+
+    h1 {
+      font-size: 28pt;
+      line-height: 1.04;
+      max-width: 6.7in;
+      font-weight: 800;
+    }
+
+    h2 {
+      font-size: 19pt;
+      line-height: 1.1;
+      margin-bottom: 0.16in;
+      font-weight: 800;
+    }
+
+    h3 {
+      font-size: 10.2pt;
+      line-height: 1.25;
+      margin-bottom: 0.06in;
+      font-weight: 800;
+    }
+
+    p {
+      color: var(--muted);
+      margin-bottom: 0.1in;
+    }
+
+    .light p {
+      color: var(--ink-muted);
+    }
+
+    strong {
+      color: var(--text);
+      font-weight: 800;
+    }
+
+    .light strong {
+      color: var(--ink);
+    }
+
+    .mono {
+      font-family: "JetBrains Mono", "Cascadia Mono", Consolas, monospace;
+      font-size: 8.1pt;
+    }
+
+    .title-mark {
+      margin-top: 0.22in;
+      display: grid;
+      grid-template-columns: 1.14in 1fr;
+      gap: 0.18in;
+      align-items: center;
+    }
+
+    .pulse {
+      width: 1.14in;
+      height: 1.14in;
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.85), rgba(20, 145, 155, 0.9));
+      position: relative;
+      box-shadow: 0 16px 44px rgba(0, 0, 0, 0.32);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .pulse::after {
+      content: "";
+      position: absolute;
+      left: 0.18in;
+      right: 0.18in;
+      top: 0.5in;
+      height: 0.18in;
+      background:
+        linear-gradient(90deg, transparent 0 7%, #E8E8ED 7% 17%, transparent 17% 28%, #E8E8ED 28% 39%, transparent 39% 50%, #E8E8ED 50% 60%, transparent 60% 72%, #E8E8ED 72% 83%, transparent 83% 100%);
+      clip-path: polygon(0 48%, 10% 48%, 15% 18%, 22% 82%, 30% 48%, 43% 48%, 49% 22%, 57% 76%, 65% 48%, 100% 48%, 100% 56%, 63% 56%, 57% 90%, 49% 36%, 44% 56%, 31% 56%, 22% 96%, 15% 34%, 11% 56%, 0 56%);
+      opacity: 0.94;
+    }
+
+    .subtitle {
+      font-size: 12.2pt;
+      color: var(--muted);
+      max-width: 6.5in;
+      margin-top: 0.2in;
+    }
+
+    .decision {
+      margin-top: 0.28in;
+      border: 1px solid rgba(77, 208, 225, 0.35);
+      background: rgba(17, 22, 64, 0.82);
+      border-radius: 8px;
+      padding: 0.18in;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.15in;
+    }
+
+    .decision .label {
+      color: var(--cyan);
+      font-size: 8pt;
+      text-transform: uppercase;
+      font-weight: 800;
+      margin-bottom: 0.05in;
+    }
+
+    .decision p {
+      margin-bottom: 0;
+      color: var(--text);
+      font-size: 10.2pt;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.07in;
+      margin-top: 0.22in;
+    }
+
+    .tag {
+      border: 1px solid rgba(232, 232, 237, 0.18);
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--text);
+      border-radius: 999px;
+      padding: 0.055in 0.09in;
+      font-size: 8.2pt;
+      font-weight: 800;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.14in;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.12in;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      background: rgba(17, 22, 64, 0.78);
+      border-radius: 8px;
+      padding: 0.13in;
+      min-height: 0.9in;
+    }
+
+    .light .card {
+      background: rgba(255, 255, 255, 0.78);
+      border-color: var(--paper-line);
+    }
+
+    .card p {
+      font-size: 8.8pt;
+      margin-bottom: 0;
+    }
+
+    .callout {
+      border-left: 4px solid var(--teal);
+      background: rgba(20, 145, 155, 0.11);
+      padding: 0.12in 0.14in;
+      border-radius: 0 8px 8px 0;
+      margin: 0.12in 0 0.16in;
+    }
+
+    .light .callout {
+      background: rgba(20, 145, 155, 0.1);
+    }
+
+    .callout p {
+      color: inherit;
+      margin-bottom: 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+      font-size: 8.2pt;
+    }
+
+    th,
+    td {
+      border: 1px solid var(--paper-line);
+      padding: 0.07in;
+      vertical-align: top;
+      text-align: left;
+    }
+
+    th {
+      background: #E9EDF8;
+      color: var(--ink);
+      font-weight: 800;
+    }
+
+    td {
+      background: rgba(255, 255, 255, 0.72);
+      color: var(--ink-muted);
+    }
+
+    td strong {
+      color: var(--ink);
+    }
+
+    .dark-table th,
+    .dark-table td {
+      border-color: var(--line);
+    }
+
+    .dark-table th {
+      background: rgba(99, 102, 241, 0.24);
+      color: var(--text);
+    }
+
+    .dark-table td {
+      background: rgba(17, 22, 64, 0.72);
+      color: var(--muted);
+    }
+
+    .dark-table td strong {
+      color: var(--text);
+    }
+
+    .status {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 0.025in 0.07in;
+      font-size: 7.4pt;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .done {
+      color: #053D2F;
+      background: #BFF4DD;
+    }
+
+    .partial {
+      color: #513A03;
+      background: #FCE8A4;
+    }
+
+    .gap {
+      color: #5A1111;
+      background: #FFD2D2;
+    }
+
+    .spine {
+      display: grid;
+      gap: 0.08in;
+      margin-top: 0.08in;
+    }
+
+    .layer {
+      display: grid;
+      grid-template-columns: 1.4in 1fr 1.55in;
+      gap: 0.1in;
+      align-items: stretch;
+      border: 1px solid var(--line);
+      background: rgba(17, 22, 64, 0.7);
+      border-radius: 8px;
+      padding: 0.09in;
+    }
+
+    .layer .name {
+      color: var(--text);
+      font-weight: 800;
+      font-size: 9.1pt;
+    }
+
+    .layer .body {
+      color: var(--muted);
+      font-size: 8.1pt;
+    }
+
+    .layer .repo {
+      color: var(--cyan);
+      font-family: "JetBrains Mono", "Cascadia Mono", Consolas, monospace;
+      font-size: 7.4pt;
+      line-height: 1.35;
+    }
+
+    .evidence-list {
+      display: grid;
+      gap: 0.07in;
+      margin-top: 0.08in;
+    }
+
+    .evidence-list p {
+      margin: 0;
+      padding-left: 0.13in;
+      position: relative;
+      font-size: 8.8pt;
+    }
+
+    .evidence-list p::before {
+      content: "-";
+      position: absolute;
+      left: 0;
+      color: var(--teal);
+      font-weight: 800;
+    }
+
+    .crafts-card {
+      border: 1px solid var(--paper-line);
+      background: rgba(255, 255, 255, 0.75);
+      border-radius: 8px;
+      padding: 0.11in;
+      min-height: 1.18in;
+    }
+
+    .crafts-card h3 {
+      color: var(--ink);
+      margin-bottom: 0.04in;
+    }
+
+    .crafts-card p {
+      color: var(--ink-muted);
+      font-size: 8.25pt;
+      margin-bottom: 0.04in;
+    }
+
+    .mini {
+      color: var(--ink-muted);
+      font-size: 7.5pt;
+      font-family: "JetBrains Mono", "Cascadia Mono", Consolas, monospace;
+    }
+
+    .contract {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.08in;
+      margin-top: 0.1in;
+    }
+
+    .contract .field {
+      border: 1px solid var(--paper-line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.78);
+      padding: 0.085in;
+      min-height: 0.78in;
+    }
+
+    .field .name {
+      font-weight: 800;
+      color: var(--ink);
+      font-size: 8.3pt;
+      margin-bottom: 0.03in;
+    }
+
+    .field .source {
+      color: var(--ink-muted);
+      font-size: 7.3pt;
+      font-family: "JetBrains Mono", "Cascadia Mono", Consolas, monospace;
+    }
+
+    .stack {
+      display: grid;
+      gap: 0.075in;
+      margin-top: 0.12in;
+    }
+
+    .stack-row {
+      display: grid;
+      grid-template-columns: 1.55in 1fr;
+      gap: 0.12in;
+      align-items: center;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(17, 22, 64, 0.72);
+      padding: 0.09in;
+    }
+
+    .stack-row .left {
+      color: var(--cyan);
+      font-weight: 800;
+      font-size: 9pt;
+    }
+
+    .stack-row .right {
+      color: var(--muted);
+      font-size: 8.2pt;
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0.08in;
+      margin-top: 0.1in;
+    }
+
+    .step {
+      border: 1px solid var(--paper-line);
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 8px;
+      padding: 0.09in;
+      min-height: 1.06in;
+    }
+
+    .step .num {
+      width: 0.22in;
+      height: 0.22in;
+      border-radius: 999px;
+      background: #14919B;
+      color: white;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 7.4pt;
+      font-weight: 800;
+      margin-bottom: 0.05in;
+    }
+
+    .step p {
+      font-size: 7.8pt;
+      margin-bottom: 0;
+    }
+
+    .ledger {
+      font-size: 7.15pt;
+    }
+
+    .ledger td,
+    .ledger th {
+      padding: 0.045in;
+    }
+
+    .small-table {
+      font-size: 7.7pt;
+    }
+
+    .small-table td,
+    .small-table th {
+      padding: 0.055in;
+    }
+
+    .tight {
+      margin-bottom: 0.05in;
+    }
+
+    .mt {
+      margin-top: 0.14in;
+    }
+  </style>
+</head>
+<body>
+  <section class="page">
+    <div class="kicker">Repo-aligned revision</div>
+    <h1>Symphonix-Health CRAFTS agentic intelligence architecture</h1>
+    <p class="subtitle">
+      Revised against the local Symphonix repositories. The prior draft treated several repos as inaccessible; this edition replaces that constraint with code and specification evidence.
+    </p>
+    <div class="title-mark">
+      <div class="pulse" aria-hidden="true"></div>
+      <div>
+        <p><strong>Working interpretation:</strong> Symphonix-Health is best described as governed, networked clinical intelligence infrastructure. It is not evidenced as a generic AGI platform. "AGI" can remain a research horizon term, but the architecture that exists is a bounded clinical agent network with identity, consent, routing, safety, and evidence gates.</p>
+        <p><strong>CRAFTS status:</strong> CRAFTS is used here as an analytical lens: Culture, Relations, Agency, Funding or resource governance, Technology, and Structure. It is not a runtime subsystem in the codebase.</p>
+      </div>
+    </div>
+    <div class="decision">
+      <div>
+        <div class="label">Correction</div>
+        <p>Repo access is no longer treated as a blocker. GHARRA, Nexus A2A, BulletTrain, Bridge SDK, Prompt Engine, CSAA, SignalBox, CAID, and Patient360 provide direct evidence.</p>
+      </div>
+      <div>
+        <div class="label">Remaining gap</div>
+        <p>The missing object is not a persona registry. It is a single cross-plane projection binding persona, skills, tools, IAM, safety, budgets, consent, and evaluations.</p>
+      </div>
+    </div>
+    <div class="tag-row">
+      <span class="tag">BulletTrain data plane</span>
+      <span class="tag">GHARRA trust registry</span>
+      <span class="tag">Nexus A2A</span>
+      <span class="tag">Bridge SDK contracts</span>
+      <span class="tag">CSAA safety cases</span>
+      <span class="tag">SignalBox attestation</span>
+    </div>
+    <div class="footer"><span>Symphonix-Health CRAFTS architecture revision</span><span>1 / 12</span></div>
+  </section>
+
+  <section class="page light">
+    <div class="kicker">What changed</div>
+    <h2>Primary revisions from the incomplete source report</h2>
+    <div class="callout">
+      <p>The source PDF's strongest limitation was its claim that local repositories were unavailable. This revision treats the public narrative as secondary and uses the local repos as the control surface.</p>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 24%;">Source draft position</th>
+          <th style="width: 38%;">Repo-aligned correction</th>
+          <th>Evidence status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Architecture is "spec-verified and interface-verified, not fully code-verified."</td>
+          <td>Core claims are now code/spec verified across BulletTrain, GHARRA, Nexus, Bridge SDK, Prompt Engine, CSAA, SignalBox, CAID, and Patient360.</td>
+          <td><span class="status done">closed</span> Local repositories are readable.</td>
+        </tr>
+        <tr>
+          <td>Unified persona registry may be missing.</td>
+          <td>GHARRA has a `PersonaRegistry` and a `PersonaDefinition` surface that consolidates 68 persona definitions and country-aware avatar selection.</td>
+          <td><span class="status partial">reframed</span> Cross-repo contract projection is still partial.</td>
+        </tr>
+        <tr>
+          <td>Specialty persona completeness is not verified.</td>
+          <td>Local persona code includes psychiatrist, dietitian, pharmacist, and nurse practitioner examples with toolsets and FHIR role codes.</td>
+          <td><span class="status done">verified</span> Completeness of every specialty remains a testable inventory task.</td>
+        </tr>
+        <tr>
+          <td>Compute power should be added as a new CRAFTS dimension.</td>
+          <td>The code supports a narrower term: resource governance. Bridge SDK defines per-persona and per-patient budgets; Bevan and Prompt Engine route model work through governed gateways.</td>
+          <td><span class="status partial">refined</span> No evidence of an infrastructure ownership layer.</td>
+        </tr>
+        <tr>
+          <td>Computational intuition can be treated as a realized layer.</td>
+          <td>The repos show planning, reflection, routing, provider fallback, and capability discovery, but no single global "intuition" service.</td>
+          <td><span class="status gap">design pattern</span> Needs explicit contract and tests if adopted.</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="grid-2 mt">
+      <div class="card">
+        <h3>Wording change</h3>
+        <p>Use "networked clinical intelligence" for the current architecture. Reserve "networked superhuman clinical intelligence" for a carefully bounded thesis claim, not for code readiness.</p>
+      </div>
+      <div class="card">
+        <h3>Diagram change</h3>
+        <p>The revised diagrams put BulletTrain, Bridge SDK, GHARRA, Nexus, Prompt Engine, Bevan, CSAA, SignalBox, and CAID into explicit layers instead of showing a generic agentic stack.</p>
+      </div>
+    </div>
+    <div class="footer"><span>Correction ledger</span><span>2 / 12</span></div>
+  </section>
+
+  <section class="page">
+    <div class="kicker">Architecture spine</div>
+    <h2>Repo-backed architecture layers</h2>
+    <p class="tight">The codebase supports a layered clinical intelligence architecture. Data, identity, reasoning, execution, and evidence are separate concerns.</p>
+    <div class="spine">
+      <div class="layer">
+        <div class="name">External substrate</div>
+        <div class="body">Health systems, national rails, payers, pharmacies, labs, imaging, ambulance workflows, and external model providers are dependencies, not proof of autonomy.</div>
+        <div class="repo">Kenya SRS<br>Bridge adapters<br>BulletTrain</div>
+      </div>
+      <div class="layer">
+        <div class="name">Data plane</div>
+        <div class="body">Cross-system data movement belongs in BulletTrain. Bridge SDK translates external protocols and projects consent, provenance, FHIR tasks, and audit records.</div>
+        <div class="repo">BulletTrain<br>symphonix-bridge-sdk</div>
+      </div>
+      <div class="layer">
+        <div class="name">Model and reasoning plane</div>
+        <div class="body">Prompt Engine and Bevan route model calls through governed gateways with policy prompts, schema validation, PHI boundaries, fallback, and output checks.</div>
+        <div class="repo">prompt-engine<br>BulletTrain/bevan_llm</div>
+      </div>
+      <div class="layer">
+        <div class="name">Trust and route plane</div>
+        <div class="body">GHARRA provides zero-trust discovery and trust metadata. Nexus validates agent records and runs A2A route admission and task lifecycle.</div>
+        <div class="repo">global-agent-registry<br>nexus-a2a-protocol</div>
+      </div>
+      <div class="layer">
+        <div class="name">Persona and contract plane</div>
+        <div class="body">Personas are defined in GHARRA and surfaced through Nexus, Bridge SDK, Patient360, and BulletTrain governance personas. This is the right home for superpersona contracts.</div>
+        <div class="repo">personas.py<br>agent_contract.py<br>Patient360</div>
+      </div>
+      <div class="layer">
+        <div class="name">Governance and evidence plane</div>
+        <div class="body">CSAA, SignalBox, CAID, RBAC, audit stores, HITL coordination, and real-service test rules decide whether an agent path can move beyond shadow or assisted operation.</div>
+        <div class="repo">csaa<br>signalbox-mcp<br>caid-agent</div>
+      </div>
+    </div>
+    <div class="footer"><span>Layered architecture</span><span>3 / 12</span></div>
+  </section>
+
+  <section class="page light">
+    <div class="kicker">CRAFTS mapping</div>
+    <h2>CRAFTS after code verification</h2>
+    <p class="tight">CRAFTS remains useful, but each dimension should map to real components and contracts. The categories below avoid treating social theory terms as deployed services.</p>
+    <div class="grid-3">
+      <div class="crafts-card">
+        <h3>Culture</h3>
+        <p>Clinical norms, safety language, national constraints, consent posture, and model behavior rules.</p>
+        <div class="mini">Prompt Engine policy prompts; CSAA; Kenya SRS; design invariants.</div>
+      </div>
+      <div class="crafts-card">
+        <h3>Relations</h3>
+        <p>How agents, humans, tenants, patients, and systems can see, trust, and route to one another.</p>
+        <div class="mini">GHARRA; Nexus route admission; Bridge consent/provenance; Patient360 context radius.</div>
+      </div>
+      <div class="crafts-card">
+        <h3>Agency</h3>
+        <p>Bounded capacity to propose, draft, classify, route, summarize, or escalate clinical and operational work.</p>
+        <div class="mini">68 persona definitions; 25 Nexus agents; Bridge typed intents; HITL workflows.</div>
+      </div>
+      <div class="crafts-card">
+        <h3>Funding and resource governance</h3>
+        <p>Resource ceilings, model routing, concurrency, queues, and cost-sensitive routing, not a broad funding theory.</p>
+        <div class="mini">Bridge concurrency budgets; Bevan routing/fallback; workflow metrics.</div>
+      </div>
+      <div class="crafts-card">
+        <h3>Technology</h3>
+        <p>The actual data, protocol, model, agent, and observability systems that make the network executable.</p>
+        <div class="mini">BulletTrain; Bridge SDK; Prompt Engine; Bevan; SignalBox; CAID.</div>
+      </div>
+      <div class="crafts-card">
+        <h3>Structure</h3>
+        <p>Governance boundaries, role permissions, safety cases, audit duties, and release gates.</p>
+        <div class="mini">RBAC; GHARRA ABAC; CSAA hard stop; real-service evidence rules.</div>
+      </div>
+    </div>
+    <div class="callout mt">
+      <p><strong>Mechanism claim:</strong> Symphonix changes the clinical decision environment by making data movement, identity, persona scope, model routing, safety, and evidence visible and governable. The mechanism is the governed network, not a free-floating agent.</p>
+    </div>
+    <table class="small-table">
+      <thead>
+        <tr>
+          <th style="width: 21%;">Dimension</th>
+          <th>Mechanism class</th>
+          <th>Boundary condition</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Culture</strong></td>
+          <td>Norms and policy prompts shape acceptable clinical behavior.</td>
+          <td>Policy text is not enough without tests and safety cases.</td>
+        </tr>
+        <tr>
+          <td><strong>Relations</strong></td>
+          <td>Trust metadata and consent projection decide which exchanges can happen.</td>
+          <td>GHARRA remains no-PHI; PHI routing must stay local.</td>
+        </tr>
+        <tr>
+          <td><strong>Agency</strong></td>
+          <td>Persona-scoped intents and tools make agent action bounded.</td>
+          <td>Legal or clinical effect needs human approval unless evidence says otherwise.</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="footer"><span>CRAFTS operationalization</span><span>4 / 12</span></div>
+  </section>
+
+  <section class="page">
+    <div class="kicker">Persona audit</div>
+    <h2>The persona gap moved</h2>
+    <div class="callout">
+      <p>The old report treated a unified persona registry as likely missing. Local code changes that conclusion: GHARRA has a consolidated persona registry. The live gap is cross-plane projection from persona to skills, tools, IAM, safety, budgets, consent, and evaluations.</p>
+    </div>
+    <div class="grid-2">
+      <div class="card">
+        <h3>Verified persona surface</h3>
+        <div class="evidence-list">
+          <p>GHARRA `PersonaDefinition` includes key, label, category, summary, toolset, SOPs, domains, FHIR role code, and avatar variants.</p>
+          <p>`PersonaRegistry` exposes the consolidated persona catalog.</p>
+          <p>The code comments state that the module consolidates three persona systems, 68 persona definitions, country-aware avatar selection, and capability scoping.</p>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Specialty examples now verified</h3>
+        <div class="evidence-list">
+          <p>Psychiatrist persona exists with clinical toolset and FHIR role code.</p>
+          <p>Dietitian persona exists with nutrition toolset and FHIR role code.</p>
+          <p>Pharmacy personas and nurse practitioner personas are present.</p>
+        </div>
+      </div>
+    </div>
+    <table class="dark-table mt">
+      <thead>
+        <tr>
+          <th style="width: 22%;">Plane</th>
+          <th>Current evidence</th>
+          <th style="width: 24%;">Cross-plane risk</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>GHARRA</strong></td>
+          <td>Persona definitions, avatar variants, capability scoping, FHIR role codes, no-PHI trust boundary.</td>
+          <td>Registry does not by itself prove runtime authorization.</td>
+        </tr>
+        <tr>
+          <td><strong>Nexus</strong></td>
+          <td>25 clinical agents, 68 personas, six IAM groups, A2A route admission, JSON-RPC task lifecycle.</td>
+          <td>Needs generated contract alignment with GHARRA personas.</td>
+        </tr>
+        <tr>
+          <td><strong>Bridge SDK</strong></td>
+          <td>Typed agent intents, safety class, FHIR Task projection, persona delegation token fields, agent-card output.</td>
+          <td>Needs persona catalog source-of-truth linkage.</td>
+        </tr>
+        <tr>
+          <td><strong>Patient360 and BulletTrain</strong></td>
+          <td>Persona-centered patient context, FCG personas, HITL orchestration, clinical workflow governance.</td>
+          <td>Needs evidence that UI roles, data radius, and backend contracts agree.</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="footer"><span>Persona and superpersona evidence</span><span>5 / 12</span></div>
+  </section>
+
+  <section class="page light">
+    <div class="kicker">Contract target</div>
+    <h2>A canonical superpersona contract should be generated, not hand-described</h2>
+    <p>The architecture has most of the necessary pieces. The next refactor target is a generated contract that projects a persona into every plane that can authorize, route, execute, observe, or test it.</p>
+    <div class="contract">
+      <div class="field">
+        <div class="name">persona_id</div>
+        <div class="source">GHARRA PersonaRegistry</div>
+      </div>
+      <div class="field">
+        <div class="name">human_role</div>
+        <div class="source">FHIR role code; IAM group</div>
+      </div>
+      <div class="field">
+        <div class="name">skill_pack</div>
+        <div class="source">persona toolset; SOPs</div>
+      </div>
+      <div class="field">
+        <div class="name">tool_pack</div>
+        <div class="source">Bridge SDK capabilities</div>
+      </div>
+      <div class="field">
+        <div class="name">safety_class</div>
+        <div class="source">Bridge AgentContract; CSAA</div>
+      </div>
+      <div class="field">
+        <div class="name">jurisdiction_pack</div>
+        <div class="source">Kenya SRS; GHARRA variants</div>
+      </div>
+      <div class="field">
+        <div class="name">consent_projection</div>
+        <div class="source">Bridge consent_projection.py</div>
+      </div>
+      <div class="field">
+        <div class="name">budget_limits</div>
+        <div class="source">Bridge concurrency.py</div>
+      </div>
+      <div class="field">
+        <div class="name">route_admission</div>
+        <div class="source">Nexus A2A; GHARRA metadata</div>
+      </div>
+      <div class="field">
+        <div class="name">model_policy</div>
+        <div class="source">Prompt Engine; Bevan router</div>
+      </div>
+      <div class="field">
+        <div class="name">eval_pack</div>
+        <div class="source">SignalBox; CAID; scenario YAML</div>
+      </div>
+      <div class="field">
+        <div class="name">audit_pack</div>
+        <div class="source">Bridge audit; BulletTrain audit store</div>
+      </div>
+    </div>
+    <table class="small-table mt">
+      <thead>
+        <tr>
+          <th>Contract field</th>
+          <th>Exists locally?</th>
+          <th>Needed revision</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Persona identity and clinical role</td>
+          <td><span class="status done">yes</span> GHARRA persona definitions and Nexus IAM groups.</td>
+          <td>Generate one canonical ID and alias table consumed by every sibling repo.</td>
+        </tr>
+        <tr>
+          <td>Skill and tool authorization</td>
+          <td><span class="status partial">partial</span> Persona toolsets and Bridge capabilities exist.</td>
+          <td>Compile allowed tool calls per persona, task type, tenant, and jurisdiction.</td>
+        </tr>
+        <tr>
+          <td>Safety and evaluation binding</td>
+          <td><span class="status partial">partial</span> Safety classes, CSAA, SignalBox, and CAID exist.</td>
+          <td>Make deployment fail when the persona lacks a passing safety case and scenario pack.</td>
+        </tr>
+        <tr>
+          <td>Budget and compute limits</td>
+          <td><span class="status partial">partial</span> Bridge concurrency budgets exist.</td>
+          <td>Expose budgets as a first-class agent contract field and report saturation telemetry.</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="footer"><span>Canonical contract projection</span><span>6 / 12</span></div>
+  </section>
+
+  <section class="page">
+    <div class="kicker">Resource governance</div>
+    <h2>"Compute power" is better modeled as resource governance</h2>
+    <p>The source report proposed compute power as a possible extra CRAFTS dimension. The repos support a narrower and more useful architecture term: resource governance.</p>
+    <div class="grid-2">
+      <div class="card">
+        <h3>What is code-backed</h3>
+        <div class="evidence-list">
+          <p>Bridge SDK has per-persona and per-patient execution budgets with saturation behavior and limit dimensions.</p>
+          <p>Bevan and Prompt Engine route model calls through governed gateways rather than letting every sibling call arbitrary models directly.</p>
+          <p>GHARRA documentation preserves a no-PHI boundary; PHI model routing belongs inside local Bevan-controlled paths.</p>
+          <p>HITL queue metrics and workflow gates provide operational back-pressure.</p>
+        </div>
+      </div>
+      <div class="card">
+        <h3>What is not evidenced</h3>
+        <div class="evidence-list">
+          <p>No local evidence was found for an estate-level GPU ownership or data-center control layer.</p>
+          <p>No single service currently declares all persona budgets, model budgets, queue limits, and safety gates as one contract.</p>
+          <p>Therefore the diagram should not imply compute sovereignty beyond the code-backed routing and budget controls.</p>
+        </div>
+      </div>
+    </div>
+    <div class="flow">
+      <div class="step">
+        <div class="num">1</div>
+        <h3>Task arrives</h3>
+        <p>Persona, tenant, patient, task, consent, and jurisdiction context are identified.</p>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <h3>Budget check</h3>
+        <p>Per-persona and per-patient limits decide whether the task can execute now.</p>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <h3>Route choice</h3>
+        <p>Prompt Engine and Bevan choose local or external model paths under policy.</p>
+      </div>
+      <div class="step">
+        <div class="num">4</div>
+        <h3>Safety gate</h3>
+        <p>CSAA, HITL policy, output validation, and consent rules constrain action.</p>
+      </div>
+      <div class="step">
+        <div class="num">5</div>
+        <h3>Evidence</h3>
+        <p>Audit, SignalBox scenarios, CAID checks, and metrics decide readiness.</p>
+      </div>
+    </div>
+    <div class="callout mt">
+      <p><strong>Revised CRAFTS wording:</strong> keep Funding as a social and procurement context, but add "resource governance" as the deployed system dimension that CRAFTS must inspect for agentic healthcare.</p>
+    </div>
+    <div class="footer"><span>Resource and compute governance</span><span>7 / 12</span></div>
+  </section>
+
+  <section class="page light">
+    <div class="kicker">Reasoning layer</div>
+    <h2>Computational intuition is a proposed pattern, not a verified global service</h2>
+    <p>The idea is still useful if it is defined as fast pre-planning: salience detection, route choice, likely framework selection, risk spotting, and tool-pack selection before deeper execution. The current repos show pieces of that pattern, not a single deployed intuition layer.</p>
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 24%;">Candidate function</th>
+          <th>Repo-backed evidence</th>
+          <th style="width: 26%;">Required to claim it as a layer</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Fast salience detection</strong></td>
+          <td>Prompt Engine detects clinical/PHI patterns and can auto-activate HIPAA, safety, bias, and citation prompt elements.</td>
+          <td>Explicit salience schema and tests across clinical pathways.</td>
+        </tr>
+        <tr>
+          <td><strong>Framework selection</strong></td>
+          <td>Persona definitions, SOPs, toolsets, and clinical safety classes provide the vocabulary.</td>
+          <td>A deterministic selector that records why a framework was chosen.</td>
+        </tr>
+        <tr>
+          <td><strong>Route and model choice</strong></td>
+          <td>Bevan and Prompt Engine support governed LLM routing, fallback, and output checks.</td>
+          <td>A route decision trace bound to persona, consent, and safety case.</td>
+        </tr>
+        <tr>
+          <td><strong>Risk spotting</strong></td>
+          <td>CSAA can hard-stop unresolved residual risks; Bridge SDK has safety classes and clinical safety cases.</td>
+          <td>Risk classifier evidence tied to SignalBox/CAID scenarios.</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="grid-2 mt">
+      <div class="card">
+        <h3>Recommended diagram label</h3>
+        <p>"Policy and routing heuristics" is more accurate than "computational intuition" for the current architecture.</p>
+      </div>
+      <div class="card">
+        <h3>Recommended implementation</h3>
+        <p>If this becomes a product layer, implement it as a typed decision record: input context, selected persona, selected tools, model path, risk class, and evidence pack.</p>
+      </div>
+    </div>
+    <div class="callout mt">
+      <p>Do not imply autonomous clinical diagnosis from this layer. The verified behavior is bounded recommendation, drafting, routing, classification, summarization, and escalation under human and safety governance.</p>
+    </div>
+    <div class="footer"><span>Reasoning and routing correction</span><span>8 / 12</span></div>
+  </section>
+
+  <section class="page">
+    <div class="kicker">Nested diagram</div>
+    <h2>Corrected nested architecture</h2>
+    <p class="tight">The nested stack below replaces a generic agentic diagram with repo-backed layers. Each layer depends on the layers below it and is constrained by safety and evidence above it.</p>
+    <div class="stack">
+      <div class="stack-row">
+        <div class="left">Learning and readiness</div>
+        <div class="right">SignalBox scenarios, CAID audits, real-service tests, readiness reports, outcome telemetry, and false-positive/false-negative checks.</div>
+      </div>
+      <div class="stack-row">
+        <div class="left">Action and workflow</div>
+        <div class="right">Patient360 workflows, claims, prescribing, pharmacy, lab, radiology, ambulance, HMIS, ERP, and assistant journeys mediated through BulletTrain and Bridge SDK.</div>
+      </div>
+      <div class="stack-row">
+        <div class="left">Guardrails and trust</div>
+        <div class="right">CSAA safety cases, GHARRA trust metadata, Nexus route admission, RBAC/ABAC, HITL coordination, consent projection, audit, and break-glass controls.</div>
+      </div>
+      <div class="stack-row">
+        <div class="left">Reasoning and routing</div>
+        <div class="right">Prompt Engine, Bevan LLM router, policy prompts, provider fallback, schema validation, local PHI routing, and output validation.</div>
+      </div>
+      <div class="stack-row">
+        <div class="left">Persona contracts</div>
+        <div class="right">GHARRA persona definitions, Nexus 68 personas and six IAM groups, Bridge typed intents, persona delegation scopes, safety class, and FHIR role codes.</div>
+      </div>
+      <div class="stack-row">
+        <div class="left">Context and data</div>
+        <div class="right">BulletTrain integration doctrine, FHIR R4, OpenHIE, X12/EDI, terminology, longitudinal patient context, consent, provenance, and audit stores.</div>
+      </div>
+      <div class="stack-row">
+        <div class="left">External substrate</div>
+        <div class="right">National systems, payer rails, provider systems, pharmacies, labs, imaging networks, identity providers, and external model APIs under explicit adapter contracts.</div>
+      </div>
+    </div>
+    <div class="callout mt">
+      <p>The diagram should be read bottom-up for dependency and top-down for governance. No agent bypasses the data, consent, trust, safety, and evidence layers.</p>
+    </div>
+    <div class="footer"><span>Nested architecture diagram</span><span>9 / 12</span></div>
+  </section>
+
+  <section class="page light">
+    <div class="kicker">Roadmap</div>
+    <h2>Roadmap after repo access was restored</h2>
+    <p>The roadmap no longer starts with "restore repository access." It starts with turning already-present surfaces into generated contracts and executable gates.</p>
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 21%;">Workstream</th>
+          <th style="width: 18%;">Status</th>
+          <th>Next action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Persona inventory</strong></td>
+          <td><span class="status done">partly closed</span></td>
+          <td>Generate a normalized persona inventory from GHARRA, Nexus, Patient360, Bridge SDK, and BulletTrain role files. Flag aliases and missing mappings.</td>
+        </tr>
+        <tr>
+          <td><strong>Superpersona contract</strong></td>
+          <td><span class="status partial">partial</span></td>
+          <td>Generate a `superpersona.contract.json` per persona with skill, tool, IAM, safety, consent, budget, route, model, and evaluation fields.</td>
+        </tr>
+        <tr>
+          <td><strong>Safety as CI gate</strong></td>
+          <td><span class="status partial">partial</span></td>
+          <td>Make CSAA unresolved risk, missing SignalBox scenario, missing CAID check, or missing real-service journey fail readiness.</td>
+        </tr>
+        <tr>
+          <td><strong>Resource governance</strong></td>
+          <td><span class="status partial">partial</span></td>
+          <td>Project Bridge concurrency budgets and Bevan routing limits into persona contracts and telemetry dashboards.</td>
+        </tr>
+        <tr>
+          <td><strong>Architecture catalog</strong></td>
+          <td><span class="status gap">gap</span></td>
+          <td>Create a cross-repo generated map of services, routes, persona roles, data flows, PHI boundaries, and evidence artifacts.</td>
+        </tr>
+        <tr>
+          <td><strong>Outcome learning loop</strong></td>
+          <td><span class="status gap">gap</span></td>
+          <td>Bind outcome metrics to approved workflow changes, prompt updates, safety case revisions, and persona contract versions.</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="flow">
+      <div class="step">
+        <div class="num">1</div>
+        <h3>Inventory</h3>
+        <p>Extract persona, route, contract, safety, and scenario surfaces from each repo.</p>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <h3>Normalize</h3>
+        <p>Resolve aliases, role codes, IAM groups, tenant scope, and jurisdiction variants.</p>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <h3>Generate</h3>
+        <p>Emit superpersona contracts and architecture catalog artifacts.</p>
+      </div>
+      <div class="step">
+        <div class="num">4</div>
+        <h3>Gate</h3>
+        <p>Require safety, real-service, and scenario evidence before readiness claims.</p>
+      </div>
+      <div class="step">
+        <div class="num">5</div>
+        <h3>Learn</h3>
+        <p>Feed verified outcomes into controlled contract and policy updates.</p>
+      </div>
+    </div>
+    <div class="footer"><span>Revised roadmap</span><span>10 / 12</span></div>
+  </section>
+
+  <section class="page">
+    <div class="kicker">Verification discipline</div>
+    <h2>Rules for future diagrams and reports</h2>
+    <p>Future architecture documents should use these checks before claiming readiness, coverage, or agentic maturity.</p>
+    <div class="grid-2">
+      <div class="card">
+        <h3>Evidence rules</h3>
+        <div class="evidence-list">
+          <p>Use local repo code/specs as the control source before public pages or narrative reports.</p>
+          <p>Distinguish code evidence, requirement evidence, scenario evidence, and inference.</p>
+          <p>Do not count reports, dashboards, or generated matrices as verdicts without source checks.</p>
+          <p>Run false-positive and false-negative checks for disputed coverage claims.</p>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Clinical readiness rules</h3>
+        <div class="evidence-list">
+          <p>Use real seeded service paths for internal systems; do not replace reachable internal services with mocks as readiness evidence.</p>
+          <p>No agent path should bypass consent, provenance, audit, PHI boundaries, HITL policy, route admission, and safety cases.</p>
+          <p>For backend contracts, UI evidence alone is incomplete unless network/backend evidence is also captured.</p>
+          <p>Break-glass, emergency, and legal-effect workflows need explicit human control and audit evidence.</p>
+        </div>
+      </div>
+    </div>
+    <table class="dark-table mt">
+      <thead>
+        <tr>
+          <th style="width: 24%;">Claim type</th>
+          <th>Minimum evidence</th>
+          <th style="width: 24%;">Bad shortcut to avoid</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Persona exists</strong></td>
+          <td>Registry entry, role code, alias mapping, IAM mapping, and runtime route or UI use.</td>
+          <td>Counting a name in one markdown file.</td>
+        </tr>
+        <tr>
+          <td><strong>Agent can act</strong></td>
+          <td>Typed intent, allowed tools, consent, safety class, route admission, budget, audit, and tests.</td>
+          <td>Inferring action from a model prompt alone.</td>
+        </tr>
+        <tr>
+          <td><strong>Workflow is ready</strong></td>
+          <td>Real seeded data path, backend and UI checks, SignalBox/CAID evidence, and safety case status.</td>
+          <td>Scenario-only pass without service evidence.</td>
+        </tr>
+        <tr>
+          <td><strong>Architecture is integrated</strong></td>
+          <td>Cross-repo contract map, route map, service ownership map, and data/provenance flow.</td>
+          <td>One diagram with no generated ledger.</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="footer"><span>Report evidence discipline</span><span>11 / 12</span></div>
+  </section>
+
+  <section class="page light">
+    <div class="kicker">Source ledger</div>
+    <h2>Repo evidence used for this revision</h2>
+    <table class="ledger">
+      <thead>
+        <tr>
+          <th style="width: 28%;">Repo/file</th>
+          <th style="width: 18%;">Lines</th>
+          <th>Evidence used</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>symphonix-health-docs/strategy/agent-first.md</strong></td>
+          <td>9; 19-21; 33-42; 54-59; 193-209</td>
+          <td>Agent-first sibling roles, API boundaries, CSAA/GHARRA/Nexus control model, discoverable/reachable/grounded/gated/observable/reversible requirements, HITL patterns.</td>
+        </tr>
+        <tr>
+          <td><strong>symphonix-health-docs/strategy/bullettrain-integration-doctrine.md</strong></td>
+          <td>11-23; 61-100; 117-119</td>
+          <td>BulletTrain as the required cross-system data movement plane; AI agents may recommend/draft/classify/route but cannot mutate sibling systems outside authorized auditable mediation.</td>
+        </tr>
+        <tr>
+          <td><strong>BulletTrain/README.md</strong></td>
+          <td>33; 43-69; 121-130; 183-219; 318-380</td>
+          <td>160+ microservices, FHIR/OpenHIE/X12/terminology support, SignalBox/FCG/governance, RBAC, HITL, Bevan, Patient360, context assembler, workflow orchestrator, adapters.</td>
+        </tr>
+        <tr>
+          <td><strong>global-agent-registry/README.md</strong></td>
+          <td>26; 93-119; 139; 165-166; 259-268</td>
+          <td>GHARRA zero-trust discovery/routing/trust registry, no-PHI boundary, ABAC, consent, FHIR R4, break-glass, agent cards, and dashboard.</td>
+        </tr>
+        <tr>
+          <td><strong>global-agent-registry/src/gharra/core/personas.py</strong></td>
+          <td>4-18; 187-199; 288-296; 524-533; 545-583; 625-633; 970-984</td>
+          <td>Consolidated persona registry, 68 persona definitions, country-aware avatar selection, capability scoping, persona fields, psychiatrist, nurse practitioner, pharmacy, dietitian, and `PersonaRegistry`.</td>
+        </tr>
+        <tr>
+          <td><strong>nexus-a2a-protocol/README.md</strong></td>
+          <td>26-30; 43; 137; 187-200; 222; 263</td>
+          <td>Trusted identity, AI Gateway, JSON-RPC, JWT, task lifecycle, 25 clinical agents, 68 personas, six IAM groups, identity endpoints, persona/IAM docs.</td>
+        </tr>
+        <tr>
+          <td><strong>nexus-a2a-protocol/docs/gharra_integration.md</strong></td>
+          <td>5; 14; 18-21; 228-231</td>
+          <td>Nexus consumes GHARRA trust/routing metadata, validates records, and does not replace GHARRA discovery or BulletTrain orchestration.</td>
+        </tr>
+        <tr>
+          <td><strong>symphonix-bridge-sdk/src/bridge_sdk/agent_contract.py</strong></td>
+          <td>1-13; 178-185; 233-248; 275-310</td>
+          <td>Agent Execution Contract, typed intents, safety class, FHIR Task conversion, GHARRA agent-card capability strings, and `.well-known/agent-card.json` output.</td>
+        </tr>
+        <tr>
+          <td><strong>symphonix-bridge-sdk/src/bridge_sdk/concurrency.py</strong></td>
+          <td>1-4; 23; 57-86; 102-182</td>
+          <td>Per-persona and per-patient execution budgets, saturation, dimensions, and limits.</td>
+        </tr>
+        <tr>
+          <td><strong>symphonix-bridge-sdk/src/bridge_sdk/consent_projection.py</strong></td>
+          <td>16-23; 95; 123-148</td>
+          <td>Consent projection travels on persona token and task, including jurisdiction and stale-consent checks.</td>
+        </tr>
+        <tr>
+          <td><strong>prompt-engine/docs/REQUIREMENTS.md</strong></td>
+          <td>344-363; 643-670; 950-956; 1026</td>
+          <td>Agentic mode, persistence/tool-use/planning, safety policy prompt elements, reflection/error recovery, PHI and clinical pattern detection.</td>
+        </tr>
+        <tr>
+          <td><strong>prompt-engine/src/prompt_engine/optimizer/workflow.py</strong></td>
+          <td>4-11; 227</td>
+          <td>Every LLM call routes through the BulletTrain API gateway hub and schema validation.</td>
+        </tr>
+        <tr>
+          <td><strong>csaa; signalbox-mcp; caid-agent; patient360-assistant</strong></td>
+          <td>CSAA 90-94, 149; SignalBox v2 217-229; CAID 245-249; Patient360 README 55-61, 128-132</td>
+          <td>Safety scope and hard-stop behavior, scenario evidence, FP/FN audit discipline, Patient360 clinical assistant and persona/context expectations.</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="footer"><span>Source ledger</span><span>12 / 12</span></div>
+  </section>
+</body>
+</html>
