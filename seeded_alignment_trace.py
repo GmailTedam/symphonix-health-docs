@@ -4,7 +4,15 @@ This module is an evidence ledger. It points to existing implementation
 ownership paths and generated canonical artefacts; it does not replace
 service code, seeded data loaders, or behavioural tests.
 
-NOT SEED COVERAGE. This module is a HUMAN-ONLY traceability aid: TRACEABILITY maps every requirement id to the SAME generic EVIDENCE_PATHS blob. It is NOT per-requirement seed coverage and NOT proof that any requirement is seeded, tested, or implemented. Do NOT feed this module (or TRACEABILITY) to the seeding-alignment gate (caid-agent/scripts/check_seeding_alignment.py) or to any readiness / coverage check. Real seed coverage is verified from the seeders the gate discovers (src/seed.py, tests/harness/seed_canonical.py, tests/fixtures, ...), never from this ledger.
+NOT SEED COVERAGE. This module is a HUMAN-ONLY traceability aid:
+TRACEABILITY maps every requirement id to the SAME generic EVIDENCE_PATHS
+blob. It is NOT per-requirement seed coverage and NOT proof that any
+requirement is seeded, tested, or implemented. Do NOT feed this module
+(or TRACEABILITY) to the seeding-alignment gate
+(caid-agent/scripts/check_seeding_alignment.py) or to any readiness /
+coverage check. Real seed coverage is verified from the seeders the gate
+discovers (src/seed.py, tests/harness/seed_canonical.py, tests/fixtures,
+...), never from this ledger.
 """
 
 from __future__ import annotations
