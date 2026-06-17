@@ -18,7 +18,8 @@ discovers (src/seed.py, tests/harness/seed_canonical.py, tests/fixtures,
 from __future__ import annotations
 
 REPO = "symphonix-health-docs"
-REQUIREMENT_IDS = [
+# Requirement-level ids (FR/NFR/DS/REQ-*); AC ids are split out below.
+requirement_ids = [
     "DS-001",
     "DS-002",
     "DS-003",
@@ -141,8 +142,18 @@ REQUIREMENT_IDS = [
     "NFR-SE-003",
     "NFR-SE-004",
     "NFR-SHD-001",
-    "NFR-SHD-002"
+    "NFR-SHD-002",
 ]
+
+# Acceptance-criterion ids (each <parent>-AC<NN>; parent is a requirement id).
+acceptance_criterion_ids = [
+]
+
+# BACKWARD-COMPAT ALIAS (deprecated; removed in Phase D). Set-equals the
+# historical REQUIREMENT_IDS, so the rubber-stamp guard's blanket
+# TRACEABILITY comprehension keeps matching and every importer of
+# REQUIREMENT_IDS is preserved. Order is free; set-equality is the contract.
+REQUIREMENT_IDS = [*requirement_ids, *acceptance_criterion_ids]
 EVIDENCE_PATHS = {
     "specification_paths": [
         "docs/specifications/seeded-requirement-traceability.md",
