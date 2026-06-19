@@ -1,0 +1,4419 @@
+{
+  "communities": {
+    "0": [
+      "nonfunctionalrequirements_nfr_co_001",
+      "nonfunctionalrequirements_nfr_co_002",
+      "nonfunctionalrequirements_nfr_fl_001",
+      "nonfunctionalrequirements_nfr_fl_002",
+      "nonfunctionalrequirements_nfr_ic_001",
+      "nonfunctionalrequirements_nfr_ma_001",
+      "nonfunctionalrequirements_nfr_ma_002",
+      "nonfunctionalrequirements_nfr_ma_003",
+      "nonfunctionalrequirements_nfr_ma_004",
+      "nonfunctionalrequirements_nfr_pe_001",
+      "nonfunctionalrequirements_nfr_re_001",
+      "nonfunctionalrequirements_nfr_re_002",
+      "nonfunctionalrequirements_nfr_re_003",
+      "nonfunctionalrequirements_nfr_sa_001",
+      "nonfunctionalrequirements_nfr_sa_002",
+      "nonfunctionalrequirements_nfr_se_001",
+      "nonfunctionalrequirements_nfr_se_002",
+      "nonfunctionalrequirements_nfr_se_003",
+      "nonfunctionalrequirements_nfr_se_004",
+      "nonfunctionalrequirements_nfr_shd_001",
+      "nonfunctionalrequirements_nfr_shd_002",
+      "seededrequirementtraceability_ds146",
+      "seededrequirementtraceability_ds147",
+      "seededrequirementtraceability_ds148",
+      "seededrequirementtraceability_ds149",
+      "seededrequirementtraceability_ds150",
+      "seededrequirementtraceability_ds151",
+      "seededrequirementtraceability_ds152",
+      "seededrequirementtraceability_ds153",
+      "seededrequirementtraceability_ds154",
+      "seededrequirementtraceability_ds155",
+      "seededrequirementtraceability_ds156",
+      "seededrequirementtraceability_ds157",
+      "seededrequirementtraceability_ds158",
+      "seededrequirementtraceability_ds159",
+      "seededrequirementtraceability_ds160",
+      "seededrequirementtraceability_ds161",
+      "seededrequirementtraceability_ds_174",
+      "seededrequirementtraceability_ds_175",
+      "seededrequirementtraceability_ds_176",
+      "seededrequirementtraceability_ds_177",
+      "seededrequirementtraceability_ds_178",
+      "seededrequirementtraceability_ds_179",
+      "seededrequirementtraceability_ds_180",
+      "seededrequirementtraceability_ds_181",
+      "seededrequirementtraceability_ds_182",
+      "seededrequirementtraceability_ds_183",
+      "seededrequirementtraceability_ds_184",
+      "seededrequirementtraceability_ds_185",
+      "seededrequirementtraceability_ds_186",
+      "seededrequirementtraceability_ds_187",
+      "seededrequirementtraceability_ds_188",
+      "seededrequirementtraceability_nfr_ma_004",
+      "seededrequirementtraceability_nfr_pe_001",
+      "seededrequirementtraceability_nfr_re_001",
+      "seededrequirementtraceability_nfr_re_002",
+      "seededrequirementtraceability_nfr_re_003",
+      "seededrequirementtraceability_nfr_sa_001",
+      "seededrequirementtraceability_nfr_sa_002",
+      "seededrequirementtraceability_nfr_se_001",
+      "seededrequirementtraceability_nfr_se_002",
+      "seededrequirementtraceability_nfr_se_003",
+      "seededrequirementtraceability_nfr_se_004",
+      "seededrequirementtraceability_sa_shd_00049",
+      "seededrequirementtraceability_sa_shd_00050",
+      "seededrequirementtraceability_sa_shd_00051",
+      "seededrequirementtraceability_sa_shd_00052",
+      "seededrequirementtraceability_sa_shd_00053",
+      "seededrequirementtraceability_sa_shd_00054",
+      "seededrequirementtraceability_sa_shd_00055",
+      "seededrequirementtraceability_sa_shd_00056",
+      "seededrequirementtraceability_sa_shd_00057",
+      "seededrequirementtraceability_sa_shd_00058",
+      "seededrequirementtraceability_sa_shd_00059",
+      "seededrequirementtraceability_sa_shd_00060",
+      "seededrequirementtraceability_sa_shd_00061",
+      "seededrequirementtraceability_sa_shd_00062",
+      "seededrequirementtraceability_sa_shd_00063",
+      "seededrequirementtraceability_sa_shd_00064",
+      "seededrequirementtraceability_seed_data_seeded_requirement_traceability_json",
+      "seededrequirementtraceability_tests_harness_requirements_matrix_json",
+      "seededrequirementtraceability_tests_test_requirement_acceptance_alignment_py"
+    ],
+    "1": [
+      "functionalrequirements_ds146",
+      "functionalrequirements_ds147",
+      "functionalrequirements_ds148",
+      "functionalrequirements_ds149",
+      "functionalrequirements_ds150",
+      "functionalrequirements_ds151",
+      "functionalrequirements_ds152",
+      "functionalrequirements_ds153",
+      "functionalrequirements_ds154",
+      "functionalrequirements_ds155",
+      "functionalrequirements_ds156",
+      "functionalrequirements_ds157",
+      "functionalrequirements_ds158",
+      "functionalrequirements_ds159",
+      "functionalrequirements_ds160",
+      "functionalrequirements_ds161",
+      "functionalrequirements_sashd00049",
+      "functionalrequirements_sashd00050",
+      "functionalrequirements_sashd00051",
+      "functionalrequirements_sashd00052",
+      "functionalrequirements_sashd00053",
+      "functionalrequirements_sashd00054",
+      "functionalrequirements_sashd00055",
+      "functionalrequirements_sashd00056",
+      "functionalrequirements_sashd00057",
+      "functionalrequirements_sashd00058",
+      "functionalrequirements_sashd00059",
+      "functionalrequirements_sashd00060",
+      "functionalrequirements_sashd00061",
+      "functionalrequirements_sashd00062",
+      "functionalrequirements_sashd00063",
+      "functionalrequirements_sashd00064",
+      "seeddata_seededrequirementtraceabilityjson",
+      "seededrequirementtraceability_ds162",
+      "seededrequirementtraceability_ds163",
+      "seededrequirementtraceability_ds164",
+      "seededrequirementtraceability_ds165",
+      "seededrequirementtraceability_ds166",
+      "seededrequirementtraceability_ds167",
+      "seededrequirementtraceability_ds168",
+      "seededrequirementtraceability_ds169",
+      "seededrequirementtraceability_ds170",
+      "seededrequirementtraceability_ds171",
+      "seededrequirementtraceability_ds172",
+      "seededrequirementtraceability_ds173",
+      "seededrequirementtraceability_ds174",
+      "seededrequirementtraceability_ds175",
+      "seededrequirementtraceability_ds176",
+      "seededrequirementtraceability_ds177",
+      "seededrequirementtraceability_ds189",
+      "seededrequirementtraceability_ds190",
+      "seededrequirementtraceability_ds191",
+      "seededrequirementtraceability_ds192",
+      "seededrequirementtraceability_ds193",
+      "seededrequirementtraceability_ds194",
+      "seededrequirementtraceability_ds195",
+      "seededrequirementtraceability_ds196",
+      "seededrequirementtraceability_nfrco001",
+      "seededrequirementtraceability_nfrco002",
+      "seededrequirementtraceability_nfrfl001",
+      "seededrequirementtraceability_nfrfl002",
+      "seededrequirementtraceability_nfric001",
+      "seededrequirementtraceability_nfrma001",
+      "seededrequirementtraceability_nfrma002",
+      "seededrequirementtraceability_nfrma003",
+      "seededrequirementtraceability_sashd00092",
+      "seededrequirementtraceability_sashd00093",
+      "seededrequirementtraceability_sashd00094",
+      "seededrequirementtraceability_sashd00095",
+      "seededrequirementtraceability_sashd00096",
+      "seededrequirementtraceability_seed_data_seeded_requirement_traceabilityjson",
+      "seededrequirementtraceability_tests_harness_requirementsmatrixjson",
+      "seededrequirementtraceability_tests_test_requirement_acceptance_alignmentpy",
+      "tests_harness_requirementsmatrixjson",
+      "tests_test_requirementacceptancealignmentpy"
+    ],
+    "2": [
+      "africa_marketplace",
+      "agent_first",
+      "ambulance_ems",
+      "analytics_bi",
+      "appointment_system",
+      "blood_transfusion",
+      "bullettrain",
+      "caid_agent",
+      "cancer_pathway_tracker",
+      "citizen_portal",
+      "clinical_pathways",
+      "community_nursing",
+      "csaa",
+      "design_system",
+      "epaccs",
+      "eps",
+      "erp",
+      "etps",
+      "genomics_interpretation",
+      "global_agent_registry",
+      "gp_system",
+      "health_agent_workspace",
+      "healthcare_pain_points_plan",
+      "helixcare_closed_loop_system",
+      "helixcare_rl_implementation_plan",
+      "hmis",
+      "insurance_eclaims",
+      "kenya_uhc_implementation",
+      "lis",
+      "maternity_system",
+      "mha_administration",
+      "mortuary_and_me",
+      "nexus_a2a_protocol",
+      "pacs_ris",
+      "pharmacy_system",
+      "picis_system",
+      "provider_portal",
+      "rea_agent_mcp",
+      "regulatory_agents",
+      "scheduling_gateway",
+      "screening_recall",
+      "signalbox_mcp",
+      "supply_chain_erp",
+      "symphonix_bridge_sdk",
+      "symphonix_emulator_kit",
+      "symphonix_eps_ig",
+      "symphonix_health_docs",
+      "symphonix_health_github_io",
+      "symphonix_public",
+      "triage_api"
+    ],
+    "3": [
+      "functionalrequirements_ds114",
+      "functionalrequirements_ds115",
+      "functionalrequirements_ds116",
+      "functionalrequirements_ds117",
+      "functionalrequirements_ds118",
+      "functionalrequirements_ds119",
+      "functionalrequirements_ds120",
+      "functionalrequirements_ds121",
+      "functionalrequirements_ds122",
+      "functionalrequirements_ds123",
+      "functionalrequirements_ds124",
+      "functionalrequirements_ds125",
+      "functionalrequirements_ds126",
+      "functionalrequirements_ds127",
+      "functionalrequirements_ds128",
+      "functionalrequirements_ds129",
+      "functionalrequirements_ds162",
+      "functionalrequirements_ds163",
+      "functionalrequirements_ds164",
+      "functionalrequirements_ds165",
+      "functionalrequirements_ds166",
+      "functionalrequirements_ds167",
+      "functionalrequirements_ds168",
+      "functionalrequirements_ds169",
+      "functionalrequirements_ds170",
+      "functionalrequirements_ds171",
+      "functionalrequirements_ds172",
+      "functionalrequirements_ds173",
+      "functionalrequirements_ds174",
+      "functionalrequirements_ds175",
+      "functionalrequirements_ds176",
+      "functionalrequirements_ds177",
+      "functionalrequirements_seed_data_seeded_requirement_traceability_json",
+      "functionalrequirements_seeddata_seeded_requirement_traceabilityjson",
+      "functionalrequirements_tests_harness_requirementsmatrixjson",
+      "functionalrequirements_tests_test_requirement_acceptance_alignment_py",
+      "functionalrequirements_tests_test_requirement_acceptance_alignmentpy"
+    ],
+    "4": [
+      "claude_skills_symphonix_health_design_tests_test_requirement_acceptance_alignment_py_any",
+      "claude_skills_symphonix_health_design_tests_test_requirement_acceptance_alignment_py_path",
+      "claude_skills_symphonix_health_design_tests_test_requirement_acceptance_alignment_py_tests_test_requirement_acceptance_alignment",
+      "claude_skills_symphonix_health_design_tests_test_requirement_acceptance_alignment_py_tests_test_requirement_acceptance_alignment_acceptance_ids_from_row",
+      "claude_skills_symphonix_health_design_tests_test_requirement_acceptance_alignment_py_tests_test_requirement_acceptance_alignment_active_acceptance_criteria",
+      "claude_skills_symphonix_health_design_tests_test_requirement_acceptance_alignment_py_tests_test_requirement_acceptance_alignment_active_acceptance_criteria_by_id",
+      "claude_skills_symphonix_health_design_tests_test_requirement_acceptance_alignment_py_tests_test_requirement_acceptance_alignment_active_acceptance_ids_by_requirement",
+      "claude_skills_symphonix_health_design_tests_test_requirement_acceptance_alignment_py_tests_test_requirement_acceptance_alignment_add_acceptance_ids_from_value",
+      "claude_skills_symphonix_health_design_tests_test_requirement_acceptance_alignment_py_tests_test_requirement_acceptance_alignment_add_requirement_ids_from_value",
+      "claude_skills_symphonix_health_design_tests_test_requirement_acceptance_alignment_py_tests_test_requirement_acceptance_alignment_candidate_has_requirement_shape",
+      "claude_skills_symphonix_health_design_tests_test_requirement_acceptance_alignment_py_tests_test_requirement_acceptance_alignment_dedupe_records",
+      "claude_skills_symphonix_health_design_tests_test_requirement_acceptance_alignment_py_tests_test_requirement_acceptance_alignment_documented_non_service_exception",
+      "claude_skills_symphonix_health_design_tests_test_requirement_acceptance_alignment_py_tests_test_requirement_acceptance_alignment_is_generic_acceptance_statement",
+      "claude_skills_symphonix_health_design_tests_test_requirement_acceptance_alignment_py_tests_test_requirement_acceptance_alignment_load_14col_rows",
+      "claude_skills_symphonix_health_design_tests_test_requirement_acceptance_alignment_py_tests_test_requirement_acceptance_alignment_load_json",
+      "claude_skills_symphonix_health_design_tests_test_requirement_acceptance_alignment_py_tests_test_requirement_acceptance_alignment_load_text",
+      "claude_skills_symphonix_health_design_tests_test_requirement_acceptance_alignment_py_tests_test_requirement_acceptance_alignment_normalized_repo_kind",
+      "claude_skills_symphonix_health_design_tests_test_requirement_acceptance_alignment_py_tests_test_requirement_acceptance_alignment_ordered_unique",
+      "claude_skills_symphonix_health_design_tests_test_requirement_acceptance_alignment_py_tests_test_requirement_acceptance_alignment_relative_row_id",
+      "claude_skills_symphonix_health_design_tests_test_requirement_acceptance_alignment_py_tests_test_requirement_acceptance_alignment_repo_kind",
+      "claude_skills_symphonix_health_design_tests_test_requirement_acceptance_alignment_py_tests_test_requirement_acceptance_alignment_requirement_id_from_record",
+      "claude_skills_symphonix_health_design_tests_test_requirement_acceptance_alignment_py_tests_test_requirement_acceptance_alignment_requirement_ids_from_row",
+      "claude_skills_symphonix_health_design_tests_test_requirement_acceptance_alignment_py_tests_test_requirement_acceptance_alignment_requirement_ids_from_text",
+      "claude_skills_symphonix_health_design_tests_test_requirement_acceptance_alignment_py_tests_test_requirement_acceptance_alignment_requirement_records",
+      "claude_skills_symphonix_health_design_tests_test_requirement_acceptance_alignment_py_tests_test_requirement_acceptance_alignment_requirements_by_id",
+      "claude_skills_symphonix_health_design_tests_test_requirement_acceptance_alignment_py_tests_test_requirement_acceptance_alignment_row_test_data_acceptance_ids",
+      "claude_skills_symphonix_health_design_tests_test_requirement_acceptance_alignment_py_tests_test_requirement_acceptance_alignment_row_test_data_requirement_ids",
+      "claude_skills_symphonix_health_design_tests_test_requirement_acceptance_alignment_py_tests_test_requirement_acceptance_alignment_rows_from_matrix",
+      "claude_skills_symphonix_health_design_tests_test_requirement_acceptance_alignment_py_tests_test_requirement_acceptance_alignment_spec_has_acceptance_criteria_wording",
+      "claude_skills_symphonix_health_design_tests_test_requirement_acceptance_alignment_py_tests_test_requirement_acceptance_alignment_spec_lines_for",
+      "claude_skills_symphonix_health_design_tests_test_requirement_acceptance_alignment_py_tests_test_requirement_acceptance_alignment_test_every_14col_requirement_row_maps_to_acceptance_criteria",
+      "claude_skills_symphonix_health_design_tests_test_requirement_acceptance_alignment_py_tests_test_requirement_acceptance_alignment_test_every_acceptance_criterion_has_matrix_evidence",
+      "claude_skills_symphonix_health_design_tests_test_requirement_acceptance_alignment_py_tests_test_requirement_acceptance_alignment_test_every_requirement_has_acceptance_criteria",
+      "claude_skills_symphonix_health_design_tests_test_requirement_acceptance_alignment_py_tests_test_requirement_acceptance_alignment_test_seed_trace_includes_acceptance_criteria",
+      "claude_skills_symphonix_health_design_tests_test_requirement_acceptance_alignment_py_tests_test_requirement_acceptance_alignment_test_specs_include_acceptance_criteria"
+    ],
+    "5": [
+      "tests_test_requirement_acceptance_alignment_py_any",
+      "tests_test_requirement_acceptance_alignment_py_path",
+      "tests_test_requirement_acceptance_alignment_py_tests_test_requirement_acceptance_alignment",
+      "tests_test_requirement_acceptance_alignment_py_tests_test_requirement_acceptance_alignment_acceptance_ids_from_row",
+      "tests_test_requirement_acceptance_alignment_py_tests_test_requirement_acceptance_alignment_active_acceptance_criteria",
+      "tests_test_requirement_acceptance_alignment_py_tests_test_requirement_acceptance_alignment_active_acceptance_criteria_by_id",
+      "tests_test_requirement_acceptance_alignment_py_tests_test_requirement_acceptance_alignment_active_acceptance_ids_by_requirement",
+      "tests_test_requirement_acceptance_alignment_py_tests_test_requirement_acceptance_alignment_add_acceptance_ids_from_value",
+      "tests_test_requirement_acceptance_alignment_py_tests_test_requirement_acceptance_alignment_add_requirement_ids_from_value",
+      "tests_test_requirement_acceptance_alignment_py_tests_test_requirement_acceptance_alignment_candidate_has_requirement_shape",
+      "tests_test_requirement_acceptance_alignment_py_tests_test_requirement_acceptance_alignment_dedupe_records",
+      "tests_test_requirement_acceptance_alignment_py_tests_test_requirement_acceptance_alignment_documented_non_service_exception",
+      "tests_test_requirement_acceptance_alignment_py_tests_test_requirement_acceptance_alignment_is_generic_acceptance_statement",
+      "tests_test_requirement_acceptance_alignment_py_tests_test_requirement_acceptance_alignment_load_14col_rows",
+      "tests_test_requirement_acceptance_alignment_py_tests_test_requirement_acceptance_alignment_load_json",
+      "tests_test_requirement_acceptance_alignment_py_tests_test_requirement_acceptance_alignment_load_text",
+      "tests_test_requirement_acceptance_alignment_py_tests_test_requirement_acceptance_alignment_normalized_repo_kind",
+      "tests_test_requirement_acceptance_alignment_py_tests_test_requirement_acceptance_alignment_ordered_unique",
+      "tests_test_requirement_acceptance_alignment_py_tests_test_requirement_acceptance_alignment_relative_row_id",
+      "tests_test_requirement_acceptance_alignment_py_tests_test_requirement_acceptance_alignment_repo_kind",
+      "tests_test_requirement_acceptance_alignment_py_tests_test_requirement_acceptance_alignment_requirement_id_from_record",
+      "tests_test_requirement_acceptance_alignment_py_tests_test_requirement_acceptance_alignment_requirement_ids_from_row",
+      "tests_test_requirement_acceptance_alignment_py_tests_test_requirement_acceptance_alignment_requirement_ids_from_text",
+      "tests_test_requirement_acceptance_alignment_py_tests_test_requirement_acceptance_alignment_requirement_records",
+      "tests_test_requirement_acceptance_alignment_py_tests_test_requirement_acceptance_alignment_requirements_by_id",
+      "tests_test_requirement_acceptance_alignment_py_tests_test_requirement_acceptance_alignment_row_test_data_acceptance_ids",
+      "tests_test_requirement_acceptance_alignment_py_tests_test_requirement_acceptance_alignment_row_test_data_requirement_ids",
+      "tests_test_requirement_acceptance_alignment_py_tests_test_requirement_acceptance_alignment_rows_from_matrix",
+      "tests_test_requirement_acceptance_alignment_py_tests_test_requirement_acceptance_alignment_spec_has_acceptance_criteria_wording",
+      "tests_test_requirement_acceptance_alignment_py_tests_test_requirement_acceptance_alignment_spec_lines_for",
+      "tests_test_requirement_acceptance_alignment_py_tests_test_requirement_acceptance_alignment_test_every_14col_requirement_row_maps_to_acceptance_criteria",
+      "tests_test_requirement_acceptance_alignment_py_tests_test_requirement_acceptance_alignment_test_every_acceptance_criterion_has_matrix_evidence",
+      "tests_test_requirement_acceptance_alignment_py_tests_test_requirement_acceptance_alignment_test_every_requirement_has_acceptance_criteria",
+      "tests_test_requirement_acceptance_alignment_py_tests_test_requirement_acceptance_alignment_test_seed_trace_includes_acceptance_criteria",
+      "tests_test_requirement_acceptance_alignment_py_tests_test_requirement_acceptance_alignment_test_specs_include_acceptance_criteria"
+    ],
+    "6": [
+      "helixcare_business_case",
+      "helixcare_business_case_agent_eclaims_reference",
+      "helixcare_business_case_agent_federation",
+      "helixcare_business_case_ambulance_ems",
+      "helixcare_business_case_appointment_system",
+      "helixcare_business_case_bridge_sdk",
+      "helixcare_business_case_bullettrain",
+      "helixcare_business_case_bullettrain_virtual_ward_services",
+      "helixcare_business_case_caid",
+      "helixcare_business_case_citizen_portal",
+      "helixcare_business_case_csaa",
+      "helixcare_business_case_diagnosis_support_rl",
+      "helixcare_business_case_eps",
+      "helixcare_business_case_gharra",
+      "helixcare_business_case_inbox_triage_rl",
+      "helixcare_business_case_insurance_eclaims",
+      "helixcare_business_case_insurance_eclaims_use_cases",
+      "helixcare_business_case_lis",
+      "helixcare_business_case_medication_adherence_rl",
+      "helixcare_business_case_nexus_a2a",
+      "helixcare_business_case_nexus_a2a_agent",
+      "helixcare_business_case_pacs_ris",
+      "helixcare_business_case_pharmacy_system",
+      "helixcare_business_case_picis_system",
+      "helixcare_business_case_prior_auth_rl",
+      "helixcare_business_case_prompt_engine",
+      "helixcare_business_case_provider_portal",
+      "helixcare_business_case_resource_allocation_rl",
+      "helixcare_business_case_rl_meta_architecture",
+      "helixcare_business_case_scheduling_gateway",
+      "helixcare_business_case_signalbox",
+      "helixcare_business_case_supply_chain_erp",
+      "helixcare_business_case_symphonix_bridge_sdk",
+      "helixcare_business_case_triage_api"
+    ],
+    "7": [
+      "scripts_brand_factory",
+      "scripts_brand_factory_agent_brain",
+      "scripts_brand_factory_ambulance",
+      "scripts_brand_factory_bars",
+      "scripts_brand_factory_bracket_cog",
+      "scripts_brand_factory_bridge",
+      "scripts_brand_factory_caduceus",
+      "scripts_brand_factory_calendar",
+      "scripts_brand_factory_capsule",
+      "scripts_brand_factory_crosshair",
+      "scripts_brand_factory_document_check",
+      "scripts_brand_factory_flask",
+      "scripts_brand_factory_flow",
+      "scripts_brand_factory_glyph_fn",
+      "scripts_brand_factory_grid",
+      "scripts_brand_factory_hospital",
+      "scripts_brand_factory_main",
+      "scripts_brand_factory_market",
+      "scripts_brand_factory_person",
+      "scripts_brand_factory_prescription",
+      "scripts_brand_factory_rationale_1",
+      "scripts_brand_factory_rationale_609",
+      "scripts_brand_factory_render_icon",
+      "scripts_brand_factory_render_logo",
+      "scripts_brand_factory_safety_shield",
+      "scripts_brand_factory_scan_stack",
+      "scripts_brand_factory_stethoscope",
+      "scripts_brand_factory_supply_chain",
+      "scripts_brand_factory_track_path",
+      "scripts_brand_factory_train",
+      "scripts_brand_factory_triage_triangle",
+      "scripts_brand_factory_waveform",
+      "scripts_brand_factory_xml_escape"
+    ],
+    "8": [
+      "clinicalpathwaysicon_clinical_pathways_icon",
+      "helixcare_business_case_clinical_pathways",
+      "helixcare_rl_implementation_plan_adherence_rl",
+      "helixcare_rl_implementation_plan_bridge_sdk",
+      "helixcare_rl_implementation_plan_bullettrain_rl",
+      "helixcare_rl_implementation_plan_bullettrain_rl_contracts",
+      "helixcare_rl_implementation_plan_bullettrain_rl_feature_store",
+      "helixcare_rl_implementation_plan_bullettrain_rl_hitl_router",
+      "helixcare_rl_implementation_plan_bullettrain_rl_monitoring",
+      "helixcare_rl_implementation_plan_bullettrain_rl_ope_gate",
+      "helixcare_rl_implementation_plan_bullettrain_rl_policy_registry",
+      "helixcare_rl_implementation_plan_bullettrain_rl_privacy_controls",
+      "helixcare_rl_implementation_plan_bullettrain_rl_reward_hacking_guard",
+      "helixcare_rl_implementation_plan_bullettrain_rl_reward_log",
+      "helixcare_rl_implementation_plan_caid",
+      "helixcare_rl_implementation_plan_clinical_pathways",
+      "helixcare_rl_implementation_plan_csaa",
+      "helixcare_rl_implementation_plan_diagnosis_support_rl",
+      "helixcare_rl_implementation_plan_ed_triage_rl",
+      "helixcare_rl_implementation_plan_gharra",
+      "helixcare_rl_implementation_plan_inbox_triage_rl",
+      "helixcare_rl_implementation_plan_insurance_eclaims",
+      "helixcare_rl_implementation_plan_observability",
+      "helixcare_rl_implementation_plan_prior_auth",
+      "helixcare_rl_implementation_plan_prior_auth_rl",
+      "helixcare_rl_implementation_plan_prompt_engine",
+      "helixcare_rl_implementation_plan_provider_portal",
+      "helixcare_rl_implementation_plan_resource_allocation_rl",
+      "helixcare_rl_implementation_plan_scheduling_rl",
+      "helixcare_rl_implementation_plan_signalbox",
+      "helixcare_rl_implementation_plan_triage_api"
+    ],
+    "9": [
+      "claude_skills_symphonix_health_design_scripts_design_system_audit_py_path",
+      "claude_skills_symphonix_health_design_scripts_readme_updater_py_path",
+      "scripts_design_system_audit",
+      "scripts_design_system_audit_audit_file",
+      "scripts_design_system_audit_is_token_reference",
+      "scripts_design_system_audit_iter_source_files",
+      "scripts_design_system_audit_main",
+      "scripts_design_system_audit_normalise_hex",
+      "scripts_design_system_audit_per_repo_report",
+      "scripts_design_system_audit_rationale_1",
+      "scripts_design_system_audit_rationale_183",
+      "scripts_design_system_audit_write_accepted_variance",
+      "scripts_readme_updater",
+      "scripts_readme_updater_build_header",
+      "scripts_readme_updater_build_recent_section",
+      "scripts_readme_updater_git_log_since_readme",
+      "scripts_readme_updater_main",
+      "scripts_readme_updater_rationale_1",
+      "scripts_readme_updater_rationale_136",
+      "scripts_readme_updater_rationale_57",
+      "scripts_readme_updater_update_readme",
+      "scripts_sibling_registry",
+      "scripts_sibling_registry_audit_enforced",
+      "scripts_sibling_registry_by_slug",
+      "scripts_sibling_registry_headless",
+      "scripts_sibling_registry_load_registry",
+      "scripts_sibling_registry_rationale_1",
+      "scripts_sibling_registry_rationale_45",
+      "scripts_sibling_registry_slugs"
+    ],
+    "10": [
+      "nonfunctionalrequirements_ds190",
+      "nonfunctionalrequirements_ds191",
+      "nonfunctionalrequirements_ds192",
+      "nonfunctionalrequirements_ds193",
+      "nonfunctionalrequirements_ds194",
+      "nonfunctionalrequirements_ds195",
+      "nonfunctionalrequirements_ds196",
+      "nonfunctionalrequirements_nfrco001",
+      "nonfunctionalrequirements_nfrco002",
+      "nonfunctionalrequirements_nfrfl001",
+      "nonfunctionalrequirements_nfrfl002",
+      "nonfunctionalrequirements_nfric001",
+      "nonfunctionalrequirements_nfrma001",
+      "nonfunctionalrequirements_nfrma002",
+      "nonfunctionalrequirements_nfrma003",
+      "nonfunctionalrequirements_nfrma004",
+      "nonfunctionalrequirements_nfrpe001",
+      "nonfunctionalrequirements_nfrre001",
+      "nonfunctionalrequirements_nfrre002",
+      "nonfunctionalrequirements_nfrre003",
+      "nonfunctionalrequirements_nfrsa001",
+      "nonfunctionalrequirements_nfrsa002",
+      "nonfunctionalrequirements_nfrse001",
+      "nonfunctionalrequirements_nfrse002",
+      "nonfunctionalrequirements_nfrse003",
+      "nonfunctionalrequirements_nfrse004",
+      "seededrequirementtraceability_designsystem"
+    ],
+    "11": [
+      "nestedcraftsdiagramcrosscheck_ambulance_ems",
+      "nestedcraftsdiagramcrosscheck_appointment_system",
+      "nestedcraftsdiagramcrosscheck_bridge_sdk",
+      "nestedcraftsdiagramcrosscheck_bullettrain",
+      "nestedcraftsdiagramcrosscheck_citizen_portal",
+      "nestedcraftsdiagramcrosscheck_clinical_pathways",
+      "nestedcraftsdiagramcrosscheck_csaa",
+      "nestedcraftsdiagramcrosscheck_erp",
+      "nestedcraftsdiagramcrosscheck_genomics_interpretation",
+      "nestedcraftsdiagramcrosscheck_gharra",
+      "nestedcraftsdiagramcrosscheck_hmis",
+      "nestedcraftsdiagramcrosscheck_human_and_ai_agent_capability_framework",
+      "nestedcraftsdiagramcrosscheck_insurance_eclaims",
+      "nestedcraftsdiagramcrosscheck_nexus_a2a",
+      "nestedcraftsdiagramcrosscheck_patient360_assistant",
+      "nestedcraftsdiagramcrosscheck_personadefinition",
+      "nestedcraftsdiagramcrosscheck_personaregistry",
+      "nestedcraftsdiagramcrosscheck_pharmacy_system",
+      "nestedcraftsdiagramcrosscheck_prompt_engine",
+      "nestedcraftsdiagramcrosscheck_provider_portal",
+      "nestedcraftsdiagramcrosscheck_superpersonacontract",
+      "nestedcraftsdiagramcrosscheck_supply_chain_erp",
+      "nestedcraftsdiagramcrosscheck_symphonix_health_mechanism_core",
+      "nestedcraftsdiagramcrosscheck_symphonix_platform_fabric"
+    ],
+    "12": [
+      "agents_dx_agent_py_openaiinstrumentor_instrument",
+      "ambulance_ems_main",
+      "ambulance_ems_metrics_dispatch_requests",
+      "ambulance_ems_metrics_response_time",
+      "appointment_system_main",
+      "appointment_system_observability_appt_metrics_booking_latency",
+      "appointment_system_observability_appt_metrics_bookings_total",
+      "appointment_system_observability_appt_metrics_slot_utilisation",
+      "appointment_system_observability_appt_metrics_waitlist_size",
+      "appointment_system_services_booking_service_create_booking",
+      "bullettrain_logging_config_configure_logging",
+      "bullettrain_main",
+      "bullettrain_metrics_connected_systems",
+      "bullettrain_metrics_hie_latency",
+      "bullettrain_metrics_hie_messages_total",
+      "symphonix_bridge_sdk_observability_correlation_correlationidmiddleware",
+      "symphonix_bridge_sdk_observability_health_make_health_router",
+      "symphonix_bridge_sdk_observability_init",
+      "symphonix_bridge_sdk_observability_logging_configure_logging",
+      "symphonix_bridge_sdk_observability_metrics_prometheusmetrics",
+      "symphonix_bridge_sdk_observability_sentry_initsentry"
+    ],
+    "13": [
+      "symphonix_observability_implementation_plan_agent_planner_py",
+      "symphonix_observability_implementation_plan_api_admin_router_py",
+      "symphonix_observability_implementation_plan_bi_metrics",
+      "symphonix_observability_implementation_plan_citizen_portal_main_py",
+      "symphonix_observability_implementation_plan_claims_metrics",
+      "symphonix_observability_implementation_plan_decorators_traced_tool_py",
+      "symphonix_observability_implementation_plan_gateway_py",
+      "symphonix_observability_implementation_plan_gp_metrics",
+      "symphonix_observability_implementation_plan_hmis_metrics",
+      "symphonix_observability_implementation_plan_lis_metrics",
+      "symphonix_observability_implementation_plan_main_py",
+      "symphonix_observability_implementation_plan_observability_a2a_metrics_py",
+      "symphonix_observability_implementation_plan_observability_agent_metrics_py",
+      "symphonix_observability_implementation_plan_pacs_metrics",
+      "symphonix_observability_implementation_plan_pathway_metrics",
+      "symphonix_observability_implementation_plan_pharmacy_metrics",
+      "symphonix_observability_implementation_plan_protocol_message_py",
+      "symphonix_observability_implementation_plan_requirements_txt",
+      "symphonix_observability_implementation_plan_server_py",
+      "symphonix_observability_implementation_plan_transfer_metrics"
+    ],
+    "14": [
+      "agent_eclaims_backend_src_agent_attestation",
+      "agent_eclaims_backend_src_agent_init",
+      "agent_eclaims_backend_src_agent_models",
+      "agent_eclaims_backend_src_agent_pending_sweeper",
+      "agent_eclaims_backend_src_agent_prompts_examples_yaml",
+      "agent_eclaims_backend_src_agent_prompts_medical_necessity_yaml",
+      "agent_eclaims_backend_src_agent_recommender",
+      "agent_eclaims_reference_agent",
+      "agent_eclaims_tests_agent_scenarios_medical_necessity_abstain_ood_json",
+      "agent_eclaims_tests_agent_scenarios_medical_necessity_approve_json",
+      "agent_eclaims_tests_agent_scenarios_medical_necessity_deny_json",
+      "agent_eclaims_tests_agent_scenarios_medical_necessity_rfi_json",
+      "agent_eclaims_tests_agent_scenarios_phi_leak_guardrail_json",
+      "agent_eclaims_tests_agent_test_output_validation",
+      "agent_eclaims_tests_agent_test_pending_sweeper",
+      "agent_eclaims_tests_agent_test_recommender",
+      "agent_first_strategy",
+      "insurance_eclaims_backend_src_adjudication",
+      "prompt_engine"
+    ],
+    "15": [
+      "promptengineeringsystem_clause_adjacent_possible",
+      "promptengineeringsystem_clause_counter_arguments",
+      "promptengineeringsystem_clause_evidence_grounding",
+      "promptengineeringsystem_clause_first_principles",
+      "promptengineeringsystem_clause_hidden_assumptions",
+      "promptengineeringsystem_clause_long_term_evolution",
+      "promptengineeringsystem_clause_precision",
+      "promptengineeringsystem_clause_scenario_reasoning",
+      "promptengineeringsystem_clause_second_order_effects",
+      "promptengineeringsystem_clause_structured_output",
+      "promptengineeringsystem_clause_synthesis",
+      "promptengineeringsystem_reasoningmode_adversarial_thinking",
+      "promptengineeringsystem_reasoningmode_critical_review",
+      "promptengineeringsystem_reasoningmode_design_thinking",
+      "promptengineeringsystem_reasoningmode_failure_analysis",
+      "promptengineeringsystem_reasoningmode_first_principles_mode",
+      "promptengineeringsystem_reasoningmode_scientific_method",
+      "promptengineeringsystem_reasoningmode_strategic_analysis",
+      "promptengineeringsystem_reasoningmode_systems_thinking"
+    ],
+    "16": [
+      "requirements_traceability_matrix_ds_001",
+      "requirements_traceability_matrix_ds_163",
+      "requirements_traceability_matrix_ds_164",
+      "requirements_traceability_matrix_ds_165",
+      "requirements_traceability_matrix_ds_172",
+      "requirements_traceability_matrix_nfr_co_001",
+      "requirements_traceability_matrix_nfr_fl_001",
+      "requirements_traceability_matrix_nfr_ic_001",
+      "requirements_traceability_matrix_nfr_ma_001",
+      "requirements_traceability_matrix_nfr_pe_001",
+      "requirements_traceability_matrix_nfr_re_001",
+      "requirements_traceability_matrix_nfr_sa_001",
+      "requirements_traceability_matrix_nfr_se_001",
+      "requirements_traceability_matrix_reports_repository_assurance_assurance_pack_json",
+      "requirements_traceability_matrix_sa_shd_00001",
+      "requirements_traceability_matrix_sa_shd_00103",
+      "requirements_traceability_matrix_tests",
+      "requirements_traceability_matrix_tests_harness_requirements_matrix_json",
+      "test_coverage_matrix"
+    ],
+    "17": [
+      "symphonixhealthplatformhighlevelarchitecture_aicapabilitystack",
+      "symphonixhealthplatformhighlevelarchitecture_bridgesdk",
+      "symphonixhealthplatformhighlevelarchitecture_bullettrain",
+      "symphonixhealthplatformhighlevelarchitecture_caid",
+      "symphonixhealthplatformhighlevelarchitecture_csaa",
+      "symphonixhealthplatformhighlevelarchitecture_designprinciplesandgovernance",
+      "symphonixhealthplatformhighlevelarchitecture_essencecriticalproblemdomains",
+      "symphonixhealthplatformhighlevelarchitecture_gharra",
+      "symphonixhealthplatformhighlevelarchitecture_humanandaiaagentcapabilityframework",
+      "symphonixhealthplatformhighlevelarchitecture_nexusa2a",
+      "symphonixhealthplatformhighlevelarchitecture_outcomes",
+      "symphonixhealthplatformhighlevelarchitecture_promptengine",
+      "symphonixhealthplatformhighlevelarchitecture_siblingsystemsanddomaincapabilities",
+      "symphonixhealthplatformhighlevelarchitecture_signalbox",
+      "symphonixhealthplatformhighlevelarchitecture_symphonixhealthmechanismcore",
+      "symphonixhealthplatformhighlevelarchitecture_symphonixplatformfabric",
+      "symphonixhealthplatformhighlevelarchitecture_thinkactionandlearningloops",
+      "symphonixhealthplatformhighlevelarchitecture_toolservices"
+    ],
+    "18": [
+      "clinical_react_bullettrainchart",
+      "clinical_react_bullettrainchart_bullettrainchart",
+      "clinical_react_bullettrainchart_default_colour",
+      "clinical_react_bullettrainchart_fmttime",
+      "clinical_react_bullettrainchart_historytoevents",
+      "clinical_react_bullettrainchart_statetovariant",
+      "clinical_react_bullettrainchart_timelineeventsvg",
+      "clinical_react_bullettrainchart_timelineeventsvgprops",
+      "clinical_react_bullettrainchart_variant_colours",
+      "clinical_react_prescriptiontracker",
+      "clinical_react_prescriptiontracker_fsm_steps",
+      "clinical_react_prescriptiontracker_prescriptiontracker",
+      "clinical_react_prescriptiontracker_state_descriptions",
+      "clinical_react_prescriptiontracker_stateprogressbar",
+      "clinical_react_prescriptiontracker_transitionbuttons",
+      "clinical_react_prescriptiontracker_transitionbuttonsprops",
+      "clinical_react_prescriptiontracker_transitionhistorytable"
+    ],
+    "19": [
+      "crafts_agentic_intelligence_architecture_revised_bridge_sdk",
+      "crafts_agentic_intelligence_architecture_revised_bullettrain",
+      "crafts_agentic_intelligence_architecture_revised_caid",
+      "crafts_agentic_intelligence_architecture_revised_csaa",
+      "crafts_agentic_intelligence_architecture_revised_data_plane",
+      "crafts_agentic_intelligence_architecture_revised_gharra",
+      "crafts_agentic_intelligence_architecture_revised_human_and_ai_agent_framework",
+      "crafts_agentic_intelligence_architecture_revised_intuitiondecision",
+      "crafts_agentic_intelligence_architecture_revised_nexus_a2a",
+      "crafts_agentic_intelligence_architecture_revised_nexus_a2a_protocol",
+      "crafts_agentic_intelligence_architecture_revised_patient360",
+      "crafts_agentic_intelligence_architecture_revised_personaregistry",
+      "crafts_agentic_intelligence_architecture_revised_signalbox",
+      "crafts_agentic_intelligence_architecture_revised_superpersonacontract",
+      "crafts_agentic_intelligence_architecture_revised_symphonix_health_crafts_agentic_intelligence_architecture",
+      "crafts_agentic_intelligence_architecture_revised_trust_and_route_plane"
+    ],
+    "20": [
+      "kenya_ai_governance",
+      "kenya_biometricverification",
+      "kenya_bullettrain",
+      "kenya_bullettrain_credentialengine",
+      "kenya_clearinghouseconnector",
+      "kenya_clientregistry",
+      "kenya_consentregistry",
+      "kenya_coverageconnector",
+      "kenya_financeinsuranceservice",
+      "kenya_frauddetector",
+      "kenya_identityservice",
+      "kenya_mobilemoneyintegration",
+      "kenya_registrationvalidator",
+      "kenya_smsgateway",
+      "kenya_whatsappgateway",
+      "kenya_workfloworchestrator"
+    ],
+    "21": [
+      "healthcarefhirviewer_allergyintolerance_resource",
+      "healthcarefhirviewer_careplan_resource",
+      "healthcarefhirviewer_careteam_resource",
+      "healthcarefhirviewer_condition_resource",
+      "healthcarefhirviewer_diagnosticreport_resource",
+      "healthcarefhirviewer_documentreference_resource",
+      "healthcarefhirviewer_encounter_resource",
+      "healthcarefhirviewer_fhir_resource_viewer",
+      "healthcarefhirviewer_medicationrequest_resource",
+      "healthcarefhirviewer_observation_resource",
+      "healthcarefhirviewer_organization_resource",
+      "healthcarefhirviewer_patient_resource",
+      "healthcarefhirviewer_practitioner_resource",
+      "healthcarefhirviewer_procedure_resource",
+      "healthcarefhirviewer_servicerequest_resource"
+    ],
+    "22": [
+      "ireland_ai_governance",
+      "ireland_apigateway",
+      "ireland_bullettrain",
+      "ireland_bullettrain_credentialengine",
+      "ireland_clinicaldashboard",
+      "ireland_connectorregistry",
+      "ireland_eventrouter",
+      "ireland_gdhcn",
+      "ireland_gharra",
+      "ireland_globalorchestrator",
+      "ireland_hitlcoordinator",
+      "ireland_nexus_a2a",
+      "ireland_policyservice",
+      "ireland_riskstratification",
+      "ireland_workfloworchestrator"
+    ],
+    "23": [
+      "scripts_adopt",
+      "scripts_adopt_get_consumerrepos",
+      "scripts_adopt_invoke_bumpall",
+      "scripts_adopt_invoke_copyuikit",
+      "scripts_adopt_invoke_copyuikitall",
+      "scripts_adopt_invoke_git",
+      "scripts_adopt_invoke_injectcss",
+      "scripts_adopt_invoke_injectcssall",
+      "scripts_adopt_invoke_pintag",
+      "scripts_adopt_invoke_submoduleall",
+      "scripts_adopt_write_fail",
+      "scripts_adopt_write_ok",
+      "scripts_adopt_write_skip",
+      "scripts_adopt_write_step",
+      "scripts_adopt_write_warn"
+    ],
+    "24": [
+      "scripts_check_phantom_classes",
+      "scripts_check_phantom_classes_collectdefined",
+      "scripts_check_phantom_classes_css_files",
+      "scripts_check_phantom_classes_defined",
+      "scripts_check_phantom_classes_isinnamespace",
+      "scripts_check_phantom_classes_localstyleblockclasses",
+      "scripts_check_phantom_classes_missing",
+      "scripts_check_phantom_classes_namespaces",
+      "scripts_check_phantom_classes_orphans",
+      "scripts_check_phantom_classes_referenced",
+      "scripts_check_phantom_classes_refs",
+      "scripts_check_phantom_classes_root",
+      "scripts_check_phantom_classes_scan_dirs",
+      "scripts_check_phantom_classes_scanreferences",
+      "scripts_check_phantom_classes_walk"
+    ],
+    "25": [
+      "claude_skills_symphonix_health_design_tests_test_specification_alignment_py_any",
+      "claude_skills_symphonix_health_design_tests_test_specification_alignment_py_path",
+      "claude_skills_symphonix_health_design_tests_test_specification_alignment_py_tests_test_specification_alignment",
+      "claude_skills_symphonix_health_design_tests_test_specification_alignment_py_tests_test_specification_alignment_active_ac_ids",
+      "claude_skills_symphonix_health_design_tests_test_specification_alignment_py_tests_test_specification_alignment_is_nfr",
+      "claude_skills_symphonix_health_design_tests_test_specification_alignment_py_tests_test_specification_alignment_load_json",
+      "claude_skills_symphonix_health_design_tests_test_specification_alignment_py_tests_test_specification_alignment_requirements",
+      "claude_skills_symphonix_health_design_tests_test_specification_alignment_py_tests_test_specification_alignment_requirements_for",
+      "claude_skills_symphonix_health_design_tests_test_specification_alignment_py_tests_test_specification_alignment_test_architecture_spec_has_high_and_low_level_diagrams",
+      "claude_skills_symphonix_health_design_tests_test_specification_alignment_py_tests_test_specification_alignment_test_functional_and_non_functional_specs_cover_requirement_and_ac_ids",
+      "claude_skills_symphonix_health_design_tests_test_specification_alignment_py_tests_test_specification_alignment_test_functional_and_non_functional_specs_include_acceptance_criteria",
+      "claude_skills_symphonix_health_design_tests_test_specification_alignment_py_tests_test_specification_alignment_test_generic_seeded_acceptance_wording_is_absent",
+      "claude_skills_symphonix_health_design_tests_test_specification_alignment_py_tests_test_specification_alignment_test_specification_set_exists_and_links_canonical_sources",
+      "claude_skills_symphonix_health_design_tests_test_specification_alignment_py_tests_test_specification_alignment_text"
+    ],
+    "26": [
+      "componentsgamification_achievementbadges",
+      "componentsgamification_badge100cosigns",
+      "componentsgamification_badgelabchampion",
+      "componentsgamification_badgesafetystreak",
+      "componentsgamification_badgetopdocumenter",
+      "componentsgamification_clinicianengagement",
+      "componentsgamification_dailychallenges",
+      "componentsgamification_leaderboard_drfatimaalrashid",
+      "componentsgamification_leaderboard_drpriyanair",
+      "componentsgamification_leaderboard_drsiosaiataufa",
+      "componentsgamification_peerleaderboard",
+      "componentsgamification_profile_dremekaokafor",
+      "componentsgamification_wellnessguardrails",
+      "componentsgamification_xpring"
+    ],
+    "27": [
+      "tests_test_specification_alignment_py_any",
+      "tests_test_specification_alignment_py_path",
+      "tests_test_specification_alignment_py_tests_test_specification_alignment",
+      "tests_test_specification_alignment_py_tests_test_specification_alignment_active_ac_ids",
+      "tests_test_specification_alignment_py_tests_test_specification_alignment_is_nfr",
+      "tests_test_specification_alignment_py_tests_test_specification_alignment_load_json",
+      "tests_test_specification_alignment_py_tests_test_specification_alignment_requirements",
+      "tests_test_specification_alignment_py_tests_test_specification_alignment_requirements_for",
+      "tests_test_specification_alignment_py_tests_test_specification_alignment_test_architecture_spec_has_high_and_low_level_diagrams",
+      "tests_test_specification_alignment_py_tests_test_specification_alignment_test_functional_and_non_functional_specs_cover_requirement_and_ac_ids",
+      "tests_test_specification_alignment_py_tests_test_specification_alignment_test_functional_and_non_functional_specs_include_acceptance_criteria",
+      "tests_test_specification_alignment_py_tests_test_specification_alignment_test_generic_seeded_acceptance_wording_is_absent",
+      "tests_test_specification_alignment_py_tests_test_specification_alignment_test_specification_set_exists_and_links_canonical_sources",
+      "tests_test_specification_alignment_py_tests_test_specification_alignment_text"
+    ],
+    "28": [
+      "criticalrealistcraftsagenticmechanismrevised_bevan",
+      "criticalrealistcraftsagenticmechanismrevised_bridgesdk",
+      "criticalrealistcraftsagenticmechanismrevised_bullettrain",
+      "criticalrealistcraftsagenticmechanismrevised_caid",
+      "criticalrealistcraftsagenticmechanismrevised_crafts",
+      "criticalrealistcraftsagenticmechanismrevised_criticalrealism",
+      "criticalrealistcraftsagenticmechanismrevised_csaa",
+      "criticalrealistcraftsagenticmechanismrevised_gharra",
+      "criticalrealistcraftsagenticmechanismrevised_nexus_a2a",
+      "criticalrealistcraftsagenticmechanismrevised_nexusa2a",
+      "criticalrealistcraftsagenticmechanismrevised_promptengine",
+      "criticalrealistcraftsagenticmechanismrevised_signalbox",
+      "criticalrealistcraftsagenticmechanismrevised_symphonixhealth"
+    ],
+    "29": [
+      "helixcareclosedloopsrs_bullettrain_connectors_citizen_portal",
+      "helixcareclosedloopsrs_bullettrain_connectors_clinical_pathways",
+      "helixcareclosedloopsrs_bullettrain_connectors_insurance_eclaims",
+      "helixcareclosedloopsrs_bullettrain_rl_hitl_router",
+      "helixcareclosedloopsrs_connectors",
+      "helixcareclosedloopsrs_feature_store",
+      "helixcareclosedloopsrs_fhir_canonical_state_vector",
+      "helixcareclosedloopsrs_hitl_router",
+      "helixcareclosedloopsrs_pathway_rl",
+      "helixcareclosedloopsrs_policy_registry",
+      "helixcareclosedloopsrs_policy_registry_rollback",
+      "helixcareclosedloopsrs_provider_portal_hitl_queue",
+      "helixcareclosedloopsrs_reward_log"
+    ],
+    "30": [
+      "symphonix_health_design_package",
+      "symphonix_health_design_package_description",
+      "symphonix_health_design_package_devdependencies",
+      "symphonix_health_design_package_devdependencies_playwright_test",
+      "symphonix_health_design_package_name",
+      "symphonix_health_design_package_private",
+      "symphonix_health_design_package_scripts",
+      "symphonix_health_design_package_scripts_lint_phantom_classes",
+      "symphonix_health_design_package_scripts_preview",
+      "symphonix_health_design_package_scripts_test_visual",
+      "symphonix_health_design_package_scripts_test_visual_headed",
+      "symphonix_health_design_package_scripts_test_visual_update",
+      "symphonix_health_design_package_version"
+    ],
+    "31": [
+      "ghana_ai_governance",
+      "ghana_bullettrain",
+      "ghana_bullettrain_credentialengine",
+      "ghana_clearinghouseconnector",
+      "ghana_coverageconnector",
+      "ghana_financeinsuranceservice",
+      "ghana_frauddetector",
+      "ghana_gdhcn",
+      "ghana_gharra",
+      "ghana_nexus_a2a",
+      "ghana_patient360",
+      "ghana_signalbox"
+    ],
+    "32": [
+      "healthcareconsentcapture_alternatives",
+      "healthcareconsentcapture_capacityassessment",
+      "healthcareconsentcapture_consentcapture",
+      "healthcareconsentcapture_expectedbenefitsoutcome",
+      "healthcareconsentcapture_formversion_orttkav42",
+      "healthcareconsentcapture_patient_robertdfinlay",
+      "healthcareconsentcapture_patientacknowledgements",
+      "healthcareconsentcapture_patientdecision",
+      "healthcareconsentcapture_righttotalkneearthroplasty",
+      "healthcareconsentcapture_riskscomplications",
+      "healthcareconsentcapture_signatures",
+      "healthcareconsentcapture_surgeon_priyanair"
+    ],
+    "33": [
+      "clinical_react_bullettrainalert",
+      "clinical_react_bullettrainalert_advisorycard",
+      "clinical_react_bullettrainalert_advisorycardprops",
+      "clinical_react_bullettrainalert_bullettrainalert",
+      "clinical_react_bullettrainalert_cdscardtoalert",
+      "clinical_react_bullettrainalert_hardstopmodal",
+      "clinical_react_bullettrainalert_hardstopmodalprops",
+      "clinical_react_bullettrainalert_infotoast",
+      "clinical_react_bullettrainalert_infotoastprops",
+      "clinical_react_bullettrainalert_overridereasonselector",
+      "clinical_react_bullettrainalert_overridereasonselectorprops"
+    ],
+    "34": [
+      "healthcaremedications_acetaminophen",
+      "healthcaremedications_cds_alert",
+      "healthcaremedications_ceftriaxone",
+      "healthcaremedications_hard_stop",
+      "healthcaremedications_heparin",
+      "healthcaremedications_hydralazine",
+      "healthcaremedications_insulin_lispro",
+      "healthcaremedications_lisinopril",
+      "healthcaremedications_medications",
+      "healthcaremedications_metformin",
+      "healthcaremedications_morphine_sulfate"
+    ],
+    "35": [
+      "symphonixhealtharchitecture_aiservices",
+      "symphonixhealtharchitecture_connectorsandadapters",
+      "symphonixhealtharchitecture_guardrailsandpolicyengine",
+      "symphonixhealtharchitecture_hospitalsandehrs",
+      "symphonixhealtharchitecture_insurersandclaims",
+      "symphonixhealtharchitecture_labsandimaging",
+      "symphonixhealtharchitecture_observabilitylayer",
+      "symphonixhealtharchitecture_publichealthandhie",
+      "symphonixhealtharchitecture_signalbox",
+      "symphonixhealtharchitecture_telemedicineandapps",
+      "symphonixhealtharchitecture_workfloworchestrator"
+    ],
+    "36": [
+      "website_atoms",
+      "website_atoms_accentrule",
+      "website_atoms_btn",
+      "website_atoms_eyebrow",
+      "website_atoms_glasscard",
+      "website_atoms_globalstyles",
+      "website_atoms_proofbadge",
+      "website_atoms_rainbowecg",
+      "website_atoms_rainbowrail",
+      "website_atoms_sectionhead",
+      "website_atoms_tagpill"
+    ],
+    "37": [
+      "claude_skills_symphonix_health_design_tests_test_bullettrain_v1_matrix_py_any",
+      "claude_skills_symphonix_health_design_tests_test_bullettrain_v1_matrix_py_path",
+      "tests_test_bullettrain_v1_matrix",
+      "tests_test_bullettrain_v1_matrix_matrix_files",
+      "tests_test_bullettrain_v1_matrix_read_json",
+      "tests_test_bullettrain_v1_matrix_rows",
+      "tests_test_bullettrain_v1_matrix_source_rows",
+      "tests_test_bullettrain_v1_matrix_test_bullettrain_v1_matrices_cover_requirements_matrix",
+      "tests_test_bullettrain_v1_matrix_test_bullettrain_v1_matrices_use_14_column_schema",
+      "tests_test_bullettrain_v1_matrix_test_bullettrain_v1_projection_preserves_source_v2_rows"
+    ],
+    "38": [
+      "components_index_auditlog",
+      "components_index_charts",
+      "components_index_dashboard_grid",
+      "components_index_data_display",
+      "components_index_data_grid",
+      "components_index_data_quality",
+      "components_index_observability",
+      "components_index_speech_viz",
+      "components_index_stats",
+      "components_index_table"
+    ],
+    "39": [
+      "components_toast_banner",
+      "components_toast_toast",
+      "components_toast_toast_actions",
+      "components_toast_toast_body",
+      "components_toast_toast_close",
+      "components_toast_toast_desc",
+      "components_toast_toast_icon",
+      "components_toast_toast_meta",
+      "components_toast_toast_progress",
+      "components_toast_toast_title"
+    ],
+    "40": [
+      "healthcare_reporting_submission_requirements",
+      "healthcare_reporting_submission_requirements_clinical_registry_submission",
+      "healthcare_reporting_submission_requirements_ecqm_qrda",
+      "healthcare_reporting_submission_requirements_hedis_ncqa",
+      "healthcare_reporting_submission_requirements_laboratory_reporting_lis",
+      "healthcare_reporting_submission_requirements_payer_claims_reporting_insurance_eclaims",
+      "healthcare_reporting_submission_requirements_pharmacy_reporting_pmp_pdmp_gphc_cqc",
+      "healthcare_reporting_submission_requirements_public_health_reporting",
+      "healthcare_reporting_submission_requirements_radiology_report_finalization_pacs_ris",
+      "healthcare_reporting_submission_requirements_submission_status_grammar"
+    ],
+    "41": [
+      "indexhtml_clinical",
+      "indexhtml_communication",
+      "indexhtml_data",
+      "indexhtml_files",
+      "indexhtml_iconography",
+      "indexhtml_interface",
+      "indexhtml_lucide",
+      "indexhtml_platform",
+      "indexhtml_status",
+      "indexhtml_time"
+    ],
+    "42": [
+      "networked_superhuman_clinical_intelligence_revised_bevan",
+      "networked_superhuman_clinical_intelligence_revised_bridge_sdk",
+      "networked_superhuman_clinical_intelligence_revised_bullettrain",
+      "networked_superhuman_clinical_intelligence_revised_caid",
+      "networked_superhuman_clinical_intelligence_revised_csaa",
+      "networked_superhuman_clinical_intelligence_revised_gharra",
+      "networked_superhuman_clinical_intelligence_revised_nexus_a2a",
+      "networked_superhuman_clinical_intelligence_revised_patient360_assistant",
+      "networked_superhuman_clinical_intelligence_revised_signalbox",
+      "networked_superhuman_clinical_intelligence_revised_symphonix_health"
+    ],
+    "43": [
+      "architecture_specification",
+      "canonical_use_case_matrix",
+      "design_specification",
+      "functional_requirements_specification",
+      "non_functional_requirements_specification",
+      "seeded_alignment_trace",
+      "seeded_alignment_trace_rationale_1",
+      "seeded_requirement_traceability",
+      "source_scenario_matrix"
+    ],
+    "44": [
+      "harness_build_derived_nfrs",
+      "harness_build_derived_nfrs_main",
+      "harness_build_derived_nfrs_project_type_for_subsystem",
+      "harness_build_derived_nfrs_rationale_1",
+      "harness_build_derived_nfrs_rationale_36",
+      "harness_build_derived_nfrs_rationale_56",
+      "harness_build_derived_nfrs_rationale_71",
+      "harness_build_derived_nfrs_regulatory_regime_for_subsystem",
+      "harness_build_derived_nfrs_scale_tier_for_subsystem"
+    ],
+    "45": [
+      "healthcareacpform_adult_acp_mode",
+      "healthcareacpform_anticipatory_care_plan",
+      "healthcareacpform_paediatric_acp_mode",
+      "healthcareacpform_paediatric_block_assent_and_parental_responsibility",
+      "healthcareacpform_preferred_place_of_care_and_death",
+      "healthcareacpform_proxy_designations_and_lpa",
+      "healthcareacpform_sign_and_share",
+      "healthcareacpform_treatments_to_withhold_or_continue",
+      "healthcareacpform_values_spiritual_cultural_preferences"
+    ],
+    "46": [
+      "helixcare_closed_loop_srs_bullettrain_rl_ope_gate",
+      "helixcare_closed_loop_srs_caid_agent_feedback",
+      "helixcare_closed_loop_srs_fr_cl_meta_001",
+      "helixcare_closed_loop_srs_fr_cl_meta_002",
+      "helixcare_closed_loop_srs_fr_cl_meta_003",
+      "helixcare_closed_loop_srs_fr_cl_meta_004",
+      "helixcare_closed_loop_srs_fr_cl_ope_001",
+      "helixcare_closed_loop_srs_prompt_engine_feedback",
+      "helixcare_closed_loop_srs_rea_agent_feedback"
+    ],
+    "47": [
+      "unified_agentic_architecture_revised_bullettrain",
+      "unified_agentic_architecture_revised_csaa",
+      "unified_agentic_architecture_revised_gharra",
+      "unified_agentic_architecture_revised_nexus",
+      "unified_agentic_architecture_revised_nexus_a2a_protocol",
+      "unified_agentic_architecture_revised_prompt_engine",
+      "unified_agentic_architecture_revised_signalbox",
+      "unified_agentic_architecture_revised_signalbox_mcp",
+      "unified_agentic_architecture_revised_symphonix_bridge_sdk"
+    ],
+    "48": [
+      "healthcare_nursing_mar_acetaminophen",
+      "healthcare_nursing_mar_heparin_infusion",
+      "healthcare_nursing_mar_insulin_aspart_sliding",
+      "healthcare_nursing_mar_lisinopril",
+      "healthcare_nursing_mar_medication_administration_record",
+      "healthcare_nursing_mar_metoprolol_tartrate",
+      "healthcare_nursing_mar_morphine_pca",
+      "healthcare_nursing_mar_pantoprazole"
+    ],
+    "49": [
+      "healthcaretrustopsdashboard_ai_agent_health",
+      "healthcaretrustopsdashboard_connector_status",
+      "healthcaretrustopsdashboard_failsafe_inbox",
+      "healthcaretrustopsdashboard_mdt_throughput",
+      "healthcaretrustopsdashboard_respect_activity",
+      "healthcaretrustopsdashboard_rtt_worklist",
+      "healthcaretrustopsdashboard_sepsis_bundle",
+      "healthcaretrustopsdashboard_trust_operations_dashboard"
+    ],
+    "50": [
+      "prompt_engineering_system_confidentiality_required_policy",
+      "prompt_engineering_system_json_output_only_policy",
+      "prompt_engineering_system_no_country_shaming_policy",
+      "prompt_engineering_system_no_pii_policy",
+      "prompt_engineering_system_post_prompt_compose_api",
+      "prompt_engineering_system_post_prompt_optimize_api",
+      "prompt_engineering_system_risk_assessment",
+      "prompt_engineering_system_scenario_generation"
+    ],
+    "51": [
+      "reporting_837_transaction_field_validation",
+      "reporting_citizen_facing_subject_rights_reporting",
+      "reporting_discharge_summary_transitions_of_care",
+      "reporting_generic_submission_queue",
+      "reporting_population_health_dashboard",
+      "reporting_prior_authorization_status",
+      "reporting_reporting_class_library",
+      "reporting_resubmission_traceability"
+    ],
+    "52": [
+      "symphonixobservabilityagentgapanalysis_bullettrain",
+      "symphonixobservabilityagentgapanalysis_caid_agent",
+      "symphonixobservabilityagentgapanalysis_global_agent_registry",
+      "symphonixobservabilityagentgapanalysis_nexus_a2a_protocol",
+      "symphonixobservabilityagentgapanalysis_prompt_engine",
+      "symphonixobservabilityagentgapanalysis_rea_agent_mcp",
+      "symphonixobservabilityagentgapanalysis_signalbox_mcp",
+      "symphonixobservabilityagentgapanalysis_tool_library"
+    ],
+    "53": [
+      "components_index_breadcrumb",
+      "components_index_navbar",
+      "components_index_navigation",
+      "components_index_navsidebar",
+      "components_index_pagination",
+      "components_index_stepper",
+      "components_index_tabs"
+    ],
+    "54": [
+      "componentsaudio_audio_player",
+      "componentsaudio_livewave",
+      "componentsaudio_miniminiwave1",
+      "componentsaudio_miniminiwave2",
+      "componentsaudio_miniminiwave3",
+      "componentsaudio_waveforma",
+      "componentsaudio_waveformd"
+    ],
+    "55": [
+      "healthcarecommandpalette_action_discharge_summary_mitchell_sarah",
+      "healthcarecommandpalette_action_new_admission_note",
+      "healthcarecommandpalette_command_palette",
+      "healthcarecommandpalette_order_admit_to_ward_mitchell_sarah",
+      "healthcarecommandpalette_page_patient_mitchell_sarah_timeline",
+      "healthcarecommandpalette_patient_mitchell_robert",
+      "healthcarecommandpalette_patient_mitchell_sarah"
+    ],
+    "56": [
+      "healthcarehandoff_doctor_achen",
+      "healthcarehandoff_doctor_kosei",
+      "healthcarehandoff_patient_margaretholloway",
+      "healthcarehandoff_sbar_assessment",
+      "healthcarehandoff_sbar_background",
+      "healthcarehandoff_sbar_recommendation",
+      "healthcarehandoff_sbar_situation"
+    ],
+    "57": [
+      "healthcaremdtcase_brain_mri",
+      "healthcaremdtcase_cns_communicate_outcome",
+      "healthcaremdtcase_dr_p_mensah",
+      "healthcaremdtcase_marcus_beaumont",
+      "healthcaremdtcase_n_oconell",
+      "healthcaremdtcase_pre_assessment_clinic",
+      "healthcaremdtcase_tumour_genomics_submission"
+    ],
+    "58": [
+      "healthcarepharmacyverification_aisha_kamara_pharmd",
+      "healthcarepharmacyverification_dr_osei",
+      "healthcarepharmacyverification_furosemide",
+      "healthcarepharmacyverification_penicillin",
+      "healthcarepharmacyverification_pharmacy_verification",
+      "healthcarepharmacyverification_sara_blevins",
+      "healthcarepharmacyverification_vancomycin_iv"
+    ],
+    "59": [
+      "healthcaresepsisbundle_care_team_attestation",
+      "healthcaresepsisbundle_sep1_compliance_gate",
+      "healthcaresepsisbundle_sepsis3_criteria",
+      "healthcaresepsisbundle_sepsis_bundle",
+      "healthcaresepsisbundle_septic_shock_addendum",
+      "healthcaresepsisbundle_six_hour_bundle",
+      "healthcaresepsisbundle_three_hour_bundle"
+    ],
+    "60": [
+      "helixcareclosedloopsrs_bias_monitor",
+      "helixcareclosedloopsrs_caid_agent",
+      "helixcareclosedloopsrs_csaa",
+      "helixcareclosedloopsrs_ope_gate",
+      "helixcareclosedloopsrs_prompt_engine",
+      "helixcareclosedloopsrs_rea_agent_mcp",
+      "helixcareclosedloopsrs_reward_hacking_guard"
+    ],
+    "61": [
+      "kenya_analyticsdashboard",
+      "kenya_apigateway",
+      "kenya_connectorregistry",
+      "kenya_gdhcn",
+      "kenya_gharra",
+      "kenya_nexus_a2a",
+      "kenya_policyservice"
+    ],
+    "62": [
+      "readme_symphonix_health_docs",
+      "symphonix_observability_agent_gap_analysis_ambulance_ems",
+      "symphonix_observability_agent_gap_analysis_appointment_system",
+      "symphonix_observability_agent_gap_analysis_bullettrain",
+      "symphonix_observability_agent_gap_analysis_clinical_pathways",
+      "symphonix_observability_agent_gap_analysis_eps",
+      "symphonix_observability_agent_gap_analysis_report"
+    ],
+    "63": [
+      "symphonixhealthworkspacereviewandgapplan_caid_agent",
+      "symphonixhealthworkspacereviewandgapplan_csaa",
+      "symphonixhealthworkspacereviewandgapplan_gharra",
+      "symphonixhealthworkspacereviewandgapplan_prompt_engine",
+      "symphonixhealthworkspacereviewandgapplan_signalbox",
+      "symphonixhealthworkspacereviewandgapplan_symphonixbridge_sdk",
+      "symphonixhealthworkspacereviewandgapplan_workspace_tooling"
+    ],
+    "64": [
+      "agentfirst_bullettrain_integration_doctrine",
+      "agentfirst_phase4_tier1_fanout",
+      "agentfirst_phase5_tier2_selection",
+      "agentfirst_phase6_platform_productisation",
+      "bullettrainintegrationdoctrine_bullettrain_integration_doctrine",
+      "governanceagents_agent_governance_hitl_escalation_breakglass"
+    ],
+    "65": [
+      "branddirectionoptions_cobalt_citron",
+      "branddirectionoptions_forest_sand",
+      "branddirectionoptions_graphite_coral",
+      "branddirectionoptions_indigo_violet_current",
+      "branddirectionoptions_plum_ochre",
+      "brandecg_signature_rainbow_ecg"
+    ],
+    "66": [
+      "claude_skills_symphonix_health_design_tests_harness_v_model_test_l2_integration_py_path",
+      "v_model_test_l2_integration",
+      "v_model_test_l2_integration_load",
+      "v_model_test_l2_integration_rationale_1",
+      "v_model_test_l2_integration_requirement_ids",
+      "v_model_test_l2_integration_test_l2_canonical_scenarios_integrate_with_requirement_catalogue"
+    ],
+    "67": [
+      "componentscode_ehr_fetch",
+      "componentscode_fanout",
+      "componentscode_lab_fetch",
+      "componentscode_merge_fhir",
+      "componentscode_patient360",
+      "componentscode_pharmacy_fetch"
+    ],
+    "68": [
+      "componentsstatutoryclock_clk_discharged",
+      "componentsstatutoryclock_clk_expired",
+      "componentsstatutoryclock_clk_paused",
+      "componentsstatutoryclock_clk_running",
+      "componentsstatutoryclock_clk_unknown",
+      "componentsstatutoryclock_statutory_clock_chip"
+    ],
+    "69": [
+      "healthcare_alert_ladder_alert_intensity_ladder",
+      "healthcare_alert_ladder_rung_1",
+      "healthcare_alert_ladder_rung_2",
+      "healthcare_alert_ladder_rung_3",
+      "healthcare_alert_ladder_rung_4",
+      "healthcare_alert_ladder_rung_5"
+    ],
+    "70": [
+      "healthcare_dnacpr_form",
+      "healthcare_dnacpr_form_decision_maker_chain",
+      "healthcare_dnacpr_form_discussion_record",
+      "healthcare_dnacpr_form_mca_four_stage_test",
+      "healthcare_dnacpr_form_review_triggers",
+      "healthcare_dnacpr_form_validity_period"
+    ],
+    "71": [
+      "healthcare_index_component_alert_ladder",
+      "healthcare_index_component_patient_banner",
+      "healthcare_index_component_vitals",
+      "healthcare_index_foundation_layer_model",
+      "healthcare_index_foundation_patterns_md",
+      "healthcare_index_foundation_tokens_css"
+    ],
+    "72": [
+      "healthcare_telemedicine_lobby_clinician_lobby_dashboard",
+      "healthcare_telemedicine_lobby_in_lobby_intake_form",
+      "healthcare_telemedicine_lobby_patient_waiting_room",
+      "healthcare_telemedicine_lobby_tech_preflight_check",
+      "healthcare_telemedicine_lobby_telehealth_consent_recording_notice",
+      "healthcare_telemedicine_lobby_telemedicine_lobby"
+    ],
+    "73": [
+      "healthcareanalytics_cardio",
+      "healthcareanalytics_gen_med",
+      "healthcareanalytics_los_by_service",
+      "healthcareanalytics_neuro",
+      "healthcareanalytics_ortho",
+      "healthcareanalytics_surg_gen"
+    ],
+    "74": [
+      "healthcarechartreview_chart_review",
+      "healthcarechartreview_patient_banner",
+      "healthcarechartreview_problem_list",
+      "healthcarechartreview_summary_panel",
+      "healthcarechartreview_timeline",
+      "healthcarechartreview_trending_signals"
+    ],
+    "75": [
+      "healthcarepatientbanner_allergies",
+      "healthcarepatientbanner_codestatus",
+      "healthcarepatientbanner_flagsandprecautions",
+      "healthcarepatientbanner_isolation",
+      "healthcarepatientbanner_patientbanner",
+      "healthcarepatientbanner_twoidentifierverification"
+    ],
+    "76": [
+      "healthcareprovenance_audit_evt_ali_verified",
+      "healthcareprovenance_audit_evt_chen_administered",
+      "healthcareprovenance_audit_evt_mendez_entered",
+      "healthcareprovenance_audit_evt_okafor_modified",
+      "healthcareprovenance_audit_evt_sepsis_watch_flagged",
+      "healthcareprovenance_audit_order_warfarin"
+    ],
+    "77": [
+      "patterns_layer0",
+      "patterns_layer1",
+      "patterns_layer2",
+      "patterns_layer3",
+      "patterns_layer4",
+      "patterns_safetyinvariants"
+    ],
+    "78": [
+      "scripts_serve_preview",
+      "scripts_serve_preview_port",
+      "scripts_serve_preview_root",
+      "scripts_serve_preview_safejoin",
+      "scripts_serve_preview_server",
+      "scripts_serve_preview_types"
+    ],
+    "79": [
+      "symphonix_health_logo_dark",
+      "symphonixhealthicon_svg",
+      "symphonixhealthiconteal_svg",
+      "symphonixhealthlogo_svg",
+      "symphonixhealthlogodark_svg",
+      "symphonixhealthlogoteal_svg"
+    ],
+    "80": [
+      "website_productsection",
+      "website_productsection_productcard",
+      "website_productsection_productsection",
+      "website_productsection_vizbars",
+      "website_productsection_viznodes",
+      "website_productsection_vizring"
+    ],
+    "81": [
+      "brand_showcasehtml",
+      "logos_symphonixhealthfavicon",
+      "logos_symphonixhealthfaviconteal",
+      "website_indexhtml",
+      "website_readme"
+    ],
+    "82": [
+      "claude_skills_symphonix_health_design_tests_harness_v_model_test_l3_system_e2e_py_path",
+      "v_model_test_l3_system_e2e",
+      "v_model_test_l3_system_e2e_load",
+      "v_model_test_l3_system_e2e_rationale_1",
+      "v_model_test_l3_system_e2e_test_l3_system_contracts_have_observable_triggers_and_outcomes"
+    ],
+    "83": [
+      "claude_skills_symphonix_health_design_tests_test_seeded_alignment_traceability_py_tests_test_seeded_alignment_traceability",
+      "claude_skills_symphonix_health_design_tests_test_seeded_alignment_traceability_py_tests_test_seeded_alignment_traceability_load_json",
+      "claude_skills_symphonix_health_design_tests_test_seeded_alignment_traceability_py_tests_test_seeded_alignment_traceability_load_traceability",
+      "claude_skills_symphonix_health_design_tests_test_seeded_alignment_traceability_py_tests_test_seeded_alignment_traceability_test_seeded_alignment_matrix_and_seed_cover_every_requirement",
+      "claude_skills_symphonix_health_design_tests_test_seeded_alignment_traceability_py_tests_test_seeded_alignment_traceability_test_seeded_alignment_traceability_paths_exist"
+    ],
+    "84": [
+      "clinical_react_fivemomentsbanner",
+      "clinical_react_fivemomentsbanner_fivemomentsbanner",
+      "clinical_react_fivemomentsbanner_fivemomentsbannerprops",
+      "clinical_react_fivemomentsbanner_fivemomentskey",
+      "clinical_react_fivemomentsbanner_fivemomentsprompt"
+    ],
+    "85": [
+      "clinical_react_medicationreviewpanel",
+      "clinical_react_medicationreviewpanel_medicationlineitem",
+      "clinical_react_medicationreviewpanel_medicationreviewpanel",
+      "clinical_react_medicationreviewpanel_medicationreviewpanelprops",
+      "clinical_react_medicationreviewpanel_standard_outcomes"
+    ],
+    "86": [
+      "clinical_react_medicationsearch",
+      "clinical_react_medicationsearch_drugbadges",
+      "clinical_react_medicationsearch_medicationsearch",
+      "clinical_react_medicationsearch_props",
+      "clinical_react_medicationsearch_tallmanlettering"
+    ],
+    "87": [
+      "components_scan_input_scan_result_error",
+      "components_scan_input_scan_result_pending",
+      "components_scan_input_scan_result_states",
+      "components_scan_input_scan_result_success",
+      "components_scan_input_scan_result_warning"
+    ],
+    "88": [
+      "components_tabs",
+      "components_tabs_brand_theme_js",
+      "preview_theme_toggle",
+      "preview_theme_toggle_applytheme",
+      "preview_theme_toggle_togglemode"
+    ],
+    "89": [
+      "componentscharts_barchart",
+      "componentscharts_charts",
+      "componentscharts_donut_slogauge",
+      "componentscharts_linearea",
+      "componentscharts_sparklines"
+    ],
+    "90": [
+      "componentsmodal_confirm_dialog",
+      "componentsmodal_critical_alert",
+      "componentsmodal_form_dialog",
+      "componentsmodal_side_drawer",
+      "componentsnavbar_navbar"
+    ],
+    "91": [
+      "componentsprogress_circularring",
+      "componentsprogress_fileuploadprogress",
+      "componentsprogress_linearprogressbar",
+      "componentsprogress_skeletonloader",
+      "componentsprogress_spinner"
+    ],
+    "92": [
+      "docs_assurance_final_seeding_assurance_report",
+      "docs_assurance_gap_register",
+      "docs_assurance_healthcare_capability_coverage_matrix",
+      "docs_assurance_readme_compliance_audit",
+      "docs_assurance_repository_assurance_pack"
+    ],
+    "93": [
+      "healthcare_documentationtemplates",
+      "healthcare_documentationtemplates_provenancecolouring",
+      "healthcare_documentationtemplates_skeleton",
+      "healthcare_documentationtemplates_smartphraseexpansion",
+      "healthcare_documentationtemplates_templatepicker"
+    ],
+    "94": [
+      "healthcare_layer_model_layer0",
+      "healthcare_layer_model_layer1",
+      "healthcare_layer_model_layer2",
+      "healthcare_layer_model_layer3",
+      "healthcare_layer_model_layer4"
+    ],
+    "95": [
+      "healthcareappointments_appointmenttypeandreason",
+      "healthcareappointments_calendargrid",
+      "healthcareappointments_confirmationsummary",
+      "healthcareappointments_providerselector",
+      "healthcareappointments_timeslotpicker"
+    ],
+    "96": [
+      "healthcarechallengesresearch_ghana_dhims2",
+      "healthcarechallengesresearch_ghana_healthinformationstrategicplan",
+      "healthcarechallengesresearch_ghana_lhims",
+      "healthcarechallengesresearch_ghana_nhia",
+      "healthcarechallengesresearch_ghana_nhis"
+    ],
+    "97": [
+      "healthcarechallengesresearch_uk_datauseaccessact2025",
+      "healthcarechallengesresearch_uk_icb",
+      "healthcarechallengesresearch_uk_ics",
+      "healthcarechallengesresearch_uk_nhs",
+      "healthcarechallengesresearch_uk_nhs10yearplan"
+    ],
+    "98": [
+      "healthcarecpoe_gate_stepper",
+      "healthcarecpoe_order_form",
+      "healthcarecpoe_orderentryverification_cpoe",
+      "healthcarecpoe_safety_checks",
+      "healthcarecpoe_sign_bar"
+    ],
+    "99": [
+      "healthcareparamedicread_aineosullivan",
+      "healthcareparamedicread_cprdecision",
+      "healthcareparamedicread_paramedicemergencyread",
+      "healthcareparamedicread_respectv4",
+      "healthcareparamedicread_rosamundosullivan"
+    ],
+    "100": [
+      "healthcareworkflowcanvas_execution_tile",
+      "healthcareworkflowcanvas_fsm_strip",
+      "healthcareworkflowcanvas_hitl_node",
+      "healthcareworkflowcanvas_node",
+      "healthcareworkflowcanvas_orchestrator"
+    ],
+    "101": [
+      "nigeria_bullettrain",
+      "nigeria_gdhcn",
+      "nigeria_gharra",
+      "nigeria_nexus_a2a",
+      "nigeria_symphonix_health"
+    ],
+    "102": [
+      "patternextraction_agent_scaffold_template",
+      "patternextraction_emulator_kit_scenario_recipe",
+      "patternextraction_gharra_capability_card_json_schema",
+      "patternextraction_hitl_checkpoint_library",
+      "patternextraction_signalbox_attestation_recipe"
+    ],
+    "103": [
+      "promptengineeringsystem_clause",
+      "promptengineeringsystem_policy",
+      "promptengineeringsystem_promptspec",
+      "promptengineeringsystem_reasoningmode",
+      "promptengineeringsystem_template"
+    ],
+    "104": [
+      "regulatory_agents_australia_tga",
+      "regulatory_agents_china_nmpa_cac",
+      "regulatory_agents_eu_mdr_ai_act",
+      "regulatory_agents_uk_mhra",
+      "regulatory_agents_us_fda"
+    ],
+    "105": [
+      "rwanda_bullettrain",
+      "rwanda_gdhcn",
+      "rwanda_gharra",
+      "rwanda_nexus_a2a",
+      "rwanda_symphonix_health"
+    ],
+    "106": [
+      "sibling_registry_bullettrain",
+      "sibling_registry_citizen_portal",
+      "sibling_registry_provider_portal",
+      "sibling_registry_symphonix_bridge_sdk",
+      "symphonix_health_design_accessibilitypreference"
+    ],
+    "107": [
+      "symphonix_observability_agent_gap_analysis_auditevent",
+      "symphonix_observability_agent_gap_analysis_global_agent_registry",
+      "symphonix_observability_agent_gap_analysis_lis",
+      "symphonix_observability_agent_gap_analysis_nexus_a2a_protocol",
+      "symphonix_observability_agent_gap_analysis_symphonix_health_tool_library"
+    ],
+    "108": [
+      "symphonix_observability_implementation_plan_api_triage_router_py",
+      "symphonix_observability_implementation_plan_gharara_client_py",
+      "symphonix_observability_implementation_plan_observability_triage_metrics_py",
+      "symphonix_observability_implementation_plan_services_ai_triage_service_py",
+      "symphonix_observability_implementation_plan_trige_api_main_py"
+    ],
+    "109": [
+      "symphonixobservabilityagentgapanalysis_analytics_bi",
+      "symphonixobservabilityagentgapanalysis_clinical_pathways",
+      "symphonixobservabilityagentgapanalysis_gp_system",
+      "symphonixobservabilityagentgapanalysis_picis_system",
+      "symphonixobservabilityagentgapanalysis_triage_api"
+    ],
+    "110": [
+      "tests_test_seeded_alignment_traceability_py_tests_test_seeded_alignment_traceability",
+      "tests_test_seeded_alignment_traceability_py_tests_test_seeded_alignment_traceability_load_json",
+      "tests_test_seeded_alignment_traceability_py_tests_test_seeded_alignment_traceability_load_traceability",
+      "tests_test_seeded_alignment_traceability_py_tests_test_seeded_alignment_traceability_test_seeded_alignment_matrix_and_seed_cover_every_requirement",
+      "tests_test_seeded_alignment_traceability_py_tests_test_seeded_alignment_traceability_test_seeded_alignment_traceability_paths_exist"
+    ],
+    "111": [
+      "uk_bullettrain",
+      "uk_gdhcn",
+      "uk_gharra",
+      "uk_nexus_a2a",
+      "uk_symphonix_health"
+    ],
+    "112": [
+      "website_sections",
+      "website_sections_countrycard",
+      "website_sections_countrysection",
+      "website_sections_ctaband",
+      "website_sections_footer"
+    ],
+    "113": [
+      "clinical_react_nominationselector",
+      "clinical_react_nominationselector_nominatedpharmacy",
+      "clinical_react_nominationselector_nominationselector",
+      "clinical_react_nominationselector_nominationselectorprops"
+    ],
+    "114": [
+      "clinical_react_penicillinallergydisambiguator",
+      "clinical_react_penicillinallergydisambiguator_allergengroup",
+      "clinical_react_penicillinallergydisambiguator_penicillinallergydisambiguator",
+      "clinical_react_penicillinallergydisambiguator_penicillinallergydisambiguatorprops"
+    ],
+    "115": [
+      "components_dashboard_grid",
+      "components_dashboard_grid_theme_toggle_js",
+      "symphonix_health_design_brand_theme",
+      "symphonix_health_design_brand_theme_applytheme"
+    ],
+    "116": [
+      "componentsdataquality_anomaly_detection_feed",
+      "componentsdataquality_data_quality",
+      "componentsdataquality_dataset_completeness_scorecard",
+      "componentsdataquality_provenance_chain"
+    ],
+    "117": [
+      "componentsdropdown_custom_open_dropdown",
+      "componentsdropdown_multi_select_chips",
+      "componentsdropdown_searchable_combobox",
+      "componentsdropdown_styled_native_select"
+    ],
+    "118": [
+      "crafts_agentic_intelligence_architecture_revised_caid_agent",
+      "crafts_agentic_intelligence_architecture_revised_csaa_agent",
+      "crafts_agentic_intelligence_architecture_revised_governance_and_evidence_plane",
+      "crafts_agentic_intelligence_architecture_revised_signalbox_mcp"
+    ],
+    "119": [
+      "harness_build_requirements_superset",
+      "harness_build_requirements_superset_build",
+      "harness_build_requirements_superset_main",
+      "harness_build_requirements_superset_rationale_1"
+    ],
+    "120": [
+      "healthcare_lab_results_basic_metabolic_panel",
+      "healthcare_lab_results_coagulation",
+      "healthcare_lab_results_complete_blood_count_w_differential",
+      "healthcare_lab_results_lab_results_review"
+    ],
+    "121": [
+      "healthcarediagnosticaiai_confidence_badges",
+      "healthcarediagnosticaiai_differentials",
+      "healthcarediagnosticaiai_ensemble_agreement",
+      "healthcarediagnosticaiai_reasoning_trace"
+    ],
+    "122": [
+      "healthcareinteropconnectors_cernerfhirr4",
+      "healthcareinteropconnectors_claimsx12837p",
+      "healthcareinteropconnectors_epicadtfeed",
+      "healthcareinteropconnectors_radiologydicom"
+    ],
+    "123": [
+      "healthcarepatientfacing_meds",
+      "healthcarepatientfacing_patientportal",
+      "healthcarepatientfacing_resultexplanation",
+      "healthcarepatientfacing_visitprep"
+    ],
+    "124": [
+      "healthcaretelemedicine_call_stage",
+      "healthcaretelemedicine_participant_manager",
+      "healthcaretelemedicine_previsit_lobby",
+      "healthcaretelemedicine_telemedicine"
+    ],
+    "125": [
+      "healthcarevoiceambientscribe_active_session",
+      "healthcarevoiceambientscribe_ambient_scribe",
+      "healthcarevoiceambientscribe_consent_card",
+      "healthcarevoiceambientscribe_linked_review"
+    ],
+    "126": [
+      "helixcare_business_case_patient_citizen_portal",
+      "helixcare_business_case_tenant_plane",
+      "helixcare_business_case_wallet_claims",
+      "helixcare_business_case_workstation"
+    ],
+    "127": [
+      "loadingstates_inlinespinner",
+      "loadingstates_optimisticui",
+      "loadingstates_overlayspinner",
+      "loadingstates_skeletonscreen"
+    ],
+    "128": [
+      "scripts_check_readiness",
+      "scripts_check_readiness_fail",
+      "scripts_check_readiness_ok",
+      "scripts_check_readiness_warn"
+    ],
+    "129": [
+      "symphonix_health_design_conftest",
+      "symphonix_health_design_conftest_hydrate_user_scope_secrets",
+      "symphonix_health_design_conftest_rationale_1",
+      "symphonix_health_design_conftest_rationale_5"
+    ],
+    "130": [
+      "symphonixhealtharchitecture_agentregistryandtrust",
+      "symphonixhealtharchitecture_asynccoordination",
+      "symphonixhealtharchitecture_healthcareagentroles",
+      "symphonixhealtharchitecture_securemessaging"
+    ],
+    "131": [
+      "symphonixhealtharchitecture_anthropicsonnet46",
+      "symphonixhealtharchitecture_bevaninternalllm",
+      "symphonixhealtharchitecture_deepseekmodels",
+      "symphonixhealtharchitecture_openaigpt5"
+    ],
+    "132": [
+      "website_hero",
+      "website_hero_hero",
+      "website_hero_herobg",
+      "website_hero_proofbar"
+    ],
+    "133": [
+      "brandlogos_logo_family",
+      "colorsbrand_brand_indigo_violet_scale",
+      "colorssurfaces_surfaces"
+    ],
+    "134": [
+      "clinical_react_clinicalsafetycasebadge",
+      "clinical_react_clinicalsafetycasebadge_clinicalsafetycasebadge",
+      "clinical_react_clinicalsafetycasebadge_clinicalsafetycasebadgeprops"
+    ],
+    "135": [
+      "clinical_react_erdauthoriser",
+      "clinical_react_erdauthoriser_erdauthoriser",
+      "clinical_react_erdauthoriser_erdauthoriserprops"
+    ],
+    "136": [
+      "clinical_react_subjectaccessexporter",
+      "clinical_react_subjectaccessexporter_subjectaccessexporter",
+      "clinical_react_subjectaccessexporter_subjectaccessexporterprops"
+    ],
+    "137": [
+      "colors_semantic_preview_dark_win32_png",
+      "spacing_shadows",
+      "type_body"
+    ],
+    "138": [
+      "components_scan_input_badge_staff_id_scan",
+      "components_scan_input_camera_viewfinder",
+      "components_scan_input_qr_barcode_scan"
+    ],
+    "139": [
+      "componentsaireasoning_ai_reasoning_components",
+      "componentsaireasoning_confidence_score",
+      "componentsaireasoning_reasoning_trace"
+    ],
+    "140": [
+      "componentsdatepicker_brand_theme_js",
+      "componentsdatepicker_date_picker",
+      "componentsdatepicker_theme_toggle_js"
+    ],
+    "141": [
+      "componentsdropdown_action_menu",
+      "componentsdropdown_grouped_menu",
+      "componentsdropdown_simple_action_menu"
+    ],
+    "142": [
+      "componentspagination_brandtheme",
+      "componentspagination_pagination",
+      "componentspagination_toggletheme"
+    ],
+    "143": [
+      "consuming_symphonix_health_design",
+      "fonts_font_attribution",
+      "gap_analysis_design_system_gap_analysis"
+    ],
+    "144": [
+      "crafts_agentic_intelligence_architecture_revised_bevan_llm",
+      "crafts_agentic_intelligence_architecture_revised_model_and_reasoning_plane",
+      "crafts_agentic_intelligence_architecture_revised_prompt_engine"
+    ],
+    "145": [
+      "gap_analysis_2026_05_repo_inventory",
+      "gap_analysis_accepted_variance",
+      "gap_analysis_brand_asset_coverage"
+    ],
+    "146": [
+      "harness_build_nfr_canonical_matrices",
+      "harness_build_nfr_canonical_matrices_main",
+      "harness_build_nfr_canonical_matrices_rationale_1"
+    ],
+    "147": [
+      "harness_build_requirements_matrix",
+      "harness_build_requirements_matrix_main",
+      "harness_build_requirements_matrix_rationale_1"
+    ],
+    "148": [
+      "healthcare_ems_dispatch_active_incident_detail",
+      "healthcare_ems_dispatch_page",
+      "healthcare_ems_dispatch_unit_dispatch_board"
+    ],
+    "149": [
+      "healthcare_patterns_ai_assist_framing_contract",
+      "healthcare_patterns_provenance_serialization",
+      "healthcare_patterns_session_receipt_audit_contract"
+    ],
+    "150": [
+      "healthcare_respect_form_review_card",
+      "healthcare_respect_form_sign_step",
+      "healthcare_respect_form_stepper"
+    ],
+    "151": [
+      "healthcare_session_security_idle_countdown_dialog",
+      "healthcare_session_security_session_recovery_banner",
+      "healthcare_session_security_session_terminated_screen"
+    ],
+    "152": [
+      "healthcarechallengesresearch_ireland_digitalforcare",
+      "healthcarechallengesresearch_ireland_hse",
+      "healthcarechallengesresearch_ireland_slaintecare"
+    ],
+    "153": [
+      "healthcaredigitalsignature_digital_signature",
+      "healthcaredigitalsignature_pin_credential_confirmation",
+      "healthcaredigitalsignature_signature_capture_widget"
+    ],
+    "154": [
+      "healthcareemptystates_html",
+      "healthcareemptystates_html_brand_theme_js",
+      "healthcareemptystates_html_theme_toggle_js"
+    ],
+    "155": [
+      "healthcarefhirterminology_icd10",
+      "healthcarefhirterminology_medicationrequest",
+      "healthcarefhirterminology_rxnorm"
+    ],
+    "156": [
+      "healthcarepatientdeterioration_news2",
+      "healthcarepatientdeterioration_patientdeterioration",
+      "healthcarepatientdeterioration_rrt"
+    ],
+    "157": [
+      "healthcareperioperative_preop_checklist",
+      "healthcareperioperative_time_out",
+      "healthcareperioperative_who_surgical_safety_checklist"
+    ],
+    "158": [
+      "healthcareprovenance_ai_output_readmission_risk",
+      "healthcareprovenance_ai_source",
+      "healthcareprovenance_conf_estimated"
+    ],
+    "159": [
+      "healthcareprovenance_signature_addendum_dr_k_okafor",
+      "healthcareprovenance_signature_cosign_dr_s_patel",
+      "healthcareprovenance_signature_signed_dr_k_okafor"
+    ],
+    "160": [
+      "healthcarevitals_flowsheet",
+      "healthcarevitals_trendchart",
+      "healthcarevitals_vitalsgrid"
+    ],
+    "161": [
+      "helixcare_closed_loop_srs_bullettrain_rl_policy_registry",
+      "helixcare_closed_loop_srs_fr_cl_mt_001",
+      "helixcare_closed_loop_srs_fr_cl_rbk_001"
+    ],
+    "162": [
+      "helixcare_rl_implementation_plan_appointment_system",
+      "helixcare_rl_implementation_plan_picis_system",
+      "helixcare_rl_implementation_plan_scheduling_gateway"
+    ],
+    "163": [
+      "helixcare_rl_implementation_plan_citizen_portal",
+      "helixcare_rl_implementation_plan_eps",
+      "helixcare_rl_implementation_plan_pharmacy_system"
+    ],
+    "164": [
+      "helixcareclosedloopsrs_citizen_portal",
+      "helixcareclosedloopsrs_global_agent_registry",
+      "helixcareclosedloopsrs_nexus_a2a_protocol"
+    ],
+    "165": [
+      "index_symphonix_design_system",
+      "spacingradii_corner_radii",
+      "spacingscale_spacing_scale"
+    ],
+    "166": [
+      "readme_africa_marketplace",
+      "readme_elocute",
+      "readme_symphonix_health_design_system"
+    ],
+    "167": [
+      "readme_bevan_llm",
+      "readme_bullettrain",
+      "readme_nexus_a2a"
+    ],
+    "168": [
+      "readmecomplianceaudit_document",
+      "repositoryassurancepack_document",
+      "requirementstraceabilitymatrix_document"
+    ],
+    "169": [
+      "scripts_test_brand_pipeline",
+      "scripts_test_brand_pipeline_check",
+      "scripts_test_brand_pipeline_rationale_1"
+    ],
+    "170": [
+      "seededrequirementtraceability_angularcomponents",
+      "seededrequirementtraceability_ds139",
+      "seededrequirementtraceability_sa_shd_00042"
+    ],
+    "171": [
+      "seededrequirementtraceability_chakrauithemeadapter",
+      "seededrequirementtraceability_ds135",
+      "seededrequirementtraceability_sa_shd_00038"
+    ],
+    "172": [
+      "seededrequirementtraceability_clinicalsafetycasebadge",
+      "seededrequirementtraceability_ds131",
+      "seededrequirementtraceability_sa_shd_00034"
+    ],
+    "173": [
+      "seededrequirementtraceability_ds128",
+      "seededrequirementtraceability_medicationreviewpanel",
+      "seededrequirementtraceability_sa_shd_00031"
+    ],
+    "174": [
+      "seededrequirementtraceability_ds129",
+      "seededrequirementtraceability_fivemomentsbanner",
+      "seededrequirementtraceability_sa_shd_00032"
+    ],
+    "175": [
+      "seededrequirementtraceability_ds130",
+      "seededrequirementtraceability_penicillinallergydisambiguator",
+      "seededrequirementtraceability_sa_shd_00033"
+    ],
+    "176": [
+      "seededrequirementtraceability_ds132",
+      "seededrequirementtraceability_frameworkagnosticcssvariables",
+      "seededrequirementtraceability_sa_shd_00035"
+    ],
+    "177": [
+      "seededrequirementtraceability_ds133",
+      "seededrequirementtraceability_sa_shd_00036",
+      "seededrequirementtraceability_tailwindpreset"
+    ],
+    "178": [
+      "seededrequirementtraceability_ds134",
+      "seededrequirementtraceability_muithemeadapter",
+      "seededrequirementtraceability_sa_shd_00037"
+    ],
+    "179": [
+      "seededrequirementtraceability_ds136",
+      "seededrequirementtraceability_sa_shd_00039",
+      "seededrequirementtraceability_webcomponentswrapper"
+    ],
+    "180": [
+      "seededrequirementtraceability_ds137",
+      "seededrequirementtraceability_sa_shd_00040",
+      "seededrequirementtraceability_vuecomponents"
+    ],
+    "181": [
+      "seededrequirementtraceability_ds138",
+      "seededrequirementtraceability_sa_shd_00041",
+      "seededrequirementtraceability_sveltecomponents"
+    ],
+    "182": [
+      "seededrequirementtraceability_ds140",
+      "seededrequirementtraceability_mobilereactnativecompatibility",
+      "seededrequirementtraceability_sa_shd_00043"
+    ],
+    "183": [
+      "seededrequirementtraceability_ds141",
+      "seededrequirementtraceability_emailsafecsssubset",
+      "seededrequirementtraceability_sa_shd_00044"
+    ],
+    "184": [
+      "seededrequirementtraceability_ds142",
+      "seededrequirementtraceability_sa_shd_00045",
+      "seededrequirementtraceability_storybookpublication"
+    ],
+    "185": [
+      "symphonix_observability_implementation_plan_observability_llm_metrics_py",
+      "symphonix_observability_implementation_plan_prompt_engine_main_py",
+      "symphonix_observability_implementation_plan_services_prompt_service_py"
+    ],
+    "186": [
+      "symphonixhealthworkspacereviewandgapplan_gharra_persona_coverage",
+      "symphonixhealthworkspacereviewandgapplan_gharra_personaregistry",
+      "symphonixhealthworkspacereviewandgapplan_symphonixbridge_sdk_superpersonacontract"
+    ],
+    "187": [
+      "symphonixobservabilityagentgapanalysis_ambulance_ems",
+      "symphonixobservabilityagentgapanalysis_eps",
+      "symphonixobservabilityagentgapanalysis_pharmacy_system"
+    ],
+    "188": [
+      "test_coverage_matrix_blocked",
+      "test_coverage_matrix_reports_repository_assurance_scenario_execution_json",
+      "test_coverage_matrix_scenario_matrix_execution"
+    ],
+    "189": [
+      "test_coverage_matrix_caid_fp_fn",
+      "test_coverage_matrix_repo_audit",
+      "test_coverage_matrix_requirement_verifier"
+    ],
+    "190": [
+      "test_coverage_matrix_fail_closed_gate",
+      "test_coverage_matrix_reports_seeding_alignment_matrix_md",
+      "test_coverage_matrix_seeding_alignment"
+    ],
+    "191": [
+      "visual_preview_pages_spec",
+      "visual_preview_pages_spec_pages",
+      "visual_preview_pages_spec_settlepreviewpage"
+    ],
+    "192": [
+      "2026_06_11_symphonix_health_platform_architecture_gap_closure_symphonix_health_platform_architecture_gap_closure_implementation_plan",
+      "2026_06_11_symphonix_health_platform_architecture_gap_closure_task_12_publish_the_architecture_package"
+    ],
+    "193": [
+      "africamarketplace_icon",
+      "africamarketplace_logo"
+    ],
+    "194": [
+      "ambulanceems_icon",
+      "ambulanceems_logo"
+    ],
+    "195": [
+      "appointmentsystem_icon",
+      "appointmentsystem_logo"
+    ],
+    "196": [
+      "architecture_setup_operations_testing_seeding_md_design_system_repo",
+      "requirements_md_design_system_repo"
+    ],
+    "197": [
+      "bloodtransfusion_icon",
+      "bloodtransfusion_logo"
+    ],
+    "198": [
+      "brandrainbowunderline_rainbow_underline",
+      "colorsrainbow_signature_rainbow_spectrum"
+    ],
+    "199": [
+      "bullettrain_icon",
+      "bullettrain_logo"
+    ],
+    "200": [
+      "c_users_hgeec_github_symphonix_health_docs_claude_skills_symphonix_health_design_scripts_git_hooks_install_sh__entry",
+      "git_hooks_install"
+    ],
+    "201": [
+      "caidagent_icon",
+      "caidagent_logo"
+    ],
+    "202": [
+      "citizenportalicon_citizen_portal_icon",
+      "citizenportallogo_citizen_portal_logo"
+    ],
+    "203": [
+      "colorssemantic_semantic_colors",
+      "colorsteal_teal_secondary"
+    ],
+    "204": [
+      "communitynursingicon_community_nursing_icon",
+      "communitynursinglogo_community_nursing_logo"
+    ],
+    "205": [
+      "components_auditlog",
+      "components_badges"
+    ],
+    "206": [
+      "components_index_inputs_forms",
+      "components_input_form_input"
+    ],
+    "207": [
+      "components_speech_viz_speech_visualization",
+      "components_stats_metric_stats"
+    ],
+    "208": [
+      "components_table_lab_results",
+      "components_table_ward_census"
+    ],
+    "209": [
+      "componentsguardrail_a_guardrail_triggered",
+      "componentsguardrail_b_content_safety_pipeline"
+    ],
+    "210": [
+      "componentsobservability_metriccards",
+      "componentsobservability_observability"
+    ],
+    "211": [
+      "componentsstepper_stepper",
+      "componentsswitch_switch_toggle"
+    ],
+    "212": [
+      "crafts_agenticintelligencearchitecture_bridge_sdk",
+      "crafts_agenticintelligencearchitecture_superpersonacontract"
+    ],
+    "213": [
+      "crafts_agenticintelligencearchitecture_gharra",
+      "crafts_agenticintelligencearchitecture_personaregistry"
+    ],
+    "214": [
+      "csaaicon_csaa_icon",
+      "csaalogo_csaa_logo"
+    ],
+    "215": [
+      "elocute_icon",
+      "elocute_logo"
+    ],
+    "216": [
+      "epaccs_icon",
+      "epaccs_logo"
+    ],
+    "217": [
+      "eps_icon",
+      "eps_logo"
+    ],
+    "218": [
+      "erp_icon",
+      "erp_logo"
+    ],
+    "219": [
+      "etps_icon",
+      "etps_logo"
+    ],
+    "220": [
+      "functionalrequirements_ds130",
+      "functionalrequirements_sa_shd_00033"
+    ],
+    "221": [
+      "functionalrequirements_ds131",
+      "functionalrequirements_sa_shd_00034"
+    ],
+    "222": [
+      "functionalrequirements_ds132",
+      "functionalrequirements_sa_shd_00035"
+    ],
+    "223": [
+      "functionalrequirements_ds133",
+      "functionalrequirements_sa_shd_00036"
+    ],
+    "224": [
+      "functionalrequirements_ds134",
+      "functionalrequirements_sa_shd_00037"
+    ],
+    "225": [
+      "functionalrequirements_ds135",
+      "functionalrequirements_sa_shd_00038"
+    ],
+    "226": [
+      "functionalrequirements_ds136",
+      "functionalrequirements_sa_shd_00039"
+    ],
+    "227": [
+      "functionalrequirements_ds137",
+      "functionalrequirements_sa_shd_00040"
+    ],
+    "228": [
+      "functionalrequirements_ds138",
+      "functionalrequirements_sa_shd_00041"
+    ],
+    "229": [
+      "functionalrequirements_ds139",
+      "functionalrequirements_sa_shd_00042"
+    ],
+    "230": [
+      "functionalrequirements_ds140",
+      "functionalrequirements_sa_shd_00043"
+    ],
+    "231": [
+      "functionalrequirements_ds141",
+      "functionalrequirements_sa_shd_00044"
+    ],
+    "232": [
+      "functionalrequirements_ds142",
+      "functionalrequirements_sa_shd_00045"
+    ],
+    "233": [
+      "functionalrequirements_ds143",
+      "functionalrequirements_sa_shd_00046"
+    ],
+    "234": [
+      "functionalrequirements_ds144",
+      "functionalrequirements_sa_shd_00047"
+    ],
+    "235": [
+      "functionalrequirements_ds145",
+      "functionalrequirements_sa_shd_00048"
+    ],
+    "236": [
+      "genomicsinterpretation_icon",
+      "genomicsinterpretation_logo"
+    ],
+    "237": [
+      "globalagentregistry_icon",
+      "globalagentregistry_logo"
+    ],
+    "238": [
+      "gpsystem_icon",
+      "gpsystem_logo"
+    ],
+    "239": [
+      "harness_build_compliance_policy_matrix",
+      "harness_build_compliance_policy_matrix_rationale_1"
+    ],
+    "240": [
+      "healthcare_index_archetype_chart_review",
+      "healthcare_index_platform_orchestrator"
+    ],
+    "241": [
+      "healthcare_index_archetype_cpoe",
+      "healthcare_index_component_medications"
+    ],
+    "242": [
+      "healthcare_reconciliation_medication_reconciliation",
+      "healthcare_regulatory_chrome_regulatory_chrome"
+    ],
+    "243": [
+      "healthcare_respect_form_patient_banner",
+      "healthcare_respect_form_success_state"
+    ],
+    "244": [
+      "healthcareboardqueue_edboard",
+      "healthcareboardqueue_workqueues"
+    ],
+    "245": [
+      "healthcarechallengesresearch_kenya_digitalhealthact",
+      "healthcarechallengesresearch_kenya_sha"
+    ],
+    "246": [
+      "healthcarechallengesresearch_nigeria_ndhi",
+      "healthcarechallengesresearch_nigeria_nhia"
+    ],
+    "247": [
+      "healthcarechallengesresearch_rwanda_cbhi",
+      "healthcarechallengesresearch_rwanda_rhie"
+    ],
+    "248": [
+      "healthcareeligibilityclaims_coverage_benefit_card",
+      "healthcareeligibilityclaims_eligibility_verification"
+    ],
+    "249": [
+      "healthcarefhirterminology_icd10cm",
+      "healthcarefhirterminology_snomedct"
+    ],
+    "250": [
+      "healthcareflowsheetrounds_flowsheet",
+      "healthcareflowsheetrounds_rounds"
+    ],
+    "251": [
+      "healthcareidentityaccess_attending_physician_role",
+      "healthcareidentityaccess_dr_maria_chen_md"
+    ],
+    "252": [
+      "healthcareimagingpacs_readingviewer",
+      "healthcareimagingpacs_symphonixdxlungv32"
+    ],
+    "253": [
+      "helixcare_closed_loop_srs_bullettrain_rl_bias_monitor",
+      "helixcare_closed_loop_srs_fr_cl_ope_002"
+    ],
+    "254": [
+      "helixcare_closed_loop_srs_bullettrain_rl_reward_hacking_guard",
+      "helixcare_closed_loop_srs_fr_cl_rhg_001"
+    ],
+    "255": [
+      "hmis_icon",
+      "hmis_logo"
+    ],
+    "256": [
+      "lis_icon",
+      "lis_logo"
+    ],
+    "257": [
+      "loadingstates_determinatebar",
+      "loadingstates_indeterminatebar"
+    ],
+    "258": [
+      "maternitysystem_icon",
+      "maternitysystem_logo"
+    ],
+    "259": [
+      "mhaadministration_icon",
+      "mhaadministration_logo"
+    ],
+    "260": [
+      "mortuaryandme_icon",
+      "mortuaryandme_logo"
+    ],
+    "261": [
+      "nexus_a2a_protocol_icon",
+      "nexus_logo"
+    ],
+    "262": [
+      "pacs_ris_icon",
+      "pacs_ris_logo"
+    ],
+    "263": [
+      "pharmacy_system_icon",
+      "pharmacy_system_logo"
+    ],
+    "264": [
+      "picis_system_icon",
+      "picis_system_logo"
+    ],
+    "265": [
+      "preview_brand_countries",
+      "preview_template"
+    ],
+    "266": [
+      "providerportal_icon",
+      "providerportal_logo"
+    ],
+    "267": [
+      "schedulinggateway_icon",
+      "schedulinggateway_logo"
+    ],
+    "268": [
+      "screeningrecall_icon",
+      "screeningrecall_logo"
+    ],
+    "269": [
+      "seededrequirementtraceability_ds001",
+      "seededrequirementtraceability_sa_shd_00001"
+    ],
+    "270": [
+      "seededrequirementtraceability_ds002",
+      "seededrequirementtraceability_sa_shd_00002"
+    ],
+    "271": [
+      "seededrequirementtraceability_ds003",
+      "seededrequirementtraceability_sa_shd_00003"
+    ],
+    "272": [
+      "seededrequirementtraceability_ds101",
+      "seededrequirementtraceability_sa_shd_00004"
+    ],
+    "273": [
+      "seededrequirementtraceability_ds102",
+      "seededrequirementtraceability_sa_shd_00005"
+    ],
+    "274": [
+      "seededrequirementtraceability_ds103",
+      "seededrequirementtraceability_sa_shd_00006"
+    ],
+    "275": [
+      "seededrequirementtraceability_ds104",
+      "seededrequirementtraceability_sa_shd_00007"
+    ],
+    "276": [
+      "seededrequirementtraceability_ds105",
+      "seededrequirementtraceability_sa_shd_00008"
+    ],
+    "277": [
+      "seededrequirementtraceability_ds106",
+      "seededrequirementtraceability_sa_shd_00009"
+    ],
+    "278": [
+      "seededrequirementtraceability_ds107",
+      "seededrequirementtraceability_sa_shd_00010"
+    ],
+    "279": [
+      "seededrequirementtraceability_ds108",
+      "seededrequirementtraceability_sa_shd_00011"
+    ],
+    "280": [
+      "seededrequirementtraceability_ds109",
+      "seededrequirementtraceability_sa_shd_00012"
+    ],
+    "281": [
+      "seededrequirementtraceability_ds110",
+      "seededrequirementtraceability_sa_shd_00013"
+    ],
+    "282": [
+      "seededrequirementtraceability_ds111",
+      "seededrequirementtraceability_sa_shd_00014"
+    ],
+    "283": [
+      "seededrequirementtraceability_ds112",
+      "seededrequirementtraceability_sa_shd_00015"
+    ],
+    "284": [
+      "seededrequirementtraceability_ds113",
+      "seededrequirementtraceability_sa_shd_00016"
+    ],
+    "285": [
+      "seededrequirementtraceability_ds114",
+      "seededrequirementtraceability_sa_shd_00017"
+    ],
+    "286": [
+      "seededrequirementtraceability_ds115",
+      "seededrequirementtraceability_sa_shd_00018"
+    ],
+    "287": [
+      "seededrequirementtraceability_ds116",
+      "seededrequirementtraceability_sa_shd_00019"
+    ],
+    "288": [
+      "seededrequirementtraceability_ds117",
+      "seededrequirementtraceability_sa_shd_00020"
+    ],
+    "289": [
+      "seededrequirementtraceability_ds118",
+      "seededrequirementtraceability_sa_shd_00021"
+    ],
+    "290": [
+      "seededrequirementtraceability_ds119",
+      "seededrequirementtraceability_sa_shd_00022"
+    ],
+    "291": [
+      "seededrequirementtraceability_ds120",
+      "seededrequirementtraceability_sa_shd_00023"
+    ],
+    "292": [
+      "seededrequirementtraceability_ds121",
+      "seededrequirementtraceability_sa_shd_00024"
+    ],
+    "293": [
+      "seededrequirementtraceability_ds122",
+      "seededrequirementtraceability_sa_shd_00025"
+    ],
+    "294": [
+      "seededrequirementtraceability_ds123",
+      "seededrequirementtraceability_sa_shd_00026"
+    ],
+    "295": [
+      "seededrequirementtraceability_ds124",
+      "seededrequirementtraceability_sa_shd_00027"
+    ],
+    "296": [
+      "seededrequirementtraceability_ds125",
+      "seededrequirementtraceability_sa_shd_00028"
+    ],
+    "297": [
+      "seededrequirementtraceability_ds126",
+      "seededrequirementtraceability_sa_shd_00029"
+    ],
+    "298": [
+      "seededrequirementtraceability_ds127",
+      "seededrequirementtraceability_sa_shd_00030"
+    ],
+    "299": [
+      "seededrequirementtraceability_ds143",
+      "seededrequirementtraceability_sa_shd_00046"
+    ],
+    "300": [
+      "seededrequirementtraceability_ds144",
+      "seededrequirementtraceability_sa_shd_00047"
+    ],
+    "301": [
+      "seededrequirementtraceability_ds145",
+      "seededrequirementtraceability_sa_shd_00048"
+    ],
+    "302": [
+      "seededrequirementtraceability_ds178",
+      "seededrequirementtraceability_sashd00081"
+    ],
+    "303": [
+      "seededrequirementtraceability_ds179",
+      "seededrequirementtraceability_sashd00082"
+    ],
+    "304": [
+      "seededrequirementtraceability_ds180",
+      "seededrequirementtraceability_sashd00083"
+    ],
+    "305": [
+      "seededrequirementtraceability_ds181",
+      "seededrequirementtraceability_sashd00084"
+    ],
+    "306": [
+      "seededrequirementtraceability_ds182",
+      "seededrequirementtraceability_sashd00085"
+    ],
+    "307": [
+      "seededrequirementtraceability_ds183",
+      "seededrequirementtraceability_sashd00086"
+    ],
+    "308": [
+      "seededrequirementtraceability_ds184",
+      "seededrequirementtraceability_sashd00087"
+    ],
+    "309": [
+      "seededrequirementtraceability_ds185",
+      "seededrequirementtraceability_sashd00088"
+    ],
+    "310": [
+      "seededrequirementtraceability_ds186",
+      "seededrequirementtraceability_sashd00089"
+    ],
+    "311": [
+      "seededrequirementtraceability_ds187",
+      "seededrequirementtraceability_sashd00090"
+    ],
+    "312": [
+      "seededrequirementtraceability_ds188",
+      "seededrequirementtraceability_sashd00091"
+    ],
+    "313": [
+      "signalboxmcp_icon",
+      "signalboxmcp_logo"
+    ],
+    "314": [
+      "supply_chain_erp_icon",
+      "supply_chain_erp_logo"
+    ],
+    "315": [
+      "symphonix_bridge_sdk_icon",
+      "symphonix_bridge_sdk_logo"
+    ],
+    "316": [
+      "symphonix_health_design_playwright_config",
+      "symphonix_health_design_playwright_config_port"
+    ],
+    "317": [
+      "symphonix_health_design_seeded_alignment_trace",
+      "symphonix_health_design_seeded_alignment_trace_rationale_1"
+    ],
+    "318": [
+      "symphonix_observability_implementation_plan_agents_dx_agent_py",
+      "symphonix_observability_implementation_plan_symphonix_bridge_sdk_main_py"
+    ],
+    "319": [
+      "symphonix_observability_implementation_plan_api_financial_router_py",
+      "symphonix_observability_implementation_plan_erp_main_py"
+    ],
+    "320": [
+      "symphonixhealthdesign_rollout",
+      "symphonixhealthdesign_skill"
+    ],
+    "321": [
+      "symphonixobservabilityagentgapanalysis_appointment_system",
+      "symphonixobservabilityagentgapanalysis_scheduling_gateway"
+    ],
+    "322": [
+      "tests_test_canonical_matrix_integrity",
+      "tests_test_canonical_matrix_integrity_rationale_1"
+    ],
+    "323": [
+      "unified_agentic_architecture_revised_caid",
+      "unified_agentic_architecture_revised_health_agent_workspace"
+    ],
+    "324": [
+      "website_navbar",
+      "website_navbar_navbar"
+    ],
+    "325": [
+      "agentfirst_caid"
+    ],
+    "326": [
+      "agentfirst_csaa"
+    ],
+    "327": [
+      "agentfirst_gharra"
+    ],
+    "328": [
+      "agentfirst_gharra_market_intelligence"
+    ],
+    "329": [
+      "agentfirst_nexus_a2a"
+    ],
+    "330": [
+      "agentfirst_prompt_engineering_system"
+    ],
+    "331": [
+      "agentfirst_se_agent_literature_review"
+    ],
+    "332": [
+      "agentfirst_signalbox_mcp"
+    ],
+    "333": [
+      "agentfirst_symphonix_bridge_sdk"
+    ],
+    "334": [
+      "agentfirst_symphonix_emulator_kit"
+    ],
+    "335": [
+      "analyticsbi_icon"
+    ],
+    "336": [
+      "analyticsbi_logo"
+    ],
+    "337": [
+      "brand_logos_symphonix_health_og"
+    ],
+    "338": [
+      "brand_logos_symphonix_health_og_teal"
+    ],
+    "339": [
+      "cancerpathwaytracker_icon"
+    ],
+    "340": [
+      "cancerpathwaytrackerlogo_cancer_pathway_tracker_logo"
+    ],
+    "341": [
+      "cds_appendix"
+    ],
+    "342": [
+      "components_scan_input_manual_entry_fallback"
+    ],
+    "343": [
+      "components_stats_preview_dark_win32"
+    ],
+    "344": [
+      "components_stats_preview_light_win32"
+    ],
+    "345": [
+      "components_table_preview_light_win32"
+    ],
+    "346": [
+      "components_tooltip_html"
+    ],
+    "347": [
+      "componentsbreadcrumb_breadcrumb"
+    ],
+    "348": [
+      "componentsbuttons_button"
+    ],
+    "349": [
+      "componentscard_productcard"
+    ],
+    "350": [
+      "componentschat_chat_ui"
+    ],
+    "351": [
+      "componentsdata_gridhtml_datagrid"
+    ],
+    "352": [
+      "componentsfileupload_fileupload"
+    ],
+    "353": [
+      "componentsforms_formlayouts"
+    ],
+    "354": [
+      "componentsformscanonical_forms"
+    ],
+    "355": [
+      "componentsnavsidebar_html"
+    ],
+    "356": [
+      "componentsobservabilityadvancedhtml_page"
+    ],
+    "357": [
+      "componentsworkflownodes_gate_timer"
+    ],
+    "358": [
+      "componentsworkflownodes_human_review"
+    ],
+    "359": [
+      "componentsworkflownodes_integration"
+    ],
+    "360": [
+      "componentsworkflownodes_llm_inference"
+    ],
+    "361": [
+      "componentsworkflownodes_notification"
+    ],
+    "362": [
+      "componentsworkflownodes_rule_cds"
+    ],
+    "363": [
+      "componentsworkflownodes_transform"
+    ],
+    "364": [
+      "componentsworkflownodes_trigger"
+    ],
+    "365": [
+      "crafts_agentic_intelligence_architecture_revised_external_substrate"
+    ],
+    "366": [
+      "crafts_agentic_intelligence_architecture_revised_global_agent_registry"
+    ],
+    "367": [
+      "crafts_agentic_intelligence_architecture_revised_sibling_domain_systems"
+    ],
+    "368": [
+      "crafts_agenticintelligencearchitecture_bevan_llm"
+    ],
+    "369": [
+      "crafts_agenticintelligencearchitecture_bullettrain"
+    ],
+    "370": [
+      "crafts_agenticintelligencearchitecture_caid"
+    ],
+    "371": [
+      "crafts_agenticintelligencearchitecture_csaa"
+    ],
+    "372": [
+      "crafts_agenticintelligencearchitecture_nexus_a2a"
+    ],
+    "373": [
+      "crafts_agenticintelligencearchitecture_patient360"
+    ],
+    "374": [
+      "crafts_agenticintelligencearchitecture_prompt_engine"
+    ],
+    "375": [
+      "crafts_agenticintelligencearchitecture_signalbox"
+    ],
+    "376": [
+      "crafts_agenticintelligencearchitecture_symphonixhealth"
+    ],
+    "377": [
+      "crisis_signposting_appendix"
+    ],
+    "378": [
+      "dark_mode_appendix"
+    ],
+    "379": [
+      "docs_architecture_setup_operations_testing_seeding"
+    ],
+    "380": [
+      "docs_assurance_implementation_inventory"
+    ],
+    "381": [
+      "docs_assurance_requirements_traceability_matrix"
+    ],
+    "382": [
+      "docs_professional_documentation_template_catalogue"
+    ],
+    "383": [
+      "final_seeding_assurance_report_md_design_system_repo"
+    ],
+    "384": [
+      "functionalrequirements_ds002"
+    ],
+    "385": [
+      "functionalrequirements_ds101"
+    ],
+    "386": [
+      "functionalrequirements_ds102"
+    ],
+    "387": [
+      "functionalrequirements_ds103"
+    ],
+    "388": [
+      "functionalrequirements_ds104"
+    ],
+    "389": [
+      "functionalrequirements_ds105"
+    ],
+    "390": [
+      "functionalrequirements_ds106"
+    ],
+    "391": [
+      "functionalrequirements_ds107"
+    ],
+    "392": [
+      "functionalrequirements_ds108"
+    ],
+    "393": [
+      "functionalrequirements_ds109"
+    ],
+    "394": [
+      "functionalrequirements_ds110"
+    ],
+    "395": [
+      "functionalrequirements_ds111"
+    ],
+    "396": [
+      "functionalrequirements_ds112"
+    ],
+    "397": [
+      "functionalrequirements_ds113"
+    ],
+    "398": [
+      "functionalrequirements_ds178"
+    ],
+    "399": [
+      "functionalrequirements_ds179"
+    ],
+    "400": [
+      "functionalrequirements_ds180"
+    ],
+    "401": [
+      "functionalrequirements_ds181"
+    ],
+    "402": [
+      "functionalrequirements_ds182"
+    ],
+    "403": [
+      "functionalrequirements_ds183"
+    ],
+    "404": [
+      "functionalrequirements_ds184"
+    ],
+    "405": [
+      "functionalrequirements_ds185"
+    ],
+    "406": [
+      "functionalrequirements_ds186"
+    ],
+    "407": [
+      "functionalrequirements_ds187"
+    ],
+    "408": [
+      "functionalrequirements_ds188"
+    ],
+    "409": [
+      "functionalrequirements_ds189"
+    ],
+    "410": [
+      "functionalrequirements_ds190"
+    ],
+    "411": [
+      "functionalrequirements_ds191"
+    ],
+    "412": [
+      "functionalrequirements_ds192"
+    ],
+    "413": [
+      "functionalrequirements_ds193"
+    ],
+    "414": [
+      "functionalrequirements_ds194"
+    ],
+    "415": [
+      "functionalrequirements_ds195"
+    ],
+    "416": [
+      "functionalrequirements_ds196"
+    ],
+    "417": [
+      "functionalrequirements_ds_145"
+    ],
+    "418": [
+      "functionalrequirements_ds_146"
+    ],
+    "419": [
+      "functionalrequirements_ds_147"
+    ],
+    "420": [
+      "functionalrequirements_ds_148"
+    ],
+    "421": [
+      "functionalrequirements_ds_149"
+    ],
+    "422": [
+      "functionalrequirements_ds_150"
+    ],
+    "423": [
+      "functionalrequirements_ds_151"
+    ],
+    "424": [
+      "functionalrequirements_ds_172"
+    ],
+    "425": [
+      "functionalrequirements_ds_173"
+    ],
+    "426": [
+      "functionalrequirements_ds_174"
+    ],
+    "427": [
+      "functionalrequirements_ds_175"
+    ],
+    "428": [
+      "functionalrequirements_ds_176"
+    ],
+    "429": [
+      "functionalrequirements_ds_177"
+    ],
+    "430": [
+      "functionalrequirements_ds_178"
+    ],
+    "431": [
+      "functionalrequirements_ds_179"
+    ],
+    "432": [
+      "functionalrequirements_ds_180"
+    ],
+    "433": [
+      "functionalrequirements_ds_181"
+    ],
+    "434": [
+      "functionalrequirements_frs_hd_001"
+    ],
+    "435": [
+      "functionalrequirements_frs_hd_002"
+    ],
+    "436": [
+      "functionalrequirements_frs_hd_003"
+    ],
+    "437": [
+      "gap_analysis_coverage_summary"
+    ],
+    "438": [
+      "gap_register_md_design_system_repo"
+    ],
+    "439": [
+      "gharra_logo"
+    ],
+    "440": [
+      "healthcare_capability_coverage_matrix_md_design_system_repo"
+    ],
+    "441": [
+      "healthcare_index_archetype_appointments"
+    ],
+    "442": [
+      "healthcare_index_archetype_board_queue"
+    ],
+    "443": [
+      "healthcare_index_archetype_flowsheet_rounds"
+    ],
+    "444": [
+      "healthcare_index_archetype_patient_facing"
+    ],
+    "445": [
+      "healthcare_index_archetype_reconciliation"
+    ],
+    "446": [
+      "healthcare_index_component_empty_states"
+    ],
+    "447": [
+      "healthcare_index_component_patient_search"
+    ],
+    "448": [
+      "healthcare_index_component_provenance"
+    ],
+    "449": [
+      "healthcare_index_platform_dx_ai"
+    ],
+    "450": [
+      "healthcare_index_platform_fhir"
+    ],
+    "451": [
+      "healthcare_index_platform_mcp"
+    ],
+    "452": [
+      "healthcare_index_platform_regulatory"
+    ],
+    "453": [
+      "healthcare_index_platform_telemed"
+    ],
+    "454": [
+      "healthcare_lab_results_preview_dark_win32"
+    ],
+    "455": [
+      "healthcare_lab_results_preview_light_win32"
+    ],
+    "456": [
+      "healthcare_mcp_control_plane_invoke_dialog"
+    ],
+    "457": [
+      "healthcare_mcp_control_plane_persona_selector"
+    ],
+    "458": [
+      "healthcare_mcp_control_plane_tool_catalog"
+    ],
+    "459": [
+      "healthcare_mcp_control_plane_trace_panel"
+    ],
+    "460": [
+      "healthcare_medications_preview_dark_win32"
+    ],
+    "461": [
+      "healthcare_medications_preview_light_win32"
+    ],
+    "462": [
+      "healthcare_mobile_clinician"
+    ],
+    "463": [
+      "healthcare_patient_banner_preview_dark_win32"
+    ],
+    "464": [
+      "healthcare_patterns_mobile_small_surface_adaptations"
+    ],
+    "465": [
+      "healthcare_reporting_reporting_submission_symphonix_healthcare"
+    ],
+    "466": [
+      "healthcare_respect_form_hero_bar"
+    ],
+    "467": [
+      "healthcare_rtt_worklist_html"
+    ],
+    "468": [
+      "healthcare_theming"
+    ],
+    "469": [
+      "healthcare_voice"
+    ],
+    "470": [
+      "healthcareanalytics_30day_readmission"
+    ],
+    "471": [
+      "healthcareanalytics_alert_override_cds"
+    ],
+    "472": [
+      "healthcareanalytics_clabsi_rate"
+    ],
+    "473": [
+      "healthcareanalytics_doortoprovider_ed"
+    ],
+    "474": [
+      "healthcareanalytics_hapi_rate"
+    ],
+    "475": [
+      "healthcarebreakglass_page"
+    ],
+    "476": [
+      "healthcarefhirterminology_loinc"
+    ],
+    "477": [
+      "healthcareidentityaccess_health_it_admin_role"
+    ],
+    "478": [
+      "healthcareidentityaccess_pharmacist_role"
+    ],
+    "479": [
+      "healthcareidentityaccess_registered_nurse_role"
+    ],
+    "480": [
+      "healthcareimagingpacs_referringview"
+    ],
+    "481": [
+      "healthcareimagingpacs_worklist"
+    ],
+    "482": [
+      "healthcareintakeform_html"
+    ],
+    "483": [
+      "healthcaremdtcase_dr_a_patel"
+    ],
+    "484": [
+      "healthcaremdtcase_dr_a_roy"
+    ],
+    "485": [
+      "healthcaremdtcase_dr_s_wong"
+    ],
+    "486": [
+      "healthcarepatientbannerpreviewlightwin32_image1"
+    ],
+    "487": [
+      "healthcarepatientsearch_patientsearchpanel"
+    ],
+    "488": [
+      "healthcareprovenance_conf_extrapolated"
+    ],
+    "489": [
+      "healthcareprovenance_conf_measured"
+    ],
+    "490": [
+      "healthcareprovenance_conf_verified"
+    ],
+    "491": [
+      "healthcareprovenance_device"
+    ],
+    "492": [
+      "healthcareprovenance_external"
+    ],
+    "493": [
+      "healthcareprovenance_fresh_expired"
+    ],
+    "494": [
+      "healthcareprovenance_fresh_now"
+    ],
+    "495": [
+      "healthcareprovenance_fresh_recent"
+    ],
+    "496": [
+      "healthcareprovenance_fresh_stale"
+    ],
+    "497": [
+      "healthcareprovenance_hie"
+    ],
+    "498": [
+      "healthcareprovenance_local_ehr"
+    ],
+    "499": [
+      "healthcareprovenance_patient_reported"
+    ],
+    "500": [
+      "healthcareprovenance_signature_unsigned_dr_r_mendez"
+    ],
+    "501": [
+      "healthcarereportingpreviewdarkwin32_image2"
+    ],
+    "502": [
+      "healthcarereportingpreviewlightwin32_image3"
+    ],
+    "503": [
+      "healthcarevitalspreviewdarkwin32_image4"
+    ],
+    "504": [
+      "healthcarevitalspreviewlightwin32_image5"
+    ],
+    "505": [
+      "helixcare_business_case_agent_eclaims_reference_md"
+    ],
+    "506": [
+      "helixcare_business_case_agent_platform"
+    ],
+    "507": [
+      "helixcare_business_case_regulatory_agents_md"
+    ],
+    "508": [
+      "implementation_inventory_md_design_system_repo"
+    ],
+    "509": [
+      "insuranceeclaims_icon"
+    ],
+    "510": [
+      "insuranceeclaims_logo"
+    ],
+    "511": [
+      "keyboard_accessibility_appendix"
+    ],
+    "512": [
+      "nestedcraftsdiagramcrosscheck_caid"
+    ],
+    "513": [
+      "nestedcraftsdiagramcrosscheck_signalbox"
+    ],
+    "514": [
+      "nonfunctionalrequirements_ds001"
+    ],
+    "515": [
+      "nonfunctionalrequirements_ds003"
+    ],
+    "516": [
+      "nonfunctionalrequirements_ds152"
+    ],
+    "517": [
+      "nonfunctionalrequirements_ds153"
+    ],
+    "518": [
+      "nonfunctionalrequirements_ds154"
+    ],
+    "519": [
+      "nonfunctionalrequirements_ds155"
+    ],
+    "520": [
+      "nonfunctionalrequirements_ds156"
+    ],
+    "521": [
+      "nonfunctionalrequirements_ds157"
+    ],
+    "522": [
+      "nonfunctionalrequirements_ds158"
+    ],
+    "523": [
+      "nonfunctionalrequirements_ds159"
+    ],
+    "524": [
+      "nonfunctionalrequirements_ds160"
+    ],
+    "525": [
+      "nonfunctionalrequirements_ds161"
+    ],
+    "526": [
+      "nonfunctionalrequirements_ds162"
+    ],
+    "527": [
+      "nonfunctionalrequirements_ds163"
+    ],
+    "528": [
+      "nonfunctionalrequirements_ds164"
+    ],
+    "529": [
+      "nonfunctionalrequirements_ds_165"
+    ],
+    "530": [
+      "nonfunctionalrequirements_ds_166"
+    ],
+    "531": [
+      "nonfunctionalrequirements_ds_167"
+    ],
+    "532": [
+      "nonfunctionalrequirements_ds_168"
+    ],
+    "533": [
+      "nonfunctionalrequirements_ds_169"
+    ],
+    "534": [
+      "nonfunctionalrequirements_ds_170"
+    ],
+    "535": [
+      "nonfunctionalrequirements_ds_171"
+    ],
+    "536": [
+      "nonfunctionalrequirements_ds_182"
+    ],
+    "537": [
+      "nonfunctionalrequirements_ds_183"
+    ],
+    "538": [
+      "nonfunctionalrequirements_ds_184"
+    ],
+    "539": [
+      "nonfunctionalrequirements_ds_185"
+    ],
+    "540": [
+      "nonfunctionalrequirements_ds_186"
+    ],
+    "541": [
+      "nonfunctionalrequirements_ds_187"
+    ],
+    "542": [
+      "nonfunctionalrequirements_ds_188"
+    ],
+    "543": [
+      "nonfunctionalrequirements_ds_189"
+    ],
+    "544": [
+      "nonfunctionalrequirements_specification"
+    ],
+    "545": [
+      "preview_pages_spec_components_buttons_preview_light_win32"
+    ],
+    "546": [
+      "preview_pages_spec_components_card_preview_dark_win32"
+    ],
+    "547": [
+      "preview_pages_spec_components_card_preview_light_win32"
+    ],
+    "548": [
+      "preview_pages_spec_components_forms_canonical_preview_dark_win32"
+    ],
+    "549": [
+      "preview_pages_spec_components_forms_canonical_preview_light_win32"
+    ],
+    "550": [
+      "preview_pages_spec_spacing_scale_preview_light_win32"
+    ],
+    "551": [
+      "preview_pages_spec_type_body_preview_dark_win32"
+    ],
+    "552": [
+      "preview_pages_spec_type_body_preview_light_win32"
+    ],
+    "553": [
+      "preview_pages_spec_type_display_preview_dark_win32"
+    ],
+    "554": [
+      "preview_pages_spec_type_display_preview_light_win32"
+    ],
+    "555": [
+      "previewpages_colors_surfaces_preview_dark_win32"
+    ],
+    "556": [
+      "previewpages_colors_surfaces_preview_light_win32"
+    ],
+    "557": [
+      "previewpages_components_badges_preview_dark_win32"
+    ],
+    "558": [
+      "previewpages_components_badges_preview_light_win32"
+    ],
+    "559": [
+      "previewpages_components_buttons_preview_dark_win32"
+    ],
+    "560": [
+      "previewpagespec_components_toast_preview_light_win32"
+    ],
+    "561": [
+      "previewpagespec_healthcare_analytics_preview_dark_win32"
+    ],
+    "562": [
+      "previewpagespec_healthcare_empty_states_preview_dark_win32"
+    ],
+    "563": [
+      "previewpagespec_healthcare_empty_states_preview_light_win32"
+    ],
+    "564": [
+      "previewpagespec_indexpreviewdarkwin32"
+    ],
+    "565": [
+      "previewpagespec_indexpreviewlightwin32"
+    ],
+    "566": [
+      "previewpagespec_spacingradiipreviewdarkwin32"
+    ],
+    "567": [
+      "previewpagespec_spacingradiipreviewlightwin32"
+    ],
+    "568": [
+      "previewpagespec_spacingscalepreviewdarkwin32"
+    ],
+    "569": [
+      "prompt_engine_icon"
+    ],
+    "570": [
+      "prompt_engineering_system_clinical_safety_policy"
+    ],
+    "571": [
+      "prompt_engineering_system_security_review_policy"
+    ],
+    "572": [
+      "promptengine_logo"
+    ],
+    "573": [
+      "promptengineeringsystem_clause_challenge_obvious"
+    ],
+    "574": [
+      "promptengineeringsystem_clause_cognitive_forcing"
+    ],
+    "575": [
+      "promptengineeringsystem_clause_context_anchor"
+    ],
+    "576": [
+      "promptengineeringsystem_clause_few_shot"
+    ],
+    "577": [
+      "promptengineeringsystem_clause_role_assignment"
+    ],
+    "578": [
+      "promptengineeringsystem_prompt_architecture_analysis"
+    ],
+    "579": [
+      "promptengineeringsystem_prompt_clinical_pathway_validation"
+    ],
+    "580": [
+      "promptengineeringsystem_prompt_nexus_protocol_analysis"
+    ],
+    "581": [
+      "readme_analytics_bi"
+    ],
+    "582": [
+      "readme_caid_agent"
+    ],
+    "583": [
+      "readme_csaa"
+    ],
+    "584": [
+      "readme_gharra"
+    ],
+    "585": [
+      "readme_prompt_engine"
+    ],
+    "586": [
+      "readme_rea_agent_mcp"
+    ],
+    "587": [
+      "readme_signalbox_mcp"
+    ],
+    "588": [
+      "readme_symphonix_bridge_sdk"
+    ],
+    "589": [
+      "readme_symphonix_emulator_kit"
+    ],
+    "590": [
+      "readme_symphonix_eps_ig"
+    ],
+    "591": [
+      "readme_triage_api"
+    ],
+    "592": [
+      "regulatory_21_cfr_part_11_fda_electronic_records_signatures"
+    ],
+    "593": [
+      "regulatory_accessibility_regulation_section_508_ada"
+    ],
+    "594": [
+      "regulatory_eu_mdr_ivdr"
+    ],
+    "595": [
+      "regulatory_fda_samd_software_as_medical_device"
+    ],
+    "596": [
+      "regulatory_gdpr_eu_data_protection"
+    ],
+    "597": [
+      "regulatory_hipaa_us_privacy_security"
+    ],
+    "598": [
+      "regulatory_onc_cures_act_us_interoperability"
+    ],
+    "599": [
+      "reporting_era_eob_viewer"
+    ],
+    "600": [
+      "scripts_jekyll_build"
+    ],
+    "601": [
+      "scripts_scan_consumers"
+    ],
+    "602": [
+      "scripts_sync_consumers"
+    ],
+    "603": [
+      "seededrequirementtraceability_ds_143"
+    ],
+    "604": [
+      "seededrequirementtraceability_ds_144"
+    ],
+    "605": [
+      "seededrequirementtraceability_ds_145"
+    ],
+    "606": [
+      "seededrequirementtraceability_ds_146"
+    ],
+    "607": [
+      "seededrequirementtraceability_ds_147"
+    ],
+    "608": [
+      "seededrequirementtraceability_ds_148"
+    ],
+    "609": [
+      "seededrequirementtraceability_ds_149"
+    ],
+    "610": [
+      "seededrequirementtraceability_ds_150"
+    ],
+    "611": [
+      "seededrequirementtraceability_ds_151"
+    ],
+    "612": [
+      "seededrequirementtraceability_ds_152"
+    ],
+    "613": [
+      "seededrequirementtraceability_ds_153"
+    ],
+    "614": [
+      "seededrequirementtraceability_ds_154"
+    ],
+    "615": [
+      "seededrequirementtraceability_ds_155"
+    ],
+    "616": [
+      "seededrequirementtraceability_ds_156"
+    ],
+    "617": [
+      "seededrequirementtraceability_ds_157"
+    ],
+    "618": [
+      "seededrequirementtraceability_ds_158"
+    ],
+    "619": [
+      "seededrequirementtraceability_ds_194"
+    ],
+    "620": [
+      "seededrequirementtraceability_ds_195"
+    ],
+    "621": [
+      "seededrequirementtraceability_ds_196"
+    ],
+    "622": [
+      "seededrequirementtraceability_fr_shd_001"
+    ],
+    "623": [
+      "seededrequirementtraceability_fr_shd_002"
+    ],
+    "624": [
+      "seededrequirementtraceability_fr_shd_003"
+    ],
+    "625": [
+      "seededrequirementtraceability_nfr_co_001"
+    ],
+    "626": [
+      "seededrequirementtraceability_nfr_co_002"
+    ],
+    "627": [
+      "seededrequirementtraceability_nfr_fl_001"
+    ],
+    "628": [
+      "seededrequirementtraceability_nfr_fl_002"
+    ],
+    "629": [
+      "seededrequirementtraceability_nfr_ic_001"
+    ],
+    "630": [
+      "seededrequirementtraceability_nfr_ma_001"
+    ],
+    "631": [
+      "seededrequirementtraceability_nfr_ma_002"
+    ],
+    "632": [
+      "seededrequirementtraceability_nfr_ma_003"
+    ],
+    "633": [
+      "seededrequirementtraceability_nfr_shd_001"
+    ],
+    "634": [
+      "seededrequirementtraceability_nfr_shd_002"
+    ],
+    "635": [
+      "seededrequirementtraceability_symphonix_health_docs"
+    ],
+    "636": [
+      "seeding_alignment_matrix"
+    ],
+    "637": [
+      "symphonix_bridge_sdk_observability_audit_auditlogger"
+    ],
+    "638": [
+      "symphonix_bridge_sdk_observability_correlation_get_correlation_id"
+    ],
+    "639": [
+      "symphonix_bridge_sdk_observability_logging_get_logger"
+    ],
+    "640": [
+      "symphonix_health_icon"
+    ],
+    "641": [
+      "symphonix_health_icon_teal"
+    ],
+    "642": [
+      "symphonix_health_marketing_bullettrain"
+    ],
+    "643": [
+      "symphonix_health_marketing_gharra"
+    ],
+    "644": [
+      "symphonix_health_marketing_nexus_a2a"
+    ],
+    "645": [
+      "symphonix_health_marketing_we_know_what_you_want"
+    ],
+    "646": [
+      "symphonix_health_og_svg_symphonix_logo"
+    ],
+    "647": [
+      "symphonix_observability_agent_gap_analysis_analytics_bi"
+    ],
+    "648": [
+      "symphonix_observability_agent_gap_analysis_gmailtedam_africa_marketplace"
+    ],
+    "649": [
+      "symphonix_observability_agent_gap_analysis_gp_system"
+    ],
+    "650": [
+      "symphonix_observability_agent_gap_analysis_health_agent_workspace"
+    ],
+    "651": [
+      "symphonix_observability_agent_gap_analysis_insurance_eclaims"
+    ],
+    "652": [
+      "symphonix_observability_agent_gap_analysis_pharmacy_system"
+    ],
+    "653": [
+      "symphonix_observability_agent_gap_analysis_symphonix_health_citizen_portal"
+    ],
+    "654": [
+      "symphonix_observability_agent_gap_analysis_symphonix_health_design_system"
+    ],
+    "655": [
+      "symphonix_observability_agent_gap_analysis_symphonix_health_kenya_uhc_implementation"
+    ],
+    "656": [
+      "symphonix_observability_agent_gap_analysis_symphonix_health_picis_system"
+    ],
+    "657": [
+      "symphonix_observability_agent_gap_analysis_symphonix_health_prompt_engine"
+    ],
+    "658": [
+      "symphonix_observability_agent_gap_analysis_symphonix_health_provider_portal"
+    ],
+    "659": [
+      "symphonix_observability_agent_gap_analysis_symphonix_health_scheduling_gateway"
+    ],
+    "660": [
+      "symphonix_observability_agent_gap_analysis_symphonix_health_signalbox_mcp"
+    ],
+    "661": [
+      "symphonix_observability_agent_gap_analysis_symphonix_health_supply_chain_erp"
+    ],
+    "662": [
+      "symphonix_observability_agent_gap_analysis_symphonix_health_symphonix_bridge_sdk"
+    ],
+    "663": [
+      "symphonix_observability_agent_gap_analysis_tedam_technologies_uk_ltd_elocute"
+    ],
+    "664": [
+      "symphonix_observability_implementation_plan"
+    ],
+    "665": [
+      "symphonix_observability_implementation_plan_alerting_gharra_rules_yml"
+    ],
+    "666": [
+      "symphonix_observability_implementation_plan_alerting_picis_rules_yml"
+    ],
+    "667": [
+      "symphonix_observability_implementation_plan_alerting_provider_portal_rules_yml"
+    ],
+    "668": [
+      "symphonix_observability_implementation_plan_alerting_supply_chain_rules_yml"
+    ],
+    "669": [
+      "symphonix_observability_implementation_plan_metrics_py"
+    ],
+    "670": [
+      "symphonix_observability_implementation_plan_observability_gateway_metrics_py"
+    ],
+    "671": [
+      "symphonix_observability_implementation_plan_observability_picis_metrics_py"
+    ],
+    "672": [
+      "symphonix_observability_implementation_plan_packages_design_system_src_components_errorboundary_tsx"
+    ],
+    "673": [
+      "symphonix_observability_implementation_plan_packages_design_system_src_sentry_ts"
+    ],
+    "674": [
+      "symphonixhealthplatformhighlevelarchitecture_symphonixhealth"
+    ],
+    "675": [
+      "symphonixobservabilityagentgapanalysis_health_agent_workspace"
+    ],
+    "676": [
+      "symphonixobservabilityagentgapanalysis_hmis"
+    ],
+    "677": [
+      "symphonixobservabilityagentgapanalysis_insurance_eclaims"
+    ],
+    "678": [
+      "symphonixobservabilityagentgapanalysis_kenya_uhc_implementation"
+    ],
+    "679": [
+      "triage_api_icon_svg_triage_api_icon"
+    ],
+    "680": [
+      "triage_api_logo_svg_triage_api_logo"
+    ],
+    "681": [
+      "type_display"
+    ],
+    "682": [
+      "type_labels"
+    ],
+    "683": [
+      "type_mono"
+    ],
+    "684": [
+      "type_quote"
+    ],
+    "685": [
+      "unified_agentic_architecture_revised_caid_agent"
+    ],
+    "686": [
+      "unified_agentic_architecture_revised_unified_symphonix_health_agentic_architecture"
+    ],
+    "687": [
+      "worldmap_svg"
+    ]
+  },
+  "cohesion": {
+    "0": 0.06172839506172839,
+    "1": 0.05225225225225225,
+    "2": 0.04,
+    "3": 0.14414414414414414,
+    "4": 0.17478991596638654,
+    "5": 0.17478991596638654,
+    "6": 0.0784313725490196,
+    "7": 0.07007575757575757,
+    "8": 0.06451612903225806,
+    "9": 0.10591133004926108,
+    "10": 0.07407407407407407,
+    "11": 0.11594202898550725,
+    "12": 0.1380952380952381,
+    "13": 0.1,
+    "14": 0.10526315789473684,
+    "15": 0.14619883040935672,
+    "16": 0.11695906432748537,
+    "17": 0.13725490196078433,
+    "18": 0.16176470588235295,
+    "19": 0.15,
+    "20": 0.125,
+    "21": 0.13333333333333333,
+    "22": 0.13333333333333333,
+    "23": 0.45714285714285713,
+    "24": 0.1619047619047619,
+    "25": 0.3076923076923077,
+    "26": 0.15384615384615385,
+    "27": 0.3076923076923077,
+    "28": 0.15384615384615385,
+    "29": 0.16666666666666666,
+    "30": 0.15384615384615385,
+    "31": 0.16666666666666666,
+    "32": 0.16666666666666666,
+    "33": 0.18181818181818182,
+    "34": 0.18181818181818182,
+    "35": 0.18181818181818182,
+    "36": 0.18181818181818182,
+    "37": 0.5555555555555556,
+    "38": 0.2,
+    "39": 0.2,
+    "40": 0.2,
+    "41": 0.2,
+    "42": 0.24444444444444444,
+    "43": 0.3333333333333333,
+    "44": 0.3055555555555556,
+    "45": 0.2222222222222222,
+    "46": 0.25,
+    "47": 0.3611111111111111,
+    "48": 0.25,
+    "49": 0.25,
+    "50": 0.32142857142857145,
+    "51": 0.2857142857142857,
+    "52": 0.25,
+    "53": 0.2857142857142857,
+    "54": 0.2857142857142857,
+    "55": 0.2857142857142857,
+    "56": 0.2857142857142857,
+    "57": 0.2857142857142857,
+    "58": 0.2857142857142857,
+    "59": 0.2857142857142857,
+    "60": 0.2857142857142857,
+    "61": 0.2857142857142857,
+    "62": 0.2857142857142857,
+    "63": 0.2857142857142857,
+    "64": 0.4666666666666667,
+    "65": 0.3333333333333333,
+    "66": 0.6,
+    "67": 0.3333333333333333,
+    "68": 0.3333333333333333,
+    "69": 0.3333333333333333,
+    "70": 0.3333333333333333,
+    "71": 0.3333333333333333,
+    "72": 0.3333333333333333,
+    "73": 0.3333333333333333,
+    "74": 0.3333333333333333,
+    "75": 0.3333333333333333,
+    "76": 0.3333333333333333,
+    "77": 0.3333333333333333,
+    "78": 0.3333333333333333,
+    "79": 0.3333333333333333,
+    "80": 0.3333333333333333,
+    "81": 0.4,
+    "82": 0.5,
+    "83": 0.6,
+    "84": 0.4,
+    "85": 0.4,
+    "86": 0.4,
+    "87": 0.4,
+    "88": 0.5,
+    "89": 0.4,
+    "90": 0.4,
+    "91": 0.4,
+    "92": 0.4,
+    "93": 0.4,
+    "94": 0.4,
+    "95": 0.4,
+    "96": 0.4,
+    "97": 0.4,
+    "98": 0.4,
+    "99": 0.4,
+    "100": 0.4,
+    "101": 0.4,
+    "102": 0.5,
+    "103": 0.4,
+    "104": 0.4,
+    "105": 0.4,
+    "106": 0.4,
+    "107": 0.5,
+    "108": 0.5,
+    "109": 0.5,
+    "110": 0.6,
+    "111": 0.4,
+    "112": 0.4,
+    "113": 0.5,
+    "114": 0.5,
+    "115": 0.5,
+    "116": 0.5,
+    "117": 0.5,
+    "118": 0.5,
+    "119": 0.6666666666666666,
+    "120": 0.5,
+    "121": 0.5,
+    "122": 1.0,
+    "123": 0.5,
+    "124": 0.5,
+    "125": 0.5,
+    "126": 0.5,
+    "127": 0.5,
+    "128": 0.5,
+    "129": 0.5,
+    "130": 0.5,
+    "131": 0.5,
+    "132": 0.5,
+    "133": 0.6666666666666666,
+    "134": 0.6666666666666666,
+    "135": 0.6666666666666666,
+    "136": 0.6666666666666666,
+    "137": 0.6666666666666666,
+    "138": 0.6666666666666666,
+    "139": 0.6666666666666666,
+    "140": 0.6666666666666666,
+    "141": 0.6666666666666666,
+    "142": 0.6666666666666666,
+    "143": 0.6666666666666666,
+    "144": 0.6666666666666666,
+    "145": 0.6666666666666666,
+    "146": 0.6666666666666666,
+    "147": 0.6666666666666666,
+    "148": 0.6666666666666666,
+    "149": 0.6666666666666666,
+    "150": 0.6666666666666666,
+    "151": 0.6666666666666666,
+    "152": 0.6666666666666666,
+    "153": 0.6666666666666666,
+    "154": 0.6666666666666666,
+    "155": 0.6666666666666666,
+    "156": 0.6666666666666666,
+    "157": 0.6666666666666666,
+    "158": 0.6666666666666666,
+    "159": 0.6666666666666666,
+    "160": 1.0,
+    "161": 0.6666666666666666,
+    "162": 0.6666666666666666,
+    "163": 0.6666666666666666,
+    "164": 0.6666666666666666,
+    "165": 0.6666666666666666,
+    "166": 0.6666666666666666,
+    "167": 0.6666666666666666,
+    "168": 0.6666666666666666,
+    "169": 0.6666666666666666,
+    "170": 0.6666666666666666,
+    "171": 0.6666666666666666,
+    "172": 0.6666666666666666,
+    "173": 0.6666666666666666,
+    "174": 0.6666666666666666,
+    "175": 0.6666666666666666,
+    "176": 0.6666666666666666,
+    "177": 0.6666666666666666,
+    "178": 0.6666666666666666,
+    "179": 0.6666666666666666,
+    "180": 0.6666666666666666,
+    "181": 0.6666666666666666,
+    "182": 0.6666666666666666,
+    "183": 0.6666666666666666,
+    "184": 0.6666666666666666,
+    "185": 0.6666666666666666,
+    "186": 0.6666666666666666,
+    "187": 0.6666666666666666,
+    "188": 0.6666666666666666,
+    "189": 0.6666666666666666,
+    "190": 0.6666666666666666,
+    "191": 0.6666666666666666,
+    "192": 1.0,
+    "193": 1.0,
+    "194": 1.0,
+    "195": 1.0,
+    "196": 1.0,
+    "197": 1.0,
+    "198": 1.0,
+    "199": 1.0,
+    "200": 1.0,
+    "201": 1.0,
+    "202": 1.0,
+    "203": 1.0,
+    "204": 1.0,
+    "205": 1.0,
+    "206": 1.0,
+    "207": 1.0,
+    "208": 1.0,
+    "209": 1.0,
+    "210": 1.0,
+    "211": 1.0,
+    "212": 1.0,
+    "213": 1.0,
+    "214": 1.0,
+    "215": 1.0,
+    "216": 1.0,
+    "217": 1.0,
+    "218": 1.0,
+    "219": 1.0,
+    "220": 1.0,
+    "221": 1.0,
+    "222": 1.0,
+    "223": 1.0,
+    "224": 1.0,
+    "225": 1.0,
+    "226": 1.0,
+    "227": 1.0,
+    "228": 1.0,
+    "229": 1.0,
+    "230": 1.0,
+    "231": 1.0,
+    "232": 1.0,
+    "233": 1.0,
+    "234": 1.0,
+    "235": 1.0,
+    "236": 1.0,
+    "237": 1.0,
+    "238": 1.0,
+    "239": 1.0,
+    "240": 1.0,
+    "241": 1.0,
+    "242": 1.0,
+    "243": 1.0,
+    "244": 1.0,
+    "245": 1.0,
+    "246": 1.0,
+    "247": 1.0,
+    "248": 1.0,
+    "249": 1.0,
+    "250": 1.0,
+    "251": 1.0,
+    "252": 1.0,
+    "253": 1.0,
+    "254": 1.0,
+    "255": 1.0,
+    "256": 1.0,
+    "257": 1.0,
+    "258": 1.0,
+    "259": 1.0,
+    "260": 1.0,
+    "261": 1.0,
+    "262": 1.0,
+    "263": 1.0,
+    "264": 1.0,
+    "265": 1.0,
+    "266": 1.0,
+    "267": 1.0,
+    "268": 1.0,
+    "269": 1.0,
+    "270": 1.0,
+    "271": 1.0,
+    "272": 1.0,
+    "273": 1.0,
+    "274": 1.0,
+    "275": 1.0,
+    "276": 1.0,
+    "277": 1.0,
+    "278": 1.0,
+    "279": 1.0,
+    "280": 1.0,
+    "281": 1.0,
+    "282": 1.0,
+    "283": 1.0,
+    "284": 1.0,
+    "285": 1.0,
+    "286": 1.0,
+    "287": 1.0,
+    "288": 1.0,
+    "289": 1.0,
+    "290": 1.0,
+    "291": 1.0,
+    "292": 1.0,
+    "293": 1.0,
+    "294": 1.0,
+    "295": 1.0,
+    "296": 1.0,
+    "297": 1.0,
+    "298": 1.0,
+    "299": 1.0,
+    "300": 1.0,
+    "301": 1.0,
+    "302": 1.0,
+    "303": 1.0,
+    "304": 1.0,
+    "305": 1.0,
+    "306": 1.0,
+    "307": 1.0,
+    "308": 1.0,
+    "309": 1.0,
+    "310": 1.0,
+    "311": 1.0,
+    "312": 1.0,
+    "313": 1.0,
+    "314": 1.0,
+    "315": 1.0,
+    "316": 1.0,
+    "317": 1.0,
+    "318": 1.0,
+    "319": 1.0,
+    "320": 1.0,
+    "321": 1.0,
+    "322": 1.0,
+    "323": 1.0,
+    "324": 1.0,
+    "325": 1.0,
+    "326": 1.0,
+    "327": 1.0,
+    "328": 1.0,
+    "329": 1.0,
+    "330": 1.0,
+    "331": 1.0,
+    "332": 1.0,
+    "333": 1.0,
+    "334": 1.0,
+    "335": 1.0,
+    "336": 1.0,
+    "337": 1.0,
+    "338": 1.0,
+    "339": 1.0,
+    "340": 1.0,
+    "341": 1.0,
+    "342": 1.0,
+    "343": 1.0,
+    "344": 1.0,
+    "345": 1.0,
+    "346": 1.0,
+    "347": 1.0,
+    "348": 1.0,
+    "349": 1.0,
+    "350": 1.0,
+    "351": 1.0,
+    "352": 1.0,
+    "353": 1.0,
+    "354": 1.0,
+    "355": 1.0,
+    "356": 1.0,
+    "357": 1.0,
+    "358": 1.0,
+    "359": 1.0,
+    "360": 1.0,
+    "361": 1.0,
+    "362": 1.0,
+    "363": 1.0,
+    "364": 1.0,
+    "365": 1.0,
+    "366": 1.0,
+    "367": 1.0,
+    "368": 1.0,
+    "369": 1.0,
+    "370": 1.0,
+    "371": 1.0,
+    "372": 1.0,
+    "373": 1.0,
+    "374": 1.0,
+    "375": 1.0,
+    "376": 1.0,
+    "377": 1.0,
+    "378": 1.0,
+    "379": 1.0,
+    "380": 1.0,
+    "381": 1.0,
+    "382": 1.0,
+    "383": 1.0,
+    "384": 1.0,
+    "385": 1.0,
+    "386": 1.0,
+    "387": 1.0,
+    "388": 1.0,
+    "389": 1.0,
+    "390": 1.0,
+    "391": 1.0,
+    "392": 1.0,
+    "393": 1.0,
+    "394": 1.0,
+    "395": 1.0,
+    "396": 1.0,
+    "397": 1.0,
+    "398": 1.0,
+    "399": 1.0,
+    "400": 1.0,
+    "401": 1.0,
+    "402": 1.0,
+    "403": 1.0,
+    "404": 1.0,
+    "405": 1.0,
+    "406": 1.0,
+    "407": 1.0,
+    "408": 1.0,
+    "409": 1.0,
+    "410": 1.0,
+    "411": 1.0,
+    "412": 1.0,
+    "413": 1.0,
+    "414": 1.0,
+    "415": 1.0,
+    "416": 1.0,
+    "417": 1.0,
+    "418": 1.0,
+    "419": 1.0,
+    "420": 1.0,
+    "421": 1.0,
+    "422": 1.0,
+    "423": 1.0,
+    "424": 1.0,
+    "425": 1.0,
+    "426": 1.0,
+    "427": 1.0,
+    "428": 1.0,
+    "429": 1.0,
+    "430": 1.0,
+    "431": 1.0,
+    "432": 1.0,
+    "433": 1.0,
+    "434": 1.0,
+    "435": 1.0,
+    "436": 1.0,
+    "437": 1.0,
+    "438": 1.0,
+    "439": 1.0,
+    "440": 1.0,
+    "441": 1.0,
+    "442": 1.0,
+    "443": 1.0,
+    "444": 1.0,
+    "445": 1.0,
+    "446": 1.0,
+    "447": 1.0,
+    "448": 1.0,
+    "449": 1.0,
+    "450": 1.0,
+    "451": 1.0,
+    "452": 1.0,
+    "453": 1.0,
+    "454": 1.0,
+    "455": 1.0,
+    "456": 1.0,
+    "457": 1.0,
+    "458": 1.0,
+    "459": 1.0,
+    "460": 1.0,
+    "461": 1.0,
+    "462": 1.0,
+    "463": 1.0,
+    "464": 1.0,
+    "465": 1.0,
+    "466": 1.0,
+    "467": 1.0,
+    "468": 1.0,
+    "469": 1.0,
+    "470": 1.0,
+    "471": 1.0,
+    "472": 1.0,
+    "473": 1.0,
+    "474": 1.0,
+    "475": 1.0,
+    "476": 1.0,
+    "477": 1.0,
+    "478": 1.0,
+    "479": 1.0,
+    "480": 1.0,
+    "481": 1.0,
+    "482": 1.0,
+    "483": 1.0,
+    "484": 1.0,
+    "485": 1.0,
+    "486": 1.0,
+    "487": 1.0,
+    "488": 1.0,
+    "489": 1.0,
+    "490": 1.0,
+    "491": 1.0,
+    "492": 1.0,
+    "493": 1.0,
+    "494": 1.0,
+    "495": 1.0,
+    "496": 1.0,
+    "497": 1.0,
+    "498": 1.0,
+    "499": 1.0,
+    "500": 1.0,
+    "501": 1.0,
+    "502": 1.0,
+    "503": 1.0,
+    "504": 1.0,
+    "505": 1.0,
+    "506": 1.0,
+    "507": 1.0,
+    "508": 1.0,
+    "509": 1.0,
+    "510": 1.0,
+    "511": 1.0,
+    "512": 1.0,
+    "513": 1.0,
+    "514": 1.0,
+    "515": 1.0,
+    "516": 1.0,
+    "517": 1.0,
+    "518": 1.0,
+    "519": 1.0,
+    "520": 1.0,
+    "521": 1.0,
+    "522": 1.0,
+    "523": 1.0,
+    "524": 1.0,
+    "525": 1.0,
+    "526": 1.0,
+    "527": 1.0,
+    "528": 1.0,
+    "529": 1.0,
+    "530": 1.0,
+    "531": 1.0,
+    "532": 1.0,
+    "533": 1.0,
+    "534": 1.0,
+    "535": 1.0,
+    "536": 1.0,
+    "537": 1.0,
+    "538": 1.0,
+    "539": 1.0,
+    "540": 1.0,
+    "541": 1.0,
+    "542": 1.0,
+    "543": 1.0,
+    "544": 1.0,
+    "545": 1.0,
+    "546": 1.0,
+    "547": 1.0,
+    "548": 1.0,
+    "549": 1.0,
+    "550": 1.0,
+    "551": 1.0,
+    "552": 1.0,
+    "553": 1.0,
+    "554": 1.0,
+    "555": 1.0,
+    "556": 1.0,
+    "557": 1.0,
+    "558": 1.0,
+    "559": 1.0,
+    "560": 1.0,
+    "561": 1.0,
+    "562": 1.0,
+    "563": 1.0,
+    "564": 1.0,
+    "565": 1.0,
+    "566": 1.0,
+    "567": 1.0,
+    "568": 1.0,
+    "569": 1.0,
+    "570": 1.0,
+    "571": 1.0,
+    "572": 1.0,
+    "573": 1.0,
+    "574": 1.0,
+    "575": 1.0,
+    "576": 1.0,
+    "577": 1.0,
+    "578": 1.0,
+    "579": 1.0,
+    "580": 1.0,
+    "581": 1.0,
+    "582": 1.0,
+    "583": 1.0,
+    "584": 1.0,
+    "585": 1.0,
+    "586": 1.0,
+    "587": 1.0,
+    "588": 1.0,
+    "589": 1.0,
+    "590": 1.0,
+    "591": 1.0,
+    "592": 1.0,
+    "593": 1.0,
+    "594": 1.0,
+    "595": 1.0,
+    "596": 1.0,
+    "597": 1.0,
+    "598": 1.0,
+    "599": 1.0,
+    "600": 1.0,
+    "601": 1.0,
+    "602": 1.0,
+    "603": 1.0,
+    "604": 1.0,
+    "605": 1.0,
+    "606": 1.0,
+    "607": 1.0,
+    "608": 1.0,
+    "609": 1.0,
+    "610": 1.0,
+    "611": 1.0,
+    "612": 1.0,
+    "613": 1.0,
+    "614": 1.0,
+    "615": 1.0,
+    "616": 1.0,
+    "617": 1.0,
+    "618": 1.0,
+    "619": 1.0,
+    "620": 1.0,
+    "621": 1.0,
+    "622": 1.0,
+    "623": 1.0,
+    "624": 1.0,
+    "625": 1.0,
+    "626": 1.0,
+    "627": 1.0,
+    "628": 1.0,
+    "629": 1.0,
+    "630": 1.0,
+    "631": 1.0,
+    "632": 1.0,
+    "633": 1.0,
+    "634": 1.0,
+    "635": 1.0,
+    "636": 1.0,
+    "637": 1.0,
+    "638": 1.0,
+    "639": 1.0,
+    "640": 1.0,
+    "641": 1.0,
+    "642": 1.0,
+    "643": 1.0,
+    "644": 1.0,
+    "645": 1.0,
+    "646": 1.0,
+    "647": 1.0,
+    "648": 1.0,
+    "649": 1.0,
+    "650": 1.0,
+    "651": 1.0,
+    "652": 1.0,
+    "653": 1.0,
+    "654": 1.0,
+    "655": 1.0,
+    "656": 1.0,
+    "657": 1.0,
+    "658": 1.0,
+    "659": 1.0,
+    "660": 1.0,
+    "661": 1.0,
+    "662": 1.0,
+    "663": 1.0,
+    "664": 1.0,
+    "665": 1.0,
+    "666": 1.0,
+    "667": 1.0,
+    "668": 1.0,
+    "669": 1.0,
+    "670": 1.0,
+    "671": 1.0,
+    "672": 1.0,
+    "673": 1.0,
+    "674": 1.0,
+    "675": 1.0,
+    "676": 1.0,
+    "677": 1.0,
+    "678": 1.0,
+    "679": 1.0,
+    "680": 1.0,
+    "681": 1.0,
+    "682": 1.0,
+    "683": 1.0,
+    "684": 1.0,
+    "685": 1.0,
+    "686": 1.0,
+    "687": 1.0
+  },
+  "gods": [
+    {
+      "id": "helixcare_closed_loop_system",
+      "label": "HelixCare Closed-Loop System",
+      "degree": 51
+    },
+    {
+      "id": "seededrequirementtraceability_designsystem",
+      "label": "design-system",
+      "degree": 26
+    },
+    {
+      "id": "helixcare_business_case",
+      "label": "HelixCare Business Case and Demonstrable Value",
+      "degree": 23
+    },
+    {
+      "id": "agent_eclaims_reference_agent",
+      "label": "Reference Agent \u2014 insurance-eclaims Adjudication Reasoner",
+      "degree": 18
+    },
+    {
+      "id": "helixcare_rl_implementation_plan_bullettrain_rl",
+      "label": "bullettrain.rl",
+      "degree": 18
+    },
+    {
+      "id": "symphonix_observability_implementation_plan_main_py",
+      "label": "main.py",
+      "degree": 15
+    },
+    {
+      "id": "kenya_bullettrain",
+      "label": "BulletTrain",
+      "degree": 15
+    },
+    {
+      "id": "symphonix_bridge_sdk_observability_metrics_prometheusmetrics",
+      "label": "PrometheusMetrics",
+      "degree": 12
+    },
+    {
+      "id": "test_coverage_matrix",
+      "label": "Test coverage matrix",
+      "degree": 12
+    },
+    {
+      "id": "healthcarefhirviewer_fhir_resource_viewer",
+      "label": "FHIR Resource Viewer",
+      "degree": 12
+    }
+  ],
+  "surprises": [
+    {
+      "source": "clinical-pathways icon",
+      "target": "Clinical Pathways",
+      "source_files": [
+        ".claude/skills/symphonix-health-design/assets/logos/clinical-pathways-icon.svg",
+        "strategy/helixcare-business-case.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "conceptually_related_to",
+      "why": "inferred connection - not explicitly stated in source; crosses file types (image \u2194 doc); connects across different repos/directories"
+    },
+    {
+      "source": "Architecture specification",
+      "target": "Canonical use-case matrix",
+      "source_files": [
+        ".claude/skills/symphonix-health-design/docs/specifications/architecture-specification.md",
+        "tests/harness/reduced_json_matrices/seeded_alignment_trace.14col.json"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "crosses file types (doc \u2194 code); connects across different repos/directories; peripheral node `Canonical use-case matrix` unexpectedly reaches hub `Architecture specification`"
+    },
+    {
+      "source": "Architecture specification",
+      "target": "Seeded requirement traceability",
+      "source_files": [
+        ".claude/skills/symphonix-health-design/docs/specifications/architecture-specification.md",
+        "seed_data/seeded_requirement_traceability.json"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "crosses file types (doc \u2194 code); connects across different repos/directories; peripheral node `Seeded requirement traceability` unexpectedly reaches hub `Architecture specification`"
+    },
+    {
+      "source": "Architecture specification",
+      "target": "Source scenario matrix",
+      "source_files": [
+        ".claude/skills/symphonix-health-design/docs/specifications/architecture-specification.md",
+        "tests/harness/json_matrices/seeded_alignment_trace_scenarios.json"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "crosses file types (doc \u2194 code); connects across different repos/directories; peripheral node `Source scenario matrix` unexpectedly reaches hub `Architecture specification`"
+    },
+    {
+      "source": "Design specification",
+      "target": "Canonical use-case matrix",
+      "source_files": [
+        ".claude/skills/symphonix-health-design/docs/specifications/design-specification.md",
+        "tests/harness/reduced_json_matrices/seeded_alignment_trace.14col.json"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "crosses file types (doc \u2194 code); connects across different repos/directories; peripheral node `Canonical use-case matrix` unexpectedly reaches hub `Design specification`"
+    }
+  ],
+  "tokens": {
+    "input": 1265634,
+    "output": 303005
+  }
+}

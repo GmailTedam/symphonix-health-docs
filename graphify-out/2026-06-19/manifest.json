@@ -1,0 +1,467 @@
+{
+  ".claude/skills/symphonix-health-design/brand-theme.js": {
+    "mtime": 1781036642.0206313,
+    "ast_hash": "ab5bdf05db64e9c3d98d61d1d96c36b8",
+    "semantic_hash": "ab5bdf05db64e9c3d98d61d1d96c36b8"
+  },
+  ".claude/skills/symphonix-health-design/conftest.py": {
+    "mtime": 1778170605.7459111,
+    "ast_hash": "40e84731db25b7f416514e14d0328835",
+    "semantic_hash": "40e84731db25b7f416514e14d0328835"
+  },
+  ".claude/skills/symphonix-health-design/healthcare/crisis-signposting.json": {
+    "mtime": 1781036642.051699,
+    "ast_hash": "d30b4e366ab6c151bffa3b59634ae1d9",
+    "semantic_hash": "d30b4e366ab6c151bffa3b59634ae1d9"
+  },
+  ".claude/skills/symphonix-health-design/package.json": {
+    "mtime": 1781036600.4488182,
+    "ast_hash": "922d34e6c9d12be3d01ef19a012cc2ae",
+    "semantic_hash": "922d34e6c9d12be3d01ef19a012cc2ae"
+  },
+  ".claude/skills/symphonix-health-design/playwright.config.ts": {
+    "mtime": 1781036600.4488182,
+    "ast_hash": "c0a548202ebc6a4276f0ce88038f1940",
+    "semantic_hash": "c0a548202ebc6a4276f0ce88038f1940"
+  },
+  ".claude/skills/symphonix-health-design/preview/theme-toggle.js": {
+    "mtime": 1776869673.1437445,
+    "ast_hash": "406378db8ab15b61937fb88f9adae871",
+    "semantic_hash": "406378db8ab15b61937fb88f9adae871"
+  },
+  ".claude/skills/symphonix-health-design/reports/repository_assurance/assurance_pack.json": {
+    "mtime": 1781036642.2351077,
+    "ast_hash": "7e14a80ebdb8c97022ae360569768787",
+    "semantic_hash": "7e14a80ebdb8c97022ae360569768787"
+  },
+  ".claude/skills/symphonix-health-design/reports/seeding_alignment_matrix.json": {
+    "mtime": 1781036642.2359996,
+    "ast_hash": "841b3c07312336f0453a3116cc84a52a",
+    "semantic_hash": "841b3c07312336f0453a3116cc84a52a"
+  },
+  ".claude/skills/symphonix-health-design/scripts/_brand_factory.py": {
+    "mtime": 1781036600.4524853,
+    "ast_hash": "82b2baad3ac2804701d16238f645e401",
+    "semantic_hash": "82b2baad3ac2804701d16238f645e401"
+  },
+  ".claude/skills/symphonix-health-design/scripts/_design_system_audit.py": {
+    "mtime": 1781036642.2388847,
+    "ast_hash": "469b74b336dc00cde0f18b31b7ac587d",
+    "semantic_hash": "469b74b336dc00cde0f18b31b7ac587d"
+  },
+  ".claude/skills/symphonix-health-design/scripts/_readme_updater.py": {
+    "mtime": 1781036642.2400918,
+    "ast_hash": "f27262d3c2edfe89fca060957964cb80",
+    "semantic_hash": "f27262d3c2edfe89fca060957964cb80"
+  },
+  ".claude/skills/symphonix-health-design/scripts/_sibling_registry.py": {
+    "mtime": 1781036600.4616401,
+    "ast_hash": "768cc676b2f1d5e66579d88417d8644a",
+    "semantic_hash": "768cc676b2f1d5e66579d88417d8644a"
+  },
+  ".claude/skills/symphonix-health-design/scripts/_test_brand_pipeline.py": {
+    "mtime": 1781036600.4627132,
+    "ast_hash": "832b849d80905526fcd5f64fb0a072da",
+    "semantic_hash": "832b849d80905526fcd5f64fb0a072da"
+  },
+  ".claude/skills/symphonix-health-design/scripts/adopt.ps1": {
+    "mtime": 1776788330.5646224,
+    "ast_hash": "d2fcf78a03a5fd90b34943fa83820140",
+    "semantic_hash": "d2fcf78a03a5fd90b34943fa83820140"
+  },
+  ".claude/skills/symphonix-health-design/scripts/check-phantom-classes.mjs": {
+    "mtime": 1781036600.4636347,
+    "ast_hash": "16cc5f74d9dcc715abab5ee79c846178",
+    "semantic_hash": "16cc5f74d9dcc715abab5ee79c846178"
+  },
+  ".claude/skills/symphonix-health-design/scripts/check-readiness.ps1": {
+    "mtime": 1776788330.5671403,
+    "ast_hash": "48c16fe686c893df83892ebde394b8b7",
+    "semantic_hash": "48c16fe686c893df83892ebde394b8b7"
+  },
+  ".claude/skills/symphonix-health-design/scripts/git-hooks/install.sh": {
+    "mtime": 1781036600.465445,
+    "ast_hash": "bca9fdf034b2726fc699b2d2aad73057",
+    "semantic_hash": "bca9fdf034b2726fc699b2d2aad73057"
+  },
+  ".claude/skills/symphonix-health-design/scripts/git-hooks/pre-commit": {
+    "mtime": 1781036600.465445,
+    "ast_hash": "8eae20e4dc85a850446511dadc7e3e7a",
+    "semantic_hash": "8eae20e4dc85a850446511dadc7e3e7a"
+  },
+  ".claude/skills/symphonix-health-design/scripts/scan-consumers.ps1": {
+    "mtime": 1776788330.5671403,
+    "ast_hash": "baaeaca3ea09b476308283561622632a",
+    "semantic_hash": "baaeaca3ea09b476308283561622632a"
+  },
+  ".claude/skills/symphonix-health-design/scripts/serve-preview.mjs": {
+    "mtime": 1781036642.2412615,
+    "ast_hash": "3f6b5113fe4612c39f4dd430854ef0d7",
+    "semantic_hash": "3f6b5113fe4612c39f4dd430854ef0d7"
+  },
+  ".claude/skills/symphonix-health-design/scripts/sync-consumers.ps1": {
+    "mtime": 1781036642.2426062,
+    "ast_hash": "deb35b8c7c841ec0af21bcec0a5695b7",
+    "semantic_hash": "deb35b8c7c841ec0af21bcec0a5695b7"
+  },
+  ".claude/skills/symphonix-health-design/seed_data/seeded_requirement_traceability.json": {
+    "mtime": 1781036642.2443655,
+    "ast_hash": "c450b701839c55ad40f6a7681ce587da",
+    "semantic_hash": "c450b701839c55ad40f6a7681ce587da"
+  },
+  ".claude/skills/symphonix-health-design/seeded_alignment_trace.py": {
+    "mtime": 1781036642.2452364,
+    "ast_hash": "c5fb9ece87151c16bf0233f95333cd53",
+    "semantic_hash": "c5fb9ece87151c16bf0233f95333cd53"
+  },
+  ".claude/skills/symphonix-health-design/tests/harness/build_compliance_policy_matrix.py": {
+    "mtime": 1781036600.4753456,
+    "ast_hash": "0c96179ee6f71caa499c6e665ee2e952",
+    "semantic_hash": "0c96179ee6f71caa499c6e665ee2e952"
+  },
+  ".claude/skills/symphonix-health-design/tests/harness/build_derived_nfrs.py": {
+    "mtime": 1781036600.4771023,
+    "ast_hash": "4fe0573f80bbdab7efccd68d72682b84",
+    "semantic_hash": "4fe0573f80bbdab7efccd68d72682b84"
+  },
+  ".claude/skills/symphonix-health-design/tests/harness/build_nfr_canonical_matrices.py": {
+    "mtime": 1781036600.4771023,
+    "ast_hash": "b021d28a1ac41712288b2c1ab8e452a1",
+    "semantic_hash": "b021d28a1ac41712288b2c1ab8e452a1"
+  },
+  ".claude/skills/symphonix-health-design/tests/harness/build_requirements_matrix.py": {
+    "mtime": 1781036600.4771023,
+    "ast_hash": "e6ffbc97357531d3d1de4de861e1a919",
+    "semantic_hash": "e6ffbc97357531d3d1de4de861e1a919"
+  },
+  ".claude/skills/symphonix-health-design/tests/harness/build_requirements_superset.py": {
+    "mtime": 1781036600.4771023,
+    "ast_hash": "7c285cc11aceff29aea481978844949e",
+    "semantic_hash": "7c285cc11aceff29aea481978844949e"
+  },
+  ".claude/skills/symphonix-health-design/tests/harness/canonical_matrices/compliance_policy_canonical.json": {
+    "mtime": 1778170605.8006446,
+    "ast_hash": "b525bf521b4db565a5aed6e5f86c5ef9",
+    "semantic_hash": "b525bf521b4db565a5aed6e5f86c5ef9"
+  },
+  ".claude/skills/symphonix-health-design/tests/harness/derived_nfrs.json": {
+    "mtime": 1778170605.8036568,
+    "ast_hash": "7f08f5c8d8f123cd36c3465cc2eac78a",
+    "semantic_hash": "7f08f5c8d8f123cd36c3465cc2eac78a"
+  },
+  ".claude/skills/symphonix-health-design/tests/harness/healthcare_requirements_superset.json": {
+    "mtime": 1781036642.247372,
+    "ast_hash": "9caf1079256d8ced26d98c0359108faa",
+    "semantic_hash": "9caf1079256d8ced26d98c0359108faa"
+  },
+  ".claude/skills/symphonix-health-design/tests/harness/json_matrices/compliance-policy_scenarios.json": {
+    "mtime": 1778170605.808656,
+    "ast_hash": "0d1b15d074e061873c79b269fab0577d",
+    "semantic_hash": "0d1b15d074e061873c79b269fab0577d"
+  },
+  ".claude/skills/symphonix-health-design/tests/harness/json_matrices/seeded_alignment_trace_scenarios.json": {
+    "mtime": 1781036642.247372,
+    "ast_hash": "cfa662532cdc072cd352bfeb3e501f0a",
+    "semantic_hash": "cfa662532cdc072cd352bfeb3e501f0a"
+  },
+  ".claude/skills/symphonix-health-design/tests/harness/nfr_canonical_matrices/nfr_nfr_co_001_canonical.json": {
+    "mtime": 1778170605.8187149,
+    "ast_hash": "2f479e97964df7fa8adba21a48cdad3e",
+    "semantic_hash": "2f479e97964df7fa8adba21a48cdad3e"
+  },
+  ".claude/skills/symphonix-health-design/tests/harness/nfr_canonical_matrices/nfr_nfr_co_002_canonical.json": {
+    "mtime": 1778170605.8226228,
+    "ast_hash": "eec08380196b9cea1d5697ca80f7dfcd",
+    "semantic_hash": "eec08380196b9cea1d5697ca80f7dfcd"
+  },
+  ".claude/skills/symphonix-health-design/tests/harness/nfr_canonical_matrices/nfr_nfr_fl_001_canonical.json": {
+    "mtime": 1778170605.8295002,
+    "ast_hash": "143b404201cd2bf43b63635b508d7b28",
+    "semantic_hash": "143b404201cd2bf43b63635b508d7b28"
+  },
+  ".claude/skills/symphonix-health-design/tests/harness/nfr_canonical_matrices/nfr_nfr_fl_002_canonical.json": {
+    "mtime": 1778170605.8332224,
+    "ast_hash": "0b1fdc51dd75a2e0a8846c9461dd2a48",
+    "semantic_hash": "0b1fdc51dd75a2e0a8846c9461dd2a48"
+  },
+  ".claude/skills/symphonix-health-design/tests/harness/nfr_canonical_matrices/nfr_nfr_ic_001_canonical.json": {
+    "mtime": 1778170605.83649,
+    "ast_hash": "55853c463925113aadb9a54953d24822",
+    "semantic_hash": "55853c463925113aadb9a54953d24822"
+  },
+  ".claude/skills/symphonix-health-design/tests/harness/nfr_canonical_matrices/nfr_nfr_ma_001_canonical.json": {
+    "mtime": 1778170605.8431864,
+    "ast_hash": "56c624086f3c302a0a92637c35db1038",
+    "semantic_hash": "56c624086f3c302a0a92637c35db1038"
+  },
+  ".claude/skills/symphonix-health-design/tests/harness/nfr_canonical_matrices/nfr_nfr_ma_002_canonical.json": {
+    "mtime": 1778170605.8491926,
+    "ast_hash": "547952b5a516cf6eeed26580b49f91a5",
+    "semantic_hash": "547952b5a516cf6eeed26580b49f91a5"
+  },
+  ".claude/skills/symphonix-health-design/tests/harness/nfr_canonical_matrices/nfr_nfr_ma_003_canonical.json": {
+    "mtime": 1778170605.8865252,
+    "ast_hash": "80eda30a328c473a21f58e3157b4be05",
+    "semantic_hash": "80eda30a328c473a21f58e3157b4be05"
+  },
+  ".claude/skills/symphonix-health-design/tests/harness/nfr_canonical_matrices/nfr_nfr_ma_004_canonical.json": {
+    "mtime": 1778170605.8955686,
+    "ast_hash": "171b72058b543fe4403644ca11fdb3c2",
+    "semantic_hash": "171b72058b543fe4403644ca11fdb3c2"
+  },
+  ".claude/skills/symphonix-health-design/tests/harness/nfr_canonical_matrices/nfr_nfr_pe_001_canonical.json": {
+    "mtime": 1778170605.899088,
+    "ast_hash": "5a4c88ddc41e9a3d7fdee9509e51b13a",
+    "semantic_hash": "5a4c88ddc41e9a3d7fdee9509e51b13a"
+  },
+  ".claude/skills/symphonix-health-design/tests/harness/nfr_canonical_matrices/nfr_nfr_re_001_canonical.json": {
+    "mtime": 1778170605.9010901,
+    "ast_hash": "f3d37e8fc3030dcf2112a72152167da8",
+    "semantic_hash": "f3d37e8fc3030dcf2112a72152167da8"
+  },
+  ".claude/skills/symphonix-health-design/tests/harness/nfr_canonical_matrices/nfr_nfr_re_002_canonical.json": {
+    "mtime": 1778170605.9046106,
+    "ast_hash": "c983b59314070bbcfbbfded7bfeb175f",
+    "semantic_hash": "c983b59314070bbcfbbfded7bfeb175f"
+  },
+  ".claude/skills/symphonix-health-design/tests/harness/nfr_canonical_matrices/nfr_nfr_re_003_canonical.json": {
+    "mtime": 1778170605.9096715,
+    "ast_hash": "6b81aa80ab5eadb191c572cebc81b9ac",
+    "semantic_hash": "6b81aa80ab5eadb191c572cebc81b9ac"
+  },
+  ".claude/skills/symphonix-health-design/tests/harness/nfr_canonical_matrices/nfr_nfr_sa_001_canonical.json": {
+    "mtime": 1778170605.91319,
+    "ast_hash": "1a3560f8fbb60c57e884d1e10d29ed8d",
+    "semantic_hash": "1a3560f8fbb60c57e884d1e10d29ed8d"
+  },
+  ".claude/skills/symphonix-health-design/tests/harness/nfr_canonical_matrices/nfr_nfr_sa_002_canonical.json": {
+    "mtime": 1778170605.9162087,
+    "ast_hash": "fa62bfddcfda069aa117e32435f0f9f9",
+    "semantic_hash": "fa62bfddcfda069aa117e32435f0f9f9"
+  },
+  ".claude/skills/symphonix-health-design/tests/harness/nfr_canonical_matrices/nfr_nfr_se_001_canonical.json": {
+    "mtime": 1778170605.9265623,
+    "ast_hash": "75abd9e6a93435aa73fd2bc023247a6f",
+    "semantic_hash": "75abd9e6a93435aa73fd2bc023247a6f"
+  },
+  ".claude/skills/symphonix-health-design/tests/harness/nfr_canonical_matrices/nfr_nfr_se_002_canonical.json": {
+    "mtime": 1778170605.931997,
+    "ast_hash": "0ee62a9ac86d9aeacef05f64f89f19ac",
+    "semantic_hash": "0ee62a9ac86d9aeacef05f64f89f19ac"
+  },
+  ".claude/skills/symphonix-health-design/tests/harness/nfr_canonical_matrices/nfr_nfr_se_003_canonical.json": {
+    "mtime": 1778170605.9363155,
+    "ast_hash": "f4f4fc7fccacab1714f07b0b859f73c3",
+    "semantic_hash": "f4f4fc7fccacab1714f07b0b859f73c3"
+  },
+  ".claude/skills/symphonix-health-design/tests/harness/nfr_canonical_matrices/nfr_nfr_se_004_canonical.json": {
+    "mtime": 1778170605.9525058,
+    "ast_hash": "011abc6dea7a5341dd8e5a1bca06e6f6",
+    "semantic_hash": "011abc6dea7a5341dd8e5a1bca06e6f6"
+  },
+  ".claude/skills/symphonix-health-design/tests/harness/reduced_json_matrices/compliance-policy_scenarios.14col.json": {
+    "mtime": 1781036642.2571921,
+    "ast_hash": "0af227c69866c30a10c63a183c859665",
+    "semantic_hash": "0af227c69866c30a10c63a183c859665"
+  },
+  ".claude/skills/symphonix-health-design/tests/harness/reduced_json_matrices/compliance_policy_canonical.14col.json": {
+    "mtime": 1781036642.2571921,
+    "ast_hash": "3b5248c6cace9f02db6db3f66b2a72e8",
+    "semantic_hash": "3b5248c6cace9f02db6db3f66b2a72e8"
+  },
+  ".claude/skills/symphonix-health-design/tests/harness/reduced_json_matrices/seeded_alignment_trace.14col.json": {
+    "mtime": 1781036642.2618232,
+    "ast_hash": "8ec7919657c5a586b6b072b1aa760ea0",
+    "semantic_hash": "8ec7919657c5a586b6b072b1aa760ea0"
+  },
+  ".claude/skills/symphonix-health-design/tests/harness/requirements_matrix.json": {
+    "mtime": 1781036642.2663932,
+    "ast_hash": "1f3bdba15e5d675213d0b8dcf3f12c84",
+    "semantic_hash": "1f3bdba15e5d675213d0b8dcf3f12c84"
+  },
+  ".claude/skills/symphonix-health-design/tests/harness/requirements_superset.json": {
+    "mtime": 1778170605.9609394,
+    "ast_hash": "4fd6e4cfdafe5163df7f5c9eba9f35f0",
+    "semantic_hash": "4fd6e4cfdafe5163df7f5c9eba9f35f0"
+  },
+  ".claude/skills/symphonix-health-design/tests/harness/v_model/test_L2_integration.py": {
+    "mtime": 1781036600.4850829,
+    "ast_hash": "e1647dec364992040f38c0d6108b586f",
+    "semantic_hash": "e1647dec364992040f38c0d6108b586f"
+  },
+  ".claude/skills/symphonix-health-design/tests/harness/v_model/test_L3_system_e2e.py": {
+    "mtime": 1781036600.4868915,
+    "ast_hash": "547e5b0cdf1d52468ff02f5c266ec618",
+    "semantic_hash": "547e5b0cdf1d52468ff02f5c266ec618"
+  },
+  ".claude/skills/symphonix-health-design/tests/test_bullettrain_v1_matrix.py": {
+    "mtime": 1781036642.2663932,
+    "ast_hash": "6f15f413d3873e0f20b2f59cc0b48e62",
+    "semantic_hash": "6f15f413d3873e0f20b2f59cc0b48e62"
+  },
+  ".claude/skills/symphonix-health-design/tests/test_canonical_matrix_integrity.py": {
+    "mtime": 1778170605.9634795,
+    "ast_hash": "7fb54dac3f18f38c6bf80eb4d15c8177",
+    "semantic_hash": "7fb54dac3f18f38c6bf80eb4d15c8177"
+  },
+  ".claude/skills/symphonix-health-design/tests/test_requirement_acceptance_alignment.py": {
+    "mtime": 1781036642.2663932,
+    "ast_hash": "a42a3429cea7bf5be7da496a0ae13c49",
+    "semantic_hash": "a42a3429cea7bf5be7da496a0ae13c49"
+  },
+  ".claude/skills/symphonix-health-design/tests/test_seeded_alignment_traceability.py": {
+    "mtime": 1781036642.2663932,
+    "ast_hash": "dc7331a8bca5ee76ada50e930618d566",
+    "semantic_hash": "dc7331a8bca5ee76ada50e930618d566"
+  },
+  ".claude/skills/symphonix-health-design/tests/test_specification_alignment.py": {
+    "mtime": 1781036642.27379,
+    "ast_hash": "c836ec25539a217567c40d39c5c922df",
+    "semantic_hash": "c836ec25539a217567c40d39c5c922df"
+  },
+  ".claude/skills/symphonix-health-design/tests/visual/preview-pages.spec.ts": {
+    "mtime": 1781036600.4912944,
+    "ast_hash": "7683f86ff5d5ba646d9f4e554f7ec9ec",
+    "semantic_hash": "7683f86ff5d5ba646d9f4e554f7ec9ec"
+  },
+  ".claude/skills/symphonix-health-design/ui_kits/clinical-react/BulletTrainAlert.tsx": {
+    "mtime": 1778170605.965478,
+    "ast_hash": "0b0b222c68b3ff953953d3a702a959f3",
+    "semantic_hash": "0b0b222c68b3ff953953d3a702a959f3"
+  },
+  ".claude/skills/symphonix-health-design/ui_kits/clinical-react/BulletTrainChart.tsx": {
+    "mtime": 1778170605.9685237,
+    "ast_hash": "396f4d1b6e8c92d69361dc67c0ecc5f7",
+    "semantic_hash": "396f4d1b6e8c92d69361dc67c0ecc5f7"
+  },
+  ".claude/skills/symphonix-health-design/ui_kits/clinical-react/ClinicalSafetyCaseBadge.tsx": {
+    "mtime": 1778170605.9711232,
+    "ast_hash": "b94df4a537eb9aa3d5bff86f0421f780",
+    "semantic_hash": "b94df4a537eb9aa3d5bff86f0421f780"
+  },
+  ".claude/skills/symphonix-health-design/ui_kits/clinical-react/FiveMomentsBanner.tsx": {
+    "mtime": 1778170605.9756806,
+    "ast_hash": "4cb17012154fba31b6050ca7d6a9ad4d",
+    "semantic_hash": "4cb17012154fba31b6050ca7d6a9ad4d"
+  },
+  ".claude/skills/symphonix-health-design/ui_kits/clinical-react/MedicationReviewPanel.tsx": {
+    "mtime": 1778170605.9791367,
+    "ast_hash": "5bc4cc9f7f6ab029443537cbb8e8ba49",
+    "semantic_hash": "5bc4cc9f7f6ab029443537cbb8e8ba49"
+  },
+  ".claude/skills/symphonix-health-design/ui_kits/clinical-react/MedicationSearch.tsx": {
+    "mtime": 1778170605.9803517,
+    "ast_hash": "1888cf39bb10a2761687adf651b08722",
+    "semantic_hash": "1888cf39bb10a2761687adf651b08722"
+  },
+  ".claude/skills/symphonix-health-design/ui_kits/clinical-react/NominationSelector.tsx": {
+    "mtime": 1778170605.9850664,
+    "ast_hash": "d027ad84bd3eb7f3aab31fe037af053c",
+    "semantic_hash": "d027ad84bd3eb7f3aab31fe037af053c"
+  },
+  ".claude/skills/symphonix-health-design/ui_kits/clinical-react/PenicillinAllergyDisambiguator.tsx": {
+    "mtime": 1778170605.9872167,
+    "ast_hash": "caec1db08fa8c8e86673bbeb3d3f5ff3",
+    "semantic_hash": "caec1db08fa8c8e86673bbeb3d3f5ff3"
+  },
+  ".claude/skills/symphonix-health-design/ui_kits/clinical-react/PrescriptionTracker.tsx": {
+    "mtime": 1778170605.9886036,
+    "ast_hash": "b4766d87692da1ac2752f7eb8bcb0be1",
+    "semantic_hash": "b4766d87692da1ac2752f7eb8bcb0be1"
+  },
+  ".claude/skills/symphonix-health-design/ui_kits/clinical-react/SubjectAccessExporter.tsx": {
+    "mtime": 1781036642.335935,
+    "ast_hash": "f8879082622d5395c597a32e30f6c889",
+    "semantic_hash": "f8879082622d5395c597a32e30f6c889"
+  },
+  ".claude/skills/symphonix-health-design/ui_kits/clinical-react/eRDAuthoriser.tsx": {
+    "mtime": 1778170605.9972615,
+    "ast_hash": "e77ae0b1d3fd9abe52392fc100e7c255",
+    "semantic_hash": "e77ae0b1d3fd9abe52392fc100e7c255"
+  },
+  ".claude/skills/symphonix-health-design/ui_kits/website/Hero.jsx": {
+    "mtime": 1776788330.5717885,
+    "ast_hash": "1e2ba5543ad365634a125ad51e7f6848",
+    "semantic_hash": "1e2ba5543ad365634a125ad51e7f6848"
+  },
+  ".claude/skills/symphonix-health-design/ui_kits/website/Navbar.jsx": {
+    "mtime": 1776788330.5717885,
+    "ast_hash": "7ab83e6fa02824b0d1d9416662e5bad5",
+    "semantic_hash": "7ab83e6fa02824b0d1d9416662e5bad5"
+  },
+  ".claude/skills/symphonix-health-design/ui_kits/website/ProductSection.jsx": {
+    "mtime": 1776788330.5717885,
+    "ast_hash": "46e5b1f99b073814acded4277d24b537",
+    "semantic_hash": "46e5b1f99b073814acded4277d24b537"
+  },
+  ".claude/skills/symphonix-health-design/ui_kits/website/Sections.jsx": {
+    "mtime": 1776788330.5762985,
+    "ast_hash": "b79f6ae756529cb99964bc49335f9874",
+    "semantic_hash": "b79f6ae756529cb99964bc49335f9874"
+  },
+  ".claude/skills/symphonix-health-design/ui_kits/website/atoms.jsx": {
+    "mtime": 1776788330.5770879,
+    "ast_hash": "23ac03a8affed32d81a77c2f72b48956",
+    "semantic_hash": "23ac03a8affed32d81a77c2f72b48956"
+  },
+  "reports/repository_assurance/assurance_pack.json": {
+    "mtime": 1780828931.6084483,
+    "ast_hash": "a8ef13a6118760f1cbb6b87ea7b5cd4f",
+    "semantic_hash": "a8ef13a6118760f1cbb6b87ea7b5cd4f"
+  },
+  "scripts/jekyll-build.ps1": {
+    "mtime": 1778531150.1194675,
+    "ast_hash": "55ce91973a3c3e8dd5c6ba391cef489d",
+    "semantic_hash": "55ce91973a3c3e8dd5c6ba391cef489d"
+  },
+  "seed_data/seeded_requirement_traceability.json": {
+    "mtime": 1781691464.956916,
+    "ast_hash": "5d9ad182e704cd99d9dbe07ab74765e4",
+    "semantic_hash": "5d9ad182e704cd99d9dbe07ab74765e4"
+  },
+  "seeded_alignment_trace.py": {
+    "mtime": 1781691464.9539168,
+    "ast_hash": "947d17267073758a771f3f0d1a995506",
+    "semantic_hash": "947d17267073758a771f3f0d1a995506"
+  },
+  "tests/harness/healthcare_requirements_superset.json": {
+    "mtime": 1780751336.3903852,
+    "ast_hash": "f2a7c402ccf013da4d52ddc92957befd",
+    "semantic_hash": "f2a7c402ccf013da4d52ddc92957befd"
+  },
+  "tests/harness/json_matrices/seeded_alignment_trace_scenarios.json": {
+    "mtime": 1780751336.3903852,
+    "ast_hash": "bf053162ac997e6fac5b79bd1edad98e",
+    "semantic_hash": "bf053162ac997e6fac5b79bd1edad98e"
+  },
+  "tests/harness/reduced_json_matrices/seeded_alignment_trace.14col.json": {
+    "mtime": 1780788668.755787,
+    "ast_hash": "ccafb9b0faacefb87c010f1cd707090d",
+    "semantic_hash": "ccafb9b0faacefb87c010f1cd707090d"
+  },
+  "tests/harness/requirements_matrix.json": {
+    "mtime": 1781186535.4962492,
+    "ast_hash": "fe8f09f3f8cbc256168bb35ca5b616b8",
+    "semantic_hash": "fe8f09f3f8cbc256168bb35ca5b616b8"
+  },
+  "tests/harness/requirements_superset.json": {
+    "mtime": 1780746888.7165575,
+    "ast_hash": "b6e5bf3c4b0563a291190e33b16a0ad0",
+    "semantic_hash": "b6e5bf3c4b0563a291190e33b16a0ad0"
+  },
+  "tests/test_requirement_acceptance_alignment.py": {
+    "mtime": 1780788676.9892185,
+    "ast_hash": "3fc39f21a54a75f88edaab20569b8e6c",
+    "semantic_hash": "3fc39f21a54a75f88edaab20569b8e6c"
+  },
+  "tests/test_seeded_alignment_traceability.py": {
+    "mtime": 1780751336.4061046,
+    "ast_hash": "15654caec47b77cce8ac98e035b60020",
+    "semantic_hash": "15654caec47b77cce8ac98e035b60020"
+  },
+  "tests/test_specification_alignment.py": {
+    "mtime": 1780788668.7576418,
+    "ast_hash": "a107b0a47ae864cbe6d652ab546b9f3d",
+    "semantic_hash": "a107b0a47ae864cbe6d652ab546b9f3d"
+  }
+}
