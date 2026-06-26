@@ -2,6 +2,13 @@
 
 Internal documentation, marketing, research, brand assets, and strategy for Symphonix Health.
 
+Note: this local companion documentation repo is not currently resolved by
+GitHub as `Symphonix-Health/symphonix-health-docs`. The current live
+non-forked Symphonix-Health repository catalogue is maintained in
+[`symphonix-health.github.io/docs/system-catalogue.md`](../symphonix-health.github.io/docs/system-catalogue.md).
+Use that catalogue, not this repo's historical notes, when checking whether
+sibling systems are present in the GitHub organisation README.
+
 ## Structure
 
 ```
