@@ -30,6 +30,17 @@ strategy/
   bullettrain-integration-doctrine.md # Cross-system data-sharing doctrine
   agent-first.md                       # AI-agent platform strategy
   prompt-engineering-system.md       # BulletTrain prompt DSL specification
+reports/
+  revised-documents/                # Repo-aligned Symphonix architecture whitepapers
+    crafts-agentic-intelligence-architecture-revised.{html,pdf}
+    critical-realist-crafts-agentic-mechanism-revised.{html,pdf}
+    networked-superhuman-clinical-intelligence-revised.{html,pdf}
+    unified-agentic-architecture-revised.{html,pdf}
+    symphonix-health-platform-high-level-architecture.md
+    symphonix-health-workspace-review-and-gap-plan.md
+    nested-crafts-diagram-cross-check.md
+  repository_assurance/
+    assurance_pack.json               # Machine-readable repository assurance evidence
 ```
 
 ## Relationships
