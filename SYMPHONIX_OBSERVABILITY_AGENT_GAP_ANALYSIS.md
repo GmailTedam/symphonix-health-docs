@@ -1,9 +1,9 @@
 # Symphonix Health — Observability, Reporting & Agent-First Gap Analysis
 
-**Scope:** 34 repositories across `symphonix-health`, `Tedam-Technologies-UK-Ltd`, and `GmailTedam` organisations  
-**Method:** Automated code search across all branches (15+ targeted queries); confirmed evidence-based — no inferred coverage  
-**Date:** 2025  
-**Author:** GitHub Copilot — AI code analysis  
+**Scope:** 34 repositories across `symphonix-health`, `Tedam-Technologies-UK-Ltd`, and `GmailTedam` organisations
+**Method:** Automated code search across all branches (15+ targeted queries); confirmed evidence-based — no inferred coverage
+**Date:** 2025
+**Author:** GitHub Copilot — AI code analysis
 
 ---
 
@@ -76,39 +76,39 @@ All findings are based on code-presence searches (not documentation claims):
 The following gaps exist **in every single repository** in the portfolio. These should be addressed as shared infrastructure or platform-level concerns before per-repo remediation.
 
 ### G1 — No Prometheus / Metrics Endpoint Exposure
-**Search result:** 0 hits org-wide for `prometheus_client`, `prom-client`, or `prometheus`  
-**Impact:** No scrape-able metrics endpoint. No SLA monitoring. No Grafana dashboards possible.  
-**Requirement:** NFR — Performance monitoring, SLA compliance (ISO 25010 §8.4 Performance Efficiency)  
+**Search result:** 0 hits org-wide for `prometheus_client`, `prom-client`, or `prometheus`
+**Impact:** No scrape-able metrics endpoint. No SLA monitoring. No Grafana dashboards possible.
+**Requirement:** NFR — Performance monitoring, SLA compliance (ISO 25010 §8.4 Performance Efficiency)
 **Note:** 7 repos have a custom `metrics.py` file (BulletTrain, ambulance-ems, eps, global-agent-registry, lis, pacs-ris, pharmacy-system). This code tracks metrics internally but does not expose a `/metrics` endpoint compatible with Prometheus/OpenMetrics. This is a partial implementation that needs the final step of a Prometheus or StatsD exporter.
 
 ### G2 — No Sentry / Error Tracking
-**Search result:** 0 hits org-wide for `sentry-sdk`, `@sentry/node`, `@sentry/react`  
-**Impact:** Unhandled exceptions silently fail in production. No MTTR measurement. No error grouping, rate tracking, or on-call alerts tied to exceptions.  
+**Search result:** 0 hits org-wide for `sentry-sdk`, `@sentry/node`, `@sentry/react`
+**Impact:** Unhandled exceptions silently fail in production. No MTTR measurement. No error grouping, rate tracking, or on-call alerts tied to exceptions.
 **Requirement:** NFR — Reliability, Mean Time to Recovery (MTTR), OWASP Logging & Monitoring Failures (A09)
 
 ### G3 — No Structured / JSON Logging Library
-**Search result:** 0 hits org-wide for `structlog`, `pythonjsonlogger`, `python-json-logger`  
-**Impact:** Log output is unstructured text (even in repos with `logging_config.py`). Cannot be reliably indexed, queried, or aggregated in any log management platform. Fields cannot be extracted for dashboards.  
+**Search result:** 0 hits org-wide for `structlog`, `pythonjsonlogger`, `python-json-logger`
+**Impact:** Log output is unstructured text (even in repos with `logging_config.py`). Cannot be reliably indexed, queried, or aggregated in any log management platform. Fields cannot be extracted for dashboards.
 **Requirement:** NFR — Auditability, Debuggability (ISO 25010 §8.5.2 Analysability)
 
 ### G4 — No Alerting Configuration
-**Search result:** 0 hits org-wide for `alertmanager`, `alert_rules`, `pagerduty`, `opsgenie`  
-**Impact:** No automated incident detection or escalation. Incidents are only discovered by end-users. No on-call routing.  
+**Search result:** 0 hits org-wide for `alertmanager`, `alert_rules`, `pagerduty`, `opsgenie`
+**Impact:** No automated incident detection or escalation. Incidents are only discovered by end-users. No on-call routing.
 **Requirement:** NFR — Incident response capability, MTTR, Availability SLA compliance (ITIL §5.3)
 
 ### G5 — No Log Shipping / Aggregation Pipeline
-**Search result:** 0 hits org-wide for `filebeat`, `fluentd`, `logstash`, `otel-collector`, `vector.toml`  
-**Impact:** Logs live only on individual service containers. Logs are lost on restart or scale-down. No cross-service correlation in a central store. No compliance-grade log retention.  
+**Search result:** 0 hits org-wide for `filebeat`, `fluentd`, `logstash`, `otel-collector`, `vector.toml`
+**Impact:** Logs live only on individual service containers. Logs are lost on restart or scale-down. No cross-service correlation in a central store. No compliance-grade log retention.
 **Requirement:** NFR — Compliance, Data Governance, Log retention (NHS Digital DSP Toolkit, HIPAA § 164.312(b))
 
 ### G6 — No Dashboard / Visualisation Configuration
-**Search result:** 0 hits org-wide for actual dashboard config (Grafana JSON, Kibana ndjson, Jaeger). BulletTrain docs *mention* Grafana aspirationally.  
-**Impact:** No operational visibility. Engineering and operations teams have no unified view of system health, throughput, error rates, or clinical volume.  
+**Search result:** 0 hits org-wide for actual dashboard config (Grafana JSON, Kibana ndjson, Jaeger). BulletTrain docs *mention* Grafana aspirationally.
+**Impact:** No operational visibility. Engineering and operations teams have no unified view of system health, throughput, error rates, or clinical volume.
 **Requirement:** FR — Operational reporting, Management visibility, Engineering operations
 
 ### G7 — No Active LLM / Agent Framework Integration
-**Search result:** 0 hits org-wide for `openai`, `anthropic`, `langchain`, `llamaindex`, `FastMCP`, `@modelcontextprotocol`, or `tool_registry` as library calls  
-**Impact:** Despite 9 repos bearing "agent" or "mcp" in their name or architecture, none use an industry-standard agent framework. All agent capabilities are aspirational/architectural only.  
+**Search result:** 0 hits org-wide for `openai`, `anthropic`, `langchain`, `llamaindex`, `FastMCP`, `@modelcontextprotocol`, or `tool_registry` as library calls
+**Impact:** Despite 9 repos bearing "agent" or "mcp" in their name or architecture, none use an industry-standard agent framework. All agent capabilities are aspirational/architectural only.
 **Requirement:** Strategic — AI-Agent-First strategy requires framework instantiation, not just architectural intent
 
 ---

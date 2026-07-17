@@ -1,7 +1,7 @@
 # BulletTrain Integration Doctrine
 
-**Status:** Draft for adoption  
-**Applies to:** Symphonix Health platform services, sibling applications, AI agents, analytics services, registries, and shared-record components  
+**Status:** Draft for adoption
+**Applies to:** Symphonix Health platform services, sibling applications, AI agents, analytics services, registries, and shared-record components
 **Companion:** [AI Agent-First Strategy](agent-first.md), [BulletTrain Integration Constitution](../../caid-agent/docs/architecture/bullettrain-integration-constitution.md)
 
 ## Decision

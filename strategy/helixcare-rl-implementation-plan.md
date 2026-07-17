@@ -1,9 +1,9 @@
 # HelixCare RL Implementation Plan - v1.0
 
-**Status:** Implementation kickoff baseline  
-**Authored:** 2026-05-14  
-**Companion to:** [helixcare-business-case.md §5](./helixcare-business-case.md) (the eight RL surfaces)  
-**Anchor pattern:** [agent-first.md](./agent-first.md) - *"Reference agent before scale"*  
+**Status:** Implementation kickoff baseline
+**Authored:** 2026-05-14
+**Companion to:** [helixcare-business-case.md §5](./helixcare-business-case.md) (the eight RL surfaces)
+**Anchor pattern:** [agent-first.md](./agent-first.md) - *"Reference agent before scale"*
 **Implementation start:** Phase 0 and Wave 1 may commence from this plan. Clinical activation remains gated by the evidence, safety, and regulatory controls below.
 
 ---
