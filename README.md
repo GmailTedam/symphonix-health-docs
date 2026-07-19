@@ -30,6 +30,13 @@ strategy/
   bullettrain-integration-doctrine.md # Cross-system data-sharing doctrine
   agent-first.md                       # AI-agent platform strategy
   prompt-engineering-system.md       # BulletTrain prompt DSL specification
+  agent-eclaims-reference.md         # Reference Tier 1 agent spec: insurance-eclaims adjudication reasoner
+  governance-agents.md               # Agent governance: HITL, escalation, break-glass
+  pattern-extraction.md              # Agent pattern extraction from reference agent to platform
+  regulatory-agents.md               # Regulatory posture for multi-agent clinical systems
+  helixcare-business-case.md         # HelixCare business case and demonstrable value
+  helixcare-closed-loop-srs.md       # HelixCare closed-loop system SRS
+  helixcare-rl-implementation-plan.{md,html} # HelixCare RL implementation plan
 reports/
   revised-documents/                # Repo-aligned Symphonix architecture whitepapers
     crafts-agentic-intelligence-architecture-revised.{html,pdf}
