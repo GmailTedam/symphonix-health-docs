@@ -1,0 +1,528 @@
+{
+  "schema_version": "CAID_MATRIX_INTEGRITY_BASELINE_V1",
+  "detector_version": 3,
+  "repo": "symphonix-health-docs",
+  "recorded_at": "2026-07-30",
+  "recorded_by": "caid matrix-integrity --write-baseline",
+  "contract": "Per-file counts for the no-padding and requirement-binding invariants. `padded` and `undefined` are ALLOWANCES and may only ever go DOWN; a file absent from `files` is allowed ZERO, and once both totals reach 0 this repo is enforced at absolute zero automatically. Raising either is a gate failure -- see coverage-shrink-waivers.json (requirement_id 'baseline:<path>') if a raise is genuinely intended. `unbound` is VISIBILITY ONLY and is never a pass/fail lever: gating on it would reward a bulk script that attaches plausible requirement ids to untouched rows, turning an honest unbound count into dishonest traceability. Bindings added to a row whose executable substance did not change are rejected by the separate manufactured_binding check, which needs no baseline.",
+  "lever_metrics": [
+    "padded",
+    "undefined"
+  ],
+  "visibility_metrics": [
+    "unbound"
+  ],
+  "atom_contract": "`atoms` maps each requirement id to the canonical body hashes bound to it. A coverage ATOM is the PAIR (requirement_id, hash). Deleting duplicate rows that share an atom removes NO atom and is always permitted -- that is why padding deletion needs no waiver. Losing the LAST atom of an active requirement is blocked unless matrix-integrity-ledger.json carries a rekey, an enumerated equivalent-or-stronger replacement, or a tombstone with a fixed reason code. Every binding here is CANDIDATE, not VERIFIED: none has survived a mutation/negation test, because nothing in this corpus has ever executed.",
+  "totals": {
+    "files_scanned": 2,
+    "files_with_findings": 1,
+    "rows": 246,
+    "padded": 122,
+    "unbound": 0,
+    "undefined": 0,
+    "weak_assertions_advisory": 0,
+    "requirements_with_atoms": 123,
+    "atoms": 246
+  },
+  "files": {
+    "tests/harness/json_matrices/seeded_alignment_trace_scenarios.json": {
+      "padded": 122,
+      "unbound": 0,
+      "undefined": 0
+    }
+  },
+  "atoms": {
+    "DS-001": [
+      "6ea05c233cb5b3b0dab923cd94179e92",
+      "empty-body"
+    ],
+    "DS-002": [
+      "0b06dec19c702cb6b5feb99dc0b81208",
+      "empty-body"
+    ],
+    "DS-003": [
+      "720aae77783204f80b6e0171022a820c",
+      "empty-body"
+    ],
+    "DS-101": [
+      "a10c0c4c76fd2532381d6ef43587c127",
+      "empty-body"
+    ],
+    "DS-102": [
+      "32435a1b8bb14a02edb5c28210438df7",
+      "empty-body"
+    ],
+    "DS-103": [
+      "781d91a056f0a7088b4a79ff6d31d956",
+      "empty-body"
+    ],
+    "DS-104": [
+      "c2dc8a7defa3091d3f06df4002437c62",
+      "empty-body"
+    ],
+    "DS-105": [
+      "33e4bc35f06a2d64820e36c539cbb814",
+      "empty-body"
+    ],
+    "DS-106": [
+      "4d324f3d283a38d3fd5c572010314ae9",
+      "empty-body"
+    ],
+    "DS-107": [
+      "8d5107026c04a1d113a5220f5a3cc234",
+      "empty-body"
+    ],
+    "DS-108": [
+      "15c74b8a8eefd43172ac08ee3b7cb721",
+      "empty-body"
+    ],
+    "DS-109": [
+      "830965a96aea6ed28dc3c9dd8a3eeb83",
+      "empty-body"
+    ],
+    "DS-110": [
+      "69372aa86ca709ea944c2925c8912718",
+      "empty-body"
+    ],
+    "DS-111": [
+      "652e5d86a04ffb35d3166675c79980a9",
+      "empty-body"
+    ],
+    "DS-112": [
+      "6d03cae4b6e7f1f0712e39569800d26e",
+      "empty-body"
+    ],
+    "DS-113": [
+      "73daa0598790e977b9898cead8130d03",
+      "empty-body"
+    ],
+    "DS-114": [
+      "5a2f6e1de8c30c4f2898aba7757fb3ab",
+      "empty-body"
+    ],
+    "DS-115": [
+      "0f85152ccdad418454d8ab1f53c640e0",
+      "empty-body"
+    ],
+    "DS-116": [
+      "47e87d54e2ede343b58ca176e130765a",
+      "empty-body"
+    ],
+    "DS-117": [
+      "6a89bbbedad477ec7ae2c911a52b5302",
+      "empty-body"
+    ],
+    "DS-118": [
+      "7a9d31361ade3e39a2b8fe33edc1152b",
+      "empty-body"
+    ],
+    "DS-119": [
+      "e87e71d839cd05463af97c5ca6867806",
+      "empty-body"
+    ],
+    "DS-120": [
+      "9d99d3844e769a969aa20029f2e1d0f9",
+      "empty-body"
+    ],
+    "DS-121": [
+      "4103adb556f6cc4e3a06a64a80e2c24d",
+      "empty-body"
+    ],
+    "DS-122": [
+      "0b2f85e94a0da8b290388f055f5abc88",
+      "empty-body"
+    ],
+    "DS-123": [
+      "7506bc5128721df0ee3ab3b10b4210fd",
+      "empty-body"
+    ],
+    "DS-124": [
+      "69964e41b80617945e1f03aa0b6d93c3",
+      "empty-body"
+    ],
+    "DS-125": [
+      "bc6ae2f1f57123d35c2ef509234a63e0",
+      "empty-body"
+    ],
+    "DS-126": [
+      "1b63f916b21d9c7a323018b114198357",
+      "empty-body"
+    ],
+    "DS-127": [
+      "9f7b2078e85c1809c4eae5b62da57c81",
+      "empty-body"
+    ],
+    "DS-128": [
+      "c39c8c5cd3274434887480c8da0e4deb",
+      "empty-body"
+    ],
+    "DS-129": [
+      "4ff75d1f642a65dd373cd46f8238dfba",
+      "empty-body"
+    ],
+    "DS-130": [
+      "c55ed9ac50501bc39aca8b4e9b342bee",
+      "empty-body"
+    ],
+    "DS-131": [
+      "c52add6c616a7737727ec78358b0b007",
+      "empty-body"
+    ],
+    "DS-132": [
+      "ede456606a957897ee607a62d5acdbc7",
+      "empty-body"
+    ],
+    "DS-133": [
+      "189a90e7eb7c016f1ec091a325deb393",
+      "empty-body"
+    ],
+    "DS-134": [
+      "c35690e2cd1fcd9e16c626293d28a0cd",
+      "empty-body"
+    ],
+    "DS-135": [
+      "ec85e43f42b9bba191f3140bfd245547",
+      "empty-body"
+    ],
+    "DS-136": [
+      "b5faafa50424ff755a7221a774c3b88f",
+      "empty-body"
+    ],
+    "DS-137": [
+      "d202d5b9c8f78bc6151222741e2a1905",
+      "empty-body"
+    ],
+    "DS-138": [
+      "153cd4c36a8c9bb690b553085a66d2f7",
+      "empty-body"
+    ],
+    "DS-139": [
+      "c2d46bd16a80236b35e52d41b5746dc2",
+      "empty-body"
+    ],
+    "DS-140": [
+      "e996b107715247873474d529554f6235",
+      "empty-body"
+    ],
+    "DS-141": [
+      "205f6a7200f0e30dfc9dc8632a1b2947",
+      "empty-body"
+    ],
+    "DS-142": [
+      "9feda4d053408a62525783a34a5dc2a8",
+      "empty-body"
+    ],
+    "DS-143": [
+      "6851914b98f4dd0d53bd9517b1455f66",
+      "empty-body"
+    ],
+    "DS-144": [
+      "a8bdee3b056b48c662b3add8dcf6c7b2",
+      "empty-body"
+    ],
+    "DS-145": [
+      "a873e4e7c9ce96ecb3713d0981e5b79d",
+      "empty-body"
+    ],
+    "DS-146": [
+      "612ef8e7ce1d05cc5032b9646b556e16",
+      "empty-body"
+    ],
+    "DS-147": [
+      "ce858cd89979fe848683272702f9f552",
+      "empty-body"
+    ],
+    "DS-148": [
+      "5be7f5f911fa839ad9cb30b8a50c2450",
+      "empty-body"
+    ],
+    "DS-149": [
+      "ad6aed9bcdba75229210cdaa6a6c714e",
+      "empty-body"
+    ],
+    "DS-150": [
+      "150c31e7837aad59cf33e20b7320a244",
+      "empty-body"
+    ],
+    "DS-151": [
+      "08b5f2b95863b9484e912abb6476bd15",
+      "empty-body"
+    ],
+    "DS-152": [
+      "666258cf0a81fee9274497af55b4aeb3",
+      "empty-body"
+    ],
+    "DS-153": [
+      "empty-body",
+      "f5d1199ac8e683dfd701b0b55592dc9e"
+    ],
+    "DS-154": [
+      "b3b32b03c9ebee8fde9f924a0dabb47b",
+      "empty-body"
+    ],
+    "DS-155": [
+      "empty-body",
+      "ff3cecd3cc809c50e925e271b21e71a9"
+    ],
+    "DS-156": [
+      "ddb3faf01d31dd23af1f1af2dba14cc9",
+      "empty-body"
+    ],
+    "DS-157": [
+      "df8eeb381b775015577027f39d333728",
+      "empty-body"
+    ],
+    "DS-158": [
+      "95da01e0d9f9c04902a0a6d7c2a77072",
+      "empty-body"
+    ],
+    "DS-159": [
+      "4788465b44bb6dc2308b54426904cb95",
+      "empty-body"
+    ],
+    "DS-160": [
+      "7ea0624bd43d563de71a4d29f6004d8b",
+      "empty-body"
+    ],
+    "DS-161": [
+      "6c799666ea166c61ffcc7aa4f6d1e2f8",
+      "empty-body"
+    ],
+    "DS-162": [
+      "9e0df98a60e7502967321922fba2c49d",
+      "empty-body"
+    ],
+    "DS-163": [
+      "74499ecbc7897af1f0204f8007890d54",
+      "empty-body"
+    ],
+    "DS-164": [
+      "1928eaf0de6f0bd4e614dcc527c402f3",
+      "empty-body"
+    ],
+    "DS-165": [
+      "3d96d9d9f9ad350f44fceecf5c8fcc0f",
+      "empty-body"
+    ],
+    "DS-166": [
+      "622631bc7684d6aefdf44c673b44dd0b",
+      "empty-body"
+    ],
+    "DS-167": [
+      "105a1d94eb3eea98e1c06d4b706e1e84",
+      "empty-body"
+    ],
+    "DS-168": [
+      "38893112e00f31e7c761d0eb6e8b675a",
+      "empty-body"
+    ],
+    "DS-169": [
+      "b19099055025bdae4b76777283fe324f",
+      "empty-body"
+    ],
+    "DS-170": [
+      "382fe8b9c1a56443525b17f6327035db",
+      "empty-body"
+    ],
+    "DS-171": [
+      "b6cc170f537baa9560f547b885ac7ca4",
+      "empty-body"
+    ],
+    "DS-172": [
+      "a059d5586fdf28cb160d66ee88518ef6",
+      "empty-body"
+    ],
+    "DS-173": [
+      "5cb7310b2ec3107f242cee9073f10b14",
+      "empty-body"
+    ],
+    "DS-174": [
+      "59616b2060a4dd313c20465ff293bcd1",
+      "empty-body"
+    ],
+    "DS-175": [
+      "3921c121656a1ff3db5f5e2898ab12b8",
+      "empty-body"
+    ],
+    "DS-176": [
+      "b7efbcdc0e85b7e8ab4025b2fd7ee52b",
+      "empty-body"
+    ],
+    "DS-177": [
+      "8240907a0daeec7d0ea97433ed2937fe",
+      "empty-body"
+    ],
+    "DS-178": [
+      "93feaa48645707d94a83125485986f5a",
+      "empty-body"
+    ],
+    "DS-179": [
+      "dc35fda8774e7a0386f05699466068a4",
+      "empty-body"
+    ],
+    "DS-180": [
+      "895a93ea4dc1b66b12d0089e9d4f078f",
+      "empty-body"
+    ],
+    "DS-181": [
+      "47bd769fad0c02aa7bed991b6c15d5d2",
+      "empty-body"
+    ],
+    "DS-182": [
+      "a949c9b8e1ca5b814505954ec3b3bb60",
+      "empty-body"
+    ],
+    "DS-183": [
+      "2b5a21558fc8dc7bd92ea708b936e550",
+      "empty-body"
+    ],
+    "DS-184": [
+      "b02c64c12c5629ef15a1ef21e1287f73",
+      "empty-body"
+    ],
+    "DS-185": [
+      "8e68657a977b90b4f4b79d075c67cd1b",
+      "empty-body"
+    ],
+    "DS-186": [
+      "empty-body",
+      "f65c04c5c976ced7e7c2975cb9c1c200"
+    ],
+    "DS-187": [
+      "empty-body",
+      "fadb15c09011ce2dddf471bee3a1bbd7"
+    ],
+    "DS-188": [
+      "35de065a6aeb510d42b1c36c9d496ea5",
+      "empty-body"
+    ],
+    "DS-189": [
+      "a104946b04e07c5924a2105888e1729d",
+      "empty-body"
+    ],
+    "DS-190": [
+      "179546c1753c7b1ba9576392b3d1b2ad",
+      "empty-body"
+    ],
+    "DS-191": [
+      "40be18f1fcb1ba016634b144f0ecaa97",
+      "empty-body"
+    ],
+    "DS-192": [
+      "ea24880ddd5509e3c203f70373b4585d",
+      "empty-body"
+    ],
+    "DS-193": [
+      "62e2f6c68363e7a575e8f0fbf5cd479f",
+      "empty-body"
+    ],
+    "DS-194": [
+      "a9a93486a36ac242cc8ba1b3c3214d56",
+      "empty-body"
+    ],
+    "DS-195": [
+      "72378b3f57d223364dd7069cf18abd97",
+      "empty-body"
+    ],
+    "DS-196": [
+      "3c1c901a2e05faa5d8a8d4104be36027",
+      "empty-body"
+    ],
+    "FR-SHD-001": [
+      "e07a3ae861be49a91a1971bfc18008dc",
+      "empty-body"
+    ],
+    "FR-SHD-002": [
+      "d252260951c0f5c06f6ac7b00ca891d7",
+      "empty-body"
+    ],
+    "FR-SHD-003": [
+      "empty-body",
+      "fa4933812cdbefa41979c73bb5eecbfb"
+    ],
+    "NFR-CO-001": [
+      "45f74a268228f5d92018da6c8781ccc9",
+      "empty-body"
+    ],
+    "NFR-CO-002": [
+      "2e7fe2ac1ba36c2416b50b90932aa037",
+      "empty-body"
+    ],
+    "NFR-FL-001": [
+      "6ba0cf89e91b79e779626854142fa48f",
+      "empty-body"
+    ],
+    "NFR-FL-002": [
+      "cffcbc15efbd2a98186b64ed1dcec051",
+      "empty-body"
+    ],
+    "NFR-IC-001": [
+      "5c8fcb2e738378f9d893a4eb79f335eb",
+      "empty-body"
+    ],
+    "NFR-MA-001": [
+      "8392a72f4dc3cd6f1ed75b2913e71960",
+      "empty-body"
+    ],
+    "NFR-MA-002": [
+      "6212ec3b9db05e158a25a98948a064e6",
+      "empty-body"
+    ],
+    "NFR-MA-003": [
+      "28ee22b0b07e11d48bb049111e72e334",
+      "empty-body"
+    ],
+    "NFR-MA-004": [
+      "7dadcaf560370d19b118fd32b7c29a29",
+      "empty-body"
+    ],
+    "NFR-PE-001": [
+      "31539d5bf3a69b6d4ffbaf043adca0d5",
+      "empty-body"
+    ],
+    "NFR-RE-001": [
+      "17610e85339d35a138992f06a3b04572",
+      "empty-body"
+    ],
+    "NFR-RE-002": [
+      "e40e3371f103d523390e04f6d8bf1db7",
+      "empty-body"
+    ],
+    "NFR-RE-003": [
+      "66be26307f30ea710643fee5cbe3213e",
+      "empty-body"
+    ],
+    "NFR-SA-001": [
+      "5df6b061845850873a2a7826e91c831c",
+      "empty-body"
+    ],
+    "NFR-SA-002": [
+      "e0b635bc683f8a74b58d532ea0046000",
+      "empty-body"
+    ],
+    "NFR-SE-001": [
+      "6742ebfc2709a4bd98057002807dbc69",
+      "empty-body"
+    ],
+    "NFR-SE-002": [
+      "ae709cc8a03873176dbb3e8dba27b3ec",
+      "empty-body"
+    ],
+    "NFR-SE-003": [
+      "587f2aae3fa0270a653d6126fd64b508",
+      "empty-body"
+    ],
+    "NFR-SE-004": [
+      "8e6f6e41505f3c713089620ac2b0cfd2",
+      "empty-body"
+    ],
+    "NFR-SHD-001": [
+      "empty-body",
+      "fa97198ee77c2f2ae3c5f9a470f508bb"
+    ],
+    "NFR-SHD-002": [
+      "c7bad5e3b9b63bd19120d8b1667ed162",
+      "empty-body"
+    ]
+  }
+}
